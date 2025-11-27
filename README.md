@@ -1,2 +1,2 @@
-# searestps
+# template-full-banner-image
 

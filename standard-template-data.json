@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.0.0",
-    "generatedAt": "2025-11-27T03:47:33.051Z",
+    "version": "1.1.0",
+    "generatedAt": "2025-11-27T06:15:42.160Z",
     "templateType": "full_banner_image",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1003,7 +1003,7 @@
                 "description": "삶이 여유로운 곳"
               },
               "closing": {
-                "title": "",
+                "title": "Sea",
                 "images": [
                   {
                     "id": "309db2e9-56bc-4765-b38e-a5e6e02351f9",
@@ -1012,7 +1012,8 @@
                     "description": "",
                     "isSelected": true
                   }
-                ]
+                ],
+                "description": "바다와 함께"
               },
               "essence": {
                 "title": "Searest: Where Healing Begins",
@@ -1069,7 +1070,7 @@
                 "description": "바다전경의 스파를 즐기세요"
               },
               "signature": {
-                "title": "",
+                "title": "Together with the ocean",
                 "images": [
                   {
                     "id": "02ecee85-0b18-4028-aefc-63859452aa41",
@@ -1085,7 +1086,8 @@
                     "description": "",
                     "isSelected": true
                   }
-                ]
+                ],
+                "description": "바다에서 힐링을"
               }
             }
           ]
@@ -1094,7 +1096,7 @@
           "sections": [
             {
               "hero": {
-                "title": "",
+                "title": "Searest Pool Villa",
                 "images": [
                   {
                     "id": "e0dbbe71-1d51-4ab4-a622-12cf6d993d50",
@@ -1123,7 +1125,7 @@
           "sections": [
             {
               "hero": {
-                "title": "",
+                "title": "Healing at Searest",
                 "images": [
                   {
                     "id": "7abfc88f-6fda-4124-bf9a-f39bc2bdb540",
@@ -1134,17 +1136,87 @@
                   }
                 ]
               },
-              "about": []
+              "about": [
+                {
+                  "title": "바다와 함께하는 Searest",
+                  "images": [
+                    {
+                      "id": "89f08008-8c82-473d-8fd2-c11abc7bb0e8",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223966999-9cmaziotmy5.jpg",
+                      "sortOrder": 0,
+                      "description": "",
+                      "isSelected": true,
+                      "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
+                    },
+                    {
+                      "id": "68825c9a-c6f2-4132-9ef2-b84719500446",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223967000-d84unf1b7lw.jpg",
+                      "sortOrder": 1,
+                      "description": "",
+                      "isSelected": true,
+                      "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
+                    }
+                  ],
+                  "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67",
+                  "description": ""
+                }
+              ]
             }
           ]
         },
-        "room": [],
+        "room": [
+          {
+            "id": "c48616db-df5f-48c7-b255-b1a89b26be75",
+            "sections": [
+              {
+                "hero": {
+                  "title": "",
+                  "images": []
+                },
+                "gallery": {
+                  "title": "Searest Pool Villa",
+                  "images": []
+                }
+              }
+            ]
+          },
+          {
+            "id": "9cf38076-db69-4b69-a99c-70ff9694266d",
+            "sections": [
+              {
+                "hero": {
+                  "title": "",
+                  "images": []
+                },
+                "gallery": {
+                  "title": "Searest Pool Villa",
+                  "images": []
+                }
+              }
+            ]
+          },
+          {
+            "id": "6505d61c-c867-456f-a90c-958317560205",
+            "sections": [
+              {
+                "hero": {
+                  "title": "",
+                  "images": []
+                },
+                "gallery": {
+                  "title": "Searest Pool Villa",
+                  "images": []
+                }
+              }
+            ]
+          }
+        ],
         "facility": [],
         "reservation": {
           "sections": [
             {
               "hero": {
-                "title": "",
+                "title": "Searest Pool Villa",
                 "images": [
                   {
                     "id": "c56fc189-9029-4e44-82b0-6c454fb024a2",
@@ -1163,7 +1235,7 @@
                 ]
               },
               "about": {
-                "title": "",
+                "title": "Sea and Searest",
                 "images": [
                   {
                     "id": "912f1e6e-ccad-471c-b3aa-cd45cb043085",
@@ -1180,13 +1252,12 @@
                     "isSelected": false
                   }
                 ],
-                "description": ""
+                "description": "바다와 함께하는 힐링 여행"
               }
             }
           ]
         }
       }
-    },
-    "id": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
+    }
   }
 }

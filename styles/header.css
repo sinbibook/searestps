@@ -1,0 +1,544 @@
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Header Component Styles */
+.header {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease;
+    padding: 0 1rem;
+    z-index: 1000;
+    min-height: auto;
+    overflow: visible; /* mobile-menu가 header 밖으로 나갈 수 있도록 */
+}
+
+/* Scrolled header state */
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Color adjustments for scrolled state */
+.header.scrolled .logo-text {
+    color: #0d4582;
+}
+
+.header.scrolled .logo-svg path,
+.header.scrolled .logo-svg rect,
+.header.scrolled .logo-svg circle {
+    fill: #0d4582;
+}
+
+.header.scrolled .menu-item {
+    color: #374151;
+}
+
+.header.scrolled .menu-item:hover {
+    color: #0d4582;
+}
+
+.header.scrolled .sub-menu-item {
+    color: #374151;
+}
+
+.header.scrolled .sub-menu-item:hover {
+    color: #0d4582;
+}
+
+.header.scrolled .mobile-toggle {
+    color: #374151;
+}
+
+.header.scrolled .reservation-btn {
+    background: rgba(13, 69, 130, 0.1);
+    border: 1px solid rgba(13, 69, 130, 0.2);
+    color: #0d4582;
+}
+
+.header.scrolled .reservation-btn:hover {
+    background: rgba(13, 69, 130, 0.2);
+}
+
+.header-content {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Component Styles - 제주 포레스트 */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    z-index: 1002;
+    position: relative;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-image {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+/* Logo responsive adjustments */
+@media (max-width: 768px) {
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-text {
+        font-size: 1.125rem;
+    }
+}
+
+/* Dark theme variant */
+.logo-container.dark .logo-text {
+    color: #0d4582;
+}
+
+.logo-container.dark .logo-svg path,
+.logo-container.dark .logo-svg rect,
+.logo-container.dark .logo-svg circle {
+    fill: #0d4582;
+}
+
+/* Light theme variant (for headers with white/light backgrounds) */
+.logo-container.light .logo-text {
+    color: #0d4582;
+}
+
+.logo-container.light .logo-svg path,
+.logo-container.light .logo-svg rect,
+.logo-container.light .logo-svg circle {
+    fill: #0d4582;
+}
+
+/* Logo hover effects */
+.logo-container:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+/* Logo for navigation bars */
+.navbar-logo .logo-container {
+    gap: 0.5rem;
+}
+
+.navbar-logo .logo-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.navbar-logo .logo-text {
+    font-size: 1.125rem;
+}
+
+/* Logo for footer */
+.footer-logo .logo-container {
+    gap: 0.5rem;
+}
+
+.footer-logo .logo-text {
+    font-size: 1rem;
+}
+
+/* Logo animation */
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logo-container.animate {
+    animation: logoFadeIn 0.5s ease-out;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: none;
+    align-items: center;
+}
+
+.nav-container {
+    position: relative;
+    z-index: 1001; /* Ensure submenus appear above other content */
+    transition: height 0.3s ease;
+}
+
+.main-menu {
+    position: relative;
+    width: 448px;
+    height: 60px;
+    padding: 0;
+    margin: 0 10px;
+}
+
+.menu-item {
+    position: absolute;
+    top: 23px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 1002; /* Ensure menu items are clickable */
+}
+
+.menu-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-about { left: 25px; }
+.menu-spaces { left: 131px; }
+.menu-specials { left: 238px; }
+.menu-reservation { left: 342px; }
+
+/* Sub Menus */
+.sub-menus {
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    width: 423px;
+    height: 174px;
+    padding: 20px 0 15px 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+    z-index: 1003;
+}
+
+.sub-menus::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 20px);
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.header.scrolled .sub-menus {
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.1);
+}
+
+.header.scrolled .sub-menus::before {
+    background: rgba(255,255,255, 0.75);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.sub-menus.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.sub-menu-item {
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(-5px);
+    max-width: 128px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sub-menus.show .sub-menu-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sub-menu-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sub-menu-item:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Sub menu positions - 동적으로 생성되는 메뉴는 JavaScript에서 관리 */
+/* 고정 메뉴만 CSS로 정의 */
+.sub-about-1 { left: 15px; top: 29px; }
+.sub-about-2 { left: 15px; top: 63px; }
+
+.sub-reservation-1 { left: 332px; top: 29px; }
+
+/* Desktop Reservation Buttons - Common Styles */
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.header-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.header-btn:active {
+    transform: scale(0.95);
+}
+
+.header.scrolled .header-btn {
+    background: rgba(13, 69, 130, 0.1);
+    border: 1px solid rgba(13, 69, 130, 0.2);
+    color: #0d4582;
+}
+
+.header.scrolled .header-btn:hover {
+    background: rgba(13, 69, 130, 0.2);
+}
+
+/* YBS Button - Unique Styles */
+.ybs-btn {
+    margin-right: 0.5rem;
+}
+
+/* Mobile Menu Toggle */
+.mobile-toggle {
+    display: block;
+    color: white;
+    padding: 0.5rem;
+    z-index: 1002;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.mobile-toggle:active {
+    transform: scale(0.95);
+}
+
+.mobile-toggle .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Close Button */
+.mobile-menu-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 1002;
+    transition: transform 0.1s ease;
+}
+
+.mobile-menu-close:active {
+    transform: scale(0.95);
+}
+
+.mobile-menu-close .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.mobile-menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 32rem;
+}
+
+.mobile-menu-section {
+    text-align: center;
+}
+
+.mobile-menu-title {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.mobile-sub-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.mobile-sub-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+    background: transparent;
+    border: none;
+}
+
+.mobile-sub-item:hover {
+    color: white;
+}
+
+/* Mobile Reservation Buttons Container */
+.mobile-reservation-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* Mobile Reservation Buttons - Common Styles */
+.mobile-header-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    flex: 0 0 auto;
+}
+
+.mobile-header-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Icon styles */
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Responsive design */
+@media (min-width: 640px) {
+    .header {
+        padding: 0 2rem;
+    }
+    .mobile-menu-grid {
+        gap: 3rem;
+    }
+    .mobile-menu-title {
+        font-size: 1.25rem;
+    }
+    .mobile-sub-item {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    .mobile-header-btn {
+        padding: 0.75rem 2rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 0 5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        padding: 0 10rem;
+    }
+    .desktop-nav {
+        display: flex;
+    }
+    .mobile-toggle {
+        display: none;
+    }
+    .mobile-menu {
+        display: none !important;
+    }
+}

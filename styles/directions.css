@@ -1,0 +1,317 @@
+/* Directions Page Specific Styles */
+
+/* Hero Title Background */
+.hero-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile hero height */
+@media (max-width: 767px) {
+    .hero-section {
+        height: 70vh;
+        min-height: 70vh;
+    }
+}
+
+.hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Back Button Position */
+.back-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+/* Content Section */
+.content-section {
+    padding: 4rem 2rem 3.5rem;
+    background: white;
+}
+
+@media (min-width: 768px) {
+    .content-section {
+        padding: 4rem 8.75rem 3.5rem;
+    }
+}
+
+.content-container {
+    width: 100%;
+    max-width: none;
+}
+
+.resort-info {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 3rem;
+}
+
+/* Notice item - reduce margin */
+.notice-item {
+    margin-bottom: 4rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.address-section h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.address-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.address-item:last-child {
+    margin-bottom: 0;
+}
+
+.address-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+.address-details p:first-child {
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.address-details p:last-child {
+    color: #4b5563;
+}
+
+.info-notice {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.info-notice p {
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Map Section */
+.map-section {
+    padding: 0 2rem 10rem 2rem;
+    background: rgba(255, 255, 255, 1);
+}
+
+@media (min-width: 768px) {
+    .map-section {
+        padding: 0 8.75rem 10rem 8.75rem;
+    }
+}
+
+.map-container {
+    width: 100%;
+    max-width: none;
+}
+
+.map-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 2rem;
+}
+
+/* Notice section title - reduce margin */
+.notice-title {
+    margin-bottom: 1rem;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 300px; /* 모바일 기본값 */
+    min-height: 450px;
+    background: white;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .map-wrapper {
+        height: 700px; /* 태블릿 이상 */
+    }
+}
+
+#kakao-map {
+    width: 100%;
+    height: 100%;
+}
+
+.map-wrapper iframe {
+    border-radius: 8px;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(229, 231, 235, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-content {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.map-pin-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #3b82f6;
+    margin: 0 auto 1rem;
+}
+
+.map-content h4 {
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.map-content .address {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.map-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.map-button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.kakao-button {
+    background: #fde047;
+    color: #111827;
+}
+
+.kakao-button:hover {
+    background: #eab308;
+}
+
+.google-button {
+    background: #3b82f6;
+    color: white;
+}
+
+.google-button:hover {
+    background: #2563eb;
+}
+
+.map-copyright {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.map-copyright-center {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* Transportation Info Cards */
+.transport-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .transport-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.transport-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.transport-card h4 {
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.transport-card p {
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.transport-card br {
+    margin: 0.25rem 0;
+}

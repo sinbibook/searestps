@@ -1,0 +1,795 @@
+/* Room Page Specific Styles */
+
+/* Hero Section */
+#room-hero-name {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Reset and Base */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+/* 모바일에서 여백 제거 */
+@media (max-width: 639px) {
+    .min-h-screen {
+        min-height: auto;
+    }
+
+    /* 모바일에서 hero 텍스트 크기 축소 */
+    #room-hero-name {
+        font-size: 1.8rem;
+    }
+
+    #room-hero-description {
+        font-size: 0.875rem;
+    }
+
+    /* 모바일에서 슬라이드 인디케이터 축소 */
+    .slide-indicators {
+        padding: 0.5rem 1rem;
+        bottom: 1rem;
+    }
+
+    .indicator-line {
+        width: 64px;
+        margin: 0 0.75rem;
+    }
+
+    .indicator-current,
+    .indicator-total {
+        font-size: 0.75rem;
+    }
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Mobile hero height */
+@media (max-width: 767px) {
+    .hero-section {
+        height: 45vh;
+        min-height: 45vh;
+    }
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-image,
+.hero-slide .image-container,
+.hero-slide .fallback-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex; /* 모바일에서도 표시 */
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.nav-button.prev {
+    left: 16px;
+}
+
+.nav-button.next {
+    right: 16px;
+}
+
+
+/* Premium Navigation Buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.nav-btn.prev {
+    left: 2rem;
+}
+
+.nav-btn.next {
+    right: 2rem;
+}
+
+.nav-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke-width: 1.5;
+    transition: transform 0.2s;
+}
+
+.nav-btn.prev:hover svg {
+    transform: translateX(-2px);
+}
+
+.nav-btn.next:hover svg {
+    transform: translateX(2px);
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-text h1 {
+    color: white;
+}
+
+/* Back Button Position */
+.back-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+/* Custom Slide Indicators */
+.slide-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+.indicator-number {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    min-width: 20px;
+    text-align: right;
+}
+
+.indicator-line {
+    position: relative;
+    margin: 0 1rem;
+    width: 96px;
+    height: 2px;
+}
+
+.indicator-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.indicator-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: white;
+    transition: width 0.5s ease-out;
+}
+
+.indicator-total {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    font-weight: 500;
+    min-width: 20px;
+    text-align: left;
+}
+
+/* Room Info Section */
+.room-info {
+    min-height: 800px;
+    padding: 4rem 2rem;
+    background: rgba(255,255,255,1);
+}
+
+.room-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
+}
+
+.room-details {
+    width: 100%;
+    order: 1;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.room-gallery {
+    width: 100%;
+    order: 2;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.room-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.room-title {
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+}
+
+.room-description {
+    color: #6b7280;
+    line-height: 1.625;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.room-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+}
+
+.feature-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    color: #6b7280;
+}
+
+.amenities-section h4 {
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+/* Room Guide Section */
+.room-guide-section {
+    margin-top: 2rem;
+}
+
+.room-guide-section h4 {
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+#room-additional-info {
+    white-space: pre-line;
+    color: #6b7280;
+    line-height: 1.625;
+    font-size: 1rem;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    height: 400px;
+}
+
+.gallery-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.gallery-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.room-gallery .gallery-item {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    aspect-ratio: 4/3;
+    opacity: 1;
+}
+
+.room-gallery .gallery-right .gallery-item {
+    aspect-ratio: 4/3;
+    flex: 1;
+    opacity: 1;
+}
+
+.gallery-right {
+    height: 100%;
+}
+
+.gallery-item img,
+.gallery-item .fallback-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.room-gallery .gallery-item:hover img,
+.room-gallery .gallery-item:hover .fallback-image {
+    transform: scale(1.05);
+}
+
+/* Exterior Area Section */
+.exterior-area {
+    padding: 2rem 2rem 4rem;
+    background: white;
+}
+
+.exterior-area-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.exterior-area-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.main-exterior-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: start;
+    animation: scaleIn 0.8s ease-out;
+}
+
+.exterior-image {
+    width: 100%;
+    order: 1;
+}
+
+.exterior-image-container {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.exterior-image-container img,
+.exterior-image-container .image-container,
+.exterior-image-container .fallback-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exterior-text {
+    width: 100%;
+    order: 2;
+}
+
+.exterior-text p {
+    color: #6b7280;
+    line-height: 1.625;
+    margin-bottom: 1rem;
+}
+
+.exterior-text p:first-child {
+    font-size: 1.125rem;
+}
+
+/* Gallery Thumbnails */
+.gallery-thumbnails {
+    order: 3;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Mobile Gallery */
+.mobile-gallery {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+}
+
+.mobile-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-gallery.dragging {
+    cursor: grabbing;
+}
+
+.mobile-gallery-item {
+    flex-shrink: 0;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    width: calc(60vw - 16px);
+    scroll-snap-align: start;
+    pointer-events: none;
+}
+
+.mobile-gallery-item img,
+.mobile-gallery-item .image-container,
+.mobile-gallery-item .fallback-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mobile-gallery-item:hover img,
+.mobile-gallery-item:hover .fallback-image {
+    transform: scale(1.05);
+}
+
+/* Desktop Gallery */
+.desktop-gallery {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.desktop-gallery-item {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.desktop-gallery-item img,
+.desktop-gallery-item .image-container,
+.desktop-gallery-item .fallback-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.desktop-gallery-item:hover img,
+.desktop-gallery-item:hover .fallback-image {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    /* 데스크톱에서 hero content padding 복원 */
+    .hero-content {
+        padding: 2rem;
+    }
+
+    /* 데스크톱에서 버튼 크기 및 위치 조정 */
+    .nav-button {
+        width: 56px;
+        height: 56px;
+    }
+
+    .nav-button svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav-button.prev {
+        left: 32px;
+    }
+
+    .nav-button.next {
+        right: 32px;
+    }
+
+    .nav-btn {
+        display: flex;
+    }
+
+
+    .room-info {
+        min-height: auto;
+        padding: 14rem 8.75rem 8rem;
+        margin-bottom: 0;
+    }
+
+    .room-grid {
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    .room-details {
+        width: 40%;
+    }
+
+    .room-gallery {
+        width: 60%;
+    }
+
+    .room-details-content {
+        gap: 2rem;
+    }
+
+    .room-title {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .room-description {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+    #room-additional-info {
+        font-size: 1.125rem;
+    }
+
+    .room-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .gallery-grid {
+        height: 450px;
+        gap: 1rem;
+    }
+
+    .gallery-left {
+        gap: 1rem;
+    }
+
+    .exterior-area {
+        padding: 4rem 8.75rem 14rem;
+    }
+
+    .exterior-area-header {
+        margin-bottom: 8rem;
+    }
+
+    .exterior-area-content {
+        gap: 8rem;
+    }
+
+    .main-exterior-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .exterior-image {
+        width: 66.666667%;
+    }
+
+    .exterior-text {
+        width: 33.333333%;
+        padding-left: 2rem;
+    }
+
+    .exterior-text p:first-child {
+        font-size: 1.25rem;
+    }
+
+    .exterior-text p {
+        font-size: 1.125rem;
+    }
+
+    .mobile-gallery {
+        display: none;
+    }
+
+    .desktop-gallery {
+        display: grid;
+    }
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-gray-600 {
+    color: #6b7280;
+}
+
+.text-gray-800 {
+    color: #1f2937;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-base {
+    font-size: 1rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+.text-6xl {
+    font-size: 3.75rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leading-relaxed {
+    line-height: 1.625;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Missing utility classes */
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-500 {
+    transition-duration: 500ms;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .md\:text-lg {
+        font-size: 1.125rem;
+    }
+
+    .md\:text-xl {
+        font-size: 1.25rem;
+    }
+
+    .md\:text-6xl {
+        font-size: 3.75rem;
+    }
+}

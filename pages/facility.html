@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="숙소 설명">
+    <meta name="keywords" content="SEO 키워드">
+    <title id="page-title">시설 안내 - 숙소명</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../styles/common.css" as="style">
+    <link rel="preload" href="../styles/facility.css" as="style">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/facility.css">
+
+
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영덕 씨레스트 스파풀빌라 - 시설안내" />
+  <meta property="og:description" content="전객실 동해바다와 정면 오션뷰이며
+간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
+출렁이는 파도와 황홀한 일출은 물론
+바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
+고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
+  <meta property="og:url" content="https://searestps.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영덕 씨레스트 스파풀빌라 - 시설안내" />
+  <meta name="twitter:description" content="전객실 동해바다와 정면 오션뷰이며
+간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
+출렁이는 파도와 황홀한 일출은 물론
+바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
+고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
+</head>
+<body>
+    <div class="facility-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <img id="hero-image"
+                     src=""
+                     alt="시설 히어로 이미지"
+                     data-facility-hero-image
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="hero-content">
+                <button class="back-button" onclick="navigateToHome()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                    Back to Home
+                </button>
+
+                <div class="hero-info">
+                    <p id="hero-subtitle" class="hero-subtitle" data-facility-hero-subtitle></p>
+                    <h1 id="hero-title" class="hero-title" data-facility-hero-title></h1>
+                    <p id="hero-description" class="hero-description" data-facility-hero-description></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading/Error States -->
+        <div id="loading-message" class="loading-message" data-facility-loading-message></div>
+        <div id="error-message" class="error-message" data-facility-error-message style="display: none;"></div>
+
+        <!-- Main Content Section -->
+        <section id="main-content" class="main-content-section page-content" data-facility-main-content style="display: none;">
+            <div class="main-grid">
+                <div class="left-column">
+                    <div class="title-section">
+                        <p id="content-subtitle" class="section-subtitle" data-facility-content-subtitle></p>
+                        <h1 id="content-title" class="section-title" data-facility-content-title></h1>
+                        <!-- <p id="content-description" class="section-description">시설 설명</p> -->
+                    </div>
+
+                    <!-- Small Image -->
+                    <div class="small-image-wrapper">
+                        <div class="small-image">
+                            <img id="small-image"
+                                 src=""
+                                 alt="시설 작은 이미지"
+                                 data-facility-small-image
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="section-description" data-facility-content>
+                        <!-- Dynamic facility content will be inserted here -->
+                    </div>
+
+                    <!-- Usage Guide -->
+                    <div class="usage-guide-section">
+                        <h3 class="usage-guide-title">이용안내</h3>
+                        <div id="usage-guide-content" class="usage-guide-content" data-facility-usage-guide>
+                            <!-- Dynamic usage guide will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <div class="large-image">
+                        <img id="large-image"
+                             src=""
+                             alt="시설 큰 이미지"
+                             data-facility-large-image
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Overview Section -->
+        <section id="experience-section" class="experience-section page-content" data-facility-experience-section style="display: none;">
+            <h2 class="experience-title">Experience Overview</h2>
+
+            <div class="experience-grid">
+                <!-- Main Content -->
+                <div data-features-main-content>
+                    <!-- 주요 특징 -->
+                    <div>
+                        <h3 class="features-title">주요 특징</h3>
+                        <div id="features-grid" class="features-grid" data-facility-features-grid>
+                            <!-- Dynamic features will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div>
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title" data-additional-info-title>추가 정보</h3>
+
+                        <div id="sidebar-info" class="sidebar-info" data-facility-sidebar-info>
+                            <!-- Dynamic sidebar info will be inserted here -->
+                        </div>
+
+                        <div>
+                            <h3 class="benefits-title" data-benefits-title>특별 혜택</h3>
+                            <ul id="benefits-list" class="benefits-list" data-facility-benefits-list>
+                                <!-- Dynamic benefits will be inserted here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section (Hidden) -->
+        <section id="gallery-section" class="px-8 sm:px-6 md:px-20 lg:px-[140px] py-8 sm:py-12 md:py-[56px] bg-white page-content" data-facility-gallery-section style="display: none;">
+            <div id="facility-fade-gallery"></div>
+        </section>
+
+        <!-- Slider Section -->
+        <section id="slider-section" class="px-8 md:px-[140px] py-8 sm:py-12 md:py-[56px] bg-white page-content" data-facility-slider-section>
+            <div class="facility-slider-wrapper">
+                <!-- Slides Container -->
+                <div class="facility-slides-container" data-facility-slides-container>
+                    <!-- Slides will be populated by data mapper -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button class="facility-nav-button facility-prev" onclick="prevFacilitySlide()">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button class="facility-nav-button facility-next" onclick="nextFacilitySlide()">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+
+                <!-- Slide Indicators -->
+                <div class="facility-slide-indicators" data-facility-slide-indicators>
+                    <!-- Indicators will be populated by data mapper -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Include ImageWithFallback script -->
+    <script src="../js/image-with-fallback.js"></script>
+
+
+    <!-- Image Helpers -->
+    <script src="../js/image-helpers.js"></script>
+
+    <!-- Base Data Mapper -->
+    <script src="../js/data-mapper/core/base-mapper.js"></script>
+
+    <!-- Facility Page Mapper -->
+    <script src="../js/data-mapper/pages/facility-mapper.js"></script>
+
+    <!-- Preview Handler for Admin Integration -->
+    <script src="../js/preview-handler.js"></script>
+
+    <!-- Header Footer Mapper -->
+    <script src="../js/data-mapper/pages/header-footer-mapper.js"></script>
+
+    <!-- Header and Footer Loader -->
+    <script src="../js/header-footer-loader.js"></script>
+
+    <!-- Page-specific script -->
+    <script src="../js/pages/facility.js"></script>
+
+</body>
+</html>

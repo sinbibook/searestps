@@ -1,0 +1,244 @@
+/* Footer Component Styles - Converted from React */
+.footer {
+    width: 100%;
+    background-color: #292524; /* bg-stone-800 */
+    position: relative;
+    z-index: 9998;
+    margin-top: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem;
+}
+
+.footer-content {
+    width: 100%;
+    padding-top: 2rem; /* py-8 */
+    padding-bottom: 2rem;
+}
+
+/* Main Footer Content */
+.footer-main {
+    display: flex;
+    flex-direction: column; /* flex-col */
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* Logo Section */
+.footer-logo-section {
+    width: 100%; /* w-full */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+/* Vertical Logo */
+.footer-logo {
+    width: 3rem; /* w-12 */
+    height: 4rem; /* h-16 */
+}
+
+.footer-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Logo Text Container - 별도 컨테이너로 줄바꿈 방지 */
+.footer-logo-text-container {
+    width: auto;
+    min-width: max-content; /* 텍스트 길이에 맞춰 최소 너비 설정 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.footer-logo-text {
+    color: white;
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600;
+    text-align: left;
+    display: block;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* Contact Information Section */
+.footer-contact {
+    width: 100%; /* w-full */
+}
+
+/* Business Info Grid (2x2) */
+.footer-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-info-item {
+    color: white;
+    font-size: 0.75rem;
+}
+
+
+/* Social Links Section */
+.footer-social-section {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Copyright Section - Full Width */
+.footer-copyright-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* border-white/20 */
+    padding-top: 1rem; /* pt-4 */
+}
+
+.footer-copyright {
+    color: white;
+    font-size: 0.75rem; /* text-xs */
+    text-align: left;
+}
+
+/* Responsive Design - sm:px-8 */
+@media (min-width: 640px) {
+    .footer {
+        padding-left: 2rem; /* sm:px-8 */
+        padding-right: 2rem;
+    }
+
+    .footer-logo {
+        width: 4rem; /* sm:w-16 */
+        height: 5rem; /* sm:h-20 */
+    }
+
+    .footer-logo-text {
+        font-size: 1rem; /* sm:text-sm */
+    }
+
+    .footer-info-item {
+        font-size: 1rem; /* sm:text-sm */
+    }
+
+    /* Small screens - 가로 배열 시작 */
+    .footer-info-row {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .footer-info-item {
+        flex: 1;
+    }
+
+    .footer-copyright {
+        font-size: 1rem; /* sm:text-sm */
+    }
+}
+
+/* Responsive Design - md:px-20 */
+@media (min-width: 768px) {
+    .footer {
+        padding-left: 5rem; /* md:px-20 */
+        padding-right: 5rem;
+    }
+
+    .footer-content {
+        padding-top: 3rem; /* md:py-12 */
+        padding-bottom: 3rem;
+    }
+
+    .footer-main {
+        margin-bottom: 2rem; /* md:mb-8 */
+    }
+
+    .footer-logo-section {
+        margin-bottom: 2rem; /* md:mb-8 */
+    }
+
+    .footer-info-grid {
+        gap: 1rem; /* md:gap-4 */
+    }
+
+    .footer-info-row {
+        gap: 2rem; /* md:gap-8 */
+    }
+
+    .footer-info-item,
+    .footer-copyright {
+        font-size: 0.875rem; /* md:text-[14px] */
+    }
+
+    .footer-copyright-section {
+        padding-top: 1.5rem; /* md:pt-6 */
+    }
+}
+
+/* Responsive Design - lg:px-40, lg:flex-row */
+@media (min-width: 1024px) {
+    .footer {
+        padding-left: 10rem; /* lg:px-40 */
+        padding-right: 10rem;
+    }
+
+    .footer-main {
+        flex-direction: row; /* lg:flex-row */
+    }
+
+    .footer-logo-section {
+        width: 20%; /* lg:w-2/10 */
+        margin-bottom: 0; /* lg:mb-0 */
+        padding-right: 2rem; /* lg:pr-8 */
+    }
+
+    .footer-contact {
+        width: 80%; /* lg:w-8/10 */
+    }
+
+    .footer-info-row {
+        gap: 3rem; /* lg:gap-12 */
+    }
+
+}
+

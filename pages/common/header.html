@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Component</title>
+    <link rel="stylesheet" href="../styles/header.css">
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영덕 씨레스트 스파풀빌라" />
+  <meta property="og:description" content="전객실 동해바다와 정면 오션뷰이며
+간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
+출렁이는 파도와 황홀한 일출은 물론
+바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
+고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
+  <meta property="og:url" content="https://searestps.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영덕 씨레스트 스파풀빌라" />
+  <meta name="twitter:description" content="전객실 동해바다와 정면 오션뷰이며
+간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
+출렁이는 파도와 황홀한 일출은 물론
+바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
+고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
+</head>
+<body>
+    <!-- Header Component -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="header-inner">
+                <!-- Logo -->
+                <div class="logo-container" onclick="navigateTo('home')">
+                    <div class="logo-icon">
+                        <img data-logo src="" alt="로고" class="logo-image">
+                    </div>
+                    <span class="logo-text" data-logo-text></span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav">
+                    <nav class="nav-container">
+                        <!-- Main Menu Container -->
+                        <div class="main-menu">
+                            <!-- About -->
+                            <div class="menu-item menu-about" onclick="navigateTo('main')">About</div>
+
+                            <!-- Spaces -->
+                            <div class="menu-item menu-spaces" data-room-link>Spaces</div>
+
+                            <!-- Specials -->
+                            <div class="menu-item menu-specials" data-facility-link>Specials</div>
+
+                            <!-- Reservation -->
+                            <div class="menu-item menu-reservation" onclick="navigateTo('reservation-info')">Reservation</div>
+                        </div>
+
+                        <!-- Sub Menus -->
+                        <div class="sub-menus" id="sub-menus">
+                            <!-- About Sub Menu -->
+                            <div class="sub-menu-item sub-about-1" onclick="navigateTo('main')">메인</div>
+                            <div class="sub-menu-item sub-about-2" onclick="navigateTo('directions')">오시는길</div>
+
+                            <!-- Spaces Sub Menu (동적으로 생성됨) -->
+
+                            <!-- Specials Sub Menu (동적으로 생성됨) -->
+
+                            <!-- Reservation Sub Menu -->
+                            <div class="sub-menu-item sub-reservation-1" onclick="navigateTo('reservation-info')">예약안내</div>
+                        </div>
+                    </nav>
+
+                    <!-- YBS Reservation Button -->
+                    <button class="header-btn ybs-btn hidden" data-ybs-booking>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25A8.966 8.966 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                        </svg>
+                        <span>YBS</span>
+                    </button>
+
+                    <!-- Desktop Reservation Button -->
+                    <button class="header-btn reservation-btn" data-booking-engine>
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25A8.966 8.966 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                        </svg>
+                        <span>실시간 예약</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                    <svg class="icon" id="menu-icon" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg class="icon" id="close-icon" viewBox="0 0 24 24" style="display: none;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (header 밖에 위치) -->
+    <div class="mobile-menu" id="mobile-menu">
+            <!-- Mobile Menu Close Button -->
+            <div class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </div>
+
+            <div class="mobile-menu-grid">
+                <!-- About Section -->
+                <div class="mobile-menu-section">
+                    <h3 class="mobile-menu-title">About</h3>
+                    <div class="mobile-sub-items">
+                        <button class="mobile-sub-item" onclick="navigateTo('main')">메인</button>
+                        <button class="mobile-sub-item" onclick="navigateTo('directions')">오시는길</button>
+                    </div>
+                </div>
+
+                <!-- Spaces Section -->
+                <div class="mobile-menu-section">
+                    <h3 class="mobile-menu-title">Spaces</h3>
+                    <div class="mobile-sub-items" id="mobile-spaces-items">
+                        <!-- 동적으로 로드됨 -->
+                    </div>
+                </div>
+
+                <!-- Specials Section -->
+                <div class="mobile-menu-section">
+                    <h3 class="mobile-menu-title">Specials</h3>
+                    <div class="mobile-sub-items" id="mobile-specials-items">
+                        <!-- 동적으로 로드됨 -->
+                    </div>
+                </div>
+
+                <!-- Reservation Section -->
+                <div class="mobile-menu-section">
+                    <h3 class="mobile-menu-title">Reservation</h3>
+                    <div class="mobile-sub-items">
+                        <button class="mobile-sub-item" onclick="navigateTo('reservation-info')">예약안내</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Reservation Buttons Container -->
+            <div class="mobile-reservation-buttons">
+                <!-- Mobile YBS Reservation Button -->
+                <button class="mobile-header-btn mobile-ybs-btn hidden" data-ybs-booking>
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25A8.966 8.966 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                    </svg>
+                    <span>YBS</span>
+                </button>
+
+                <!-- Mobile Reservation Button -->
+                <button class="mobile-header-btn mobile-reservation-btn" data-booking-engine>
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25A8.966 8.966 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                    </svg>
+                    <span>실시간 예약</span>
+                </button>
+            </div>
+        </div>
+
+    <!-- Preview Handler for Admin Integration -->
+    <script src="../js/preview-handler.js"></script>
+
+    <!-- Header script -->
+    <script src="../js/common/header.js"></script>
+</body>
+</html>

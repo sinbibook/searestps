@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="숙소 설명">
+    <meta name="keywords" content="SEO 키워드">
+    <title>오시는길 - 숙소명</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../styles/common.css" as="style">
+    <link rel="preload" href="../styles/directions.css" as="style">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/directions.css">
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영덕 씨레스트 스파풀빌라 - 오시는길" />
+  <meta property="og:description" content="전객실 동해바다와 정면 오션뷰이며
+간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
+출렁이는 파도와 황홀한 일출은 물론
+바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
+고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
+  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
+  <meta property="og:url" content="https://searestps.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영덕 씨레스트 스파풀빌라 - 오시는길" />
+  <meta name="twitter:description" content="전객실 동해바다와 정면 오션뷰이며
+간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
+출렁이는 파도와 황홀한 일출은 물론
+바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
+고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
+  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
+</head>
+<body>
+    <div class="directions-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Background Image -->
+            <div class="hero-background">
+                <img data-directions-hero-image
+                     src=""
+                     alt="Mountain Landscape"
+                     loading="eager">
+            </div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <!-- Back Button -->
+                <button class="back-button" onclick="navigateToHome()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                    Back to Home
+                </button>
+
+                <!-- Title -->
+                <h1 class="hero-title" data-directions-hero-title></h1>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-section page-content">
+            <div class="content-container">
+                <!-- Resort Info Section -->
+                <div class="resort-info">
+                    <h2 class="section-title" data-directions-section-title></h2>
+
+                    <div class="info-grid">
+                        <div class="info-content">
+                            <div class="address-section">
+                                <div class="address-item">
+                                    <svg class="address-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                    </svg>
+                                    <div class="address-details">
+                                        <p>도로명 주소</p>
+                                        <p data-directions-road-address></p>
+                                    </div>
+                                </div>
+                                <!-- 추후 지번 사용예정 -->
+                                <!-- <div class="address-item">
+                                    <svg class="address-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.158.69-.158 1.006 0l4.994 2.497c.317.158.69.158 1.007 0z" />
+                                    </svg>
+                                    <div class="address-details">
+                                        <p>지번 주소</p>
+                                        <p data-directions-lot-address></p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- custom information section -->
+                <div class="notice-section" data-directions-notice-section>
+                    <h3 class="map-title notice-title" data-directions-notice-title></h3>
+                    <div class="address-item notice-item">
+                        <div class="address-details">
+                            <p data-directions-notice-description></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section page-content">
+            <div class="map-container">
+                <h3 class="map-title" data-directions-map-title></h3>
+
+                <!-- Map Container -->
+                <div class="map-wrapper">
+                    <!-- Kakao Map -->
+                    <div id="kakao-map"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Kakao Map SDK - Local -->
+    <script src="../js/kakao-maps-sdk.js"></script>
+
+    <!-- Include ImageWithFallback script -->
+    <script src="../js/image-with-fallback.js"></script>
+
+    <!-- Image Helpers -->
+    <script src="../js/image-helpers.js"></script>
+
+    <!-- Base Data Mapper -->
+    <script src="../js/data-mapper/core/base-mapper.js"></script>
+
+    <!-- Directions Page Mapper -->
+    <script src="../js/data-mapper/pages/directions-mapper.js"></script>
+
+    <!-- Preview Handler for Admin Integration -->
+    <script src="../js/preview-handler.js"></script>
+
+    <!-- Header Footer Mapper -->
+    <script src="../js/data-mapper/pages/header-footer-mapper.js"></script>
+
+    <!-- Header and Footer Loader -->
+    <script src="../js/header-footer-loader.js"></script>
+
+    <!-- Page-specific script -->
+    <script src="../js/pages/directions.js"></script>
+
+</body>
+</html>

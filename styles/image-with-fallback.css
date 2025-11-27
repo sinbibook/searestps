@@ -1,0 +1,65 @@
+/* Image With Fallback Component Styles */
+.image-container {
+    position: relative;
+    height: 100%;
+}
+
+.loading-placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #e7e5e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.loading-placeholder.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #d6d3d1;
+    border-top-color: #78716c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.fallback-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fallback-image.loaded {
+    opacity: 1;
+}
+
+.fallback-image.error {
+    opacity: 1;
+}

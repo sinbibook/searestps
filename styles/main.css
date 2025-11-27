@@ -1,0 +1,375 @@
+/* Main Page Specific Styles */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-image,
+.hero-slide .image-container,
+.hero-slide .fallback-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Navigation Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex; /* 모바일에서도 표시 */
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.nav-button.prev {
+  left: 16px;
+}
+
+.nav-button.next {
+  right: 16px;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  padding-bottom: 64px;
+}
+
+/* Back Button Position */
+.back-button {
+    margin-bottom: 32px;
+    width: fit-content;
+}
+
+.hero-title {
+  margin-bottom: 64px;
+}
+
+.hero-title h1 {
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+.hero-title p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  max-width: 512px;
+  line-height: 1.5;
+}
+
+/* Slide Indicators */
+.slide-indicators {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+}
+
+.indicator-current {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 20px;
+  text-align: right;
+}
+
+.indicator-bar {
+  position: relative;
+  margin: 0 16px;
+  width: 96px;
+  height: 2px;
+}
+
+.indicator-track {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.indicator-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: white;
+  transition: width 0.5s ease-out;
+}
+
+.indicator-total {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 20px;
+  text-align: left;
+}
+
+/* Content Sections */
+.content-section {
+  position: relative;
+  padding: 40px 32px;
+}
+
+.section-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.text-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.image-item {
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-item img,
+.image-item .image-container,
+.image-item .fallback-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Full Width Image Section */
+.full-width-section {
+  position: relative;
+}
+
+.full-width-image {
+  width: 100%;
+  height: 353px;
+  padding-top: 48px;
+  overflow: hidden;
+}
+
+.full-width-image img,
+.full-width-image .image-container,
+.full-width-image .fallback-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Loading placeholder styles for image-with-fallback */
+.loading-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.loading-placeholder.hidden {
+  display: none;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #6b7280;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Image container positioning */
+.hero-slide .image-container,
+.image-item .image-container,
+.full-width-image .image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure loaded images are visible */
+.fallback-image.loaded {
+  opacity: 1;
+  z-index: 2;
+  position: relative;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 32px 140px 64px 140px;
+  }
+
+  .hero-title h1 {
+    font-size: 6rem;
+  }
+
+  .hero-title p {
+    font-size: 20px;
+  }
+
+  .nav-button {
+    width: 56px;
+    height: 56px;
+  }
+  .nav-button.prev {
+    left: 32px;
+  }
+  .nav-button.next {
+    right: 32px;
+  }
+
+
+  .content-section {
+    padding: 60px 140px;
+  }
+
+  .section-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  /* Reverse class for alternating layout */
+  .section-container.reverse {
+    direction: rtl;
+  }
+
+  .section-container.reverse > * {
+    direction: ltr;
+  }
+
+  .text-content h2 {
+    font-size: 3rem;
+  }
+
+  .text-description {
+    font-size: 16px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    height: 70vh;
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title h1 {
+    font-size: 3rem;
+  }
+
+  .hero-title p {
+    font-size: 16px;
+  }
+
+  .text-content h2 {
+    font-size: 1.5rem;
+  }
+}

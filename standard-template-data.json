@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.3.0",
-    "generatedAt": "2025-11-28T06:06:25.015Z",
+    "version": "1.4.0",
+    "generatedAt": "2025-11-28T09:56:57.209Z",
     "templateType": "full_banner_image",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -359,7 +359,7 @@
     ],
     "nameEn": "Yeongdeok Searest Pool Villa",
     "domain": "searestps.kr",
-    "realtimeBookingId": "12513",
+    "realtimeBookingId": "9999",
     "ybsId": ""
   },
   "rooms": [

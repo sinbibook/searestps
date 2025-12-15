@@ -104,14 +104,19 @@
 
     <!-- Mobile Menu (header 밖에 위치) -->
     <div class="mobile-menu" id="mobile-menu">
-            <!-- Mobile Menu Close Button -->
-            <div class="mobile-menu-close" onclick="toggleMobileMenu()">
-                <svg class="icon" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
+            <!-- Mobile Menu Header with Property Name -->
+            <div class="mobile-menu-header">
+                <div class="mobile-property-name" data-mobile-property-name></div>
+                <div class="mobile-menu-close" onclick="toggleMobileMenu()">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </div>
             </div>
 
-            <div class="mobile-menu-grid">
+            <!-- Scrollable Menu Content -->
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-grid">
                 <!-- About Section -->
                 <div class="mobile-menu-section">
                     <h3 class="mobile-menu-title">About</h3>
@@ -144,6 +149,7 @@
                         <button class="mobile-sub-item" onclick="navigateTo('reservation-info')">예약안내</button>
                     </div>
                 </div>
+            </div>
             </div>
 
             <!-- Mobile Reservation Buttons Container -->

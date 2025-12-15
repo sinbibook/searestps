@@ -386,23 +386,38 @@
     z-index: 1001;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
+    padding: 0;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
 }
 
+/* Mobile Menu Header */
+.mobile-menu-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(31, 41, 55, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+.mobile-property-name {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
 /* Mobile Menu Close Button */
 .mobile-menu-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
     color: white;
     padding: 0.5rem;
     cursor: pointer;
-    z-index: 1002;
     transition: transform 0.1s ease;
 }
 
@@ -420,13 +435,23 @@
     visibility: visible;
 }
 
+/* Scrollable Menu Content */
+.mobile-menu-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+}
+
 .mobile-menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    margin-bottom: 4rem;
     width: 100%;
     max-width: 32rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
 }
 
 .mobile-menu-section {
@@ -464,11 +489,17 @@
 
 /* Mobile Reservation Buttons Container */
 .mobile-reservation-buttons {
+    position: sticky;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    width: 100%;
+    padding: 1.5rem;
+    background: rgba(31, 41, 55, 0.98);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
 }
 
 /* Mobile Reservation Buttons - Common Styles */

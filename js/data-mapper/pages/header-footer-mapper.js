@@ -50,6 +50,12 @@ class HeaderFooterMapper extends BaseDataMapper {
             logoText.textContent = property.name;
         }
 
+        // Mobile menu property name 매핑
+        const mobilePropertyName = this.safeSelect('[data-mobile-property-name]');
+        if (mobilePropertyName && property.name) {
+            mobilePropertyName.textContent = property.name;
+        }
+
         // Header 로고 이미지 매핑 (data-logo 속성 사용)
         const logoImage = this.safeSelect('[data-logo]');
         if (logoImage) {

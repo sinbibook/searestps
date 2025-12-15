@@ -246,7 +246,8 @@ class RoomMapper extends BaseDataMapper {
             const roomDesc = roomDescriptions?.find(desc => desc.roomtypeId === room.id);
             const infoDescription = roomDesc?.infoDescription;
 
-            roomInfoDescription.textContent = this.sanitizeText(
+            // XSS 방지 처리 후 줄바꿈을 <br>로 변환
+            roomInfoDescription.innerHTML = this._formatTextWithLineBreaks(
                 infoDescription || room.description,
                 `${room.name}의 상세 정보입니다.`
             );

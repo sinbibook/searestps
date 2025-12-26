@@ -1,7 +1,7 @@
 /* Footer Component Styles - Converted from React */
 .footer {
     width: 100%;
-    background-color: #292524; /* bg-stone-800 */
+    background-color: var(--color-secondary);
     position: relative;
     z-index: 9998;
     margin-top: auto;
@@ -69,6 +69,7 @@
     text-align: left;
     display: block;
     white-space: nowrap; /* 줄바꿈 방지 */
+    font-family: var(--font-ko-main);
 }
 
 /* Contact Information Section */
@@ -92,6 +93,7 @@
 .footer-info-item {
     color: white;
     font-size: 0.75rem;
+    font-family: var(--font-ko-sub);
 }
 
 

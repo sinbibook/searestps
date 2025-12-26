@@ -1,5 +1,10 @@
 /* Main Page Specific Styles */
 
+/* Dynamic Content Sections */
+#dynamic-content-sections {
+  background-color: var(--color-primary);
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;

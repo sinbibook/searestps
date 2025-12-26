@@ -76,7 +76,7 @@
 .section-title {
     font-size: 2.5rem;
     font-weight: 300;
-    color: #111827;
+    color: #1a1a1a;
     margin-bottom: 1.5rem;
     line-height: 1.1;
 }
@@ -402,6 +402,7 @@
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    font-family: var(--font-ko-sub);
 }
 
 @media (min-width: 768px) {
@@ -440,6 +441,7 @@
     gap: 0.5rem;
     font-size: 0.875rem;
     color: #4b5563;
+    font-family: var(--font-ko-sub);
 }
 
 @media (min-width: 640px) {
@@ -481,7 +483,7 @@
     .lg\:px-\[140px\] { padding-left: 8.75rem; padding-right: 8.75rem; }
 }
 
-.bg-white { background-color: white; }
+.bg-primary { background-color: var(--color-primary); }
 
 /* Facility Slider Styles */
 .facility-slider-wrapper {

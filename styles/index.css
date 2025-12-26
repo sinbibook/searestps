@@ -70,6 +70,7 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.8);
     font-weight: 600;
+    font-family: var(--font-en-main);
 }
 
 .tagline {
@@ -233,7 +234,7 @@
 
 /* Brand Essence Section */
 .essence-section {
-    background: linear-gradient(to bottom, #fafaf9, #ffffff);
+    background: var(--color-primary);
     padding: 4rem 0;
 }
 
@@ -251,13 +252,13 @@
 .section-divider {
     width: 3rem;
     height: 1px;
-    background: #d6d3d1;
+    background: var(--color-secondary);
     margin: 2rem auto;
 }
 
 .section-title {
     font-size: 1.25rem;
-    color: #1c1917;
+    color: #1f2937;
     font-weight: 300;
     letter-spacing: -0.025em;
     padding: 0 1rem;
@@ -340,7 +341,7 @@
 /* Gallery & Signature Sections - Shared Styles */
 .gallery-section,
 .signature-section {
-    background: linear-gradient(to bottom, #fafaf9, #f5f5f4);
+    background: var(--color-primary);
     padding: 4rem 0;
 }
 
@@ -408,6 +409,10 @@
 .gallery-item-title.has-text,
 .signature-item-title.has-text {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.signature-item-title {
+    font-family: var(--font-ko-sub);
 }
 
 .gallery-item-subtitle,

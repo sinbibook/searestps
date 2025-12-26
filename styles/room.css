@@ -266,7 +266,6 @@
 .room-info {
     min-height: 800px;
     padding: 4rem 2rem;
-    background: rgba(255,255,255,1);
 }
 
 .room-grid {
@@ -297,6 +296,7 @@
 .room-title {
     font-size: 1.875rem;
     margin-bottom: 1rem;
+    font-family: var(--font-ko-main);
 }
 
 .room-description {
@@ -304,12 +304,11 @@
     line-height: 1.625;
     margin-bottom: 1.5rem;
     font-size: 1rem;
+    font-family: var(--font-ko-sub);
 }
 
 .room-features {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .features-list {
@@ -321,6 +320,7 @@
 .feature-item {
     display: flex;
     align-items: center;
+    font-family: var(--font-ko-sub);
 }
 
 .feature-icon {
@@ -334,6 +334,7 @@
     font-weight: 500;
     color: #1f2937;
     margin-bottom: 1rem;
+    font-family: var(--font-ko-main);
 }
 
 .amenities-grid {
@@ -351,6 +352,7 @@
     font-weight: 500;
     color: #1f2937;
     margin-bottom: 0.75rem;
+    font-family: var(--font-ko-main);
 }
 
 #room-additional-info {
@@ -358,6 +360,7 @@
     color: #6b7280;
     line-height: 1.625;
     font-size: 1rem;
+    font-family: var(--font-ko-sub);
 }
 
 /* Gallery Grid */
@@ -414,7 +417,6 @@
 /* Exterior Area Section */
 .exterior-area {
     padding: 2rem 2rem 4rem;
-    background: white;
 }
 
 .exterior-area-header {
@@ -465,6 +467,7 @@
     color: #6b7280;
     line-height: 1.625;
     margin-bottom: 1rem;
+    font-family: var(--font-ko-sub);
 }
 
 .exterior-text p:first-child {
@@ -617,10 +620,6 @@
         font-size: 1.125rem;
     }
 
-    .room-features {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
 
     .gallery-grid {
         height: 450px;

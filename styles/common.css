@@ -321,17 +321,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Selection Colors */
-::selection {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-::-moz-selection {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 8px;

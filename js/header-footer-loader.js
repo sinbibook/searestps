@@ -18,6 +18,7 @@ class HeaderFooterLoader {
             const doc = parser.parseFromString(html, 'text/html');
             const headerElement = doc.querySelector('header');
             const mobileMenuElement = doc.querySelector('.mobile-menu');
+            const fixedBookingBtn = doc.querySelector('.fixed-mobile-booking-btn');
             const styleElements = doc.querySelectorAll('head style');
             const linkElements = doc.querySelectorAll('head link[rel="stylesheet"]');
             const scriptElements = doc.querySelectorAll('script');
@@ -40,6 +41,12 @@ class HeaderFooterLoader {
                 if (mobileMenuElement && !headerElement.contains(mobileMenuElement)) {
                     const mobileMenuClone = mobileMenuElement.cloneNode(true);
                     document.body.appendChild(mobileMenuClone);
+                }
+
+                // Add fixed mobile booking button
+                if (fixedBookingBtn) {
+                    const bookingBtnClone = fixedBookingBtn.cloneNode(true);
+                    document.body.appendChild(bookingBtnClone);
                 }
                 
                 // Add styles to head

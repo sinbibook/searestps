@@ -1,659 +1,1011 @@
-/* ================================
-   Fullpage Scroll Styles
-   ================================ */
-
-/* Fullpage Container */
-#fullpage {
+/* Main Content */
+.main-content {
+    padding-top: 0;
+    margin-top: 0;
     position: relative;
-    width: 100%;
-    /* height removed to allow natural flow */
+    background: white;
 }
 
-/* Fullpage Sections */
-.fp-section {
+/* Hero Section */
+.hero-section {
     position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    touch-action: pan-y pinch-zoom; /* 수직 스크롤만 허용, 수평은 JS가 처리 */
+}
+
+/* Hero Content Overlay */
+.hero-content-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 60px 0;
+}
+
+.hero-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.hero-text-content {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+
+/* Hero Subtitle */
+.hero-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.subtitle-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.subtitle-line {
+    width: 40px;
+    height: 1px;
+    background: white;
+}
+
+/* Hero Property Name - 스타일은 common.css로 이동됨 */
+
+/* Hero Title Property Name (기존 클래스 유지) */
+.hero-title-property-name {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    /* 세련된 다층 text-shadow */
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.12),
+        0 8px 16px rgba(0, 0, 0, 0.14),
+        0 16px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    /* 부드러운 그림자 */
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.08),
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Hero Description */
+.hero-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    line-height: 1.6;
+    /* 최소한의 그림자 */
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Slider Navigation */
+.hero-slider-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    width: 400px;
+}
+
+.slider-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.slider-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.7;
 }
 
-/* 스크롤 허용 - 푸터까지 보이도록 */
-body {
-    overflow-y: auto;
-    overflow-x: hidden;
+.slider-btn:hover {
+    opacity: 1;
 }
 
-/* ================================
-   Section 1: Hero Section - Index Specific
-   ================================ */
+/* Progress Bar */
+.hero-progress-container {
+    width: 100%;
+    max-width: 600px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+    overflow: hidden;
+}
 
-/* Index page specific hero bottom info position */
-.hero-bottom-info {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    right: 40px;
-    z-index: 100;
+.hero-progress-bar {
+    height: 100%;
+    background: white;
+    width: 0;
+    transition: width 0.1s linear;
+    border-radius: 1px;
+}
+
+/* Essence Section */
+.essence-section {
+    padding: 100px 0;
+    background: var(--color-primary, #e6f3ff);
+    position: relative;
+}
+
+.essence-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.essence-property-name {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.property-name-en {
+    font-family: 'Roustel', sans-serif;
+    font-size: 48px;
+    font-weight: normal;
+    color: var(--color-secondary, #658399);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 2px;
     display: flex;
     align-items: center;
+    gap: 20px;
+}
+
+.property-name-en::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-secondary, #658399);
+    opacity: 0.8;
+}
+
+.essence-text {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.essence-bottom {
+    display: flex;
+    align-items: flex-end;
+    gap: 80px;
+}
+
+.essence-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
+    height: 550px;
 }
 
-/* Hero property name - 왼쪽 고정 */
-.hero-property-name {
-    flex: 0 0 auto;
-    font-family: var(--font-en-main), serif;
-    font-size: 1.125rem;
-    color: #fff;
-    letter-spacing: 0.05em;
+.essence-image {
+    width: 500px;
+    height: 550px;
+    position: relative;
+    flex-shrink: 0;
 }
 
-/* Index page progress container - 중앙 위치 */
-.hero-progress-container {
+.essence-image::before {
+    content: '';
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 15px;
+    right: -15px;
+    width: 500px;
+    height: 550px;
+    background: var(--color-secondary, #658399);
+    opacity: 0.8;
+    border-radius: 275px 275px 0 0;
+    z-index: 0;
+}
+
+.essence-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden !important;
+}
+
+.essence-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+}
+
+.essence-slide {
+    width: 100%;
+    height: 100%;
+    position: relative !important;
+    overflow: hidden !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+.essence-slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 275px 275px 0 0;
+    object-fit: cover;
+}
+
+.essence-thumbnails {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.essence-thumb {
+    width: 200px;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.essence-thumb::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 200px;
+    height: 250px;
+    background: var(--color-secondary, #658399);
+    opacity: 0.3;
+    border-radius: 100px 100px 0 0;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.essence-thumb:hover::before {
+    background: var(--color-secondary, #658399);
+    opacity: 0.5;
+}
+
+.essence-thumb.active::before {
+    background: var(--color-secondary, #658399);
+    opacity: 0.8;
+}
+
+.essence-thumb-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden !important;
+    border-radius: 100px 100px 0 0;
+}
+
+.essence-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px 100px 0 0;
+}
+
+.essence-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 275px 275px 0 0;
+}
+
+/* Wipe animation classes */
+.wipe-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.wipe-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: 10;
+    transition: width 0.8s ease-in-out;
+}
+
+.wipe-container.wiping::before {
+    width: 0;
+}
+
+.essence-title {
+    font-family: var(--font-ko-main);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-secondary, #658399);
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.essence-description {
+    font-family: var(--font-ko-sub);
+    font-size: 17px;
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+    text-align: left;
+}
+
+/* Essence 텍스트 영역 우측 세로줄 */
+.essence-text-content {
+    position: relative;
+}
+
+.essence-text-content::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -30px;
+    width: 1px;
+    height: calc(100% + 60px);
+    background: var(--color-secondary, #658399);
+    opacity: 0.3;
+}
+
+/* 모바일에서 세로줄 숨김 */
+@media (max-width: 768px) {
+    .essence-text-content::after {
+        display: none;
+    }
+}
+
+
+/* Signature Section */
+.signature-section {
+    padding: 100px 0;
+}
+
+.signature-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.signature-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.signature-main-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.signature-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.signature-text-content {
+    margin-bottom: 40px;
+}
+
+.signature-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--color-secondary, #658399);
+    margin: 0 0 30px 0;
+    line-height: 1.3;
+}
+
+.signature-description {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.signature-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.signature-thumb {
+    height: 120px;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.signature-thumb:hover {
+}
+
+.signature-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Rooms Section */
+.rooms-section {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, var(--color-primary, #e6f3ff) 0%, var(--color-secondary, #658399) 100%);
+    position: relative;
+    overflow: hidden;  /* 섹션 밖으로 나가는 요소 숨김 */
+}
+
+.rooms-container {
+    max-width: none;
+    margin: 0;
+    padding-left: calc((100vw - 1200px) / 2 + 20px);
+    padding-right: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.rooms-drag-indicator {
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-}
-.hero-section .section-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     width: 100%;
-    height: 100vh;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
-/* Animations for text on load */
-.hero-section .hero-title {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease 0.5s forwards;
-}
-
-.hero-section .hero-description {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease 0.7s forwards;
-}
-
-.hero-section .hero-bottom-info {
-    opacity: 0;
-    animation: fadeIn 1s ease 1s forwards;
-}
-
-/* 모바일 반응형 */
-@media (max-width: 768px) {
-    /* 모바일에서 일반 스크롤 강제 활성화 */
-    html, body {
-        overflow: auto !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        height: auto !important;
-        position: relative !important;
-    }
-
-    /* 모바일에서는 fp-nav 보정 제거 */
-    .hero-progress-container {
-        position: relative;
-        left: auto;
-        transform: none;
-        margin-left: 0;
-        flex: 1;
-    }
-
-    .hero-property-name {
-        font-size: 1rem;
-    }
-
-    #fullpage {
-        height: auto !important;
-        overflow: visible !important;
-        position: relative !important;
-        transform: none !important;
-    }
-
-    .fp-section,
-    .section {
-        height: auto !important;
-        min-height: 100vh !important;
-        position: relative !important;
-        transform: none !important;
-        top: auto !important;
-        left: auto !important;
-    }
-
-    /* Signature Section 모바일 조정 */
-    .signature-section {
-        min-height: 50vh !important;
-        height: auto !important;
-        padding: 80px 20px !important;
-    }
-
-    .signature-container {
-        flex-direction: column;
-        height: auto !important;
-    }
-
-    .signature-left {
-        width: 100%;
-        padding: 40px 20px;
-        height: auto;
-    }
-
-    .signature-content {
-        text-align: center;
-    }
-
-    .signature-section .signature-thumbnails {
-        display: none;
-    }
-
-    .signature-right {
-        display: none;
-    }
-
-    /* Navigation dots 완전히 숨기기 */
-    .fp-nav {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-    }
-    .hero-bottom-info {
-        left: 20px;
-        right: 20px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .hero-property-name {
-        text-align: center;
-    }
-
-    .hero-progress-container {
-        padding: 0;
-    }
-
-    .hero-indicators {
-        justify-content: center;
-    }
-
-    .hero-content {
-        padding: 0 40px;
-    }
-
-    /* 모바일에서 히어로 섹션 텍스트만 즉시 표시 */
-    .hero-title,
-    .hero-description {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: fadeInUp 1s ease forwards !important;
-    }
-
-    /* 모바일에서 스크롤 애니메이션을 위한 초기 상태 */
-    .animate-element {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-    }
-
-    /* 모바일에서 애니메이션 활성화 상태 */
-    .animate-element.animate {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-
-    /* 모바일 갤러리 스타일 수정 */
-    .gallery-section {
-        min-height: 100vh !important;
-        height: auto !important;
-        background: linear-gradient(to bottom, var(--color-secondary) 0%, var(--color-secondary) 50%, var(--color-primary) 50%, var(--color-primary) 100%) !important;
-    }
-
-    .gallery-container {
-        height: auto !important;
-        min-height: 100vh !important;
-        padding: 40px 0 !important;
-    }
-
-    .gallery-slider-wrapper {
-        height: 300px !important;
-        min-height: 300px !important;
-        overflow: visible !important;
-        transform: translateY(-50px) !important;
-    }
-
-    .gallery-slider {
-        height: 300px !important;
-        min-height: 300px !important;
-        padding: 0 20px !important;
-    }
-
-    .gallery-item {
-        width: 250px !important;
-        height: 280px !important;
-        flex-shrink: 0 !important;
-    }
-
-    .gallery-header {
-        padding: 40px 20px !important;
-        text-align: center !important;
-    }
-}
-
-/* Navigation Dots */
-.fp-nav {
-    position: fixed;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
-}
-
-.fp-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.fp-nav li {
-    margin: 15px 0;
-}
-
-.fp-nav a {
-    display: block;
-    width: 12px;
-    height: 12px;
+.rooms-drag-indicator::before {
+    content: '‹ drag ›';
     position: relative;
+    z-index: 2;
+    background: var(--color-secondary, #658399);
+    opacity: 0.8;
+    padding: 0 10px;
 }
 
-.fp-nav a span {
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    border: 1px solid rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-
-.fp-nav a:hover span,
-.fp-nav a.active span {
-    background: #fff;
-    transform: scale(1.3);
-    border: 1px solid rgba(0,0,0,0.4);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 10;
-    opacity: 0;
-    animation: fadeInUp 1s ease 2s forwards;
-}
-
-.scroll-indicator span {
-    display: block;
-    font-size: 0.875rem;
-    color: #666;
-    margin-bottom: 10px;
-    letter-spacing: 0.05em;
-}
-
-.scroll-indicator::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 30px;
-    background: #666;
-    margin: 0 auto;
-    animation: scrollDown 1.5s ease infinite;
-}
-
-@keyframes scrollDown {
-    0% {
-        transform: translateY(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(15px);
-        opacity: 0;
-    }
-}
-
-/* ================================
-   Section 2: Essence Section - Split Layout
-   ================================ */
-.essence-section {
-    background: #f5f5f5;
-    position: relative;
-    height: 100vh;
-}
-
-/* Property Name EN Styling */
-.property-name-en {
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-en-main), serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    font-style: italic;
-    background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) 50%, var(--color-secondary) 50%, var(--color-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-align: center;
-    z-index: 10;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(99, 89, 85, 0.1);
-}
-
-.essence-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-}
-
-/* 왼쪽: 이미지 영역 */
-.essence-left {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.essence-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* 오른쪽: 텍스트 영역 */
-.essence-right {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-    background: var(--color-primary);
-    overflow: hidden;
-}
-
-.essence-right::before {
+.rooms-drag-indicator::after {
     content: '';
     position: absolute;
-    top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../images/shadow1.png') no-repeat right top;
-    background-size: cover;
-    opacity: 0.3;
-    z-index: 0;
-    animation: floatingShadow 8s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes floatingShadow {
-    0%, 100% {
-        transform: rotate(0deg) scale(1) translate(0, 0);
-    }
-    20% {
-        transform: rotate(-1deg) scale(1.02) translate(2px, -3px);
-    }
-    40% {
-        transform: rotate(1deg) scale(1.01) translate(-3px, 2px);
-    }
-    60% {
-        transform: rotate(-0.5deg) scale(1.03) translate(4px, -2px);
-    }
-    80% {
-        transform: rotate(0.5deg) scale(1.01) translate(-2px, 3px);
-    }
-}
-
-.essence-content {
-    position: relative;
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%);
     z-index: 1;
 }
 
-.essence-title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--color-secondary);
-    margin-bottom: 20px;
-    letter-spacing: 0.02em;
+.rooms-header {
+    margin-bottom: 60px;
+}
+
+.rooms-title {
+    font-family: 'Roustel', sans-serif;
+    font-size: 42px;
+    font-weight: normal;
+    color: var(--color-secondary, #658399);
+    margin: 0 0 30px 0;
+    letter-spacing: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rooms-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-secondary, #658399);
+    margin-left: 20px;
+}
+
+.rooms-grid {
+    display: flex;
+    gap: 0;
+    padding: 0 20px 0 0;
+    overflow-x: auto;
+    overflow-y: hidden;  /* 수직 스크롤 방지 */
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.rooms-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* 스냅 기능 제거 - 자유로운 드래그 */
+
+@media (max-width: 1240px) {
+    .rooms-container {
+        padding-left: 20px;
+    }
+
+    .room-item:first-child {
+        margin-left: 0;
+    }
+
+    .room-item:last-child {
+        margin-right: 50px;
+    }
+
+    .rooms-drag-indicator::before {
+        left: 0;
+        right: 0;
+    }
+}
+
+.rooms-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.rooms-grid:active {
+    cursor: grabbing;
+}
+
+.room-item {
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
+    width: 35%;  /* 2.5개가 보이도록 조정 */
+    min-width: 350px;
+    max-width: 420px;
+    position: relative;
+    margin-right: 60px;
+}
+
+
+.room-item:first-child {
+    margin-left: calc((100vw - 70%) / 2 - 60px);  /* 첫 번째 아이템 위치 조정 - 2.5개 보이도록 */
+}
+
+.room-item:last-child {
+    margin-right: 100px;
+}
+
+@media (max-width: 1240px) {
+    .room-item:last-child {
+        margin-right: 20px;
+    }
+}
+
+.room-item .room-number {
+    position: absolute;
+    top: 0;
+    left: -60px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 8px;
+    font-weight: 300;
+    z-index: 2;
+    padding-bottom: 20px;
+}
+
+.room-item .room-number::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 20px); /* 텍스트 바로 아래 20px 간격 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 0; /* 기본값: 줄 없음 */
+    background: #ffffff;
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+/* 텍스트가 짧을 때만 줄 표시 (7글자 이하) */
+.room-item .room-number.short-text::before {
+    height: calc(430px - 100%); /* 텍스트 아래부터 아래 영역까지 */
+}
+
+
+.room-image {
+    width: 90%;
+    max-width: 350px;
+    aspect-ratio: 1;
+    margin: 0 auto 40px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.room-item:hover .room-image img {
+}
+
+.room-content {
+    padding: 0;
+}
+
+.room-name {
+
+    font-size: 24px;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+    letter-spacing: 0;
     line-height: 1.3;
 }
 
-.essence-divider {
-    width: 1px;
-    height: 60px;
-    background: #333;
-    margin: 0 auto 30px auto;
+.room-description {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.7;
+    margin: 0 0 40px 0;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 54.4px; /* 2줄 고정 높이: font-size(16) * line-height(1.7) * 2줄 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
-.essence-description {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #666;
-    line-height: 1.8;
-    letter-spacing: 0.01em;
+.room-details {
+    display: none;
 }
 
-/* ================================
-   Section 3: Signature Section (Like Essence Section)
-   ================================ */
-.signature-section {
-    background: var(--color-primary);
+.room-view-btn {
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid transparent;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    padding: 8px 0;
+    font-family: inherit;
     position: relative;
-    height: 100vh;
 }
 
-.signature-container {
-    display: flex;
-    height: 100%;
+.room-view-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 0.4s ease;
+}
+
+.room-view-btn:hover::after {
     width: 100%;
 }
 
-/* 왼쪽: 텍스트 영역 */
-.signature-left {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-primary);
-    padding: 60px;
-    position: relative;
-    overflow: hidden;
+.room-view-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.signature-left::before {
+/* Responsive */
+@media (max-width: 768px) {
+    .rooms-section {
+        padding: 80px 0;
+    }
+
+    .rooms-container {
+        padding: 0 15px;
+    }
+
+    .rooms-title {
+        font-size: 32px;
+    }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .room-image {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 30px;
+    }
+
+    .room-name {
+        font-size: 32px;
+    }
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 100px 0 0 0;
+    background: var(--color-primary, #e6f3ff);
+}
+
+.gallery-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.gallery-header {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.gallery-section-name {
+    margin-bottom: 30px;
+}
+
+.gallery-section-title {
+    font-family: 'Roustel', sans-serif;
+    font-size: 42px;
+    font-weight: normal;
+    color: var(--color-secondary, #658399);
+    margin: 0;
+    letter-spacing: 2px;
+    position: relative;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.gallery-section-title::before {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-secondary, #658399);
+    opacity: 0.8;
+    margin-right: 20px;
+}
+
+.gallery-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-secondary, #658399);
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.gallery-description {
+    font-size: 17px;
+    color: #666;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.gallery-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    min-height: 70vh;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 0;
+    position: relative;
+    transition: border-radius 0.3s ease;
+}
+
+/* 갤러리 아이템 호버 시 설명 표시 */
+.gallery-item-description {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+.gallery-item:hover .gallery-item-description {
+    opacity: 1;
+}
+
+/* 호버 시 이미지에 어두운 오버레이 추가 */
+.gallery-item::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/shadow2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.3;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.5) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
     pointer-events: none;
-    animation: leafFloat 15s ease-in-out infinite;
-    transform-origin: center center;
 }
 
-@keyframes leafFloat {
-    0%, 100% {
-        transform: rotate(0deg) scale(1) translate(0, 0);
-    }
-    15% {
-        transform: rotate(2deg) scale(1.02) translate(3px, -5px);
-    }
-    30% {
-        transform: rotate(-1deg) scale(1.01) translate(-2px, 2px);
-    }
-    45% {
-        transform: rotate(1.5deg) scale(1.03) translate(5px, -3px);
-    }
-    60% {
-        transform: rotate(-2deg) scale(1.01) translate(-4px, 4px);
-    }
-    75% {
-        transform: rotate(0.5deg) scale(1.02) translate(2px, -6px);
-    }
-    85% {
-        transform: rotate(-1.5deg) scale(1.01) translate(-3px, 3px);
-    }
+.gallery-item:hover::after {
+    opacity: 1;
 }
 
-.signature-content {
-    max-width: 500px;
+/* 가운데 아이템 (3번째) - 100px */
+.gallery-item:nth-child(3):hover {
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
 
-.signature-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 30px;
-    line-height: 1.4;
-    text-align: center;
+/* 가운데 양옆 (2, 4번째) - 70px */
+.gallery-item:nth-child(2):hover,
+.gallery-item:nth-child(4):hover {
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
 }
 
-.signature-description {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #666;
-    line-height: 1.8;
-    letter-spacing: 0.01em;
-    margin-bottom: 30px;
-    text-align: center;
+/* 맨끝 (1, 5번째) - 50px */
+.gallery-item:nth-child(1):hover,
+.gallery-item:nth-child(5):hover {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
-/* Signature Thumbnails */
-.signature-thumbnails {
-    display: flex;
-    gap: 25px;
-    margin-top: 80px;
-    justify-content: center;
+/* 기본 상태 */
+/* 첫번째 이미지 - 4:3 비율 */
+.gallery-item:nth-child(1) {
+    width: 15%;
+    aspect-ratio: 4/3;
 }
 
-.signature-thumb {
-    width: 80px;
-    height: 80px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* 두번째 이미지 - 양옆 */
+.gallery-item:nth-child(2) {
+    width: 20%;
 }
 
-/* Hexagon border (only visible when active or hover) */
-.signature-thumb::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* 세번째 이미지 - 중앙 */
+.gallery-item:nth-child(3) {
+    width: 30%;
+}
+
+/* 네번째 이미지 - 양옆 */
+.gallery-item:nth-child(4) {
+    width: 20%;
+}
+
+/* 다섯번째 이미지 - 4:3 비율 */
+.gallery-item:nth-child(5) {
+    width: 15%;
+    aspect-ratio: 4/3;
+}
+
+
+.gallery-item img,
+.gallery-item-image img {
     width: 100%;
-    height: 100%;
-    background: transparent;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    transition: background 0.3s ease;
-    z-index: 1;
-}
-
-/* White padding inner layer */
-.signature-thumb::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    background: var(--color-primary);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    z-index: 2;
-}
-
-.signature-thumb img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
     object-fit: cover;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    transition: transform 0.3s ease;
-    z-index: 3;
 }
 
-.signature-thumb:hover img {
-    transform: translate(-50%, -50%) scale(1.1);
+/* 양옆 이미지들 (2번째, 4번째) */
+.gallery-item:nth-child(2) img,
+.gallery-item:nth-child(4) img {
+    height: 300px;
 }
 
-/* Active state - show border */
-.signature-thumb.active::before {
-    background: var(--color-secondary);
+/* 중앙 이미지 (3번째) */
+.gallery-item:nth-child(3) img {
+    height: 450px;
 }
 
-/* Hover state - show semi-transparent border */
-.signature-thumb:hover:not(.active)::before {
-    background: rgba(99, 89, 85, 0.3);
+/* 끝 이미지들 (1번째, 5번째) - 고정 높이 */
+.gallery-item:nth-child(1) img,
+.gallery-item:nth-child(5) img {
+    height: 280px;
 }
 
-/* 오른쪽: 이미지 영역 */
-.signature-right {
-    width: 50%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+/* 모바일에서는 비율 유지 */
+@media (max-width: 768px) {
+    .gallery-item:nth-child(1) img,
+    .gallery-item:nth-child(2) img,
+    .gallery-item:nth-child(3) img,
+    .gallery-item:nth-child(4) img,
+    .gallery-item:nth-child(5) img {
+        height: auto;
+    }
 }
 
-.signature-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.5s ease;
+.gallery-item-content {
+    display: none;
 }
 
-/* ================================
-   Section 4: Gallery Section
-   ================================ */
-/* Gallery styles are now in common.css */
-
-/* ================================
-   Section 5: Closing Section
-   ================================ */
+/* Closing Section */
 .closing-section {
     position: relative;
-    height: 100vh; /* Full viewport height for last fullpage section */
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
 
 .closing-background {
@@ -662,7 +1014,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
+}
+
+.closing-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+    z-index: 2;
+    pointer-events: none;
 }
 
 .closing-background img {
@@ -671,357 +1035,397 @@ body {
     object-fit: cover;
 }
 
-/* 배경 위 그라데이션 오버레이 */
-.closing-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.1) 50%,
-        rgba(0, 0, 0, 0.3) 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
 .closing-content {
     position: relative;
     z-index: 2;
-    height: 100%;
-    color: #fff;
-}
-
-/* 중앙 콘텐츠 컨테이너 */
-.closing-center-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 25px;
-    z-index: 2;
+    padding-left: 100px;
+    color: white;
+    max-height: 75%;
 }
 
-/* 타이틀 */
+.closing-vertical-text {
+    display: flex;
+    flex-direction: column-reverse;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    gap: 8px;
+}
+
+.closing-property-name {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roustel', sans-serif;
+    letter-spacing: 5px;
+    color: white;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    /* text-transform: uppercase; */
+}
+
 .closing-title {
-    font-size: 2.5rem;
+    font-size: 24px;
     font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
+    font-family: var(--font-ko-main);
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 5px;
+    margin-bottom: 30px;
 }
 
-.closing-title.animate {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s;
-}
-
-/* 설명 */
 .closing-description {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    color: var(--color-primary);
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
+    font-size: 17px;
+    line-height: 1.6;
+    
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    margin-left: 4px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
 }
 
-.closing-description.animate {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.6s;
-}
-
-
-/* Closing Section CTA Buttons */
-.closing-cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-}
-
-.closing-cta-buttons.animate {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1s;
+.closing-border-top,
+.closing-border-bottom {
+    width: 60px;
+    height: 2px;
+    background: white;
+    margin: 0 auto;
 }
 
 
-.closing-btn {
-    padding: 12px 32px;
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    border-radius: 0;
-    color: var(--color-primary);
-    font-family: var(--font-ko-main), sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s ease;
+/* Closing Section Mobile */
+@media (max-width: 768px) {
+    .closing-content {
+        padding-left: 40px;
+        gap: 30px;
+        max-height: none;
+    }
+
+    .closing-vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        flex-direction: column-reverse;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .closing-property-name {
+        font-size: 16px;
+        letter-spacing: 3px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        margin-right: 20px;
+    }
+
+    .closing-title {
+        font-size: 18px;
+        letter-spacing: 2px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        margin-right: 20px;
+    }
+
+    .closing-description {
+        font-size: 14px;
+        line-height: 1.6;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
 }
 
-.closing-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--color-primary);
-    transition: left 0.3s ease;
-    z-index: -1;
-}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .signature-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
 
-.closing-btn:hover {
-    color: #333;
-}
+    .signature-main-image {
+        height: 400px;
+    }
 
-.closing-btn:hover::before {
-    left: 0;
-}
+    .hero-content-container {
+        padding: 0 40px;
+    }
 
-.closing-btn span {
-    display: inline-block;
-}
+    /* hero-property-name 반응형은 common.css에서 처리 */
 
-
-/* ================================
-   Responsive Styles
-   ================================ */
-@media (max-width: 1200px) {
-    /* Signature section responsive */
+    .hero-title-property-name {
+        font-size: 36px;
+    }
 }
 
 @media (max-width: 768px) {
-    /* Hide desktop navigation */
-    .fp-nav {
-        display: none !important;
+    .hero-content-container {
+        padding: 0 30px;
+        text-align: center;
+        align-items: center;
     }
 
-
-    /* Disable fullpage scroll on mobile */
-    #fullpage {
-        overflow: visible !important;
+    .hero-subtitle {
+        justify-content: center;
     }
 
-    .section {
-        height: auto !important;
-        min-height: 100vh;
+    /* hero-property-name 반응형은 common.css에서 처리 */
+
+    .hero-title-property-name {
+        font-size: 28px;
     }
 
-    .fp-nav a {
-        width: 10px;
-        height: 10px;
+    .hero-title {
+        font-size: 20px;
     }
 
-    .fp-nav a span {
-        width: 10px;
-        height: 10px;
+    .signature-thumbnails {
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    .section-wrapper {
-        padding: 60px 20px;
+    .signature-thumb {
+        height: 80px;
     }
 
-    /* Essence section mobile */
-    .essence-container {
-        flex-direction: column-reverse;
-    }
-
-    .essence-left,
-    .essence-right {
-        width: 100%;
-        height: 50vh;
-    }
-
-    .essence-right {
-        padding: 40px 20px;
-    }
-
-    /* Signature section mobile */
-    .signature-container {
+    .gallery-grid {
+        display: flex;
         flex-direction: column;
-    }
-
-    .signature-left,
-    .signature-right {
-        width: 100%;
-        height: 50vh;
-        padding: 0;
-    }
-
-    .signature-left {
-        padding: 40px 20px;
-    }
-
-    .essence-title {
-        font-size: 1.5rem;
-    }
-
-    .essence-description {
-        font-size: 0.9rem;
-    }
-
-    .gallery-container,
-    .closing-content {
+        gap: 15px;
         padding: 0 20px;
+        width: 100%;
+        margin-left: 0;
+        height: auto;
     }
 
-    .signature-title,
-    .gallery-title {
-        font-size: 2rem;
+    .gallery-item {
+        width: 100%;
+        height: auto;
+        aspect-ratio: unset;
     }
 
-    .closing-title {
-        font-size: 2rem;
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5) {
+        width: 100%;
+        aspect-ratio: unset;
+        grid-column: unset;
     }
 
-    .closing-description {
-        font-size: 1.25rem;
+    .gallery-item img {
+        height: auto;
+        width: 100%;
     }
 
-    .closing-title {
-        top: 60px;
-        left: 20px;
-        font-size: 1.5rem;
+    .essence-section,
+    .signature-section,
+    .gallery-section {
+        padding: 60px 0;
     }
 
-    .closing-description {
-        bottom: 60px;
-        left: 20px;
-        font-size: 1rem;
+    .essence-content {
+        gap: 40px;
     }
 
-    .closing-cta-buttons {
+    .essence-property-name {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .property-name-en {
+        font-size: 32px;
+    }
+
+    .essence-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .essence-bottom {
         flex-direction: column;
-        gap: 12px;
-        padding: 0 20px;
+        gap: 40px;
     }
 
-    .closing-btn {
+    .essence-left {
+        justify-content: center;
+    }
+
+    .essence-thumbnails {
+        display: none;
+    }
+
+    .essence-image {
+        width: 280px;
+        height: 320px;
+        margin: 0 auto;
+        align-self: center;
+    }
+
+    .essence-image::before {
+        width: 280px;
+        height: 320px;
+        border-radius: 140px 140px 0 0;
+    }
+
+    .essence-slide img {
+        border-radius: 140px 140px 0 0;
+    }
+
+    .essence-thumbnails {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .essence-thumb {
+        width: 120px;
+        height: 150px;
+    }
+
+    .essence-thumb::before {
+        width: 120px;
+        height: 150px;
+        border-radius: 60px 60px 0 0;
+    }
+
+    .essence-thumb-container {
+        border-radius: 60px 60px 0 0;
+    }
+
+    .essence-thumb img {
+        border-radius: 60px 60px 0 0;
+    }
+
+    /* 히어로 슬라이더 네비게이션 중앙정렬 */
+    .hero-content-container .slider-nav {
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        padding: 14px 24px;
-    }
-
-    .gallery-slider {
-        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .essence-title {
-        font-size: 1.25rem;
+    /* hero-property-name 반응형은 common.css에서 처리 */
+
+    .hero-title-property-name {
+        font-size: 24px;
     }
 
-    .essence-divider {
-        height: 40px;
+    .hero-title {
+        font-size: 18px;
     }
 
-    .essence-description {
-        font-size: 0.875rem;
+    .hero-description {
+        font-size: 14px;
     }
 
-    .signature-section {
-        padding: 3rem 0 0 0 !important;
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
     }
 
-    .signature-title,
-    .gallery-title {
-        font-size: 1.5rem;
+    .hero-content-container .slider-nav {
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
-    .signature-description,
-    .gallery-description {
-        font-size: 1rem;
+    .hero-progress-container {
+        max-width: 250px;
     }
 
-
-    .closing-title {
-        font-size: 1.5rem;
+    .signature-thumbnails {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
-    .closing-description {
-        font-size: 1rem;
+    .signature-thumb {
+        height: 100px;
+    }
+
+    /* 객실 섹션 모바일 최적화 */
+    .room-item {
+        width: 260px;
+        min-width: 260px;
+        margin-right: 30px;
+    }
+
+    .room-item:first-child {
+        margin-left: calc((100vw - 260px) / 2 - 15px);
+    }
+
+    .room-image {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+
+    .room-name {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .room-description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        height: auto;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    .room-view-btn {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+
+    .room-item .room-number {
+        font-size: 14px;
+        left: -25px;  /* 공간 확보 */
+        letter-spacing: 4px;
+        max-height: 200px;  /* 최대 높이 제한 */
+        overflow: visible;  /* 오버플로우 표시 */
+        white-space: nowrap;  /* 한 줄 유지 */
+    }
+
+    .room-item .room-number::before {
+        height: 0; /* 모바일에서도 기본값: 줄 없음 */
+    }
+
+    /* 모바일에서도 짧은 텍스트만 줄 표시 */
+    .room-item .room-number.short-text::before {
+        height: calc(350px - 100%);
+    }
+
+    /* 갤러리 섹션 모바일 최적화 */
+    .gallery-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+        aspect-ratio: unset;
+    }
+
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5) {
+        width: 100%;
+        aspect-ratio: unset;
+    }
+
+    .gallery-item img {
+        height: auto;
+        width: 100%;
     }
 }
-
-/* ================================
-   Scroll Animations for FullPage
-   ================================ */
-.animate-element {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-}
-
-.animate-element.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* Stagger animations within the same section */
-.essence-title.animate-element {
-    transition-delay: 0.1s;
-}
-
-.essence-divider.animate-element {
-    transition-delay: 0.3s;
-}
-
-.essence-description.animate-element {
-    transition-delay: 0.5s;
-}
-
-.signature-title.animate-element {
-    transition-delay: 0.1s;
-}
-
-.signature-description.animate-element {
-    transition-delay: 0.3s;
-}
-
-.signature-thumbnails.animate-element {
-    transition-delay: 0.5s;
-}
-
-.signature-thumb.animate-element:nth-child(1) {
-    transition-delay: 0.6s;
-}
-
-.signature-thumb.animate-element:nth-child(2) {
-    transition-delay: 0.7s;
-}
-
-.signature-thumb.animate-element:nth-child(3) {
-    transition-delay: 0.8s;
-}
-
-.gallery-title.animate-element {
-    transition-delay: 0.1s;
-}
-
-.gallery-description.animate-element {
-    transition-delay: 0.3s;
-}
-

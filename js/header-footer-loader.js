@@ -39,8 +39,11 @@
     // Load Header
     async function loadHeader() {
         try {
-            // Load header CSS first
-            loadCSS('styles/header.css');
+            // Load header CSS first and ensure it loads before continuing
+            const headerCSS = document.createElement('link');
+            headerCSS.rel = 'stylesheet';
+            headerCSS.href = 'styles/header.css';
+            document.head.appendChild(headerCSS);
 
             const response = await fetch('common/header.html', { cache: 'no-cache' });
             const html = await response.text();
@@ -49,52 +52,77 @@
             const temp = document.createElement('div');
             temp.innerHTML = html;
 
-            // Find transparent header and menu overlay from temp
-            const transparentHeader = temp.querySelector('.transparent-header');
-            const menuOverlay = temp.querySelector('.menu-overlay');
-            const menuOverlayBg = temp.querySelector('.menu-overlay-bg');
+            // Find header opened and top header directly from temp
+            const headerOpened = temp.querySelector('.header-opened');
+            const headerOpenedOverlay = temp.querySelector('.header-opened-overlay');
+            const topHeader = temp.querySelector('.top-header');
+            const mobileFixedButtons = temp.querySelector('.mobile-fixed-buttons');
 
-            // Insert overlay background first
-            if (menuOverlayBg) {
-                document.body.insertBefore(menuOverlayBg, document.body.firstChild);
+            // Insert top header directly to body
+            if (topHeader) {
+                document.body.insertBefore(topHeader, document.body.firstChild);
             }
 
-            // Insert menu overlay
-            if (menuOverlay) {
-                document.body.insertBefore(menuOverlay, document.body.firstChild);
+            // Insert header-opened right after top-header
+            if (headerOpened) {
+                document.body.insertBefore(headerOpened, topHeader.nextSibling);
             }
 
-            // Insert transparent header
-            if (transparentHeader) {
-                document.body.insertBefore(transparentHeader, document.body.firstChild);
+            // Insert overlay
+            if (headerOpenedOverlay) {
+                document.body.appendChild(headerOpenedOverlay);
+            }
+
+            // Insert mobile buttons
+            if (mobileFixedButtons) {
+                document.body.appendChild(mobileFixedButtons);
             }
 
             // Load header JavaScript
             const script = document.createElement('script');
             script.src = 'js/common/header.js';
             script.onload = function() {
+                // Remove any inline onclick handlers and set up proper event listener
+                setTimeout(() => {
+                    const hamburgerButton = document.getElementById('hamburger-button');
+                    if (hamburgerButton) {
+                        // Remove inline onclick if it exists
+                        hamburgerButton.removeAttribute('onclick');
+
+                        // Remove any existing listeners by cloning
+                        const newButton = hamburgerButton.cloneNode(true);
+                        hamburgerButton.parentNode.replaceChild(newButton, hamburgerButton);
+
+                        // Add clean event listener
+                        newButton.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            if (window.toggleHeaderMenu) {
+                                window.toggleHeaderMenu();
+                            }
+                        });
+                    }
+                }, 100);
+
                 // Mark header as loaded after script is fully loaded
                 headerLoaded = true;
                 tryInitializeMapper();
-
-                // Trigger scroll event to ensure scrolled class is applied
-                window.dispatchEvent(new Event('scroll'));
             };
             document.body.appendChild(script);
 
             // Immediately check scroll position after header is loaded
-            if (window.scrollY > 50 || window.pageYOffset > 50) {
-                const header = document.querySelector('.transparent-header');
-                if (header) {
-                    header.classList.add('scrolled');
-                    document.body.classList.add('scrolled');
+            setTimeout(() => {
+                if (window.scrollY > 50 || window.pageYOffset > 50) {
+                    const header = document.querySelector('.top-header');
+                    if (header) {
+                        header.classList.add('scrolled');
+                    }
                 }
-            }
+            }, 100);
         } catch (error) {
             console.error('Error loading header:', error);
         }
     }
-
 
     // Load Footer
     async function loadFooter() {
@@ -114,19 +142,12 @@
                 const footer = temp.querySelector('.footer');
                 if (footer) {
                     document.body.appendChild(footer);
-
-                    // Update copyright year dynamically
-                    const copyrightElement = footer.querySelector('.footer-copyright p');
-                    if (copyrightElement) {
-                        const currentYear = new Date().getFullYear();
-                        copyrightElement.textContent = `© ${currentYear} All rights reserved.`;
-                    }
                 }
 
-                // Also append floating buttons if they exist
-                const floatingButtons = temp.querySelector('.floating-buttons');
-                if (floatingButtons) {
-                    document.body.appendChild(floatingButtons);
+                // Also append top button if exists
+                const topButton = temp.querySelector('#topButton');
+                if (topButton) {
+                    document.body.appendChild(topButton);
                 }
 
                 // Load footer JavaScript if exists
@@ -143,60 +164,10 @@
         }
     }
 
-    // Load Scroll to Top Button
-    async function loadScrollToTop() {
-        try {
-            const response = await fetch('common/scroll-to-top.html', { cache: 'no-cache' });
-            if (response.ok) {
-                const html = await response.text();
-                const temp = document.createElement('div');
-                temp.innerHTML = html;
-
-                const scrollBtn = temp.querySelector('.scroll-to-top');
-                if (scrollBtn) {
-                    document.body.appendChild(scrollBtn);
-                    initScrollToTop();
-                }
-            }
-        } catch (error) {
-            console.error('Error loading scroll to top button:', error);
-        }
-    }
-
-    // Initialize scroll to top functionality
-    function initScrollToTop() {
-        const scrollBtn = document.getElementById('scrollToTop');
-        if (!scrollBtn) return;
-
-        // Show/hide button based on scroll position
-        function toggleScrollButton() {
-            if (window.scrollY > 100) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
-        }
-
-        // Initial check
-        toggleScrollButton();
-
-        // Listen for scroll events
-        window.addEventListener('scroll', toggleScrollButton);
-
-        // Scroll to top on click
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-
     // Initialize
     document.addEventListener('DOMContentLoaded', function() {
         loadHeader();
         loadFooter();
-        loadScrollToTop();
     });
 
 })();

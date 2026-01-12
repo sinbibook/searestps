@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.17.0",
-    "generatedAt": "2026-01-12T08:51:34.009Z",
+    "version": "1.18.0",
+    "generatedAt": "2026-01-12T08:52:46.742Z",
     "templateType": "fullpage_scroll",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1112,45 +1112,45 @@
                     "isSelected": true
                   },
                   {
+                    "id": "6a4c61c1-1fa9-4301-8562-b5a09e7aefab",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-trseeomumq.jpg",
+                    "sortOrder": 2,
+                    "description": "301호_야외풀",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "dfbb05d2-2a5e-4064-af96-7b3c52048cce",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-1ghdvrdldoej.jpg",
+                    "sortOrder": 3,
+                    "description": "301호_야외스파",
+                    "isSelected": true
+                  },
+                  {
                     "id": "5babcdd6-90e4-4c5d-a650-1c92a33b30eb",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1764120071924-f1rgedr5hd.jpg",
-                    "sortOrder": 2,
+                    "sortOrder": 4,
                     "description": "201호_야외풀",
                     "isSelected": true
                   },
                   {
                     "id": "5878cae3-f74c-41d5-b487-5ff774f45a1e",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1764120071924-zuef978ntx.jpg",
-                    "sortOrder": 3,
+                    "sortOrder": 5,
                     "description": "101호_실내스파",
                     "isSelected": true
                   },
                   {
                     "id": "313ab7fb-56cf-4c05-b2e3-fb8461ace814",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-oy41onqpqv.jpg",
-                    "sortOrder": 4,
+                    "sortOrder": 6,
                     "description": "201호_야외스파",
                     "isSelected": true
                   },
                   {
                     "id": "3eda37ac-99c8-4ffe-aa9f-82e04838f5b1",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-fhukw4b69zl.jpg",
-                    "sortOrder": 5,
-                    "description": "201호_실내풀",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "dfbb05d2-2a5e-4064-af96-7b3c52048cce",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-1ghdvrdldoej.jpg",
-                    "sortOrder": 6,
-                    "description": "301호_야외스파",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "6a4c61c1-1fa9-4301-8562-b5a09e7aefab",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-trseeomumq.jpg",
                     "sortOrder": 7,
-                    "description": "301호_야외풀",
+                    "description": "201호_실내풀",
                     "isSelected": true
                   },
                   {

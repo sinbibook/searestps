@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.11.0",
-    "generatedAt": "2026-01-12T03:10:11.742Z",
+    "version": "1.12.0",
+    "generatedAt": "2026-01-12T03:17:08.055Z",
     "templateType": "fullpage_scroll",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1489,6 +1489,27 @@
               }
             }
           ]
+        }
+      },
+      "theme": {
+        "font": {
+          "koSub": null,
+          "enMain": {
+            "cdn": "https://fonts.cdnfonts.com/css/gloock-2",
+            "key": "gloock",
+            "woff2": null,
+            "family": "Gloock"
+          },
+          "koMain": {
+            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
+            "key": "pretendard",
+            "woff2": null,
+            "family": "Pretendard"
+          }
+        },
+        "color": {
+          "primary": "#FFFDF5",
+          "secondary": "#364C84"
         }
       },
       "popup": {

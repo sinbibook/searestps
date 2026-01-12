@@ -15,14 +15,79 @@ class BaseDataMapper {
     // ============================================================================
 
     /**
+     * URL 생성 헬퍼 (preview 쿼리스트링 자동 유지)
+     * @param {string} page - 페이지 파일명 (예: 'room.html')
+     * @param {Object} params - 추가 쿼리 파라미터 (예: { id: 'room-001' })
+     * @returns {string} 완성된 URL
+     */
+    buildUrl(page, params = {}) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const isPreview = urlParams.get('preview') === 'true';
+
+        const queryParams = new URLSearchParams(params);
+        if (isPreview) {
+            queryParams.set('preview', 'true');
+        }
+
+        const queryString = queryParams.toString();
+        return queryString ? `${page}?${queryString}` : page;
+    }
+
+    /**
+     * 스네이크 케이스를 카멜 케이스로 변환
+     * API 데이터(snake_case) → JavaScript 표준(camelCase)
+     */
+    convertToCamelCase(obj) {
+        if (Array.isArray(obj)) {
+            return obj.map(item => this.convertToCamelCase(item));
+        } else if (obj !== null && typeof obj === 'object') {
+            return Object.keys(obj).reduce((result, key) => {
+                // 스네이크 케이스를 카멜 케이스로 변환
+                const camelKey = key.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+                result[camelKey] = this.convertToCamelCase(obj[key]);
+                return result;
+            }, {});
+        }
+        return obj;
+    }
+
+    /**
      * JSON 데이터 로드
+     * URL에 ?preview=true가 있으면 preview-data.json, 없으면 standard-template-data.json 로드
+     * 잘못된 쿼리스트링은 자동으로 제거
      */
     async loadData() {
         try {
+            // URL 파라미터 확인
+            const urlParams = new URLSearchParams(window.location.search);
+            const previewValue = urlParams.get('preview');
+            const isPreview = previewValue === 'true';
+
+            // 잘못된 쿼리스트링 감지 시 index로 리다이렉트
+            // 허용된 파라미터: preview (값이 true일 때만), id
+            const allowedParams = ['preview', 'id'];
+            const allParamsValid = Array.from(urlParams.keys()).every(key => {
+                if (key === 'preview') return urlParams.get('preview') === 'true';
+                if (key === 'id') return true;
+                return false;
+            });
+
+            if (window.location.search && !allParamsValid) {
+                // 루트로 리다이렉트
+                window.location.href = window.location.origin + window.location.pathname.replace(/[^/]*$/, '');
+                return;
+            }
+
+            // 데이터 파일 선택
+            const dataFile = isPreview ? 'preview-data.json' : 'standard-template-data.json';
+
             // 캐시 방지를 위한 타임스탬프 추가
             const timestamp = new Date().getTime();
-            const response = await fetch(`../standard-template-data.json?t=${timestamp}`);
-            this.data = await response.json();
+            const response = await fetch(`./${dataFile}?t=${timestamp}`);
+            const rawData = await response.json();
+
+            // 스네이크 케이스를 카멜 케이스로 자동 변환
+            this.data = this.convertToCamelCase(rawData);
             this.isDataLoaded = true;
             return this.data;
         } catch (error) {
@@ -54,18 +119,32 @@ class BaseDataMapper {
     }
 
     /**
-     * 이미지 배열에서 선택된 이미지를 필터링하고 정렬하는 헬퍼 메서드
-     * @param {Array} images - 이미지 배열
-     * @returns {Array} 선택되고 정렬된 이미지 배열
+     * DOM 요소 안전 선택
      */
-    _getSortedSelectedImages(images) {
-        if (!images || !Array.isArray(images)) {
+    safeSelect(selector) {
+        try {
+            return document.querySelector(selector);
+        } catch (error) {
+            console.warn(`Invalid selector: ${selector}`);
+            return null;
+        }
+    }
+
+    /**
+     * 여러 DOM 요소 안전 선택
+     */
+    safeSelectAll(selector) {
+        try {
+            return document.querySelectorAll(selector);
+        } catch (error) {
+            console.warn(`Invalid selector: ${selector}`);
             return [];
         }
-        return images
-            .filter(img => img.isSelected)
-            .sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
     }
+
+    // ============================================================================
+    // 📝 TEXT UTILITIES
+    // ============================================================================
 
     /**
      * 값이 비어있는지 확인하는 헬퍼 메서드
@@ -115,30 +194,6 @@ class BaseDataMapper {
         // 먼저 HTML 특수 문자를 이스케이프 처리한 후 줄바꿈 변환
         const escapedText = this._escapeHTML(trimmedText);
         return escapedText.replace(/\n/g, '<br>');
-    }
-
-    /**
-     * DOM 요소 안전 선택
-     */
-    safeSelect(selector) {
-        try {
-            return document.querySelector(selector);
-        } catch (error) {
-            console.warn(`Invalid selector: ${selector}`);
-            return null;
-        }
-    }
-
-    /**
-     * 여러 DOM 요소 안전 선택
-     */
-    safeSelectAll(selector) {
-        try {
-            return document.querySelectorAll(selector);
-        } catch (error) {
-            console.warn(`Invalid selector: ${selector}`);
-            return [];
-        }
     }
 
     // ============================================================================
@@ -273,17 +328,43 @@ class BaseDataMapper {
         if (seo.title) {
             const title = this.safeSelect('title');
             if (title) title.textContent = seo.title;
+
+            // OG Title도 같이 업데이트
+            const ogTitle = this.safeSelect('meta[property="og:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', seo.title);
         }
 
         if (seo.description) {
             const metaDescription = this.safeSelect('meta[name="description"]');
             if (metaDescription) metaDescription.setAttribute('content', seo.description);
+
+            // OG Description도 같이 업데이트
+            const ogDescription = this.safeSelect('meta[property="og:description"]');
+            if (ogDescription) ogDescription.setAttribute('content', seo.description);
         }
 
         if (seo.keywords) {
             const metaKeywords = this.safeSelect('meta[name="keywords"]');
             if (metaKeywords) metaKeywords.setAttribute('content', seo.keywords);
         }
+
+        // OG URL은 현재 페이지 URL로 설정
+        const ogUrl = this.safeSelect('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+    }
+
+    /**
+     * 기본 OG 이미지 가져오기 (로고 이미지 사용)
+     */
+    getDefaultOGImage() {
+        if (!this.isDataLoaded) return null;
+
+        const logoImages = this.safeGet(this.data, 'homepage.images.0.logo');
+        if (logoImages && logoImages.length > 0 && logoImages[0]?.url) {
+            return logoImages[0].url;
+        }
+
+        return null;
     }
 
     // ============================================================================
@@ -295,42 +376,6 @@ class BaseDataMapper {
      */
     async mapPage() {
         throw new Error('mapPage() method must be implemented by subclass');
-    }
-
-    /**
-     * Open Graph 메타 태그 매핑 (동적 생성)
-     * @param {string} title - OG title
-     * @param {string} description - OG description
-     * @param {string} imageUrl - OG image URL
-     */
-    mapOpenGraphTags(title = '', description = '', imageUrl = '') {
-        /**
-         * 메타 태그 생성 또는 업데이트 헬퍼 함수
-         * @param {string} property - OG property 이름
-         * @param {string} content - 메타 태그 content 값
-         */
-        const createOrUpdateMeta = (property, content) => {
-            if (!content) return;
-
-            let meta = document.querySelector(`meta[property="${property}"]`);
-            if (!meta) {
-                meta = document.createElement('meta');
-                meta.setAttribute('property', property);
-                document.head.appendChild(meta);
-            }
-            meta.setAttribute('content', content);
-        };
-
-        // OG 메타 태그 생성 또는 업데이트
-        createOrUpdateMeta('og:type', 'website');
-        createOrUpdateMeta('og:title', title);
-        createOrUpdateMeta('og:description', description);
-        createOrUpdateMeta('og:image', imageUrl);
-        createOrUpdateMeta('og:url', window.location.href);
-
-        if (this.data?.property?.name) {
-            createOrUpdateMeta('og:site_name', this.data.property.name);
-        }
     }
 
     /**

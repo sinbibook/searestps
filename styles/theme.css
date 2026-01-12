@@ -1,16 +1,22 @@
+/* Theme CSS - 테마 변수 정의 (폰트, 색상) */
+/* 배포 시 이 파일만 덮어쓰면 됨 */
+
+/* CDN Fonts */
+@import url('https://use.typekit.net/vll4umt.css');
+
 /* Font Faces */
 @font-face {
-  font-family: 'GowunDodum-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  font-family: 'Aritaburi';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
   font-weight: 400;
   font-display: swap;
 }
 
 /* CSS Variables */
 :root {
-  --font-ko-main: 'GowunDodum-Regular', 'Apple SD Gothic Neo', sans-serif;
-  --font-ko-sub: 'GowunDodum-Regular', 'Apple SD Gothic Neo', sans-serif;
-  --font-en-main: 'GowunDodum-Regular', 'Apple SD Gothic Neo', sans-serif;
-  --color-primary: #fafaf9;
-  --color-secondary: #78716c;
+  --font-ko-main: 'Aritaburi', sans-serif;
+  --font-ko-sub: 'Aritaburi', sans-serif;
+  --font-en-main: 'Amandine', serif;
+  --color-primary: #fdfcf4;
+  --color-secondary: #31423d;
 }

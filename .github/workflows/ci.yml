@@ -9,11 +9,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      
+
     - name: Check JavaScript syntax
       run: |
         # JS 파일이 있으면 구문 검사
@@ -24,7 +24,7 @@ jobs:
         else
           echo "No JavaScript files found"
         fi
-    
+
     - name: Validate HTML structure
       run: |
         # index.html 존재 확인

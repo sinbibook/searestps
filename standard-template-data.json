@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "1.10.0",
-    "generatedAt": "2026-01-05T03:13:38.094Z",
-    "templateType": "full_banner_image",
+    "version": "1.11.0",
+    "generatedAt": "2026-01-12T03:10:11.742Z",
+    "templateType": "fullpage_scroll",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
   },
@@ -76,8 +76,8 @@
       {
         "id": "244eedf4-17a3-4bd3-8628-5e40ef0f362b",
         "name": "오션뷰",
-        "description": "전 객실 동해바다와 정면 오션뷰이며, \n간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.\n\n출렁이는 파도와 황홀한 일출은 물론 \n바다낚시, 스노쿨링, 바다수영, 바다갯바위산책, 고동보발바다체험등 아름다운 감성과 추억을 선사합니다.",
-        "usageGuide": "[이용안내]\n전 객실 동해바다와 정면 오션뷰",
+        "description": "전 객실 동해바다와 정면 오션뷰이며, \n간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.\n\n[이용안내]\n전 객실 동해바다와 정면 오션뷰\n\n출렁이는 파도와 황홀한 일출은 물론 \n바다낚시, 스노쿨링, 바다수영, 바다갯바위산책, 고동보발바다체험등 아름다운 감성과 추억을 선사합니다.",
+        "usageGuide": "전 객실 동해바다와 정면 오션뷰이며, \n간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.\n\n[이용안내]\n전 객실 동해바다와 정면 오션뷰\n\n출렁이는 파도와 황홀한 일출은 물론 \n바다낚시, 스노쿨링, 바다수영, 바다갯바위산책, 고동보발바다체험등 아름다운 감성과 추억을 선사합니다.",
         "displayOrder": 18,
         "images": [
           {
@@ -109,7 +109,7 @@
       {
         "id": "9409a2c3-4b8a-4b02-8744-a30e116185c0",
         "name": "실내외 풀빌라 & 스파 ",
-        "description": "오션뷰를 바라보며 수영 스파를 즐겨보세요",
+        "description": "[개별 풀빌라]\n-  미온수 온도 30~33도 유지 \n-  수영장 미온수 이용 시 입실 하루 전 신청 필수\n1. 301호 실외수영장 \n- 크기 : 7m˟2m˟1.2m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 1월~3월말까지 이용 불가\n2. 201호 실내수영장 (사계절 이용 가능)\n- 크기 : 6.0m˟2m˟1.0m\n- 미온수 요금 : 5만원(현장결제) \n3. 201호 실외수영장 \n- 크기 : 7m˟2m˟1.1m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 12월~3월말까지 이용 불가\n\n[스파]\n- 101호 실내스파, 201호 301호 노천스파\n- 이용 시간: 15시~22시까지\n- 이용 요금: 무료\n\n※ 실외수영장 및 스파는 기상 상황에 따라 이용이 불가할 수 있습니다.",
         "usageGuide": "[개별 풀빌라]\n-  미온수 온도 30~33도 유지 \n-  수영장 미온수 이용 시 입실 하루 전 신청 필수\n1. 301호 실외수영장 \n- 크기 : 7m˟2m˟1.2m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 1월~3월말까지 이용 불가\n2. 201호 실내수영장 (사계절 이용 가능)\n- 크기 : 6.0m˟2m˟1.0m\n- 미온수 요금 : 5만원(현장결제) \n3. 201호 실외수영장 \n- 크기 : 7m˟2m˟1.1m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 12월~3월말까지 이용 불가\n\n[스파]\n- 101호 실내스파, 201호 301호 노천스파\n- 이용 시간: 15시~22시까지\n- 이용 요금: 무료\n\n※ 실외수영장 및 스파는 기상 상황에 따라 이용이 불가할 수 있습니다.",
         "displayOrder": 19,
         "images": [
@@ -154,7 +154,7 @@
       {
         "id": "7f569fd4-9581-4f02-8a86-b499fbdcc6a3",
         "name": "개별바베큐",
-        "description": "객실 내 테라스에서 프라이빗 개별 바베큐 파티가 가능합니다. ",
+        "description": "[개별바베큐]\n각 객실 개별테라스 바베큐\n-숯+그릴대여 비용 : 2~4인기준 3만원 / 숯 추가시 5천원 (현장결제)\n※우천 및 동계 시 사용 가능\n※펜션 내 개인 가스버너, 부탄가스 반입금지입니다.\n",
         "usageGuide": "[개별바베큐]\n각 객실 개별테라스 바베큐\n-숯+그릴대여 비용 : 2~4인기준 3만원 / 숯 추가시 5천원 (현장결제)\n※우천 및 동계 시 사용 가능\n※펜션 내 개인 가스버너, 부탄가스 반입금지입니다.",
         "displayOrder": 20,
         "images": [
@@ -187,8 +187,8 @@
       {
         "id": "ae680008-3d8f-479f-8ea6-199323252752",
         "name": "바다수영 / 스노쿨링",
-        "description": "펜션 바로 앞 바다에서 야외 수영이 가능합니다 ",
-        "usageGuide": "\n[ 바다 수영 / 스노쿨링 ]\n-101호 객실의 경우 바로 앞 바다에서 야외 수영가능\n※ 6월~9월 101호 예약손님 께 스노쿨링+구명조끼 2세트\n2시간 무료대여 서비스 (몸무게100kg이하)",
+        "description": "[ 바다 수영 / 스노쿨링 ]\n-101호 객실의 경우 바로 앞 바다에서 야외 수영가능\n※ 6월~9월 101호 예약손님 께 스노쿨링+구명조끼 2세트\n2시간 무료대여 서비스 (몸무게100kg이하)",
+        "usageGuide": "[ 바다 수영 / 스노쿨링 ]\n-101호 객실의 경우 바로 앞 바다에서 야외 수영가능\n※ 6월~9월 101호 예약손님 께 스노쿨링+구명조끼 2세트\n2시간 무료대여 서비스 (몸무게100kg이하)",
         "displayOrder": 21,
         "images": [
           {
@@ -367,7 +367,7 @@
       "id": "c48616db-df5f-48c7-b255-b1a89b26be75",
       "name": "A101(10초해변,실내스파,스노쿨링,바다수영)",
       "description": "복층형 : \n- 1층 : 거실1+주방1+화장실1+스파+테라스\n- 2층: 침대룸1",
-      "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
+      "roomInfo": "복층형 : \n- 1층 : 거실1+주방1+화장실1+스파+테라스\n- 2층: 침대룸1\n\n[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
       "size": 99,
       "baseOccupancy": 2,
@@ -529,31 +529,31 @@
           ],
           "exterior": [
             {
-              "id": "9c00b956-7443-4a36-a891-76540626ce10",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/c48616db-df5f-48c7-b255-b1a89b26be75/exterior/1764113713421-gnm9k4af9e.jpg",
-              "sortOrder": 0,
-              "description": "",
-              "isSelected": true
-            },
-            {
-              "id": "890ce99b-8e25-4bce-8006-cfc68562bf16",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/c48616db-df5f-48c7-b255-b1a89b26be75/exterior/1764113713421-8km97oyu1ih.jpg",
-              "sortOrder": 1,
-              "description": "",
-              "isSelected": true
-            },
-            {
               "id": "e1a6a403-2d3c-4564-a7c8-34d05e3589a6",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/c48616db-df5f-48c7-b255-b1a89b26be75/exterior/1764113713421-7jv9aovhcub.jpg",
-              "sortOrder": 2,
-              "description": "",
+              "sortOrder": 0,
+              "description": "A101",
               "isSelected": true
             },
             {
               "id": "30458084-5787-49ad-a83a-975b022628f6",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/c48616db-df5f-48c7-b255-b1a89b26be75/exterior/1764113713421-20wfytog8im.jpg",
+              "sortOrder": 1,
+              "description": "A101",
+              "isSelected": true
+            },
+            {
+              "id": "9c00b956-7443-4a36-a891-76540626ce10",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/c48616db-df5f-48c7-b255-b1a89b26be75/exterior/1764113713421-gnm9k4af9e.jpg",
+              "sortOrder": 2,
+              "description": "A101",
+              "isSelected": true
+            },
+            {
+              "id": "890ce99b-8e25-4bce-8006-cfc68562bf16",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/c48616db-df5f-48c7-b255-b1a89b26be75/exterior/1764113713421-8km97oyu1ih.jpg",
               "sortOrder": 3,
-              "description": "",
+              "description": "A101",
               "isSelected": true
             }
           ]
@@ -565,7 +565,7 @@
       "id": "9cf38076-db69-4b69-a99c-70ff9694266d",
       "name": "A201(오션뷰,실내풀,야외풀,야외스파)",
       "description": "복층형 : \n- 1층 : 침대룸1+거실1+주방1+화장실1+풀빌라+스파+테라스\n- 2층: 침대룸1",
-      "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
+      "roomInfo": "복층형 : \n- 1층 : 침대룸1+거실1+주방1+화장실1+풀빌라+스파+테라스\n- 2층 : 침대룸1\n\n[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
       "size": 132,
       "baseOccupancy": 2,
@@ -731,28 +731,28 @@
               "id": "2b6049fd-9d3b-4e3b-93bb-0d1539ac4a3d",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9cf38076-db69-4b69-a99c-70ff9694266d/exterior/1764113795064-r4fbz4pbg3d.jpg",
               "sortOrder": 0,
-              "description": "",
+              "description": "A201",
               "isSelected": true
             },
             {
               "id": "6393eac1-8767-4cdb-975d-d42991b928d5",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9cf38076-db69-4b69-a99c-70ff9694266d/exterior/1764113795064-dm5llw2pvli.jpg",
               "sortOrder": 1,
-              "description": "",
+              "description": "A201",
               "isSelected": true
             },
             {
               "id": "058d44e6-6c77-4d11-aa1a-6046b1d05449",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9cf38076-db69-4b69-a99c-70ff9694266d/exterior/1764113795064-7bsnba8k4jd.jpg",
               "sortOrder": 2,
-              "description": "",
+              "description": "A201",
               "isSelected": true
             },
             {
               "id": "ad1e38e6-0c40-4806-9be6-c94b58822dbd",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9cf38076-db69-4b69-a99c-70ff9694266d/exterior/1764113795064-snmc9ua01t8.jpg",
               "sortOrder": 3,
-              "description": "",
+              "description": "A201",
               "isSelected": true
             }
           ]
@@ -764,7 +764,7 @@
       "id": "6505d61c-c867-456f-a90c-958317560205",
       "name": "A301(오션뷰,야외풀,야외스파)",
       "description": "분리형 : 침대룸1+거실1+주방1+화장실1+풀빌라+스파+테라스",
-      "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
+      "roomInfo": "분리형 : 침대룸1+거실1+주방1+화장실1+풀빌라+스파+테라스\n\n[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
       "size": 99,
       "baseOccupancy": 2,
@@ -928,28 +928,28 @@
               "id": "02eb8e49-d5d6-4988-93ae-8d069c74b7d0",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/6505d61c-c867-456f-a90c-958317560205/exterior/1764113858147-2d2kum3zzdv.jpg",
               "sortOrder": 0,
-              "description": "",
+              "description": "A301",
               "isSelected": true
             },
             {
               "id": "1bc815d3-b7ef-4804-a267-731e21fb1708",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/6505d61c-c867-456f-a90c-958317560205/exterior/1764113858147-2pbrg7muouw.jpg",
               "sortOrder": 1,
-              "description": "",
+              "description": "A301",
               "isSelected": true
             },
             {
               "id": "601a78f9-3e60-41c2-a744-4ad1fb8bc6d4",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/6505d61c-c867-456f-a90c-958317560205/exterior/1764113858147-ilxmd85jnn9.jpg",
               "sortOrder": 2,
-              "description": "",
+              "description": "A301",
               "isSelected": true
             },
             {
               "id": "65f9608b-70a4-4026-b8e4-5a70b38ecdeb",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/6505d61c-c867-456f-a90c-958317560205/exterior/1764113858147-htf1rf3tsbk.jpg",
               "sortOrder": 3,
-              "description": "",
+              "description": "A301",
               "isSelected": true
             }
           ]
@@ -960,7 +960,7 @@
   ],
   "homepage": {
     "domain": "searestps.kr",
-    "templateType": "full_banner_image",
+    "templateType": "fullpage_scroll",
     "images": [
       {
         "logo": [
@@ -1000,7 +1000,7 @@
           "sections": [
             {
               "hero": {
-                "title": "Healing at Searest",
+                "title": "바다 위에서 머무는 시간,",
                 "images": [
                   {
                     "id": "be14fcc4-12d4-41d2-a267-f8569e9e537e",
@@ -1010,24 +1010,52 @@
                     "isSelected": true
                   },
                   {
-                    "id": "3f8c106b-1df2-4d50-9784-d0b4b0fff806",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1764113626276-ctkew417hmi.jpg",
-                    "sortOrder": 1,
-                    "description": "",
-                    "isSelected": false
-                  },
-                  {
                     "id": "e8cda6a9-fd10-420d-a6e3-e3df0281b857",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1764225346382-sm5ff6ljrf.jpg",
+                    "sortOrder": 1,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "b155fdf5-64b0-4c73-8234-3495c69dc479",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199701-cpl4uaf8b9n.jpg",
                     "sortOrder": 2,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
+                  },
+                  {
+                    "id": "3f8c106b-1df2-4d50-9784-d0b4b0fff806",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1764113626276-ctkew417hmi.jpg",
+                    "sortOrder": 3,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "5b1cbc6a-e013-433f-b1e1-a3595f7f74a9",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199701-89teb1hxhj8.jpg",
+                    "sortOrder": 4,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "20f1dfd2-c907-4b5b-88d9-c299d1be9f7f",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199702-4yfh2h2zbug.jpg",
+                    "sortOrder": 5,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "75c39791-f1e4-4b6a-91fa-aa403fa02c2a",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199702-zq0osi94iat.jpg",
+                    "sortOrder": 6,
+                    "description": "",
+                    "isSelected": true
                   }
                 ],
-                "description": "삶이 여유로운 곳"
+                "description": "영덕 씨레스트 풀빌라"
               },
               "closing": {
-                "title": "Sea",
+                "title": "파도 소리가 일상이 되는 곳,",
                 "images": [
                   {
                     "id": "309db2e9-56bc-4765-b38e-a5e6e02351f9",
@@ -1037,10 +1065,10 @@
                     "isSelected": true
                   }
                 ],
-                "description": "바다와 함께"
+                "description": "영덕 씨레스트 풀빌라"
               },
               "essence": {
-                "title": "Searest: Where Healing Begins",
+                "title": "바다를 보며 수영하는 경험",
                 "images": [
                   {
                     "id": "311c0733-0ab2-41cf-a2ff-92cef829f0b1",
@@ -1054,64 +1082,148 @@
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1764113626276-aecugypgehr.jpg",
                     "sortOrder": 1,
                     "description": "",
+                    "isSelected": false
+                  },
+                  {
+                    "id": "56e41f6c-651c-429c-926c-2ee6d49b37cc",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1768185916182-rs0q8iz2twr.jpg",
+                    "sortOrder": 2,
+                    "description": "",
                     "isSelected": true
                   }
                 ],
-                "description": "삶의 휴식이 시작되는 곳, Searest"
+                "description": "1층 객실은 바다와 단 10초 거리,\n마치 바다와 이어진 듯한 시간을 즐길 수 있고\n2·3층 객실에서는 프라이빗한 개별 수영장에서\n탁 트인 오션뷰를 온전히 누릴 수 있습니다."
               },
               "gallery": {
-                "title": "Sea and SPA",
+                "title": "바다와 가장 가까운 풀빌라",
                 "images": [
                   {
                     "id": "bf85600f-0ac4-462d-a768-9bfe5c6e2057",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1764120071924-b3mnesiaq66.jpg",
                     "sortOrder": 0,
-                    "description": "",
-                    "isSelected": true
-                  },
-                  {
-                    "id": "5babcdd6-90e4-4c5d-a650-1c92a33b30eb",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1764120071924-f1rgedr5hd.jpg",
-                    "sortOrder": 1,
-                    "description": "",
+                    "description": "201호_야외풀",
                     "isSelected": true
                   },
                   {
                     "id": "c7f700c2-72b9-462f-a9e7-1cb9e2c2a4eb",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1764120071924-nen6maqg8ko.jpg",
+                    "sortOrder": 1,
+                    "description": "101호_실내스파",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "5babcdd6-90e4-4c5d-a650-1c92a33b30eb",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1764120071924-f1rgedr5hd.jpg",
                     "sortOrder": 2,
-                    "description": "",
+                    "description": "201호_야외풀",
                     "isSelected": true
                   },
                   {
                     "id": "5878cae3-f74c-41d5-b487-5ff774f45a1e",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1764120071924-zuef978ntx.jpg",
                     "sortOrder": 3,
-                    "description": "",
+                    "description": "101호_실내스파",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "313ab7fb-56cf-4c05-b2e3-fb8461ace814",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-oy41onqpqv.jpg",
+                    "sortOrder": 4,
+                    "description": "201호_야외스파",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "3eda37ac-99c8-4ffe-aa9f-82e04838f5b1",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-fhukw4b69zl.jpg",
+                    "sortOrder": 5,
+                    "description": "201호_실내풀",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "dfbb05d2-2a5e-4064-af96-7b3c52048cce",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-1ghdvrdldoej.jpg",
+                    "sortOrder": 6,
+                    "description": "301호_야외스파",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "6a4c61c1-1fa9-4301-8562-b5a09e7aefab",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-trseeomumq.jpg",
+                    "sortOrder": 7,
+                    "description": "301호_야외풀",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "1e2e074c-fe33-4298-a88a-4c04bae358da",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-lej4rbvj80c.jpg",
+                    "sortOrder": 8,
+                    "description": "301호_야외풀",
+                    "isSelected": false
+                  },
+                  {
+                    "id": "64f6e8be-ceb5-4325-ada0-39c8de83ade0",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-sfamvq4nqc.jpg",
+                    "sortOrder": 9,
+                    "description": "301호_야외스파",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "6208d43d-5d24-4bde-99d1-7f22c7ecba17",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_gallery/1768186063111-nv1hhc8ys7t.jpg",
+                    "sortOrder": 10,
+                    "description": "301호_야외풀",
                     "isSelected": true
                   }
                 ],
-                "description": "바다전경의 스파를 즐기세요"
+                "description": "\n눈앞에 펼쳐진 수평선,\n그 풍경을 바라보며 몸을 맡기는 물의 온도.\n\n씨레스트에서는\n전 객실 오션뷰와 함께\n바다를 향해 열린 시간을 경험하실 수 있습니다."
               },
               "signature": {
-                "title": "Together with the ocean",
+                "title": "물 위에서, 물 안에서 쉬다",
                 "images": [
                   {
                     "id": "02ecee85-0b18-4028-aefc-63859452aa41",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1764120071924-zldir37gyp.jpg",
                     "sortOrder": 0,
                     "description": "",
-                    "isSelected": true
+                    "isSelected": false
                   },
                   {
                     "id": "b48a60ab-1280-4656-925a-9986431eb71d",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1764120071924-ne6p1nxlj8g.jpg",
                     "sortOrder": 1,
                     "description": "",
+                    "isSelected": false
+                  },
+                  {
+                    "id": "7ac8ae5c-5a1a-458f-b495-41f364886cda",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-b8yhy5j6uz7.jpg",
+                    "sortOrder": 2,
+                    "description": "",
                     "isSelected": true
+                  },
+                  {
+                    "id": "7fac73dc-641a-4e46-bd0a-93cf9fa81858",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-h2614wdijmp.jpg",
+                    "sortOrder": 3,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "536bbb6f-2381-4c46-a920-95c5bcfc9938",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-1dpfpgec84k.jpg",
+                    "sortOrder": 4,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "a7c26546-a422-4474-957c-33b7c17095f0",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-90w4xy0udv8.jpg",
+                    "sortOrder": 5,
+                    "description": "",
+                    "isSelected": false
                   }
                 ],
-                "description": "바다에서 힐링을"
+                "description": "수영 이후에는\n객실 내 스파에서 다시 한 번 깊은 휴식을.\n\n바다를 바라보며 즐기는 스파 타임은\n하루의 피로를 천천히 내려놓게 합니다."
               }
             }
           ]
@@ -1149,7 +1261,7 @@
           "sections": [
             {
               "hero": {
-                "title": "Healing at Searest",
+                "title": "바다와 가장 가까운 풀빌라",
                 "images": [
                   {
                     "id": "e664362e-f848-46de-91bb-ff19097b161b",
@@ -1165,15 +1277,16 @@
                     "description": "",
                     "isSelected": false
                   }
-                ]
+                ],
+                "description": "바다를 바라보는 숙소는 많지만,\n바다를 향해 수영하는 경험은 흔하지 않습니다.\n\n영덕 씨레스트 풀빌라는\n전 객실 오션뷰로 설계된 공간에서\n탁 트인 바다를 마주하며 물 위에 머무는 시간을 선사합니다.\n\n1층 객실은 바다와 단 10초 거리.\n마치 바다와 이어진 듯한 동선 속에서\n풍경과 휴식의 경계가 자연스럽게 사라집니다.\n\n2층과 3층 객실에서는\n프라이빗한 개별 수영장을 통해\n오롯이 나만의 시선으로 바다를 누릴 수 있습니다.\n\n개별 수영장과 객실 내 스파는\n하루의 흐름을 천천히 낮추고,\n커플과 가족 모두에게 깊은 쉼을 완성합니다.\n\n불필요한 장식은 덜어내고\n바다, 물, 휴식이라는 본질에 집중한 공간.\n\n머무는 순간 자체가\n이곳을 선택한 이유가 됩니다.\n\n영덕 씨레스트 풀빌라.\n지금, 바다와 가장 가까운 휴식을 예약하세요."
               },
               "about": [
                 {
-                  "title": "바다와 함께하는 Searest",
+                  "title": "파도 소리가 일상이 되는 곳,",
                   "images": [
                     {
-                      "id": "89f08008-8c82-473d-8fd2-c11abc7bb0e8",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223966999-9cmaziotmy5.jpg",
+                      "id": "3ee0ee88-6d36-4bd5-b3d4-55418caae48e",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1768186331493-9vtg6hsoxae.jpg",
                       "sortOrder": 0,
                       "description": "",
                       "isSelected": true,
@@ -1186,10 +1299,18 @@
                       "description": "",
                       "isSelected": true,
                       "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
+                    },
+                    {
+                      "id": "89f08008-8c82-473d-8fd2-c11abc7bb0e8",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223966999-9cmaziotmy5.jpg",
+                      "sortOrder": 2,
+                      "description": "",
+                      "isSelected": false,
+                      "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
                     }
                   ],
                   "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67",
-                  "description": "감성 가득한 하루를 보낼 수 있는 곳\n영덕 씨레스트풀빌라에서 특별한 순간을 느껴보세요."
+                  "description": "영덕 씨레스트 풀빌라"
                 }
               ]
             }
@@ -1201,7 +1322,7 @@
             "sections": [
               {
                 "hero": {
-                  "title": "",
+                  "title": "문 앞에서 시작되는 바다.\n10초 해변, 실내 스파와 함께 바다를 즐길 수 있 가장 가까운 객실\n",
                   "images": []
                 },
                 "gallery": {
@@ -1216,7 +1337,7 @@
             "sections": [
               {
                 "hero": {
-                  "title": "",
+                  "title": "\n실내에서도, 야외에서도 바다를 품다.\n오션뷰 실내풀과 야외풀,\n야외 스파까지 완성된 프리미엄 객실",
                   "images": []
                 },
                 "gallery": {
@@ -1231,7 +1352,7 @@
             "sections": [
               {
                 "hero": {
-                  "title": "",
+                  "title": "\n하늘과 바다를 가장 넓게 담는 자리.\n오션뷰 야외풀과 야외 스파로\n탁 트인 휴식을 완성하는 객실",
                   "images": []
                 },
                 "gallery": {
@@ -1242,7 +1363,88 @@
             ]
           }
         ],
-        "facility": [],
+        "facility": [
+          {
+            "id": "244eedf4-17a3-4bd3-8628-5e40ef0f362b",
+            "sections": [
+              {
+                "hero": {
+                  "title": "머무는 모든 순간에,\n바다가 시야의 중심이 됩니다.\n\n전 객실 오션뷰로\n아침부터 밤까지 바다와 함께합니다.",
+                  "images": []
+                },
+                "about": {
+                  "title": "",
+                  "images": []
+                },
+                "experience": {
+                  "features": [],
+                  "additionalInfos": [],
+                  "benefits": []
+                }
+              }
+            ]
+          },
+          {
+            "id": "9409a2c3-4b8a-4b02-8744-a30e116185c0",
+            "sections": [
+              {
+                "hero": {
+                  "title": "물 위에서 쉬고,\n물 안에서 하루를 마무리합니다.\n\n실내와 야외를 넘나드는 풀과 스파로\n사계절에 가까운 깊은 휴식을 완성합니다.",
+                  "images": []
+                },
+                "about": {
+                  "title": "",
+                  "images": []
+                },
+                "experience": {
+                  "features": [],
+                  "additionalInfos": [],
+                  "benefits": []
+                }
+              }
+            ]
+          },
+          {
+            "id": "7f569fd4-9581-4f02-8a86-b499fbdcc6a3",
+            "sections": [
+              {
+                "hero": {
+                  "title": "바다를 바라보며 즐기는,\n가장 여유로운 식사.\n\n시선은 풍경에 두고,\n시간은 천천히 흐르게 둡니다.",
+                  "images": []
+                },
+                "about": {
+                  "title": "",
+                  "images": []
+                },
+                "experience": {
+                  "features": [],
+                  "additionalInfos": [],
+                  "benefits": []
+                }
+              }
+            ]
+          },
+          {
+            "id": "ae680008-3d8f-479f-8ea6-199323252752",
+            "sections": [
+              {
+                "hero": {
+                  "title": "준비 없이 시작되는,\n가장 자연스러운 액티비티.\n\n문을 나서면 바로 바다.\n수영과 스노클링이 일상이 됩니다.",
+                  "images": []
+                },
+                "about": {
+                  "title": "",
+                  "images": []
+                },
+                "experience": {
+                  "features": [],
+                  "additionalInfos": [],
+                  "benefits": []
+                }
+              }
+            ]
+          }
+        ],
         "reservation": {
           "sections": [
             {
@@ -1288,6 +1490,9 @@
             }
           ]
         }
+      },
+      "popup": {
+        "popups": []
       }
     }
   }

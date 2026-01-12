@@ -1,250 +1,308 @@
-/* Reservation Page Styles */
+/* Reservation page specific styles */
 
-.reservation-about-section {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    background-color: transparent;
-}
+/* page-title h1 스타일은 common.css에서 관리 */
 
-/* Intro Section - main.html과 동일한 스타일 */
-.reservation-intro-section {
-    background: var(--color-primary);
-    text-align: center;
+/* Reservation Page Container */
+.reservation-page {
     position: relative;
 }
 
-.reservation-intro-content {
-    max-width: 800px;
+/* Reservation Intro Section */
+.reservation-intro-section {
+    padding: 80px 20px 60px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.reservation-label {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 30px;
-    line-height: 1.4;
-    letter-spacing: 0.02em;
+/* 제목과 설명 세로 레이아웃 */
+.reservation-content-wrapper {
+    margin-top: 100px;
 }
 
-.reservation-number.animate {
-    opacity: 1;
-    transform: translateY(0);
+.reservation-title-section {
+    margin-bottom: 30px;
+}
+
+.reservation-description-section {
+    width: 100%;
+}
+
+.reservation-hero-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-secondary, #658399);
+    margin: 0;
+    line-height: 1.2;
+    text-align: left;
 }
 
 .reservation-description {
-    font-size: 1.125rem;
-    font-weight: 400;
-    color: #666;
+    
+    font-size: 18px;
     line-height: 1.8;
-    letter-spacing: 0.01em;
+    color: #666;
     margin: 0;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-    transition-delay: 0.2s;
+    white-space: pre-line;
+    text-align: left;
 }
 
-.reservation-description.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Removed reservation-section-label styles */
-
-/* Book Now Button - 플로팅 버튼 스타일 */
+/* Book Now Button Section */
 .reservation-book-now {
-    display: flex;
-    justify-content: center;
-    margin: 60px 0 150px;
+    text-align: center;
+    padding: 40px 20px;
 }
 
 .reservation-book-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 32px;
-    background: transparent;
-    border: 1px solid var(--color-secondary);
-    color: var(--color-secondary);
+    display: inline-block;
+    padding: 15px 50px;
+    background-color: var(--color-secondary, #658399);
+    color: white;
     text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 0;
-}
-
-.reservation-book-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--color-secondary);
-    transition: width 0.3s ease;
-    z-index: -1;
-}
-
-.reservation-book-btn:hover::before {
-    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .reservation-book-btn:hover {
-    color: #fff;
-    border-color: var(--color-secondary);
-    box-shadow: 0 10px 30px rgba(49, 66, 61, 0.2);
+    background-color: var(--color-secondary, #658399);
+    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
-/* Content Layout */
+/* Reservation Content Layout */
 .reservation-content-layout {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Details Section - container for grid */
+.reservation-details-section {
+    width: 100%;
+    padding: 0;
+    /* 오른쪽 콘텐츠가 스크롤될 수 있을 정도의 최소 높이 */
+    min-height: auto;
+    padding-bottom: 100px;
+}
+
+/* ========================================
+   새로운 3섹션 레이아웃 스타일
+   ======================================== */
+
+/* 각 예약 섹션 */
+.reservation-section {
+    margin-bottom: 100px;
+}
+
+/* 섹션 그리드 */
+.reservation-section-grid {
     display: flex;
-    gap: 60px;
-    margin: 100px 0;
-    position: relative;
-    min-height: 100vh;
+    gap: 80px;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0;
 }
 
-.reservation-info-content {
-    width: 70%;
-    padding-right: 0;
+/* 짝수 섹션 (입/퇴실, 예약안내) 반대 레이아웃 */
+.reservation-section:nth-child(even) .reservation-section-grid {
+    flex-direction: row-reverse;
 }
 
-/* 우측 고정 이미지 영역 */
-.reservation-image-section {
-    width: 30%;
-    height: 600px;
+/* 왼쪽 이미지 패널 */
+.reservation-image-panel {
     position: sticky;
     top: 100px;
-    overflow: hidden;
+    flex: 0 0 40%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: calc(-50vw + 50%);
+    width: 40vw;
 }
 
-.reservation-image-section img {
+/* 짝수 섹션 이미지 패널 - 오른쪽 정렬 */
+.reservation-section:nth-child(even) .reservation-image-panel {
+    margin-left: 0;
+    margin-right: calc(-50vw + 50%);
+}
+
+.reservation-panel-image {
+    width: 100%;
+    height: 350px;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #f0f0f0;
+    transition: border-radius 0.6s ease;
+    position: relative;
+}
+
+/* 홀수 섹션 이미지 - 오른쪽 radius */
+.reservation-section:nth-child(odd) .reservation-panel-image.visible {
+    border-radius: 0px 180px 180px 0px;
+}
+
+/* 짝수 섹션 이미지 - 왼쪽 radius, 오른쪽은 직각 */
+.reservation-section:nth-child(even) .reservation-panel-image.visible {
+    border-radius: 180px 0px 0px 180px;
+}
+
+.reservation-panel-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0;
-    transition: transform 0.6s ease-out;
-    will-change: transform;
 }
 
-.reservation-details-section {
-    display: grid;
-    gap: 0;
+.reservation-panel-title {
+    font-family: 'Roustel', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--color-secondary, #658399);
+    text-align: right;
+    transition: all 0.6s ease;
+    padding: 0 40px;
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
 }
 
-/* Reservation Box - 투명한 흰색 배경 박스 스타일 */
+.reservation-panel-title::before {
+    content: '';
+    flex: 1 1 auto;
+    height: 1px;
+    background-color: var(--color-secondary, #658399);
+    margin-right: 20px;
+}
+
+/* 짝수 섹션 타이틀 - 왼쪽 정렬 */
+.reservation-section:nth-child(even) .reservation-panel-title {
+    text-align: left;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+
+.reservation-section:nth-child(even) .reservation-panel-title::before {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+/* 오른쪽 콘텐츠 영역 */
+.reservation-content-area {
+    flex: 1;
+    padding: 0 40px;
+    max-width: 600px; /* 더 좁게 변경 */
+    min-height: 500px; /* 이미지 높이와 매칭 */
+    display: flex;
+    align-items: center;
+}
+
+/* 각 섹션 박스 */
 .reservation-box {
     padding: 40px;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Safari 지원 */
+    padding-bottom: 40px;
+    width: 100%;
+    background: transparent;
     border-radius: 0;
-    margin-bottom: 30px;
-    transition: all 0.4s ease;
+    box-shadow: none;
     opacity: 0;
-    transform: translateY(30px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* backdrop-filter를 지원하지 않는 브라우저를 위한 fallback */
-@supports not (backdrop-filter: blur(10px)) {
-    .reservation-box {
-        background: rgba(255, 255, 255, 0.85); /* 더 불투명한 배경 */
-        border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-}
-
-.reservation-box:last-child {
-    border-bottom: none;
-}
-
-.reservation-box.animate {
+/* 스크롤 시 나타나는 애니메이션 */
+.reservation-box.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
-/* Box Title */
+/* 박스 내부 이미지 숨김 (왼쪽 패널에서 표시) */
+.reservation-box-image {
+    display: none;
+}
+
 .reservation-box-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-secondary, #658399);
+    margin-bottom: 40px;
     padding-bottom: 15px;
-    letter-spacing: -0.02em;
-    position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--color-secondary, #658399);
 }
 
-/* Box Content */
-.reservation-text-content {
-    font-size: 1rem;
+.reservation-box-content {
+    color: #666;
     line-height: 1.8;
-    color: var(--text-secondary);
-    white-space: pre-line;
+    font-size: 16px;
 }
 
-/* Check In/Out Times */
+/* Check-in/Check-out Times */
 .checkin-checkout-times {
     display: flex;
     gap: 40px;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .detail-label {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--color-secondary, #658399);
+    font-size: 16px;
 }
 
 .detail-value {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--primary-green);
+    color: #333;
+    font-size: 16px;
 }
 
-/* Refund Box Specific Styles */
+/* Operation Info Section */
+.operation-info-section {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.operation-info-text {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Refund Box */
 .refund-box {
-    padding-top: 80px;
+    background: transparent;
 }
 
 .refund-content {
-    display: grid;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Refund Table Section */
 .refund-table-section {
-    width: 100%;
+    background: transparent;
+    border-radius: 8px;
+    padding: 20px;
 }
 
 .refund-section-title {
-    font-size: 1.3rem;
+    font-size: 18px;
     font-weight: 600;
-    color: var(--text-color);
-    margin: 20px 0
+    color: #333;
+    margin-bottom: 15px;
 }
 
 .refund-table-wrapper {
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 .refund-table {
@@ -253,124 +311,191 @@
 }
 
 .refund-table thead {
-    background: #edf1ed;
-    color: var(--color-secondary);
+    background: var(--color-secondary, #658399);
+    color: white;
 }
 
-.refund-table th {
-    padding: 20px;
+.refund-table th,
+.refund-table td {
+    padding: 12px;
     text-align: left;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.05em;
-    color: var(--color-secondary);
+    border: 1px solid #ddd;
 }
 
-.refund-table tbody td {
-    padding: 18px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    font-size: 0.95rem;
-    color: var(--text-secondary);
+.refund-table tbody tr:nth-child(even) {
+    background: transparent;
 }
 
-.refund-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-
-.refund-table .no-refund {
-    color: #e74c3c;
-    font-weight: 600;
+.refund-table tbody tr:hover {
+    background: rgba(101, 131, 153, 0.1);
 }
 
 /* Refund Text Section */
 .refund-text-section {
-    padding: 30px 0;
+    background: transparent;
+    border-radius: 8px;
+    padding: 20px;
 }
 
 .refund-notes {
-    font-size: 0.95rem;
+    color: #666;
     line-height: 1.8;
-    color: var(--text-secondary);
+}
+
+/* Reservation Text Content - Preserve line breaks */
+.reservation-text-content {
     white-space: pre-line;
 }
 
-/* Full Banner Section - common.css에서 처리 */
-/* Marquee Section - common.css에서 처리 */
-
-/* Animation Classes */
-.animate-element {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.animate-element.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Design */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .reservation-about-section {
-        padding: 60px 30px;
-    }
-
-    .reservation-intro-content {
-        padding-top: 50px;
-    }
-
-    .reservation-box {
-        padding: 30px;
-    }
-
-    .reservation-info-content {
-        width: 100%;
-        padding-right: 0;
-    }
-
-    .reservation-image-section {
+    /* 모바일에서 이미지 패널 숨김 */
+    .reservation-image-panel {
         display: none;
     }
 
+    /* 모바일에서 콘텐츠 영역 전체 너비 */
+    .reservation-content-area {
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 0; /* 모바일에서는 margin-bottom 제거 */
+        min-height: auto;
+    }
+
+    /* 모바일에서 섹션 그리드 수정 */
+    .reservation-section-grid {
+        display: block;
+        gap: 0;
+    }
+
+    /* 모바일에서 박스 애니메이션 제거 */
+    .reservation-box {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .reservation-intro-section {
+        padding: 60px 20px 40px;
+    }
+
+    .reservation-description {
+        font-size: 16px;
+    }
+
+    .reservation-book-btn {
+        padding: 12px 40px;
+        font-size: 15px;
+    }
+
     .reservation-content-layout {
+        padding: 0 20px;
+    }
+
+    /* 모바일 레이아웃 */
+    .reservation-details-grid {
         flex-direction: column;
-        margin: 60px 0;
+        min-height: auto;
+        gap: 0;
+    }
+
+    .reservation-sticky-panel {
+        display: none;
+    }
+
+    .reservation-scroll-content {
+        border-left: none;
+        padding: 0 20px;
+        max-width: 100%;
+    }
+
+    .reservation-box {
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .reservation-box-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .reservation-box-content {
+        font-size: 14px;
     }
 
     .checkin-checkout-times {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
-    .detail-value {
-        font-size: 1.2rem;
-    }
-
-    .reservation-box-title {
-        font-size: 1.5rem;
+    .refund-table {
+        font-size: 14px;
     }
 
     .refund-table th,
     .refund-table td {
-        padding: 15px;
-        font-size: 0.9rem;
+        padding: 8px;
     }
-
 }
 
 @media (max-width: 480px) {
+    .reservation-intro-section {
+        padding: 40px 20px 30px;
+    }
+
+    .reservation-hero-title {
+        font-size: 28px;
+    }
+
+    .reservation-description {
+        font-size: 14px;
+    }
+
+    .reservation-book-now {
+        padding: 30px 20px;
+    }
+
+    .reservation-content-wrapper {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .reservation-title-section {
+        margin-bottom: 20px;
+    }
+
+    .reservation-hero-title {
+        text-align: center;
+    }
+
+    .reservation-description {
+        text-align: center;
+    }
+
+
     .reservation-box {
-        padding: 25px;
+        padding: 20px 0;
     }
 
-    .reservation-label {
-        font-size: 1.8rem;
+    .reservation-box-title {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 
-    .reservation-book-btn {
-        padding: 12px 30px;
-        font-size: 0.85rem;
+    .detail-label,
+    .detail-value {
+        font-size: 14px;
     }
 
+    .refund-section-title {
+        font-size: 16px;
+    }
+
+    .refund-table-section {
+        padding: 0;
+    }
+
+    .refund-text-section {
+        padding: 0;
+    }
 }

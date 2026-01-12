@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="숙소 설명">
   <meta name="keywords" content="SEO 키워드">
-  <title>숙소명 - 소개</title>
+  <title>Main - 템플릿</title>
 
+  <!-- Preload critical resources -->
+  <link rel="preload" href="styles/common.css" as="style">
+  <link rel="preload" href="styles/main.css" as="style">
+
+  <!-- Theme CSS -->
   <link rel="stylesheet" href="styles/theme.css">
   <link rel="stylesheet" href="styles/common.css">
   <link rel="stylesheet" href="styles/main.css">
-
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="영덕 씨레스트 스파풀빌라 - 숙소소개" />
@@ -33,62 +37,58 @@
   <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
 </head>
 <body>
-  <main class="main-content">
-      <!-- CUSTOM FIELD : 메인 소개 섹션 -->
-      <!-- homepage.customFields.pages.main.sections[0].hero.images 매핑 -->
-      <section class="hero-section hero-center-bottom">
-          <div class="hero-slider" data-hero-slider>
-              <!-- 동적으로 hero-slide가 생성됩니다 -->
+
+  <main>
+      <section class="page-hero-section">
+        <!-- CUSTOM FIELD : 메인 소개 섹션 이미지 매핑 1장 -->
+          <div class="hero-background">
+              <img data-main-hero-img>
           </div>
-          <!-- 페이지명 하드코딩 -->
-          <div class="hero-property-title">PROLOGUE</div>
-          <div class="hero-bottom-info">
-              <div class="hero-progress-container">
-                  <button class="hero-nav-prev" aria-label="Previous slide">&lt;</button>
-                  <span class="current-slide hero-indicators" data-current-slide>01</span>
-                  <div class="hero-progress-bar">
-                      <div class="hero-progress-fill" data-hero-progress></div>
+          <!-- 페이지 제목 하드코딩 fixed -->
+          <div class="page-title">
+              <span class="property-name-kr" data-main-property-name-kr></span>
+              <h1 class="typing-text" data-text="Prologue" style="--text-length: 8;">Prologue</h1>
+          </div>
+          <!-- Scroll Down Icon -->
+          <div class="scroll-down-icon" onclick="scrollToContent()">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </div>
+      </section>
+      <div class="content-wrap scroll-target">
+          <div class="main-container">
+              <div class="text-content">
+                  <div class="logo-line-container">
+                      <!-- 숙소 영문명 매핑 fixed -->
+                      <span class="logo-text-line" data-main-property-name-en></span>
+                      <div class="horizontal-line"></div>
                   </div>
-                  <span class="total-slides hero-indicators" data-total-slides>02</span>
-                  <button class="hero-nav-next" aria-label="Next slide">&gt;</button>
+                  <!-- custom field : 메인 소개 섹션 타이틀/설명 매핑 -->
+                  <div class="hero-content">
+                      <h2 class="hero-title" data-main-about-title></h2>
+                      <p class="hero-description" data-main-about-description></p>
+                  </div>
+              </div>
+              <!-- custom field : 소개 블록 동적 생성 - 이미지1, 제목, 설명이 한블록-->
+              <div class="about-content" data-main-introduction>
+                  <!-- 동적으로 about-block들이 생성됩니다 -->
               </div>
           </div>
-      </section>
-      <div class="main-about-section">
-          <div class="main-about-content">
-              <!-- homepage.customFields.pages.main.sections[0].hero.title 매핑 -->
-              <h2 class="main-about-title" data-main-about-title></h2>
-              <!-- homepage.customFields.pages.main.sections[0].hero.description 매핑 -->
-              <p class="main-about-description" data-main-about-description></p>
-          </div>
 
-          <!-- CUSTOM FIELD : 소개 섹션 / 동적 블록 생성 영역 / 최소 블럭 1개 -->
-          <!-- homepage.customFields.pages.main.sections[0].about[] 매핑 -->
-          <section class="intro-section">
-            <!-- 동적으로 intro-block이 생성됩니다 -->
+          <!-- 숙소 외경이미지 0번째 fixed -->
+          <section class="full-banner" data-main-banner>
+              <!-- 숙소 영문명 매핑 fixed -->
+              <div class="closing-property-name" data-closing-property-name></div>
           </section>
-        </div>
-
-      <!-- property.images[0].exterior[] 첫번째 이미지 매핑 -->
-      <section class="full-banner" data-main-banner>
-        <!-- property.nameEn 매핑 -->
-        <h2 class="full-banner-title" data-main-banner-title></h2>
-        <!-- property.images[0].exterior[] 첫번째 이미지 매핑 -->
-        <div class="full-banner-circle" data-main-banner-bg></div>
-      </section>
-
-      <!-- property.nameEn 매핑 (uppercase, 5개 span 반복) -->
-      <div class="marquee-section">
-        <div class="marquee-container">
-          <div class="marquee-text" data-marquee-property-name>
-            <!-- 동적으로 span이 생성됩니다 -->
-          </div>
-        </div>
       </div>
   </main>
 
-  <!-- Include ImageWithFallback script (standard-template-data.json에서만 필요) -->
-  <!-- <script src="js/image-with-fallback.js"></script> -->
+  <!-- Common JavaScript -->
+  <script src="js/common.js"></script>
+
+  <!-- Include ImageWithFallback script -->
+  <script src="js/image-with-fallback.js"></script>
 
   <!-- Image Helpers -->
   <script src="js/image-helpers.js"></script>
@@ -108,14 +108,15 @@
   <!-- Header and Footer Loader -->
   <script src="js/header-footer-loader.js"></script>
 
-  <!-- Fullscreen Slider Component -->
-  <script src="js/components/fullscreen-slider.js"></script>
+  <!-- Fullscreen Slider Component (나중에 추가) -->
+  <!-- <script src="js/components/fullscreen-slider.js"></script> -->
+
+  <!-- Scroll Animations -->
+  <script src="js/common/scroll-animations.js"></script>
 
   <!-- Page-specific script -->
   <script type="module" src="js/pages/main.js"></script>
 
-  <!-- Scroll Animations -->
-  <script src="js/scroll-animations.js"></script>
 
 </body>
 </html>

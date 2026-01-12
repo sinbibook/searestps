@@ -15,56 +15,54 @@
         });
     }
 
-    // Get property data from mapped data
-    async function getPropertyData(key) {
-        try {
-            // Try to get from session storage first
-            const storedData = sessionStorage.getItem('templateData');
-            if (storedData) {
-                const data = JSON.parse(storedData);
-                return data.property?.[key];
-            }
+    // Top Button functionality
+    function initTopButton() {
+        const topButton = document.getElementById('topButton');
+        if (!topButton) return;
 
-            // Otherwise, try to load from JSON files
-            const jsonFiles = ['demo-filled.json', 'standard-template-data.json'];
-            for (const file of jsonFiles) {
-                try {
-                    const response = await fetch(`/${file}`);
-                    if (response.ok) {
-                        const data = await response.json();
-                        if (data.property?.[key]) {
-                            return data.property[key];
-                        }
+        let isScrolling = false;
+
+        // Show/hide button based on scroll position
+        function handleScroll() {
+            if (!isScrolling) {
+                window.requestAnimationFrame(() => {
+                    if (window.pageYOffset > 300) {
+                        topButton.classList.add('show');
+                    } else {
+                        topButton.classList.remove('show');
                     }
-                } catch (error) {
-                    console.log(`Error loading ${file}:`, error);
-                }
+                    isScrolling = false;
+                });
+                isScrolling = true;
             }
-        } catch (error) {
-            console.error('Error getting property data:', error);
         }
-        return null;
-    }
 
-    // Handle Gpension reservation
-    async function handleGpensionReservation() {
-        const realtimeBookingId = await getPropertyData('realtimeBookingId');
+        // Smooth scroll to top
+        topButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-        if (realtimeBookingId && realtimeBookingId !== '지펜션ID') {
-            const reservationUrl = `https://www.bookingplay.co.kr/booking/1/${realtimeBookingId}`;
-            window.open(reservationUrl, '_blank');
-        }
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Check initial scroll position
+        handleScroll();
     }
 
     // Initialize footer
-    document.addEventListener('DOMContentLoaded', function() {
+    const runInitializers = () => {
         updateCopyrightYear();
+        initTopButton();
+    };
 
-        // Set up Gpension reservation button
-        const realtimeBtn = document.querySelector('[data-property-realtime-booking-id]');
-        if (realtimeBtn) {
-            realtimeBtn.addEventListener('click', handleGpensionReservation);
-        }
-    });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runInitializers);
+    } else {
+        // DOM is already loaded
+        runInitializers();
+    }
 
 })();

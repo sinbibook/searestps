@@ -10,9 +10,10 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="styles/common.css" as="style">
     <link rel="preload" href="styles/room.css" as="style">
+
+    <!-- Theme CSS -->
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/slider.css">
     <link rel="stylesheet" href="styles/room.css">
 
   <!-- Open Graph Meta Tags for Social Media -->
@@ -37,65 +38,108 @@
   <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
 </head>
 <body>
+
     <main class="main-content">
-        <!-- rooms[index].images[0].interior 매핑 -->
-        <section class="hero-section hero-center-bottom">
-            <div class="hero-slider" data-hero-slider>
-                <!-- 동적으로 hero-slide가 생성됩니다 -->
-            </div>
-            <!-- 페이지명 하드코딩 -->
-            <div class="hero-property-title">ROOM</div>
-            <div class="hero-bottom-info">
-                <div class="hero-progress-container">
-                    <button class="hero-nav-prev" aria-label="Previous slide">&lt;</button>
-                    <span class="current-slide hero-indicators" data-current-slide>01</span>
-                    <div class="hero-progress-bar">
-                        <div class="hero-progress-fill" data-hero-progress></div>
+
+        <!-- Room Hero Slider Section -->
+        <section class="room-hero-section">
+            <div class="room-hero-slider">
+                <div class="room-slider-container" data-room-slider>
+                    <!-- 동적으로 슬라이드가 생성됩니다 -->
+                </div>
+
+                <!-- Room Name Overlay - 슬라이더 중앙에 표시 -->
+                <div class="room-name-overlay">
+                    <div class="room-hero-circular-text">
+                        <svg viewBox="0 0 240 240">
+                            <path id="hero-text-path" d="M120,30 A90,90 0 1,1 119.9,30" fill="none"/>
+                            <text>
+                              <!-- 숙소 영문명 매핑 fixed -->
+                                <textPath href="#hero-text-path" data-hero-circular-property-text>
+                                </textPath>
+                            </text>
+                        </svg>
                     </div>
-                    <span class="total-slides hero-indicators" data-total-slides>03</span>
-                    <button class="hero-nav-next" aria-label="Next slide">&gt;</button>
+                    <!-- 객실명 매핑 fixed -->
+                    <h2 class="room-title-overlay" data-room-name></h2>
+                </div>
+
+                <!-- Slider Navigation - Desktop -->
+                <div class="room-slider-nav">
+                    <button class="room-nav-btn room-nav-prev" id="room-prev-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="room-nav-btn room-nav-next" id="room-next-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div class="room-slider-nav-mobile">
+                    <button class="room-nav-btn-mobile room-nav-prev-mobile" id="room-prev-btn-mobile">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="room-nav-btn-mobile room-nav-next-mobile" id="room-next-btn-mobile">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <section class="room-info-section room-about-section">
-            <div class="room-intro-section">
-                <div class="room-intro-content">
-                    <!-- rooms[index].images[0].thumbnail 매핑 -->
-                    <div class="room-thumbnail animate-element">
-                        <div class="room-thumbnail-hexagon">
-                            <img data-room-thumbnail alt="Room Thumbnail">
-                        </div>
+        <!-- Room Name Section (모바일 전용) -->
+        <section class="room-name-section">
+            <div class="room-hero-text">
+                <div class="room-name-wrapper">
+                    <div class="room-hero-circular-text">
+                        <svg viewBox="0 0 240 240">
+                            <path id="hero-text-path" d="M120,30 A90,90 0 1,1 119.9,30" fill="none"/>
+                            <text>
+                              <!-- 숙소 영문명 매핑 fixed -->
+                                <textPath href="#hero-text-path" data-hero-circular-property-text-mobile>
+                                </textPath>
+                            </text>
+                        </svg>
                     </div>
-                    <!-- rooms[index].name 매핑 -->
-                    <div class="room-label">
-                        <span class="room-number animate-element" data-room-name></span>
-                    </div>
-                    <!-- homepage.customFields.pages.room[index].sections[0].hero.title 매핑 -->
-                    <p class="room-description animate-element" data-room-description></p>
+                    <!-- 객실명 매핑 fixed -->
+                    <h2 class="room-title animate-on-scroll" data-room-name-mobile></h2>
                 </div>
             </div>
+        </section>
 
-            <div class="room-details-container animate-element">
-                <h3 class="room-section-title">Room Detail</h3>
+        <!-- Room Description Section -->
+        <section class="room-description-section">
+            <div class="room-description-container">
+                <!-- 객실 설명 매핑 fixed -->
+                <p class="room-description animate-on-scroll" data-room-info-description></p>
+            </div>
+        </section>
+
+        <div class="content-wrap">
+        <section class="room-info-section">
+            <div class="room-info-container">
                 <div class="room-info-content">
-                    <div class="room-info-left">
-                        <!-- rooms[index].images[0].interior (index 2~5) 매핑 -->
-                        <div class="room-slider" data-room-slider>
-                            <div class="room-slider-wrapper" data-room-slider-wrapper>
-                                <!-- 동적으로 room-slide가 생성됩니다 -->
-                            </div>
-                            <div class="room-slider-indicators" data-room-slider-indicators>
-                                <!-- 동적으로 indicator가 생성됩니다 -->
-                            </div>
-                        </div>
-                        <div class="room-thumbnails" data-room-thumbnails>
-                            <!-- 동적으로 thumb-img가 생성됩니다 -->
-                        </div>
-                    </div>
-                    <div class="room-info-right">
-                        <!-- rooms[index] 시스템 데이터 매핑 -->
-                        <div class="room-details-grid" data-room-details>
+                    <!-- 하드코딩 fixed -->
+                    <h2 class="room-info-title-styled animate-on-scroll">Room Information</h2>
+
+                    <!-- 객실 정보 매핑 -->
+                    <div class="room-details-section animate-on-scroll">
+                        <h4 class="details-section-title">
+                            객실 정보
+                            <button class="section-toggle-btn" data-toggle="room-details">
+                                <span class="toggle-minus">−</span>
+                                <span class="toggle-plus" style="display: none;">+</span>
+                            </button>
+                        </h4>
+                        <div class="room-details-content" data-content="room-details">
+                            <div class="room-details-grid">
                             <div class="room-detail-item">
                                 <span class="detail-label">객실 크기</span>
                                 <span class="detail-value" data-room-size></span>
@@ -113,60 +157,102 @@
                                 <span class="detail-value" data-room-capacity></span>
                             </div>
                             <div class="room-detail-item">
-                                <span class="detail-label">체크인</span>
-                                <span class="detail-value" data-room-checkin></span>
+                                <span class="detail-label">체크인 / 체크아웃</span>
+                                <span class="detail-value"><span data-room-checkin></span> / <span data-room-checkout></span></span>
                             </div>
-                            <div class="room-detail-item">
-                                <span class="detail-label">체크아웃</span>
-                                <span class="detail-value" data-room-checkout></span>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 편의시설 섹션 매핑 -->
+                    <div class="room-amenities-section animate-on-scroll">
+                        <h4 class="amenities-section-title">
+                            편의시설
+                            <button class="section-toggle-btn" data-toggle="amenities">
+                                <span class="toggle-minus">−</span>
+                                <span class="toggle-plus" style="display: none;">+</span>
+                            </button>
+                        </h4>
+                        <div class="amenities-content" data-content="amenities">
+                            <div class="amenities-list" data-room-amenities-icons></div>
+                        </div>
+                    </div>
+
+                    <!-- 객실 이용규칙/안내사항 매핑 -->
+                    <div class="room-usage-guide animate-on-scroll">
+                        <h4 class="usage-guide-title">
+                            객실 안내사항
+                            <button class="section-toggle-btn" data-toggle="usage-guide">
+                                <span class="toggle-minus">−</span>
+                                <span class="toggle-plus" style="display: none;">+</span>
+                            </button>
+                        </h4>
+                        <div class="usage-guide-content" data-content="usage-guide">
+                          <p data-room-guide></p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- rooms[index].amenities 매핑 -->
-            <div class="room-amenities-section animate-element" data-room-amenities>
-                <h3 class="room-section-title">Amenities</h3>
-                <div class="amenities-grid" data-room-amenities-grid>
-                    <!-- 동적으로 amenity-item이 생성됩니다 -->
-                </div>
-            </div>
-
-            <!-- rooms[index].roomInfo 매핑 -->
-            <div class="room-usage-guide-section animate-element" data-room-usage-guide>
-                <h3 class="room-section-title">Room Information</h3>
-                <div class="usage-guide-content" data-room-guide>
-                    <!-- 동적으로 내용이 매핑됩니다 -->
-                </div>
-            </div>
-
         </section>
 
-    <section class="room-gallery-section">
-        <div class="room-gallery-label animate-element">
-            <span>#GALLERY</span>
-            <!-- homepage.customFields.pages.room[index].sections[0].gallery.title 매핑 -->
-            <p class="room-gallery-description" data-room-gallery-title></p>
+      </div>
+
+      <!-- 객실 썸네일 0번쨰 매핑 -->
+      <section class="full-banner animate-on-scroll" data-room-banner>
+          <!-- 숙소 영문명 매핑 fixed -->
+          <div class="property-en-bg-text" data-property-name-en></div>
+      </section>
+
+      
+      <section class="exterior-gallery-section">
+        <div class="gallery-grid-container">
+          <!-- 갤러리 제목 하드코딩 fixed -->
+           <h2 class="room-info-title-styled animate-on-scroll">Exterior Gallery</h2>
+
+          <!-- CUSTOM FIELD : 갤러리 섹션 설명 매핑 -->
+          <h2 class="gallery-grid-title animate-fade-up" data-delay="400" data-room-gallery-title></h2>
+
+          <div class="gallery-grid-wrapper">
+            <!-- 3장 한 줄 -->
+            <div class="gallery-row row-3">
+              <div class="gallery-item animate-on-scroll slide-left" data-delay="600">
+                <img src="./images/room.jpg" alt="Gallery image">
+              </div>
+              <div class="gallery-item animate-on-scroll slide-up" data-delay="700">
+                <img src="./images/room2.jpg" alt="Gallery image">
+              </div>
+              <div class="gallery-item animate-on-scroll slide-right" data-delay="800">
+                <img src="./images/room3.jpg" alt="Gallery image">
+              </div>
+            </div>
+
+            <!-- 2장 한 줄 -->
+            <div class="gallery-row row-2">
+              <div class="gallery-item animate-on-scroll slide-left" data-delay="900">
+                <img src="./images/room4.jpg" alt="Gallery image">
+              </div>
+              <div class="gallery-item animate-on-scroll slide-right" data-delay="1000">
+                <img src="./images/room5.jpg" alt="Gallery image">
+              </div>
+            </div>
+
+            <!-- 1장 한 줄 -->
+            <div class="gallery-row row-1">
+              <div class="gallery-item animate-on-scroll slide-up" data-delay="1100">
+                <img src="./images/room6.jpg" alt="Gallery image">
+              </div>
+            </div>
+
+          </div>
         </div>
-        <!-- rooms[index].images[0].exterior 매핑 -->
-        <div class="room-gallery-container" data-room-gallery>
-            <!-- 동적으로 gallery-item이 생성됩니다 -->
-        </div>
-    </section>
+      </section>
     </main>
 
-    <!-- property.nameEn 매핑 (uppercase, 5개 span 반복) -->
-    <div class="marquee-section">
-        <div class="marquee-container">
-            <div class="marquee-text" data-marquee-property-name>
-                <!-- 동적으로 span이 생성됩니다 -->
-            </div>
-        </div>
-    </div>
+    <!-- Include ImageWithFallback script -->
+    <script src="js/image-with-fallback.js"></script>
 
-    <!-- Include ImageWithFallback script (standard-template-data.json에서만 필요) -->
-    <!-- <script src="js/image-with-fallback.js"></script> -->
+    <!-- Common JavaScript -->
+    <script src="js/common.js"></script>
 
     <!-- Image Helpers -->
     <script src="js/image-helpers.js"></script>
@@ -186,11 +272,12 @@
     <!-- Header and Footer Loader -->
     <script src="js/header-footer-loader.js"></script>
 
+    <!-- Scroll Animations -->
+    <script src="js/common/scroll-animations.js"></script>
+
+
     <!-- Page-specific script -->
     <script src="js/pages/room.js"></script>
-
-    <!-- Scroll Animations -->
-    <script src="js/scroll-animations.js"></script>
 
 </body>
 </html>

@@ -1,318 +1,528 @@
-/* ================================
-   Main Page Styles
-   ================================ */
+/* Main �t� � ��| */
 
-/* Main page specific overrides - using common hero styles */
-
-/* Main About Section - Below marquee */
-.main-about-section {
-    padding: 80px 20px;
-    min-height: 700px;
-    background: var(--color-primary);
-    text-align: center;
+/* �t� ��\ 9X */
+.page-hero-section {
     position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.main-about-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 30%;
-    background-image: url('../images/shadow1.png');
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: contain;
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: 1;
-    transform: translateX(var(--parallax-x, 0));
-    transition: transform 0.15s ease-out;
-}
-
-.main-about-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.main-about-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 30px;
-    line-height: 1.4;
-    letter-spacing: 0.02em;
-    transform: translateY(30px);
-    transition: all 1s ease;
-}
-
-.main-about-title.animate {
-    transform: translateY(0);
-}
-
-.main-about-description {
-    font-size: 1.125rem;
-    font-weight: 400;
-    color: #666;
-    line-height: 1.8;
-    letter-spacing: 0.01em;
-    transform: translateY(30px);
-    transition: all 1s ease;
-    transition-delay: 0.2s;
-}
-
-.main-about-description.animate {
-    transform: translateY(0);
-}
-
-/* Animation - Slide up from bottom */
-@keyframes slideUp {
-    from {
-            transform: translateY(30px);
-    }
-    to {
-            transform: translateY(0);
-    }
-}
-
-/* Intro Section - Dynamic blocks */
-.intro-section {
-    background: var(--color-primary);
-    padding: 100px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.intro-block {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* Reverse layout for even blocks (2nd, 4th, etc) */
-.intro-block:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.intro-block:nth-child(even) .intro-block-content {
-    text-align: left;
-}
-
-/* Last block gets extra padding bottom */
-.intro-block:last-child {
-    padding-bottom: 100px;
-}
-
-.intro-block-image {
-    position: relative;
-    width: 55%;
-    height: 500px;
-    flex-shrink: 0;
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.intro-block-image.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Even blocks - image slides from right */
-.intro-block:nth-child(even) .intro-block-image {
-    opacity: 0;
-    transform: translateX(100px);
-}
-
-.intro-block:nth-child(even) .intro-block-image.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Animation - Slide from left */
-@keyframes slideInLeft {
-    from {
-            transform: translateX(-50px);
-    }
-    to {
-            transform: translateX(0);
-    }
-}
-
-/* Animation - Slide from right */
-@keyframes slideInRight {
-    from {
-            transform: translateX(50px);
-    }
-    to {
-            transform: translateX(0);
-    }
-}
-
-/* 1px green border */
-.intro-block-image::before {
-    content: '';
+/* ��l� 0� t�� */
+.hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-secondary);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
 }
 
-/* White padding area */
-.intro-block-image::after {
-    content: '';
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 애니메이션 키프레임 */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInCenter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* �t� � (Prologue) */
+.page-title {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    background: var(--color-primary);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    opacity: 1;
+}
+
+/* page-title h1 스타일은 common.css에서 관리 */
+
+
+/* �t�� $� �Lt (index.html ��|�  �) */
+/* main-container 스타일은 common.css로 이동 */
+
+.text-content {
+    position: relative;
+    margin-bottom: 80px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* logo-line-container 스타일은 common.css로 이동됨 */
+
+.hero-content {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content .hero-title {
+    font-family: var(--font-ko-main);
+    font-size: 28px;  /* essence-title과 동일 */
+    font-weight: 700;
+    color: var(--color-secondary, #658399);
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+    display: block;
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.text-content .hero-description {
+    font-family: var(--font-ko-sub);
+    font-size: 17px;  /* essence-description과 동일 */
+    color: #666;
+    line-height: 1.8;
+    text-align: right;
+    max-width: 600px;
+    margin-left: auto;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+.hero-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 180px;
+    padding: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    /* 전체 컨테이너에 그라데이션 적용 */
+    background: linear-gradient(to bottom,
+        var(--color-primary) 0%,
+        var(--color-secondary) 50%,
+        var(--color-secondary) 100%);
+}
+
+/* 소개 블록 - 배경 제거 */
+.about-block {
+    position: relative;
+    width: 100vw;
+    margin: 0;
+    min-height: 600px;
+    opacity: 1;
+    /* 개별 블록 배경 제거 */
+    background: transparent;
+}
+
+/* 개별 블록 배경 스타일 제거 - 컨테이너 레벨에서 그라데이션 적용 */
+
+.about-block:last-child {
+    margin-bottom: 0;
+}
+
+.about-content {
+    position: relative;
+}
+
+.about-content::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100px;
+    background: var(--color-secondary);
+    opacity: 0.8;
+    position: relative;
+    left: 0;
+}
+
+/* 짝수 번째 about-block - 반대 레이아웃 */
+.about-block:nth-child(even) .about-image {
+    left: auto;
+    right: 20px;
+    transform: translateX(100px);
+}
+
+/* 짝수 블록 이미지 - 오른쪽에서 나타남 */
+.about-block:nth-child(even) .about-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-block:nth-child(even) .about-text {
+    right: auto;
+    left: 20px;
+    text-align: left;
+    transform: translateY(-50%) translateX(-100px);
+}
+
+/* 짝수 블록 텍스트 - 왼쪽에서 나타남 */
+.about-block:nth-child(even) .about-text.visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* 짝수 번째 about-text 세로줄 위치 조정 */
+.about-block:nth-child(even) .about-text::after {
+    right: auto;
+    left: 0;
+}
+
+/* 내부 컨테이너 - 최대 너비 제한 */
+.about-block-inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+    padding: 80px 20px 100px;
+}
+
+/* 세로 이미지 컨테이너 - 왼쪽에 위치 */
+.about-image {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    left: 20px;
+    top: -50px;
+    border-radius: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
     z-index: 2;
 }
 
-.intro-block-image img {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    width: calc(100% - 24px);
-    height: calc(100% - 24px);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    z-index: 3;
+/* 홀수 블록 이미지 - 왼쪽에서 나타남 */
+.about-block:nth-child(odd) .about-image.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.intro-block-content {
-    width: 45%;
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 텍스트 영역 - 우측에 위치 */
+.about-text {
+    position: absolute;
+    right: 20px;
+    top: 60%;
+    transform: translateY(-50%) translateX(100px);
+    width: 50%;
+    padding: 40px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: right;
-    padding-left: 20px;
     opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 1s ease, transform 1s ease;
-    transition-delay: 0.3s;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    z-index: 1;
 }
 
-.intro-block-content.animate {
+/* 홀수 블록 텍스트 - 오른쪽에서 나타남 */
+.about-block:nth-child(odd) .about-text.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(-50%) translateX(0);
 }
 
-/* Even blocks - content slides from left */
-.intro-block:nth-child(even) .intro-block-content {
-    opacity: 0;
-    transform: translateX(-100px);
+/* about-text 영역 우측 세로줄 */
+.about-text::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 1px;
+    height: calc(100% + 100px);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.intro-block:nth-child(even) .intro-block-content.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.intro-block-title {
-    font-size: 1.75rem;
+.about-title {
+    font-family: var(--font-ko-main);
+    font-size: 26px;
     font-weight: 700;
-    color: var(--color-secondary);
-    margin-bottom: 10px;
-    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
 }
 
-.intro-block-description {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #666;
+.about-description {
+    font-family: var(--font-ko-sub);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.8;
-    letter-spacing: 0.01em;
-    max-width: 800px;
-    margin-top: 10px;
+    margin: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+}
+
+/* 모든 블록 어두운 색상 텍스트로 통일 */
+.about-block .about-title {
+    color: var(--color-primary);
+}
+
+.about-block .about-description {
+    color: var(--color-primary);
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: normal;
+    color: white;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+    line-height: 1.6;
+    max-width: 600px;
 }
 
 
-/* Mobile Responsive */
+/* Q ��| */
+@media (max-width: 1024px) {
+    /* page-title h1은 common.css에서 관리 */
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    /* About block tablet styles */
+    .about-block-inner {
+        padding: 60px 20px 80px;
+        height: 500px;
+    }
+
+    .about-image {
+        width: 400px;
+        height: 500px;
+        left: 20px;
+        top: -30px;
+    }
+
+    .about-text {
+        width: 50%;
+        padding: 30px 40px;
+    }
+
+    .about-block:nth-child(even) .about-image {
+        right: 20px;
+    }
+
+    .about-block:nth-child(even) .about-text {
+        left: 20px;
+    }
+}
+
 @media (max-width: 768px) {
-    .hero-property-title {
-        font-size: 2.5rem;
-        bottom: 80px;
+    /* page-title h1은 common.css에서 관리 */
+
+    /* main-container 스타일은 common.css로 이동 */
+
+    .hero-text-content {
+        align-items: center;
+        text-align: center;
     }
 
-    .main-about-section {
-        padding: 60px 20px;
+    .hero-title {
+        font-size: 36px;
+        letter-spacing: 1px;
     }
 
-    .main-about-section::before {
-        width: 90%;
+    .hero-description {
+        font-size: 16px;
+        max-width: 90%;
     }
 
-    .main-about-title {
-        font-size: 1.7rem;
-    }
-
-    .main-about-description {
-        font-size: 1rem;
-    }
-
-    /* Intro Section Mobile */
-    .marquee-section {
+    /* About 블록 모바일 - 새로운 디자인 */
+    .about-content {
+        gap: 0;
         margin-top: 100px;
     }
 
-    .intro-section {
-       padding: 0px 20px 60px 20px;
+    .about-block {
+        min-height: auto;
+        padding: 80px 0;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
 
-    .intro-block {
-        flex-direction: column;
-        gap: 40px;
-        margin-top: 50px;
+    .about-block-inner {
+        height: auto;
+        padding: 0;
     }
 
-    /* 모바일에서는 row-reverse 제거 */
-    .intro-block:nth-child(even) {
-        flex-direction: column;
-    }
-
-    /* 모바일에서 짝수 번째 블록의 콘텐츠도 중앙 정렬 */
-    .intro-block:nth-child(even) .intro-block-content {
-        text-align: center;
-    }
-
-    /* 모바일에서 마지막 블록 패딩 제거 */
-    .intro-block:last-child {
-        padding-bottom: 0;
-    }
-
-    .intro-block-image {
-        width: 100%;
+    .about-block .about-image {
+        position: relative;
+        width: 90%;
         height: 350px;
+        left: auto;
+        right: auto;
+        transform: none;
+        top: 0;
+        border-radius: 0;
+        margin: 0 auto 40px;
+        display: block;
+        opacity: 1 !important;
     }
 
-    .intro-block-content {
-        width: 100%;
+    .about-text {
+        position: relative;
+        width: 90%;
+        max-width: none;
+        padding: 0;
+        margin: 0 auto;
         text-align: center;
-        padding-left: 0;
+        top: 0;
+        right: auto;
+        left: auto;
+        transform: none !important;
+        opacity: 1 !important;
     }
 
-    .intro-block-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
+    /* visible 클래스가 추가되어도 transform 제거 */
+    .about-block:nth-child(even) .about-text.visible,
+    .about-block:nth-child(odd) .about-text.visible {
+        transform: none !important;
+        opacity: 1;
     }
 
-    .intro-block-description {
-        font-size: 1rem;
+    /* 모바일에서 세로줄 숨김 */
+    .about-text::after {
+        display: none;
+    }
+
+    /* 짝수 번째 블록도 동일하게 중앙정렬 */
+    .about-block:nth-child(even) .about-image {
+        left: auto;
+        right: auto;
+        transform: none;
+        margin: 0 auto 40px;
+    }
+
+    .about-block:nth-child(even) .about-text {
+        text-align: center;
+        left: auto;
+        right: auto;
+        margin: 0 auto;
+    }
+
+    .about-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .about-description {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* page-title h1은 common.css에서 관리 */
+
+    /* main-container 스타일은 common.css로 이동 */
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    /* About 블록 480px - 새로운 디자인 */
+    .about-content {
+        gap: 0;
+        margin-top: 80px;
+    }
+
+    .about-block {
+        min-height: auto;
+        padding: 60px 0;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .about-block-inner {
+        height: auto;
+        padding: 0;
+    }
+
+    .about-block .about-image {
+        width: 90%;
+        height: 250px;
+        left: auto;
+        right: auto;
+        transform: none;
+        border-radius: 0;
+        margin: 0 auto 25px;
+        display: block;
+    }
+
+    .about-text {
+        padding: 0 20px;
+    }
+
+    .about-title {
+        font-size: 20px;
+    }
+
+    .about-description {
+        font-size: 13px;
     }
 }

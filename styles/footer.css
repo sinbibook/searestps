@@ -1,246 +1,456 @@
-/* Footer Component Styles - Converted from React */
+/* Footer Styles */
 .footer {
-    width: 100%;
-    background-color: var(--color-secondary);
-    position: relative;
-    z-index: 9998;
-    margin-top: auto;
-    padding-left: 1rem; /* px-4 */
-    padding-right: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 40px 0;
+}
+
+/* Footer stays in place - overlay mode */
+
+.footer-divider {
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    height: 1px;
+    background-color: #d4d1cd;
 }
 
 .footer-content {
-    width: 100%;
-    padding-top: 2rem; /* py-8 */
-    padding-bottom: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
 }
 
-/* Main Footer Content */
-.footer-main {
+.footer-top {
     display: flex;
-    flex-direction: column; /* flex-col */
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 1.5rem; /* mb-6 */
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
-/* Logo Section */
-.footer-logo-section {
-    width: 100%; /* w-full */
-    margin-bottom: 1.5rem; /* mb-6 */
+.footer-left-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
-.footer-logo-container {
+.footer-left-content {
+    display: flex;
+    gap: 60px;
+    width: 100%;
+    flex-direction: row;
+}
+
+.footer-menu-groups {
+    display: flex;
+    gap: 50px;
+    flex: 1;
+}
+
+.footer-menu-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
-/* Vertical Logo */
+.footer-menu-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.footer-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-menu-items a {
+    font-size: 12px;
+    color: #333;
+    opacity: 0.7;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-menu-items a:hover {
+    opacity: 1;
+}
+
+.footer-info-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 세로 중앙 정렬 추가 */
+    gap: 15px;
+}
+
+.footer-right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* 세로 중앙 정렬 추가 */
+    gap: 10px;
+}
+
 .footer-logo {
-    width: 3rem; /* w-12 */
-    height: 4rem; /* h-16 */
+    width: 140px;
+    max-width: 100%;
 }
 
-.footer-logo svg {
+.footer-logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+.footer-sub-text {
+    font-size: 14px;
+    color: var(--color-secondary);
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    height: 100%;
+    max-width: 1400px;
+    height: 1px;
+    background-color: #d4d1cd;
 }
 
 .footer-logo-image {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
+    max-width: 150px;
 }
 
-/* Logo Text Container - 별도 컨테이너로 줄바꿈 방지 */
-.footer-logo-text-container {
-    width: auto;
-    min-width: max-content; /* 텍스트 길이에 맞춰 최소 너비 설정 */
-    white-space: nowrap; /* 줄바꿈 방지 */
+.footer-logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* filter removed for PNG logo */
 }
 
 .footer-logo-text {
-    color: white;
-    font-size: 0.75rem; /* text-xs */
-    font-weight: 600;
-    text-align: left;
+    font-family: var(--font-ko-main), serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+.footer-business-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+    color: #333;
+    opacity: 0.7;
+}
+
+.footer-business-info span {
     display: block;
-    white-space: nowrap; /* 줄바꿈 방지 */
-    font-family: var(--font-ko-main);
 }
 
-/* Contact Information Section */
-.footer-contact {
-    width: 100%; /* w-full */
+.footer-phone {
+    text-align: right;
+    color: var(--color-secondary);
 }
 
-/* Business Info Grid (2x2) */
-.footer-info-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+.footer-phone-text {
+    font-family: var(--font-ko-main), serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    letter-spacing: 0.02em;
 }
 
-.footer-info-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.footer-email {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #333;
 }
 
-.footer-info-item {
-    color: white;
-    font-size: 0.75rem;
-    font-family: var(--font-ko-sub);
+/* Utility class for hiding elements */
+.is-hidden {
+    display: none !important;
 }
 
 
-/* Social Links Section */
-.footer-social-section {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+.footer-copyright {
+    text-align: center;
 }
 
+.footer-copyright p {
+    font-size: 11px;
+    color: var(--color-secondary);
+    margin: 0;
+    opacity: 0.6;
+}
+
+/* Social Section */
+.social-section {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.social-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-secondary);
+    opacity: 0.3;
+    margin-bottom: 15px;
+}
+
+/* Social Links */
 .social-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.social-link {
-    width: 2.5rem;
-    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--color-secondary);
     border-radius: 50%;
-    color: white;
+    color: var(--color-secondary);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer Social Links Styles */
+.footer-social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.footer-social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid var(--color-secondary);
+    border-radius: 50%;
+    color: var(--color-secondary);
+    opacity: 0.7;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
-.social-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.footer-social-links a:hover {
+    opacity: 1;
+    background: var(--color-secondary);
+    color: var(--color-primary);
     transform: translateY(-2px);
 }
 
-.social-link svg {
-    width: 1.25rem;
-    height: 1.25rem;
+.footer-social-links svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
 }
 
-/* Copyright Section - Full Width */
-.footer-copyright-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* border-white/20 */
-    padding-top: 1rem; /* pt-4 */
-}
-
-.footer-copyright {
-    color: white;
-    font-size: 0.75rem; /* text-xs */
-    text-align: left;
-}
-
-/* Responsive Design - sm:px-8 */
-@media (min-width: 640px) {
+/* Responsive Design */
+@media (max-width: 768px) {
     .footer {
-        padding-left: 2rem; /* sm:px-8 */
-        padding-right: 2rem;
-    }
-
-    .footer-logo {
-        width: 4rem; /* sm:w-16 */
-        height: 5rem; /* sm:h-20 */
-    }
-
-    .footer-logo-text {
-        font-size: 1rem; /* sm:text-sm */
-    }
-
-    .footer-info-item {
-        font-size: 1rem; /* sm:text-sm */
-    }
-
-    /* Small screens - 가로 배열 시작 */
-    .footer-info-row {
-        flex-direction: row;
-        gap: 1.5rem;
-    }
-
-    .footer-info-item {
-        flex: 1;
-    }
-
-    .footer-copyright {
-        font-size: 1rem; /* sm:text-sm */
-    }
-}
-
-/* Responsive Design - md:px-20 */
-@media (min-width: 768px) {
-    .footer {
-        padding-left: 5rem; /* md:px-20 */
-        padding-right: 5rem;
+        margin-left: 0;
+        padding: 40px 0;
     }
 
     .footer-content {
-        padding-top: 3rem; /* md:py-12 */
-        padding-bottom: 3rem;
+        padding: 0 20px;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
     }
 
-    .footer-main {
-        margin-bottom: 2rem; /* md:mb-8 */
+    /* 모바일 푸터 새로운 구조 */
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        order: 1;
     }
 
-    .footer-logo-section {
-        margin-bottom: 2rem; /* md:mb-8 */
+    .footer-left-content {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .footer-info-grid {
-        gap: 1rem; /* md:gap-4 */
+    /* 1. 로고와 전화번호 맨 위에 */
+    .footer-right-section {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
-    .footer-info-row {
-        gap: 2rem; /* md:gap-8 */
+    .footer-logo {
+        order: 1;
+        width: 120px;
     }
 
-    .footer-info-item,
+    .footer-phone {
+        order: 2;
+        text-align: left;
+        color: var(--color-secondary);
+    }
+
+    .footer-phone-text {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .footer-email {
+        order: 3;
+        text-align: left;
+        font-size: 13px;
+        margin-top: 5px;
+        color: #333;
+    }
+
+    /* 2. 주소와 사업자번호, 통신판매 */
+    .footer-left-section {
+        order: 2;
+        width: 100%;
+    }
+
+    .footer-info-section {
+        order: 1;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .footer-business-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-business-info span {
+        font-size: 12px;
+        color: #333;
+        line-height: 1.4;
+    }
+
+    /* 모바일 소셜 링크 스타일 */
+    .footer-social-links {
+        justify-content: center;
+        margin-top: 15px;
+        gap: 6px;
+    }
+
+    .footer-social-links a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-social-links svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* 3. 메뉴들 */
+    .footer-menu-groups {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .footer-menu-group {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-menu-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: var(--color-secondary);
+    }
+
+    .footer-menu-items {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-menu-items a {
+        font-size: 12px;
+        color: #333;
+        opacity: 0.7;
+        text-decoration: none;
+        line-height: 1.3;
+    }
+
+    .footer-menu-items a:hover {
+        color: var(--color-secondary);
+    }
+
+    /* 4. 마지막에 copyright */
     .footer-copyright {
-        font-size: 0.875rem; /* md:text-[14px] */
+        order: 3;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
     }
 
-    .footer-copyright-section {
-        padding-top: 1.5rem; /* md:pt-6 */
+    .footer-copyright p {
+        font-size: 10px;
+        color: #999;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* 기존 스타일 재정의 */
+    .footer-left {
+        flex: none;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-right {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* footer-bottom 모바일에서 숨기기 */
+    .footer-bottom {
+        display: none !important;
     }
 }
-
-/* Responsive Design - lg:px-40, lg:flex-row */
-@media (min-width: 1024px) {
-    .footer {
-        padding-left: 10rem; /* lg:px-40 */
-        padding-right: 10rem;
-    }
-
-    .footer-main {
-        flex-direction: row; /* lg:flex-row */
-    }
-
-    .footer-logo-section {
-        width: 20%; /* lg:w-2/10 */
-        margin-bottom: 0; /* lg:mb-0 */
-        padding-right: 2rem; /* lg:pr-8 */
-    }
-
-    .footer-contact {
-        width: 80%; /* lg:w-8/10 */
-    }
-
-    .footer-info-row {
-        gap: 3rem; /* lg:gap-12 */
-    }
-
-}
-

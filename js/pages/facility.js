@@ -1,129 +1,205 @@
 /**
- * Facility Page Functionality
- * 시설 페이지 슬라이더 기능
+ * Facility Hero Slider - Clean Implementation
+ * 3초마다 이미지 전환, 프로그레스바 동기화
  */
 
-// Navigation function
-function navigateToHome() {
-    window.location.href = './index.html';
-}
+// 전역 변수로 interval 관리
+window._facilityHeroSliderInterval = null;
+let isTransitioning = false;
 
-// Facility Slider Functions
-window.facilityCurrentSlide = 0;
-window.facilityTotalSlides = 1;
-
-function updateFacilitySlider() {
-    const slides = document.querySelectorAll('.facility-slide');
-    const indicators = document.querySelectorAll('.facility-indicator');
-
-    slides.forEach((slide, index) => {
-        slide.style.opacity = index === window.facilityCurrentSlide ? '1' : '0';
-    });
-
-    indicators.forEach((indicator, index) => {
-        indicator.style.background = index === window.facilityCurrentSlide ? 'white' : 'rgba(255,255,255,0.5)';
-    });
-}
-
-function nextFacilitySlide() {
-    if (window.facilityTotalSlides <= 1) return;
-
-    window.facilityCurrentSlide = (window.facilityCurrentSlide + 1) % window.facilityTotalSlides;
-    updateFacilitySlider();
-}
-
-function prevFacilitySlide() {
-    if (window.facilityTotalSlides <= 1) return;
-
-    window.facilityCurrentSlide = window.facilityCurrentSlide === 0
-        ? window.facilityTotalSlides - 1
-        : window.facilityCurrentSlide - 1;
-    updateFacilitySlider();
-}
-
-function goToFacilitySlide(index) {
-    if (index >= 0 && index < window.facilityTotalSlides) {
-        window.facilityCurrentSlide = index;
-        updateFacilitySlider();
+window.initFacilityHeroSlider = function initHeroSlider() {
+    // 기존 interval 정리
+    if (window._facilityHeroSliderInterval) {
+        clearInterval(window._facilityHeroSliderInterval);
+        window._facilityHeroSliderInterval = null;
     }
-}
 
-// Auto-play functionality (optional)
-let facilityAutoSlideTimer;
-function startFacilityAutoSlide() {
-    if (window.facilityTotalSlides <= 1) return;
+    const slider = document.querySelector('[data-hero-slider]');
+    if (!slider) return;
 
-    facilityAutoSlideTimer = setInterval(() => {
-        nextFacilitySlide();
-    }, 4000); // 4초마다 자동 슬라이드
-}
+    const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+    const currentSlideEl = document.querySelector('[data-current-slide]');
+    const totalSlidesEl = document.querySelector('[data-total-slides]');
+    const progressBar = document.querySelector('[data-hero-progress]');
+    const prevBtn = document.querySelector('.hero-nav-prev');
+    const nextBtn = document.querySelector('.hero-nav-next');
 
-function stopFacilityAutoSlide() {
-    if (facilityAutoSlideTimer) {
-        clearInterval(facilityAutoSlideTimer);
-    }
-}
+    const SLIDE_DURATION = 3000; // 3초
+    let currentIndex = 0;
 
-// Touch 슬라이드 변수
-let facilityTouchStartX = 0;
-let facilityTouchEndX = 0;
-let facilityIsTouchMove = false;
-
-// Touch 이벤트 핸들러
-function handleFacilityTouchStart(e) {
-    facilityTouchStartX = e.changedTouches[0].screenX;
-    facilityIsTouchMove = false;
-}
-
-function handleFacilityTouchMove(e) {
-    facilityIsTouchMove = true;
-}
-
-function handleFacilityTouchEnd(e) {
-    facilityTouchEndX = e.changedTouches[0].screenX;
-
-    if (!facilityIsTouchMove) return;
-
-    const threshold = 50; // 최소 스와이프 거리
-    const swipeDistance = facilityTouchStartX - facilityTouchEndX;
-
-    if (Math.abs(swipeDistance) > threshold) {
-        if (swipeDistance > 0) {
-            // 왼쪽으로 스와이프 = 다음 슬라이드
-            nextFacilitySlide();
-        } else {
-            // 오른쪽으로 스와이프 = 이전 슬라이드
-            prevFacilitySlide();
+    // 슬라이드가 없거나 1개만 있으면 중지
+    if (slides.length <= 1) {
+        if (slides.length === 1) {
+            slides[0].classList.add('active');
+            if (currentSlideEl) currentSlideEl.textContent = '01';
+            if (totalSlidesEl) totalSlidesEl.textContent = '01';
         }
+        return;
     }
-}
 
-// Mouse hover와 Touch 이벤트 설정
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize FacilityMapper (PreviewHandler가 없을 때만)
-    if (!window.previewHandler) {
-        const facilityMapper = new FacilityMapper();
-        facilityMapper.initialize().then(() => {
-            facilityMapper.setupNavigation();
-        }).catch(error => {
-            console.error('❌ FacilityMapper initialization failed:', error);
+    // 초기 설정
+    if (totalSlidesEl) {
+        totalSlidesEl.textContent = String(slides.length).padStart(2, '0');
+    }
+
+    // 슬라이드 전환 함수
+    function goToSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        // 이전 슬라이드 비활성화
+        const prevSlide = slides[currentIndex];
+        prevSlide.classList.remove('active');
+
+        // 새 슬라이드 활성화
+        currentIndex = index;
+        const newSlide = slides[currentIndex];
+        newSlide.classList.add('active');
+
+        // 새 슬라이드 줌인 시작
+        const newImg = newSlide.querySelector('img');
+        if (newImg) {
+            // 처음에 scale(1)로 설정 (트랜지션 없이)
+            newImg.style.transition = 'none';
+            newImg.style.transform = 'scale(1)';
+
+            // 다음 프레임에서 트랜지션 복원 및 줌인
+            requestAnimationFrame(() => {
+                newImg.style.transition = 'transform 3s ease-out';
+                requestAnimationFrame(() => {
+                    newImg.style.transform = 'scale(1.12)';
+                });
+            });
+        }
+
+        // 이전 슬라이드 줌 리셋 (다음 사용을 위해)
+        setTimeout(() => {
+            const prevImg = prevSlide.querySelector('img');
+            if (prevImg && prevSlide !== newSlide) {
+                prevImg.style.transition = 'none';
+                prevImg.style.transform = 'scale(1)';
+                requestAnimationFrame(() => {
+                    prevImg.style.transition = 'transform 3s ease-out';
+                });
+            }
+        }, 500);
+
+        // 숫자 업데이트
+        if (currentSlideEl) {
+            currentSlideEl.textContent = String(currentIndex + 1).padStart(2, '0');
+        }
+
+        // 프로그레스바 리셋 및 시작
+        resetProgressBar();
+
+        // 트랜지션 종료 후 플래그 리셋
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 600);
+    }
+
+    // 프로그레스바 리셋
+    function resetProgressBar() {
+        if (!progressBar) return;
+
+        // 즉시 리셋
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0';
+
+        // 다음 프레임에서 애니메이션 시작
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                progressBar.style.transition = `width ${SLIDE_DURATION}ms linear`;
+                progressBar.style.width = '100%';
+            });
         });
     }
 
-    setTimeout(() => {
-        const sliderWrapper = document.querySelector('.facility-slider-wrapper');
-        if (sliderWrapper) {
-            // Mouse 이벤트
-            sliderWrapper.addEventListener('mouseenter', stopFacilityAutoSlide);
-            sliderWrapper.addEventListener('mouseleave', startFacilityAutoSlide);
+    // 다음 슬라이드
+    function nextSlide() {
+        if (isTransitioning) return;
+        const nextIndex = (currentIndex + 1) % slides.length;
+        goToSlide(nextIndex);
+    }
 
-            // Touch 이벤트
-            sliderWrapper.addEventListener('touchstart', handleFacilityTouchStart, { passive: true });
-            sliderWrapper.addEventListener('touchmove', handleFacilityTouchMove, { passive: true });
-            sliderWrapper.addEventListener('touchend', handleFacilityTouchEnd, { passive: true });
+    // 이전 슬라이드
+    function prevSlide() {
+        if (isTransitioning) return;
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        goToSlide(prevIndex);
+    }
 
-            // 초기 auto-play 시작
-            startFacilityAutoSlide();
+    // 자동 재생 시작
+    function startAutoPlay() {
+        stopAutoPlay(); // 기존 인터벌 정리
+        window._facilityHeroSliderInterval = setInterval(nextSlide, SLIDE_DURATION);
+    }
+
+    // 자동 재생 중지
+    function stopAutoPlay() {
+        if (window._facilityHeroSliderInterval) {
+            clearInterval(window._facilityHeroSliderInterval);
+            window._facilityHeroSliderInterval = null;
         }
-    }, 1000);
+    }
+
+    // 버튼 이벤트
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (!isTransitioning) {
+                stopAutoPlay();
+                nextSlide();
+                setTimeout(() => {
+                    startAutoPlay();
+                }, 100);
+            }
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (!isTransitioning) {
+                stopAutoPlay();
+                prevSlide();
+                setTimeout(() => {
+                    startAutoPlay();
+                }, 100);
+            }
+        });
+    }
+
+    // 초기화
+    slides.forEach(slide => slide.classList.remove('active'));
+    goToSlide(0);
+    startAutoPlay();
+};
+
+// 디테일 슬라이더 (룸 디테일용)
+
+// Intersection Observer for animations
+function initAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-element:not(.animate)');
+
+    if (!animatedElements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// 페이지 로드 시 초기화
+document.addEventListener('DOMContentLoaded', () => {
+    // Hero slider는 mapper에서 이미지 로드 후 초기화됨
+    initAnimations();
 });

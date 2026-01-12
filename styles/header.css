@@ -1,602 +1,554 @@
-/* Utility Classes */
-.hidden {
-    display: none !important;
-}
-
-/* Header Component Styles */
-.header {
-    width: 100%;
-    background: transparent;
-    border: 0;
+/* ================================
+   Transparent Header
+   ================================ */
+.transparent-header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    transition: all 0.3s ease;
-    padding: 0 1rem;
-    z-index: 1000;
-    min-height: auto;
-    overflow: visible; /* mobile-menu가 header 밖으로 나갈 수 있도록 */
-}
-
-/* Scrolled header state */
-.header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Color adjustments for scrolled state */
-.header.scrolled .logo-text {
-    color: var(--color-secondary);
-}
-
-.header.scrolled .menu-item {
-    color: #374151;
-}
-
-.header.scrolled .menu-item:hover {
-    color: var(--color-primary);
-}
-
-.header.scrolled .sub-menu-item {
-    color: #374151;
-}
-
-.header.scrolled .sub-menu-item:hover {
-    color: var(--color-primary);
-}
-
-.header.scrolled .mobile-toggle {
-    color: #374151;
-}
-
-.header.scrolled .reservation-btn {
-    background: var(--color-secondary);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.header.scrolled .reservation-btn:hover {
-    background: var(--color-secondary);
-    filter: brightness(0.95);
-}
-
-.header-content {
     width: 100%;
-    padding: 1rem 0;
+    height: 80px;
+    z-index: 10000; /* Higher than menu overlay */
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
-.header-inner {
+.transparent-header.scrolled {
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.header-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 40px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Logo Component Styles - 제주 포레스트 */
-.logo-container {
+/* ================================
+   Menu Button (Right)
+   ================================ */
+.menu-toggle {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #fff;
+    border-radius: 0;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    z-index: 1002;
-    position: relative;
+    transition: all 0.3s ease;
+    z-index: 10001;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-}
-
-.logo-image {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-.logo-text {
-    color: white;
+.menu-text {
+    color: #fff;
+    font-family: var(--font-ko-main), sans-serif;
+    font-size: 0.875rem;
     font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    font-family: var(--font-ko-main);
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
 }
 
-/* Logo responsive adjustments */
-@media (max-width: 768px) {
-    .logo-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-    .logo-text {
-        font-size: 1.125rem;
-    }
+/* When scrolled */
+.transparent-header.scrolled .menu-toggle {
+    background: var(--color-secondary);
+    border-color: var(--color-primary);
 }
 
-/* Dark theme variant */
-.logo-container.dark .logo-text {
+.transparent-header.scrolled .menu-text {
     color: var(--color-primary);
 }
 
-/* Light theme variant (for headers with white/light backgrounds) */
-.logo-container.light .logo-text {
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #fff;
+}
+
+.transparent-header.scrolled .menu-toggle:hover {
+    background: var(--color-secondary);
+    opacity: 0.8;
+    border-color: var(--color-primary);
+}
+
+.menu-toggle.active .menu-text,
+body.menu-open .menu-toggle .menu-text {
     color: var(--color-primary);
 }
 
-/* Logo hover effects */
-.logo-container:hover {
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+body.menu-open .menu-toggle {
+    background: var(--color-secondary);
+    border-color: var(--color-primary);
 }
 
-/* Logo for navigation bars */
-.navbar-logo .logo-container {
-    gap: 0.5rem;
+.menu-dynamic-image {
+    border-radius: 20px;
 }
 
-.navbar-logo .logo-icon {
-    width: 36px;
-    height: 36px;
-}
-
-.navbar-logo .logo-text {
-    font-size: 1.125rem;
-}
-
-/* Logo for footer */
-.footer-logo .logo-container {
-    gap: 0.5rem;
-}
-
-.footer-logo .logo-text {
-    font-size: 1rem;
-}
-
-/* Logo animation */
-@keyframes logoFadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.logo-container.animate {
-    animation: logoFadeIn 0.5s ease-out;
-}
-
-/* Desktop Navigation */
-.desktop-nav {
-    display: none;
+/* ================================
+   Left Logo
+   ================================ */
+.header-logo {
+    cursor: pointer;
+    display: flex;
     align-items: center;
+    padding: 12px;
 }
 
-.nav-container {
-    position: relative;
-    z-index: 1001; /* Ensure submenus appear above other content */
-    transition: height 0.3s ease;
+.logo-img {
+    width: 150px;
+    height: auto;
+    /* No filter at top, dark green when scrolled */
+    filter: none;
+    transition: filter 0.3s ease;
 }
 
-.main-menu {
-    position: relative;
-    width: 448px;
-    height: 60px;
-    padding: 0;
-    margin: 0 10px;
+/* Logo image - no filter for PNG images */
+.transparent-header.scrolled .logo-img {
+    /* filter removed for PNG logo */
 }
 
-.menu-item {
-    position: absolute;
-    top: 23px;
-    color: white;
-    font-family: var(--font-en-main);
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-    z-index: 1002; /* Ensure menu items are clickable */
+/* Logo image - no filter when menu is active */
+body.menu-open .transparent-header .logo-img {
+    /* filter removed for PNG logo */
 }
 
-.menu-item:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.menu-about { left: 25px; }
-.menu-spaces { left: 131px; }
-.menu-specials { left: 238px; }
-.menu-reservation { left: 342px; }
-
-/* Sub Menus */
-.sub-menus {
-    position: absolute;
-    top: 55px;
-    left: 10px;
-    width: 423px;
-    height: 174px;
-    padding: 20px 0 15px 0;
+/* Body scroll lock when menu is open */
+body.menu-open {
     overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-out;
-    z-index: 1003;
 }
 
-.sub-menus::before {
-    content: '';
-    position: absolute;
-    top: 20px;
+/* YBS button changes when menu is active */
+body.menu-open .ybs-booking-btn {
+    border-color: #333;
+    color: #333;
+}
+
+/* Dark Sections (Gallery & Closing) - Light Header Styles */
+body.dark-section-active .transparent-header .logo-img {
+    /* filter removed for PNG logo */
+}
+
+body.dark-section-active .menu-toggle .menu-text {
+    color: var(--color-primary);
+}
+
+body.dark-section-active .menu-toggle .hamburger span {
+    background-color: var(--color-primary);
+}
+
+body.dark-section-active .ybs-booking-btn {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* ================================
+   YBS Booking Button
+   ================================ */
+.ybs-booking-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 0;
+    color: #fff;
+    font-family: var(--font-ko-main), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ybs-booking-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.booking-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.ybs-text {
+    text-transform: uppercase;
+}
+
+/* ================================
+   Full Screen Menu Overlay
+   ================================ */
+.menu-overlay {
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 20px);
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
+    height: 100vh;
+    background: var(--color-primary);
+    clip-path: circle(0px at calc(100% - 60px) 40px);
+    transition: clip-path 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 9999;
+    overflow: hidden; /* 메뉴 전체 영역 스크롤 방지 */
+    will-change: clip-path; /* GPU 가속화 힌트 */
+    transform: translateZ(0); /* 레이어 분리를 통한 성능 개선 */
+    backface-visibility: hidden; /* 깜빡임 방지 */
 }
 
-.header.scrolled .sub-menus {
-    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.1);
+.menu-overlay.active {
+    clip-path: circle(150vmax at calc(100% - 60px) 40px);
+    transition: clip-path 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* 시간 단축 */
 }
 
-.header.scrolled .sub-menus::before {
-    background: rgba(255,255,255, 0.75);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.menu-overlay-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
 }
 
-.sub-menus.show {
-    opacity: 1;
-    pointer-events: all;
+.menu-overlay-bg.active {
+    display: block;
 }
 
-.sub-menu-item {
-    position: absolute;
-    color: white;
-    font-family: var(--font-ko-sub);
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
-    transition: all 0.2s ease;
-    opacity: 0;
-    transform: translateY(-5px);
-    max-width: 128px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+/* ================================
+   Menu Close Button
+   ================================ */
+.menu-close-btn {
+    display: none; /* Hide the custom close button */
 }
 
-.sub-menus.show .sub-menu-item {
-    opacity: 1;
-    transform: translateY(0);
+/* ================================
+   Menu Content
+   ================================ */
+.menu-overlay-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0); /* 콘텐츠도 별도 레이어 */
+    will-change: transform;
 }
 
-.sub-menu-item.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.sub-menu-item:hover {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Sub menu positions - 동적으로 생성되는 메뉴는 JavaScript에서 관리 */
-/* 고정 메뉴만 CSS로 정의 */
-.sub-about-1 { left: 15px; top: 29px; }
-.sub-about-2 { left: 15px; top: 63px; }
-
-.sub-reservation-1 { left: 332px; top: 29px; }
-
-/* Desktop Reservation Buttons - Common Styles */
-.header-btn {
+/* Split Container */
+.menu-split-container {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin-top: 0.5rem;
-    font-family: var(--font-ko-sub);
+    width: 100%;
+    height: 100vh;
+    transform: translateZ(0); /* 성능 개선 */
 }
 
-.header-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+/* Left Section - Menu */
+.menu-left-section {
+    width: 50%;
+    display: flex;
+    align-items: flex-start; /* 상단 정렬 */
+    justify-content: center;
+    padding: 120px 40px 40px 40px; /* 상단 패딩 더 추가 (헤더 높이 고려) */
+    height: 100vh;
+    overflow-y: auto; /* 섹션 전체 스크롤 활성화 */
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 지원 */
+}
+
+/* Right Section - Image */
+.menu-right-section {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 40px 40px 0;
+}
+
+
+/* ================================
+   Menu Grid 2x2
+   ================================ */
+.menu-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto; /* 고정 높이 대신 콘텐츠에 맞게 자동 조절 */
+    gap: 35px 50px; /* 간격 더 줄이기 */
+    width: 100%;
+    max-width: 600px;
+    /* padding 제거하거나 줄이기 */
+}
+
+/* Menu Item */
+.menu-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 아코디언 닫힌 상태 */
+.menu-item:not(.accordion-active) .menu-item-list {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.menu-item-title {
+    font-size: 1rem; /* 폰트 크기 약간 줄이기 */
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-bottom: 15px; /* 하단 여백 줄이기 */
+    letter-spacing: 0.05em;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.menu-item-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-secondary);
+}
+
+/* 아코디언 화살표 */
+.menu-item-title::before {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+    font-size: 0.7rem;
+    color: var(--color-secondary);
+    opacity: 0.7;
+}
+
+.menu-item:not(.accordion-active) .menu-item-title::before {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+
+.menu-item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 500px; /* 아코디언 열렸을 때 최대 높이 */
+    overflow: hidden; /* 스크롤 제거 */
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.menu-item-list li {
+    margin-bottom: 8px; /* 간격 더 줄이기 */
+    line-height: 1.3; /* 라인 높이 조절 */
+}
+
+.menu-item-list a {
+    font-size: 0.9rem; /* 더 작게 */
+    font-weight: 400;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    pointer-events: auto;
+    z-index: 10;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.menu-item:hover .menu-item-list a {
+    color: #333;
+}
+
+.menu-item-list a:hover {
+    color: #000;
+    transform: translateX(5px);
+}
+
+
+/* ================================
+   Menu Image Container
+   ================================ */
+.menu-image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.menu-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover ~ .menu-right-section .menu-image-container img {
     transform: scale(1.05);
 }
 
-.header-btn:active {
-    transform: scale(0.95);
+/* Custom scrollbar for menu-left-section */
+.menu-left-section::-webkit-scrollbar {
+    width: 6px;
 }
 
-.header.scrolled .header-btn {
-    background: var(--color-secondary);
-    border: 1px solid var(--color-primary);
+.menu-left-section::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
 }
 
-.header.scrolled .header-btn:hover {
-    background: var(--color-secondary);
-    filter: brightness(0.95);
+.menu-left-section::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
 }
 
-/* YBS Button - Unique Styles */
-.ybs-btn {
-    margin-right: 0.5rem;
+.menu-left-section::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 
-/* Mobile Menu Toggle */
-.mobile-toggle {
-    display: block;
-    color: white;
-    padding: 0.5rem;
-    z-index: 1002;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-}
-
-.mobile-toggle:active {
-    transform: scale(0.95);
-}
-
-.mobile-toggle .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-/* Mobile Menu */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--color-primary);
-    backdrop-filter: blur(12px);
-    z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-/* Mobile Menu Header */
-.mobile-menu-header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: var(--color-secondary);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 10;
-}
-
-.mobile-property-name {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0.025em;
-}
-
-/* Mobile Menu Close Button */
-.mobile-menu-close {
-    color: #374151;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-}
-
-.mobile-menu-close:active {
-    transform: scale(0.95);
-}
-
-.mobile-menu-close .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.mobile-menu.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Scrollable Menu Content */
-.mobile-menu-content {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1.5rem;
-    -webkit-overflow-scrolling: touch;
-}
-
-.mobile-menu-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 32rem;
-    margin: 0 auto;
-    padding-bottom: 2rem;
-}
-
-.mobile-menu-section {
-    text-align: center;
-}
-
-.mobile-menu-title {
-    color: #374151;
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 0.5rem;
-}
-
-.mobile-sub-items {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.mobile-sub-item {
-    color: #6b7280;
-    font-size: 0.875rem;
-    font-family: var(--font-ko-sub);
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color 0.2s ease;
-    background: transparent;
-    border: none;
-}
-
-.mobile-sub-item:hover {
-    color: #374151;
-}
-
-/* Mobile Reservation Buttons Container */
-.mobile-reservation-buttons {
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1.5rem;
-    background: var(--color-secondary);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 10;
-}
-
-/* Mobile Reservation Buttons - Common Styles */
-.mobile-header-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 1rem;
-    flex: 0 0 auto;
-    font-family: var(--font-ko-sub);
-}
-
-.mobile-header-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Icon styles */
-.icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    stroke: currentColor;
-    stroke-width: 2;
-    fill: none;
-}
-
-/* Responsive design */
-@media (min-width: 640px) {
-    .header {
-        padding: 0 2rem;
+/* ================================
+   Mobile Responsive
+   ================================ */
+/* ================================
+   Mobile Responsive
+   ================================ */
+@media (max-width: 768px) {
+    /* 모바일에서도 헤더 표시 */
+    .transparent-header {
+        background: transparent !important;
+        display: block !important;
     }
-    .mobile-menu-grid {
-        gap: 3rem;
+
+    .header-container {
+        padding: 0 20px;
+        justify-content: space-between;
+        display: flex !important;
+        width: 100vw;
     }
-    .mobile-menu-title {
+
+    .header-logo {
+        display: flex !important;
+        align-items: center;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .logo-img {
+        display: block !important;
+        width: 120px !important;
+        height: auto !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        width: auto;
+        height: auto;
+        padding: 8px 16px;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .menu-text {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .ybs-booking-btn {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+    }
+
+    .booking-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* 메뉴 오버레이 모바일에서 정상 작동 */
+    .menu-overlay {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .menu-overlay.active {
+        clip-path: circle(150vmax at calc(100% - 60px) 40px) !important;
+    }
+
+    /* Mobile menu layout */
+    .menu-split-container {
+        flex-direction: column;
+    }
+
+    .menu-left-section {
+        width: 100%;
+        padding: 100px 30px 30px 20px;
+        height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 지원 */
+    }
+    
+    .menu-right-section {
+        display: none; /* Hide image on mobile */
+    }
+
+    .menu-grid-2x2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    .menu-close-btn {
+        top: 20px;
+        left: 20px;
+    }
+
+    .menu-item-title {
         font-size: 1.25rem;
     }
-    .mobile-sub-item {
-        font-size: 1rem;
-        padding: 0.75rem;
+
+    .menu-item-list a {
+        font-size: 0.9375rem;
     }
-    .mobile-header-btn {
-        padding: 0.75rem 2rem;
-        font-size: 1.125rem;
-    }
-}
 
-/* Fixed Mobile Booking Button */
-.fixed-mobile-booking-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    border: none;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 999;
-}
-
-.fixed-mobile-booking-btn:active {
-    transform: scale(0.95);
-}
-
-.fixed-mobile-booking-btn .icon {
-    width: 30px;
-    height: 30px;
-    stroke: #666;
-    stroke-width: 2;
-    fill: none;
-}
-
-/* Show only on mobile */
-@media (max-width: 1023px) {
-    .fixed-mobile-booking-btn {
-        display: flex !important;
-    }
-}
-
-@media (min-width: 768px) {
-    .header {
-        padding: 0 5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .header {
-        padding: 0 10rem;
-    }
-    .desktop-nav {
+    /* Mobile Bottom Booking Buttons */
+    .mobile-booking-buttons {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
         display: flex;
-    }
-    .mobile-toggle {
+        justify-content: space-between;
+        gap: 10px;
+        z-index: 1002;
         display: none;
     }
-    .mobile-menu {
-        display: none !important;
+
+    .menu-overlay.active .mobile-booking-buttons {
+        display: flex;
     }
-    .fixed-mobile-booking-btn {
-        display: none !important;
+
+    .mobile-booking-btn {
+        flex: 1;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #fff;
+        border-radius: 0;
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-booking-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-content-bottom {
+        display: none;
     }
 }

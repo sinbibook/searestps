@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.20.0",
-    "generatedAt": "2026-01-12T08:57:38.985Z",
+    "version": "1.21.0",
+    "generatedAt": "2026-01-12T09:02:03.219Z",
     "templateType": "full_banner_wipe",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -78,7 +78,7 @@
         "name": "오션뷰",
         "description": "전 객실 동해바다 정면 오션뷰",
         "usageGuide": "전 객실 동해바다와 정면 오션뷰이며, \n간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.\n\n출렁이는 파도와 황홀한 일출은 물론 \n바다낚시, 스노쿨링, 바다수영, 바다갯바위산책, 고동보발바다체험등 아름다운 감성과 추억을 선사합니다.",
-        "displayOrder": 18,
+        "displayOrder": 4,
         "images": [
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865264-idgbpr7qkq.jpg",
@@ -108,43 +108,82 @@
       },
       {
         "id": "9409a2c3-4b8a-4b02-8744-a30e116185c0",
-        "name": "실내외 풀빌라 & 스파 ",
-        "description": "객실 내 개별적으로 이용 가능한 실내/외 풀빌라와 스파가 마련되어 있습니다. \n(객실 별 시설 상이)",
-        "usageGuide": "[개별 풀빌라]\n-  미온수 온도 30~33도 유지 \n-  수영장 미온수 이용 시 입실 하루 전 신청 필수\n1. 301호 실외수영장 \n- 크기 : 7m˟2m˟1.2m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 1월~3월말까지 이용 불가\n2. 201호 실내수영장 (사계절 이용 가능)\n- 크기 : 6.0m˟2m˟1.0m\n- 미온수 요금 : 5만원(현장결제) \n3. 201호 실외수영장 \n- 크기 : 7m˟2m˟1.1m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 12월~3월말까지 이용 불가\n\n[스파]\n- 101호 실내스파, 201호 301호 노천스파\n- 이용 시간: 15시~22시까지\n- 이용 요금: 무료\n\n※ 실외수영장 및 스파는 기상 상황에 따라 이용이 불가할 수 있습니다.",
-        "displayOrder": 19,
+        "name": "개별 풀빌라",
+        "description": "객실 내 개별 수영장이 있습니다. (201호, 301호)",
+        "usageGuide": "[개별 풀빌라]\n-  미온수 온도 30~33도 유지 \n-  수영장 미온수 이용 시 입실 하루 전 신청 필수\n1. 301호 실외수영장 \n- 크기 : 7m˟2m˟1.2m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 1월~3월말까지 이용 불가\n2. 201호 실내수영장 (사계절 이용 가능)\n- 크기 : 6.0m˟2m˟1.0m\n- 미온수 요금 : 5만원(현장결제) \n3. 201호 실외수영장 \n- 크기 : 7m˟2m˟1.1m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 12월~3월말까지 이용 불가\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.",
+        "displayOrder": 18,
         "images": [
           {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866966-tmqj722pd4d.jpg",
-            "sortOrder": 4,
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866966-smrvcnz8boi.jpg",
+            "sortOrder": 1,
             "description": "",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866966-jyig7k5kcai.jpg",
-            "sortOrder": 3,
-            "description": "",
-            "isSelected": true
-          },
-          {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866966-smrvcnz8boi.jpg",
             "sortOrder": 2,
             "description": "",
             "isSelected": true
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866966-yilv8qruaa.jpg",
-            "sortOrder": 1,
+            "sortOrder": 3,
             "description": "",
             "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866966-tmqj722pd4d.jpg",
+            "sortOrder": 4,
+            "description": "",
+            "isSelected": false
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866967-uryn8spb7or.jpg",
             "sortOrder": 5,
             "description": "",
-            "isSelected": true
+            "isSelected": false
           },
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/9409a2c3-4b8a-4b02-8744-a30e116185c0/main/1764119866965-1ynhyoyje7jj.jpg",
+            "sortOrder": 0,
+            "description": "",
+            "isSelected": true
+          }
+        ]
+      },
+      {
+        "id": "d15262fc-3172-4e22-a3d0-5f669e08ebd2",
+        "name": "스파",
+        "description": "개별 스파에서 피로를 풀어보세요. ",
+        "usageGuide": "[스파]\n- 101호 실내스파, 201호 301호 노천스파\n- 이용 시간: 15시~22시까지\n- 이용 요금: 무료\n\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.",
+        "displayOrder": 19,
+        "images": [
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/d15262fc-3172-4e22-a3d0-5f669e08ebd2/main/1768208484784-3y8w1o9135j.jpg",
+            "sortOrder": 2,
+            "description": "",
+            "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/d15262fc-3172-4e22-a3d0-5f669e08ebd2/main/1768208484784-r5y611e8joi.jpg",
+            "sortOrder": 1,
+            "description": "",
+            "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/d15262fc-3172-4e22-a3d0-5f669e08ebd2/main/1768208484784-q1fe54z42y.jpg",
+            "sortOrder": 3,
+            "description": "",
+            "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/d15262fc-3172-4e22-a3d0-5f669e08ebd2/main/1768208484784-92b5yew1p2f.jpg",
+            "sortOrder": 4,
+            "description": "",
+            "isSelected": true
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/d15262fc-3172-4e22-a3d0-5f669e08ebd2/main/1768208484784-9mss0rqe9il.jpg",
             "sortOrder": 0,
             "description": "",
             "isSelected": true
@@ -216,16 +255,16 @@
             "isSelected": true
           },
           {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870308-du21c5hls58.jpg",
-            "sortOrder": 1,
-            "description": "",
-            "isSelected": true
-          },
-          {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870309-k5e1xjgush.jpg",
             "sortOrder": 5,
             "description": "",
             "isSelected": false
+          },
+          {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870308-du21c5hls58.jpg",
+            "sortOrder": 1,
+            "description": "",
+            "isSelected": true
           }
         ]
       }

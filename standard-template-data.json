@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.12.0",
-    "generatedAt": "2026-01-12T03:17:08.055Z",
+    "version": "1.13.0",
+    "generatedAt": "2026-01-12T08:36:50.557Z",
     "templateType": "fullpage_scroll",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -960,7 +960,7 @@
   ],
   "homepage": {
     "domain": "searestps.kr",
-    "templateType": "fullpage_scroll",
+    "templateType": "full_banner_wipe",
     "images": [
       {
         "logo": [
@@ -1289,24 +1289,21 @@
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1768186331493-9vtg6hsoxae.jpg",
                       "sortOrder": 0,
                       "description": "",
-                      "isSelected": true,
-                      "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
+                      "isSelected": true
                     },
                     {
                       "id": "68825c9a-c6f2-4132-9ef2-b84719500446",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223967000-d84unf1b7lw.jpg",
                       "sortOrder": 1,
                       "description": "",
-                      "isSelected": true,
-                      "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
+                      "isSelected": true
                     },
                     {
                       "id": "89f08008-8c82-473d-8fd2-c11abc7bb0e8",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223966999-9cmaziotmy5.jpg",
                       "sortOrder": 2,
                       "description": "",
-                      "isSelected": false,
-                      "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
+                      "isSelected": true
                     }
                   ],
                   "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67",
@@ -1377,9 +1374,9 @@
                   "images": []
                 },
                 "experience": {
+                  "benefits": [],
                   "features": [],
-                  "additionalInfos": [],
-                  "benefits": []
+                  "additionalInfos": []
                 }
               }
             ]
@@ -1397,9 +1394,9 @@
                   "images": []
                 },
                 "experience": {
+                  "benefits": [],
                   "features": [],
-                  "additionalInfos": [],
-                  "benefits": []
+                  "additionalInfos": []
                 }
               }
             ]
@@ -1417,9 +1414,9 @@
                   "images": []
                 },
                 "experience": {
+                  "benefits": [],
                   "features": [],
-                  "additionalInfos": [],
-                  "benefits": []
+                  "additionalInfos": []
                 }
               }
             ]
@@ -1437,9 +1434,9 @@
                   "images": []
                 },
                 "experience": {
+                  "benefits": [],
                   "features": [],
-                  "additionalInfos": [],
-                  "benefits": []
+                  "additionalInfos": []
                 }
               }
             ]
@@ -1493,7 +1490,12 @@
       },
       "theme": {
         "font": {
-          "koSub": null,
+          "koSub": {
+            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
+            "key": "pretendard",
+            "woff2": null,
+            "family": "Pretendard"
+          },
           "enMain": {
             "cdn": "https://fonts.cdnfonts.com/css/gloock-2",
             "key": "gloock",
@@ -1514,7 +1516,25 @@
       },
       "popup": {
         "popups": []
-      }
-    }
+      },
+      "property": {
+        "images": []
+      },
+      "roomtypes": [
+        {
+          "id": "c48616db-df5f-48c7-b255-b1a89b26be75",
+          "images": []
+        },
+        {
+          "id": "9cf38076-db69-4b69-a99c-70ff9694266d",
+          "images": []
+        },
+        {
+          "id": "6505d61c-c867-456f-a90c-958317560205",
+          "images": []
+        }
+      ]
+    },
+    "id": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
   }
 }

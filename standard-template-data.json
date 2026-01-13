@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.21.0",
-    "generatedAt": "2026-01-12T09:02:03.219Z",
+    "version": "1.22.0",
+    "generatedAt": "2026-01-13T08:05:35.219Z",
     "templateType": "full_banner_wipe",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1632,7 +1632,8 @@
             "isSelected": true,
             "category": "property_exterior"
           }
-        ]
+        ],
+        "nameEn": "Searest Pool Villa"
       },
       "roomtypes": [
         {

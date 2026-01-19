@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.23.0",
-    "generatedAt": "2026-01-16T04:02:04.476Z",
+    "version": "1.24.0",
+    "generatedAt": "2026-01-19T07:57:34.901Z",
     "templateType": "full_banner_wipe",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -16,8 +16,8 @@
     "longitude": 129.378030880882,
     "contactPhone": "010-4222-7400",
     "contactEmail": "555@naver.com",
-    "checkin": "15:00:00",
-    "checkout": "11:00:00",
+    "checkin": "15:00",
+    "checkout": "11:00",
     "checkInOutInfo": "[입/퇴실 안내]\n - 입실시각: 15시\n - 퇴실시각: 11시\n ※ 22시 이후 입실 시 사전 문의 부탁드립니다.",
     "usageGuide": "[펜션 이용 안내 사항]\n1. 전 객실 금연입니다\n2. 예약 인원에서 인원이 추가되는 경우 펜션에 미리 연락을 주시기 바랍니다.\n※ 펜션의 객실요금은 각 객실의 기준인원이 이용할 수 있는 요금입니다.\n기준인원이 넘어가는 추가인원에 대한 비용은 별도 지불하셔야 합니다. 최대 인원 초과 시 펜션에 사전문의 바랍니다.\n\n[입/퇴실 안내]\n - 입실시각: 15시\n - 퇴실시각: 11시\n ※ 22시 이후 입실 시 사전 문의 부탁드립니다.\n\n[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.\n\n[개별바베큐]\n각 객실 개별테라스 바베큐\n-숯+그릴대여 비용 : 2~4인기준 3만원 / 숯 추가시 5천원 (현장결제)\n※우천 및 동계 시 사용 가능\n※펜션 내 개인 가스버너, 부탄가스 반입금지입니다.\n\n[개별 풀빌라]\n- 온도: 미온수 30℃~33℃\n※ 미온수 이용 시 입실 하루 전 신청 필수\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.\n\n1. 301호 실외수영장 \n- 크기 : 7m˟2m˟1.2m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 1월~3월말까지 이용 불가\n2. 201호 실내수영장 (사계절 이용 가능)\n- 크기 : 6.0m˟2m˟1.0m\n- 미온수 요금 : 5만원(현장결제) \n3. 201호 실외수영장 \n- 크기 : 7m˟2m˟1.1m\n- 미온수 요금 : 9만원(현장결제) \n- 동절기 12월~3월말까지 이용 불가\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.\n\n[스파]\n- 101호 실내스파, 201호 301호 노천스파\n- 이용 시간: 15시~22시까지\n- 이용 요금: 무료\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.\n\n[ 바다 수영 / 스노쿨링 ]\n-101호 객실의 경우 바로 앞 바다에서 야외 수영가능\n※ 6월~9월 101호 예약손님 께 스노쿨링+구명조끼 2세트\n2시간 무료대여 서비스 (몸무게100kg이하)\n\n[서비스]\n- 객실 와이파이 이용 가능 \n- OTT 이용가능 (개인계정)\n- 전 객실  메모리폼 매트리스 , 직수 정수기 구비\n- 가져오신 짐은 2층까지 기계로 내려드립니다.\n\n[주차장]\n- 주차장은 3층과 가까우며, 1층은 계단으로 내려가야합니다.\n* 엘리베이터가 없으므로 몸이 불편하신분들은 3층 객실을 추천드립니다",
     "reservationGuide": "미성년자는 보호자 없이 예약 및 입실 불가하며, 위반 시 환불 없이 퇴실됩니다.\n객실 요금은 기준 인원 기준이며, 초과 시 추가 요금이 발생합니다.\n최대 인원 초과 시 입실 불가하며, 이로 인한 환불은 불가입니다. (유아, 어린이 포함)\n현장 추가 요금은 숙소 측에 사전 확인 바랍니다.\n수영장 등 부대시설은 날씨나 상황에 따라 이용이 제한될 수 있으니 사전 확인 바랍니다.\n당일 예약 후 취소 시 환불 불가하며, 늦은 시간 당일 예약 후 즉시 방문 시 입실 불가할 수 있으니 숙소 확인 후 예약해 주세요.\n취소 수수료는 구매처마다 다를 수 있습니다.\n시스템 오류로 인해 정상가와 다른 금액으로 예약이 진행된 경우, 부득이하게 예약이 취소될 수 있습니다.\n전 객실 금연이며, 흡연은 지정된 장소에서만 가능합니다.",
@@ -81,14 +81,14 @@
         "displayOrder": 4,
         "images": [
           {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865264-idgbpr7qkq.jpg",
-            "sortOrder": 3,
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865261-k2bg75t9f0o.jpg",
+            "sortOrder": 0,
             "description": "",
             "isSelected": true
           },
           {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865261-k2bg75t9f0o.jpg",
-            "sortOrder": 0,
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865263-dj1bg3ewnwm.jpg",
+            "sortOrder": 1,
             "description": "",
             "isSelected": true
           },
@@ -99,8 +99,8 @@
             "isSelected": true
           },
           {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865263-dj1bg3ewnwm.jpg",
-            "sortOrder": 1,
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865264-idgbpr7qkq.jpg",
+            "sortOrder": 3,
             "description": "",
             "isSelected": true
           }
@@ -198,8 +198,8 @@
         "displayOrder": 20,
         "images": [
           {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/7f569fd4-9581-4f02-8a86-b499fbdcc6a3/main/1764119869025-02o29cuu7zqy.jpg",
-            "sortOrder": 3,
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/7f569fd4-9581-4f02-8a86-b499fbdcc6a3/main/1764119869024-zfv8z9nanir.jpg",
+            "sortOrder": 0,
             "description": "",
             "isSelected": true
           },
@@ -210,8 +210,8 @@
             "isSelected": true
           },
           {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/7f569fd4-9581-4f02-8a86-b499fbdcc6a3/main/1764119869024-zfv8z9nanir.jpg",
-            "sortOrder": 0,
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/7f569fd4-9581-4f02-8a86-b499fbdcc6a3/main/1764119869025-02o29cuu7zqy.jpg",
+            "sortOrder": 3,
             "description": "",
             "isSelected": true
           },
@@ -231,6 +231,12 @@
         "displayOrder": 21,
         "images": [
           {
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870308-0ci4p7v3oisf.jpg",
+            "sortOrder": 0,
+            "description": "",
+            "isSelected": true
+          },
+          {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870308-k83a245w32i.jpg",
             "sortOrder": 2,
             "description": "",
@@ -239,12 +245,6 @@
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870308-crxjpc5klzh.jpg",
             "sortOrder": 4,
-            "description": "",
-            "isSelected": true
-          },
-          {
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870308-0ci4p7v3oisf.jpg",
-            "sortOrder": 0,
             "description": "",
             "isSelected": true
           },
@@ -814,7 +814,8 @@
         "livingRoom": 0
       },
       "bedTypes": [
-        "퀸 베드"
+        "퀸 베드",
+        "소파베드"
       ],
       "amenities": [
         "무료 WiFi",

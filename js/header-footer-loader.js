@@ -81,7 +81,7 @@
             // Load header JavaScript
             const script = document.createElement('script');
             script.src = 'js/common/header.js';
-            script.onload = function() {
+            script.onload = async function() {
                 // Remove any inline onclick handlers and set up proper event listener
                 setTimeout(() => {
                     const hamburgerButton = document.getElementById('hamburger-button');
@@ -106,7 +106,7 @@
 
                 // Mark header as loaded after script is fully loaded
                 headerLoaded = true;
-                tryInitializeMapper();
+                await tryInitializeMapper();
             };
             document.body.appendChild(script);
 
@@ -157,7 +157,7 @@
 
                 // Mark footer as loaded and try to initialize mapper
                 footerLoaded = true;
-                tryInitializeMapper();
+                await tryInitializeMapper();
             }
         } catch (error) {
             console.error('Error loading footer:', error);

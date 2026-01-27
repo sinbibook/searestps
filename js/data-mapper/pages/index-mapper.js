@@ -427,6 +427,14 @@ class IndexMapper extends BaseDataMapper {
                     sliderContainer.appendChild(itemDiv);
                 }
             }
+
+            // 동적 생성된 gallery-item에 애니메이션 클래스 추가
+            setTimeout(() => {
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.classList.add('animate-fade-in');
+                });
+            }, 100);
+
             return;
         }
 
@@ -459,6 +467,13 @@ class IndexMapper extends BaseDataMapper {
             itemDiv.appendChild(descriptionSpan);
             sliderContainer.appendChild(itemDiv);
         }
+
+        // 동적 생성된 gallery-item에 애니메이션 클래스 추가
+        setTimeout(() => {
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.classList.add('animate-fade-in');
+            });
+        }, 100);
     }
 
     // ============================================================================
@@ -526,6 +541,13 @@ class IndexMapper extends BaseDataMapper {
 
             roomsContainer.appendChild(roomItem);
         });
+
+        // 동적 생성된 room-item에 애니메이션 클래스 추가
+        setTimeout(() => {
+            document.querySelectorAll('.room-item').forEach(item => {
+                item.classList.add('animate-fade-in');
+            });
+        }, 100);
 
         // 드래그 스크롤 기능 추가
         this.addDragScrollToRooms(roomsContainer);

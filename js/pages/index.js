@@ -584,9 +584,30 @@
     let scrollAnimations;
 
     function initScrollAnimations() {
+        // ScrollAnimations 클래스가 로드될 때까지 더 안정적으로 대기
         if (typeof ScrollAnimations === 'undefined') {
-            setTimeout(initScrollAnimations, 100);
+            // 최대 5초까지 대기하되, 100ms마다 체크
+            let attempts = 0;
+            const maxAttempts = 50; // 5초
+
+            const checkInterval = setInterval(() => {
+                attempts++;
+                if (typeof ScrollAnimations !== 'undefined') {
+                    clearInterval(checkInterval);
+                    initScrollAnimations();
+                } else if (attempts >= maxAttempts) {
+                    clearInterval(checkInterval);
+                    console.warn('ScrollAnimations class not loaded, using fallback');
+                    // ScrollAnimations가 로드되지 않았을 때 수동으로 애니메이션 클래스 추가
+                    initFallbackAnimations();
+                }
+            }, 100);
             return;
+        }
+
+        // 기존 observer 파괴
+        if (scrollAnimations && typeof scrollAnimations.destroy === 'function') {
+            scrollAnimations.destroy();
         }
 
         scrollAnimations = new ScrollAnimations({
@@ -681,11 +702,7 @@
                     selector: '.rooms-title',
                     options: { delay: 0 }
                 },
-                {
-                    type: 'fadeIn',
-                    selector: '.room-item',
-                    options: { delay: 300 }
-                },
+                // room-item은 스크롤 애니메이션 제거 - 항상 보이도록 설정
                 // Gallery 섹션: 섹션 타이틀은 오른쪽에서, 제목/설명은 위로, 이미지들은 하나씩 페이드인
                 {
                     type: 'slideLeft',
@@ -702,31 +719,7 @@
                     selector: '.gallery-description',
                     options: { delay: 400 }
                 },
-                {
-                    type: 'slideLeft',
-                    selector: '.gallery-item:nth-child(1)',
-                    options: { delay: 600 }
-                },
-                {
-                    type: 'slideRight',
-                    selector: '.gallery-item:nth-child(2)',
-                    options: { delay: 750 }
-                },
-                {
-                    type: 'slideLeft',
-                    selector: '.gallery-item:nth-child(3)',
-                    options: { delay: 900 }
-                },
-                {
-                    type: 'slideRight',
-                    selector: '.gallery-item:nth-child(4)',
-                    options: { delay: 1050 }
-                },
-                {
-                    type: 'slideLeft',
-                    selector: '.gallery-item:nth-child(5)',
-                    options: { delay: 1200 }
-                },
+                // gallery-item들도 스크롤 애니메이션 제거 - 항상 보이도록 설정
                 // 클로징 영역: 타이틀, 설명, 버튼이 순차적으로 아래에서 위로 등장
                 {
                     type: 'slideUp',
@@ -749,6 +742,49 @@
         scrollAnimations.registerAnimations(animations);
     }
 
+    // ScrollAnimations 클래스가 로드되지 않았을 때의 대체 애니메이션
+    function initFallbackAnimations() {
+        console.log('Using fallback animations for index page');
+
+        // 스크롤 애니메이션이 필요한 요소들만 관리 (room-item, gallery-item 제외)
+        const elementsToAnimate = [
+            { selector: '.rooms-title', className: 'animate-slide-right' },
+            { selector: '.gallery-section-title', className: 'animate-slide-left' },
+            { selector: '.gallery-title', className: 'animate-slide-up' },
+            { selector: '.gallery-description', className: 'animate-slide-up' }
+        ];
+
+        // Intersection Observer 지원 여부 확인
+        if (!window.IntersectionObserver) {
+            // IntersectionObserver가 지원되지 않으면 모든 요소를 즉시 표시
+            elementsToAnimate.forEach(item => {
+                const elements = document.querySelectorAll(item.selector);
+                elements.forEach(el => el.classList.add(item.className));
+            });
+            return;
+        }
+
+        // 각 요소 타입별로 Observer 생성
+        elementsToAnimate.forEach(item => {
+            const elements = document.querySelectorAll(item.selector);
+            if (elements.length === 0) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(item.className);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    }
+
     // Initialize all components when DOM is loaded
     let isInitialized = false;
 
@@ -767,9 +803,10 @@
         initScrollAnimations();
     }
 
-    // 전역 노출 (preview-handler에서 사용)
+    // 전역 노출 (preview-handler와 mapper에서 사용)
     window.initHeroSlider = initHeroSlider;
     window.initEssenceSlider = initEssenceSlider;
+    window.initScrollAnimations = initScrollAnimations;
 
     // Try multiple initialization strategies for better compatibility
     if (document.readyState === 'loading') {

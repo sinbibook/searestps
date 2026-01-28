@@ -69,8 +69,51 @@ class IndexMapper extends BaseDataMapper {
         setTimeout(() => {
             if (typeof window.initScrollAnimations === 'function') {
                 window.initScrollAnimations();
+            } else {
+                // initScrollAnimations 함수가 없으면 직접 애니메이션 등록
+                this.initDirectAnimations();
             }
         }, 200);
+    }
+
+    /**
+     * 직접적인 애니메이션 등록 (fallback)
+     */
+    initDirectAnimations() {
+        console.log('Index Mapper: Using direct animations');
+
+        const animationPairs = [
+            { selector: '.room-item', className: 'animate-fade-in' },
+            { selector: '.gallery-item', className: 'animate-fade-in' },
+            { selector: '.rooms-title', className: 'animate-slide-right' },
+            { selector: '.gallery-section-title', className: 'animate-slide-left' },
+            { selector: '.gallery-title', className: 'animate-slide-up' },
+            { selector: '.gallery-description', className: 'animate-slide-up' }
+        ];
+
+        if (typeof IntersectionObserver !== 'undefined') {
+            animationPairs.forEach(pair => {
+                const elements = document.querySelectorAll(pair.selector);
+                elements.forEach(element => {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add(pair.className);
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+                    observer.observe(element);
+                });
+            });
+        } else {
+            // IntersectionObserver가 지원되지 않으면 즉시 애니메이션 클래스 추가
+            animationPairs.forEach(pair => {
+                const elements = document.querySelectorAll(pair.selector);
+                elements.forEach(el => el.classList.add(pair.className));
+            });
+        }
     }
 
     // ============================================================================
@@ -427,14 +470,6 @@ class IndexMapper extends BaseDataMapper {
                     sliderContainer.appendChild(itemDiv);
                 }
             }
-
-            // 동적 생성된 gallery-item에 애니메이션 클래스 추가
-            setTimeout(() => {
-                document.querySelectorAll('.gallery-item').forEach(item => {
-                    item.classList.add('animate-fade-in');
-                });
-            }, 100);
-
             return;
         }
 
@@ -467,13 +502,6 @@ class IndexMapper extends BaseDataMapper {
             itemDiv.appendChild(descriptionSpan);
             sliderContainer.appendChild(itemDiv);
         }
-
-        // 동적 생성된 gallery-item에 애니메이션 클래스 추가
-        setTimeout(() => {
-            document.querySelectorAll('.gallery-item').forEach(item => {
-                item.classList.add('animate-fade-in');
-            });
-        }, 100);
     }
 
     // ============================================================================
@@ -541,13 +569,6 @@ class IndexMapper extends BaseDataMapper {
 
             roomsContainer.appendChild(roomItem);
         });
-
-        // 동적 생성된 room-item에 애니메이션 클래스 추가
-        setTimeout(() => {
-            document.querySelectorAll('.room-item').forEach(item => {
-                item.classList.add('animate-fade-in');
-            });
-        }, 100);
 
         // 드래그 스크롤 기능 추가
         this.addDragScrollToRooms(roomsContainer);

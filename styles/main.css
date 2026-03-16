@@ -369,6 +369,10 @@
 }
 
 @media (max-width: 768px) {
+    .page-hero-section {
+        height: 70vh;
+    }
+
     /* page-title h1은 common.css에서 관리 */
 
     /* main-container 스타일은 common.css로 이동 */

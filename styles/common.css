@@ -686,7 +686,7 @@ p,
 /* Property Name 공통 스타일 - index.html과 main.html */
 .hero-property-name,
 .logo-text-line {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-weight: normal;
     margin: 0;
     line-height: 1.2;
@@ -701,6 +701,9 @@ p,
     margin: 0 0 20px 0;
     display: inline-block;
     letter-spacing: 4px;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.1;
 }
 
 /* main.html logo line용 */
@@ -723,6 +726,8 @@ p,
 @media (max-width: 768px) {
     .hero-property-name {
         font-size: 48px;
+        letter-spacing: 2px;
+        line-height: 1.2;
     }
 
     .logo-text-line {
@@ -732,7 +737,9 @@ p,
 
 @media (max-width: 480px) {
     .hero-property-name {
-        font-size: 32px;
+        font-size: 36px;
+        letter-spacing: 1px;
+        line-height: 1.6;
     }
 
     .logo-text-line {
@@ -895,7 +902,7 @@ p,
 }
 
 .page-title h1 {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 80px;
     font-weight: normal;
     color: transparent;  /* 타이핑 효과를 위해 transparent로 변경 */
@@ -964,6 +971,10 @@ p,
 }
 
 @media (max-width: 768px) {
+    .page-hero-section {
+        height: 70vh;
+    }
+
     .main-container {
         padding: 40px 20px 0px 20px;
     }
@@ -1023,7 +1034,7 @@ p,
     left: 150px;
     font-size: 30px;
     font-weight: bold;
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     letter-spacing: 5px;
     color: white;
     writing-mode: vertical-rl;

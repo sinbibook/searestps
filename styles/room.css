@@ -453,7 +453,7 @@
    ROOM INFORMATION SECTION
    ======================================== */
 .room-info-title-styled {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 42px;
     font-weight: normal;
     color: var(--color-secondary, #658399);
@@ -789,7 +789,7 @@
 
 .marquee-text span {
     display: inline-block;
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 80px;
     color: white;
     opacity: 0.3;
@@ -1467,15 +1467,19 @@
     }
 
     /* Mobile banner - disable fixed attachment for performance */
-    .full-banner {
+    .full-banner,
+    .full-banner[data-room-banner] {
         background-attachment: scroll !important;
-        height: 400px;
+        height: 320px !important;
+        min-height: 320px !important;
+        max-height: 320px !important;
         margin: 50px 0;
     }
 
     .full-banner .property-en-bg-text {
         top: -50px;
         left: 0px;
+        white-space: break-spaces;
     }
 }
 

@@ -530,7 +530,6 @@ class IndexMapper extends BaseDataMapper {
 
             // 객실명 가져오기 (customFields 우선)
             const roomName = this.getRoomName(room);
-            const isShortText = roomName.length <= 7; // 7글자 이하면 줄 표시
 
             // 룸 이미지 (customFields 우선, thumbnail 카테고리)
             const thumbnailImages = this.getRoomImages(room, 'roomtype_thumbnail');
@@ -551,7 +550,7 @@ class IndexMapper extends BaseDataMapper {
             }
 
             roomItem.innerHTML = `
-                <div class="room-number${isShortText ? ' short-text' : ''}">${roomName}</div>
+                <div class="room-number short-text"></div>
                 <div class="room-image">
                     <img alt="${roomName}" loading="lazy" class="${imageClass}">
                 </div>

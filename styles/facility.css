@@ -78,7 +78,7 @@
 
 /* 숙소 영문명 - 작게 */
 .facility-hero-property-name {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 24px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.9);
@@ -246,7 +246,7 @@
 }
 
 .facility-intro-subtitle {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 28px;
     letter-spacing: 3px;
     color: var(--color-secondary, #658399);
@@ -399,7 +399,7 @@
 }
 
 .facility-special-title {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 100px;
     font-weight: 300;
     color: var(--color-secondary, #658399);
@@ -478,7 +478,7 @@
 }
 
 .facility-special-subtitle {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 48px;
     font-weight: 300;
     color: var(--color-secondary, #658399);
@@ -554,7 +554,7 @@
 }
 
 .facility-title-en {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 72px;
     font-weight: 400;
     color: #fff;
@@ -634,7 +634,7 @@
 }
 
 .facility-name {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 16px;
     letter-spacing: 3px;
     color: var(--color-secondary, #658399);
@@ -688,7 +688,7 @@
     position: absolute;
     bottom: 30px;
     left: 40px;
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 36px;
     color: white;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
@@ -779,6 +779,10 @@
 }
 
 @media (max-width: 768px) {
+    .facility-hero-section {
+        height: 70vh;
+    }
+
     .usage-boxes {
         grid-template-columns: 1fr;
         gap: 20px;

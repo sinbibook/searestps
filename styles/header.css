@@ -16,7 +16,7 @@ html.menu-open {
     left: 0;
     width: 100%;
     height: 80px;
-    background: transparent;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
     backdrop-filter: none;
     z-index: 2001;
     transition: all 0.3s ease;
@@ -82,12 +82,16 @@ html.menu-open {
 }
 
 .logo-text {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 28px;
     font-weight: normal;
     color: white;
     letter-spacing: 2px;
     transition: color 0.3s ease;
+    white-space: nowrap;
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .top-header.scrolled .logo-text {
@@ -367,6 +371,31 @@ html.menu-open {
 /* 명시도를 높여서 !important 제거 */
 body .header-opened.expanded {
     height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for header-opened */
+.header-opened.expanded::-webkit-scrollbar {
+    width: 5px;
+}
+
+.header-opened.expanded::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.header-opened.expanded::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 2.5px;
+}
+
+.header-opened.expanded::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+}
+
+/* Firefox scrollbar */
+.header-opened.expanded {
+    scrollbar-width: thin;
+    scrollbar-color: #999999 transparent;
 }
 
 .header-opened-content {
@@ -398,7 +427,7 @@ body .header-opened.expanded {
 }
 
 .side-logo-text {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 24px;
     font-weight: normal;
     color: white;
@@ -424,7 +453,7 @@ body .header-opened.expanded {
 }
 
 .dropdown-section-title {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 18px;
     font-weight: normal;
     color: white;
@@ -517,8 +546,15 @@ body .header-opened.expanded {
         padding: 0 15px;
     }
 
+    .logo-container {
+        max-width: 70%; /* 메뉴 버튼 공간 확보 */
+    }
+
     .logo-text {
-        font-size: 24px;
+        font-size: 20px;
+        white-space: normal; /* 두 줄 허용 */
+        line-height: 1.3;
+        letter-spacing: 1px;
     }
 
     .reservation-btn {
@@ -542,7 +578,7 @@ body .header-opened.expanded {
     .header-opened.expanded {
         height: 100vh !important;
         max-height: 100vh !important;
-        overflow: hidden;
+        overflow-y: auto;
     }
 
     .header-opened-content {

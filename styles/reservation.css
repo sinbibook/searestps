@@ -157,7 +157,7 @@
 }
 
 .reservation-panel-title {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 36px;
     font-weight: 400;
     color: var(--color-secondary, #658399);

@@ -193,12 +193,12 @@
 }
 
 .property-name-en {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 48px;
     font-weight: normal;
     color: var(--color-secondary, #658399);
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.5;
     letter-spacing: 2px;
     display: flex;
     align-items: center;
@@ -242,16 +242,7 @@
 }
 
 .essence-image::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    right: -15px;
-    width: 500px;
-    height: 550px;
-    background: var(--color-secondary, #658399);
-    opacity: 0.8;
-    border-radius: 275px 275px 0 0;
-    z-index: 0;
+    display: none;
 }
 
 .essence-slider-container {
@@ -281,7 +272,7 @@
 .essence-slide img {
     width: 100%;
     height: 100%;
-    border-radius: 275px 275px 0 0;
+    border-radius: 0;
     object-fit: cover;
 }
 
@@ -293,7 +284,7 @@
 }
 
 .essence-thumb {
-    width: 200px;
+    width: 300px;
     height: 250px;
     position: relative;
     cursor: pointer;
@@ -301,17 +292,7 @@
 }
 
 .essence-thumb::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: -10px;
-    width: 200px;
-    height: 250px;
-    background: var(--color-secondary, #658399);
-    opacity: 0.3;
-    border-radius: 100px 100px 0 0;
-    z-index: 0;
-    transition: all 0.3s ease;
+    display: none;
 }
 
 .essence-thumb:hover::before {
@@ -330,21 +311,21 @@
     height: 100%;
     z-index: 1;
     overflow: hidden !important;
-    border-radius: 100px 100px 0 0;
+    border-radius: 0;
 }
 
 .essence-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 100px 100px 0 0;
+    border-radius: 0;
 }
 
 .essence-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 275px 275px 0 0;
+    border-radius: 0;
 }
 
 /* Wipe animation classes */
@@ -545,7 +526,7 @@
 }
 
 .rooms-title {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 42px;
     font-weight: normal;
     color: var(--color-secondary, #658399);
@@ -642,22 +623,16 @@
 
 .room-item .room-number {
     position: absolute;
-    top: 0;
-    left: -60px;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-size: 16px;
-    color: #ffffff;
-    letter-spacing: 8px;
-    font-weight: 300;
+    top: 30px; /* 이미지 중앙 위치 */
+    left: -30px;
+    font-size: 0; /* 텍스트 완전 제거 */
     z-index: 2;
-    padding-bottom: 20px;
 }
 
 .room-item .room-number::before {
     content: '';
     position: absolute;
-    top: calc(100% + 20px); /* 텍스트 바로 아래 20px 간격 */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
@@ -667,9 +642,9 @@
     transition: height 0.3s ease;
 }
 
-/* 텍스트가 짧을 때만 줄 표시 (7글자 이하) */
+/* 선 표시 */
 .room-item .room-number.short-text::before {
-    height: calc(430px - 100%); /* 텍스트 아래부터 아래 영역까지 */
+    height: 400px; /* 이미지 중앙부터 아래로 */
 }
 
 
@@ -826,7 +801,7 @@
 }
 
 .gallery-section-title {
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     font-size: 42px;
     font-weight: normal;
     color: var(--color-secondary, #658399);
@@ -942,31 +917,13 @@
 }
 
 /* 기본 상태 */
-/* 첫번째 이미지 - 4:3 비율 */
-.gallery-item:nth-child(1) {
-    width: 15%;
-    aspect-ratio: 4/3;
-}
-
-/* 두번째 이미지 - 양옆 */
-.gallery-item:nth-child(2) {
-    width: 20%;
-}
-
-/* 세번째 이미지 - 중앙 */
-.gallery-item:nth-child(3) {
-    width: 30%;
-}
-
-/* 네번째 이미지 - 양옆 */
-.gallery-item:nth-child(4) {
-    width: 20%;
-}
-
-/* 다섯번째 이미지 - 4:3 비율 */
+/* 갤러리 아이템 균등 너비 */
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(4),
 .gallery-item:nth-child(5) {
-    width: 15%;
-    aspect-ratio: 4/3;
+    width: 20%;
 }
 
 
@@ -976,21 +933,13 @@
     object-fit: cover;
 }
 
-/* 양옆 이미지들 (2번째, 4번째) */
-.gallery-item:nth-child(2) img,
-.gallery-item:nth-child(4) img {
-    height: 300px;
-}
-
-/* 중앙 이미지 (3번째) */
-.gallery-item:nth-child(3) img {
-    height: 450px;
-}
-
-/* 끝 이미지들 (1번째, 5번째) - 고정 높이 */
+/* 모든 갤러리 이미지 높이 통일 */
 .gallery-item:nth-child(1) img,
+.gallery-item:nth-child(2) img,
+.gallery-item:nth-child(3) img,
+.gallery-item:nth-child(4) img,
 .gallery-item:nth-child(5) img {
-    height: 280px;
+    height: 450px;
 }
 
 /* 모바일에서는 비율 유지 */
@@ -1066,7 +1015,7 @@
 .closing-property-name {
     font-size: 30px;
     font-weight: bold;
-    font-family: 'Roustel', sans-serif;
+    font-family: var(--font-en-main);
     letter-spacing: 5px;
     color: white;
     writing-mode: vertical-rl;
@@ -1106,6 +1055,16 @@
 
 /* Closing Section Mobile */
 @media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+        min-height: 70vh;
+    }
+
+    .closing-section {
+        height: 50vh;
+        min-height: 400px;
+    }
+
     .closing-content {
         padding-left: 40px;
         gap: 30px;
@@ -1222,7 +1181,7 @@
     }
 
     .gallery-item img {
-        height: auto;
+        height: 250px;
         width: 100%;
     }
 
@@ -1237,7 +1196,7 @@
     }
 
     .essence-property-name {
-        text-align: center;
+        text-align: left;
         margin-bottom: 30px;
     }
 
@@ -1246,7 +1205,7 @@
     }
 
     .essence-text {
-        text-align: center;
+        text-align: left;
         margin-bottom: 20px;
     }
 
@@ -1256,7 +1215,9 @@
     }
 
     .essence-left {
-        justify-content: center;
+        align-items: flex-start;
+        height: auto;
+        width: 100%;
     }
 
     .essence-thumbnails {
@@ -1271,13 +1232,11 @@
     }
 
     .essence-image::before {
-        width: 280px;
-        height: 320px;
-        border-radius: 140px 140px 0 0;
+        display: none;
     }
 
     .essence-slide img {
-        border-radius: 140px 140px 0 0;
+        border-radius: 0;
     }
 
     .essence-thumbnails {
@@ -1293,17 +1252,15 @@
     }
 
     .essence-thumb::before {
-        width: 120px;
-        height: 150px;
-        border-radius: 60px 60px 0 0;
+        display: none;
     }
 
     .essence-thumb-container {
-        border-radius: 60px 60px 0 0;
+        border-radius: 0;
     }
 
     .essence-thumb img {
-        border-radius: 60px 60px 0 0;
+        border-radius: 0;
     }
 
     /* 히어로 슬라이더 네비게이션 중앙정렬 */
@@ -1392,21 +1349,18 @@
     }
 
     .room-item .room-number {
-        font-size: 14px;
+        font-size: 0; /* 텍스트 완전 제거 */
         left: -25px;  /* 공간 확보 */
-        letter-spacing: 4px;
-        max-height: 200px;  /* 최대 높이 제한 */
-        overflow: visible;  /* 오버플로우 표시 */
-        white-space: nowrap;  /* 한 줄 유지 */
+        top: 140px; /* 모바일 이미지 중앙 */
     }
 
     .room-item .room-number::before {
         height: 0; /* 모바일에서도 기본값: 줄 없음 */
     }
 
-    /* 모바일에서도 짧은 텍스트만 줄 표시 */
+    /* 모바일에서도 선 표시 */
     .room-item .room-number.short-text::before {
-        height: calc(350px - 100%);
+        height: 250px; /* 이미지 중앙부터 아래로 */
     }
 
     /* 갤러리 섹션 모바일 최적화 */
@@ -1435,7 +1389,7 @@
     }
 
     .gallery-item img {
-        height: auto;
+        height: 250px;
         width: 100%;
     }
 }

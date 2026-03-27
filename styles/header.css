@@ -226,12 +226,12 @@ html.menu-open {
 }
 
 .circular-ybs-btn {
-    order: 1;
+    order: 2;
     display: none; /* 기본 숨김 - ybsId 있을 때만 JS로 표시 */
 }
 
 .circular-reservation-btn {
-    order: 2;
+    order: 1;
 }
 
 .hamburger-button {

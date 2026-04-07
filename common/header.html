@@ -1,238 +1,82 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Component</title>
-    <link rel="stylesheet" href="../styles/header.css">
-  <!-- Open Graph Meta Tags for Social Media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="영덕 씨레스트 스파풀빌라" />
-  <meta property="og:description" content="전객실 동해바다와 정면 오션뷰이며
-간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
-출렁이는 파도와 황홀한 일출은 물론
-바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
-고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
-  <meta property="og:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
-  <meta property="og:url" content="https://searestps.kr" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="영덕 씨레스트 스파풀빌라" />
-  <meta name="twitter:description" content="전객실 동해바다와 정면 오션뷰이며
-간이해수욕장을 펜션 앞마당으로 쓰고 있습니다.
-출렁이는 파도와 황홀한 일출은 물론
-바다낚시, 스노쿨링, 바다수영, 바다갯바위산책,
-고동보발바다체험 등 당신께 아름다운 감성과 추억을 선사합니다." />
-  <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
-</head>
-<body>
-    <!-- Top Header -->
-    <header class="top-header">
-        <div class="top-header-content">
-            <div class="logo-container" onclick="navigateTo('home')">
-                <!-- <img data-logo src="images/mutenlol_logo.png" alt="로고" class="logo-image"> -->
-                <span class="logo-text" data-logo-text></span>
+<header class="site-header">
+    <div class="header-wrapper">
+        <div class="header-inner">
+            <div class="header-logo">
+                <a href="index.html">
+                    <!-- custom field : 로고 이미지 매핑 -->
+                    <img data-logo src="" alt="">
+                </a>
             </div>
-            <div class="header-buttons">
-                <!-- Reservation Button -->
-                <div class="circular-reservation-btn desktop-only" data-booking-engine>
-                    <svg class="rotating-text" viewBox="0 0 100 100">
-                        <defs>
-                            <path id="circle-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"></path>
-                        </defs>
-                        <text>
-                            <textPath href="#circle-path" startOffset="0%">
-                                RESERVATION • RESERVATION • RESERVATION •
-                            </textPath>
-                        </text>
-                    </svg>
-                    <div class="btn-center">
-                        <span style="font-weight: 700; font-size: 16px;">예약</span>
-                    </div>
-                </div>
-
-                <!-- YBS Button -->
-                <div class="circular-ybs-btn desktop-only" data-ybs-booking>
-                    <svg class="rotating-text" viewBox="0 0 100 100">
-                        <defs>
-                            <path id="ybs-circle-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"></path>
-                        </defs>
-                        <text>
-                            <textPath href="#ybs-circle-path" startOffset="0%">
-                                YBS • YBS • YBS • YBS • YBS •
-                            </textPath>
-                        </text>
-                    </svg>
-                    <div class="btn-center">
-                        <span style="font-weight: 700; font-size: 14px;">YBS</span>
-                    </div>
-                </div>
-
-                <!-- Menu Button -->
-                <div class="hamburger-button" id="hamburger-button" onclick="toggleMenu()">
-                    <div class="toggle-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <span class="menu-label">MENU</span>
-                </div>
-            </div>
+            <nav class="header-nav">
+                <span class="header-menu-btn">Menu</span>
+                <ul class="nav-menu">
+                    <li class="has-dropdown">
+                        <a href="main.html">Prologue</a>
+                        <div class="dropdown-sub">
+                            <a href="main.html">Prologue</a>
+                            <a href="directions.html">오시는 길</a>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="room.html">Rooms</a>
+                        <!-- custom field : 객실 서브메뉴 동적 생성 (mapper) -->
+                        <div class="dropdown-sub" data-rooms-sub></div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="facility.html">Specials</a>
+                        <!-- custom field : 시설 서브메뉴 동적 생성 (mapper) -->
+                        <div class="dropdown-sub" data-facilities-sub></div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="reservation.html">Reservation</a>
+                        <div class="dropdown-sub">
+                            <a href="reservation.html">예약 안내</a>
+                        </div>
+                    </li>
+                    <!-- custom field : 예약 버튼 그룹 -->
+                    <li class="button-group">
+                        <a href="#" class="btn-book" data-booking-engine><span class="book-full">예약하기</span><span class="book-short">예약</span></a>
+                        <a href="#" class="btn-ybs" data-ybs-booking style="display: none;"><span class="ybs-full">YBS</span><span class="ybs-short">YBS</span></a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </header>
-
-    <!-- Header Opened -->
-    <div class="header-opened" id="header-opened">
-        <div class="header-opened-content">
-            <!-- Menu content -->
-            <div class="dropdown-menu-grid">
-                <!-- About Section -->
-                <div class="dropdown-section">
-                    <h3 class="dropdown-section-title expandable active" onclick="toggleMobileAccordion(this)">About</h3>
-                    <ul class="dropdown-section-list accordion-content active">
-                        <li><a onclick="navigateTo('main')">프롤로그</a></li>
-                        <li><a onclick="navigateTo('directions')">오시는길</a></li>
-                    </ul>
+    </div>
+    <!-- Dropdown Background (데스크톱: 배경 패널 / 모바일: 아코디언 메뉴) -->
+    <div class="header-dropdown" aria-label="서브 메뉴">
+        <div class="header-dropdown-inner">
+            <div class="dropdown-columns">
+                <div class="dropdown-col is-expanded" role="group" aria-label="Prologue">
+                    <span class="dropdown-col-title">Prologue<span class="col-arrow"></span></span>
+                    <div class="dropdown-col-links">
+                        <a href="main.html">Prologue</a>
+                        <a href="directions.html">오시는 길</a>
+                    </div>
                 </div>
-
-                <!-- Spaces Section -->
-                <div class="dropdown-section">
-                    <h3 class="dropdown-section-title expandable active" onclick="toggleMobileAccordion(this)">Rooms</h3>
-                    <ul class="dropdown-section-list accordion-content active" data-rooms-list>
-                        <!-- 동적으로 생성됩니다 -->
-                    </ul>
+                <div class="dropdown-col is-expanded" role="group" aria-label="Rooms">
+                    <span class="dropdown-col-title">Rooms<span class="col-arrow"></span></span>
+                    <!-- custom field : 객실 메뉴 동적 생성 (mapper) -->
+                    <div class="dropdown-col-links" data-rooms-list></div>
                 </div>
-
-                <!-- Specials Section -->
-                <div class="dropdown-section">
-                    <h3 class="dropdown-section-title expandable active" onclick="toggleMobileAccordion(this)">Specials</h3>
-                    <ul class="dropdown-section-list accordion-content active" data-facilities-list>
-                        <!-- 동적으로 생성됩니다 -->
-                    </ul>
+                <div class="dropdown-col is-expanded" role="group" aria-label="Specials">
+                    <span class="dropdown-col-title">Specials<span class="col-arrow"></span></span>
+                    <!-- custom field : 시설 메뉴 동적 생성 (mapper) -->
+                    <div class="dropdown-col-links" data-facilities-list></div>
                 </div>
-
-                <!-- Reservation Section -->
-                <div class="dropdown-section">
-                    <h3 class="dropdown-section-title expandable active" onclick="toggleMobileAccordion(this)">Reservation</h3>
-                    <ul class="dropdown-section-list accordion-content active">
-                        <li><a onclick="navigateTo('reservation')">예약안내</a></li>
-                    </ul>
+                <div class="dropdown-col is-expanded" role="group" aria-label="Reservation">
+                    <span class="dropdown-col-title">Reservation<span class="col-arrow"></span></span>
+                    <div class="dropdown-col-links">
+                        <a href="reservation.html">예약 안내</a>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Mobile Menu Reservation Button -->
-            <div class="mobile-menu-reservation">
-                <button class="reservation-btn" data-booking-engine onclick="toggleHeaderMenu(); navigateTo('reservation')">
-                    RESERVATION
-                </button>
             </div>
         </div>
     </div>
+</header>
 
-    <!-- Header Opened Overlay for all pages -->
-    <div class="header-opened-overlay" id="header-opened-overlay"></div>
-
-    <!-- Mobile Fixed Buttons Container -->
-    <div class="mobile-fixed-buttons">
-        <!-- Mobile Reservation Button -->
-        <div class="mobile-circular-reservation-btn" data-booking-engine>
-            <svg class="rotating-text" viewBox="0 0 100 100">
-                <defs>
-                    <path id="mobile-res-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"></path>
-                </defs>
-                <text>
-                    <textPath href="#mobile-res-path" startOffset="0%">
-                        RESERVATION • RESERVATION •
-                    </textPath>
-                </text>
-            </svg>
-            <div class="btn-center">
-                <span style="font-weight: 700; font-size: 14px;">예약</span>
-            </div>
-        </div>
-
-        <!-- Mobile YBS Button -->
-        <div class="mobile-circular-ybs-btn" data-ybs-booking>
-            <svg class="rotating-text" viewBox="0 0 100 100">
-                <defs>
-                    <path id="mobile-ybs-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"></path>
-                </defs>
-                <text>
-                    <textPath href="#mobile-ybs-path" startOffset="0%">
-                        YBS • YBS • YBS • YBS •
-                    </textPath>
-                </text>
-            </svg>
-            <div class="btn-center">
-                <span style="font-weight: 700; font-size: 12px;">YBS</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Preview Handler for Admin Integration -->
-    <script src="../js/preview-handler.js"></script>
-
-    <!-- Base Data Mapper (required for HeaderFooterMapper) -->
-    <script src="../js/data-mapper/base-data-mapper.js"></script>
-
-    <!-- Header Footer Mapper -->
-    <script src="../js/data-mapper/pages/header-footer-mapper.js"></script>
-
-    <!-- Header and Footer Loader -->
-    <script src="../js/header-footer-loader.js"></script>
-
-    <!-- Header script -->
-    <script src="../js/common/header.js"></script>
-
-    <!-- Additional script for immediate menu functionality and initialization -->
-    <script>
-        // Initialize header mapping when loaded directly
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if this is being loaded as a standalone page
-            if (window.location.pathname.includes('/common/header.html')) {
-                // Wait for mapper to be available
-                const initializeHeader = async function() {
-                    if (window.HeaderFooterMapper) {
-                        console.log('Initializing header mapper...');
-                        const mapper = new window.HeaderFooterMapper();
-                        await mapper.initialize();
-                        await mapper.mapHeader();
-                        console.log('Header mapping complete');
-                    } else {
-                        // Retry if mapper not yet loaded
-                        setTimeout(initializeHeader, 100);
-                    }
-                };
-
-                // Start initialization after scripts are loaded
-                setTimeout(initializeHeader, 500);
-            }
-        });
-
-        function testMenuToggle() {
-            console.log('Test menu toggle called!');
-            const headerOpened = document.getElementById('header-opened');
-            const hamburgerButton = document.getElementById('hamburger-button');
-
-            if (headerOpened) {
-                console.log('Header opened element found');
-                const isExpanded = headerOpened.classList.contains('expanded');
-                console.log('Current expanded state:', isExpanded);
-
-                if (isExpanded) {
-                    headerOpened.classList.remove('expanded');
-                    hamburgerButton.classList.remove('active');
-                    console.log('Menu closed');
-                } else {
-                    headerOpened.classList.add('expanded');
-                    hamburgerButton.classList.add('active');
-                    console.log('Menu opened');
-                }
-            } else {
-                console.log('Header opened element NOT found');
-            }
-        }
-    </script>
-</body>
-</html>
+<!-- Scripts -->
+<script src="js/image-helpers.js"></script>
+<script src="js/data-mapper/core/base-mapper.js"></script>
+<script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+<script src="js/header-footer-loader.js"></script>
+<script src="js/common/header.js"></script>

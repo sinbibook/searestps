@@ -98,9 +98,6 @@ class HeaderFooterMapper extends BaseDataMapper {
     mapHeaderNavigation() {
         if (!this.isDataLoaded) return;
 
-        // 메인 메뉴 아이템 클릭 핸들러 설정
-        this.mapMainMenuItems();
-
         // 객실 메뉴 동적 생성
         this.mapRoomMenuItems();
 
@@ -159,234 +156,58 @@ class HeaderFooterMapper extends BaseDataMapper {
     }
 
     /**
-     * 메인 메뉴 아이템 클릭 핸들러 설정
-     */
-    mapMainMenuItems() {
-        // Spaces 메뉴 - 첫 번째 객실로 이동
-        const spacesMenu = document.querySelector('[data-room-link]');
-        if (spacesMenu) {
-            const rooms = this.safeGet(this.data, 'rooms');
-            if (rooms && rooms.length > 0) {
-                spacesMenu.onclick = () => {
-                    window.location.href = `room.html?id=${rooms[0].id}`;
-                };
-            }
-        }
-
-        // Specials 메뉴 - 첫 번째 시설로 이동
-        const specialsMenu = document.querySelector('[data-facility-link]');
-        if (specialsMenu) {
-            const facilities = this.safeGet(this.data, 'property.facilities');
-            if (facilities && facilities.length > 0) {
-                specialsMenu.onclick = () => {
-                    window.location.href = `facility.html?id=${facilities[0].id}`;
-                };
-            }
-        }
-    }
-
-    /**
-     * 헬퍼 메서드: 메뉴 아이템들을 동적으로 생성
-     * @param {Array} items - 메뉴 아이템 데이터 배열
-     * @param {string} classPrefix - CSS 클래스 접두사 (sub-spaces-, sub-specials- 등)
-     * @param {string} mobileContainerId - 모바일 메뉴 컨테이너 ID
-     * @param {string} urlTemplate - URL 템플릿 (room.html, facility.html 등)
-     * @param {string} defaultNamePrefix - 기본 이름 접두사 (객실, 시설 등)
-     * @param {number} maxItems - 최대 표시할 아이템 수 (기본: 무제한)
-     * @param {Function} customClickHandler - 커스텀 클릭 핸들러 (선택사항)
-     */
-    _createMenuItems(items, classPrefix, mobileContainerId, urlTemplate, defaultNamePrefix, maxItems = null, customClickHandler = null) {
-        if (!items || !Array.isArray(items)) return;
-
-        // Desktop 서브메뉴 업데이트
-        const desktopMenu = document.querySelector('.sub-menus');
-        if (desktopMenu) {
-            // 기존 메뉴 아이템들 제거
-            const existingItems = desktopMenu.querySelectorAll(`[class*="${classPrefix}"]`);
-            existingItems.forEach(item => item.remove());
-
-            // 메뉴 카테고리별 left 위치 정의
-            const leftPositions = {
-                'sub-about-': 15,
-                'sub-spaces-': 121,
-                'sub-specials-': 228,
-                'sub-reservation-': 332
-            };
-
-            // 현재 카테고리의 left 위치 가져오기
-            const leftPosition = leftPositions[classPrefix] || 0;
-
-            // 새로운 메뉴 아이템들 생성
-            const displayItems = maxItems ? items.slice(0, maxItems) : items;
-            displayItems.forEach((item, index) => {
-                const menuItem = document.createElement('div');
-                menuItem.className = `sub-menu-item ${classPrefix}${index + 1}`;
-                menuItem.textContent = item.name || `${defaultNamePrefix}${index + 1}`;
-
-                // 동적으로 위치 계산 (첫 번째: 29px, 그 다음부터 34px씩 증가)
-                const topPosition = 29 + (index * 34);
-                menuItem.style.cssText = `left: ${leftPosition}px; top: ${topPosition}px;`;
-
-                // 클릭 이벤트 추가
-                menuItem.addEventListener('click', () => {
-                    if (customClickHandler) {
-                        customClickHandler(item.id);
-                    } else {
-                        window.location.href = `${urlTemplate}?id=${item.id}`;
-                    }
-                });
-
-                desktopMenu.appendChild(menuItem);
-            });
-
-            // 서브메뉴 컨테이너 높이 동적 조정
-            // 가장 많은 메뉴를 가진 카테고리 기준으로 높이 계산
-            const allSubMenuItems = desktopMenu.querySelectorAll('.sub-menu-item');
-            if (allSubMenuItems.length > 0) {
-                // 각 메뉴 아이템 중 가장 아래에 있는 항목의 bottom 위치 계산
-                let maxBottom = 0;
-                allSubMenuItems.forEach(item => {
-                    // inline style과 CSS로 정의된 top 값 모두 읽기
-                    const computedTop = window.getComputedStyle(item).top;
-                    const top = parseInt(computedTop) || parseInt(item.style.top) || 0;
-                    const itemHeight = 34; // 각 메뉴 아이템 높이 (padding 포함)
-                    const bottom = top + itemHeight;
-                    if (bottom > maxBottom) {
-                        maxBottom = bottom;
-                    }
-                });
-
-                // 여유 공간 추가 (상단 9px + 하단 여유)
-                const containerHeight = maxBottom + 10;
-                desktopMenu.style.height = `${containerHeight}px`;
-            }
-        }
-
-        // Mobile 서브메뉴 업데이트
-        const mobileContainer = document.getElementById(mobileContainerId);
-        if (mobileContainer) {
-            mobileContainer.innerHTML = '';
-
-            items.forEach((item, index) => {
-                const menuButton = document.createElement('button');
-                menuButton.className = 'mobile-sub-item';
-                menuButton.textContent = item.name || `${defaultNamePrefix}${index + 1}`;
-
-                // 클릭 이벤트 추가
-                menuButton.addEventListener('click', () => {
-                    if (customClickHandler) {
-                        customClickHandler(item.id);
-                    } else {
-                        window.location.href = `${urlTemplate}?id=${item.id}`;
-                    }
-                });
-
-                mobileContainer.appendChild(menuButton);
-            });
-        }
-    }
-
-    /**
-     * 객실 메뉴 아이템 동적 생성 (Side Header용)
+     * 객실 메뉴 아이템 동적 생성
      */
     mapRoomMenuItems() {
         const roomData = this.safeGet(this.data, 'rooms');
-        if (!roomData || !Array.isArray(roomData)) {
-            return;
-        }
+        if (!roomData || !Array.isArray(roomData)) return;
 
-        // displayOrder로 정렬
         const sortedRooms = [...roomData].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
 
-        // 객실 리스트 컨테이너 찾기
-        const roomsList = this.safeSelect('[data-rooms-list]');
-        if (!roomsList) {
-            return;
-        }
+        // 메가 드롭다운 + nav 서브메뉴 모두 처리
+        const containers = [
+            document.querySelector('[data-rooms-list]'),
+            document.querySelector('[data-rooms-sub]')
+        ].filter(Boolean);
 
-        // 기존 내용 초기화
-        roomsList.innerHTML = '';
-
-        // 각 객실 아이템 생성
-        sortedRooms.forEach((room) => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-
-            a.textContent = this.getRoomName(room);
-            a.style.cursor = 'pointer';
-
-            // 클릭 이벤트 추가
-            a.addEventListener('click', () => {
-                window.location.href = `room.html?id=${room.id}`;
+        containers.forEach(container => {
+            container.innerHTML = '';
+            sortedRooms.forEach(room => {
+                const a = document.createElement('a');
+                a.textContent = this.getRoomName(room);
+                a.style.cursor = 'pointer';
+                a.addEventListener('click', () => {
+                    navigateTo('room', room.id);
+                });
+                container.appendChild(a);
             });
-
-            li.appendChild(a);
-            roomsList.appendChild(li);
         });
-
     }
 
     /**
-     * 시설 메뉴 아이템 동적 생성 (Side Header용)
+     * 시설 메뉴 아이템 동적 생성
      */
     mapFacilityMenuItems() {
         const facilityData = this.safeGet(this.data, 'property.facilities');
-        if (!facilityData || !Array.isArray(facilityData)) {
-            return;
-        }
+        if (!facilityData || !Array.isArray(facilityData)) return;
 
-        // displayOrder로 정렬
         const sortedFacilities = [...facilityData].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
 
-        // 편의시설 리스트 컨테이너 찾기
-        const facilitiesList = this.safeSelect('[data-facilities-list]');
-        if (!facilitiesList) {
-            return;
-        }
+        // 메가 드롭다운 + nav 서브메뉴 모두 처리
+        const containers = [
+            document.querySelector('[data-facilities-list]'),
+            document.querySelector('[data-facilities-sub]')
+        ].filter(Boolean);
 
-        // 기존 내용 초기화
-        facilitiesList.innerHTML = '';
-
-        // 각 편의시설 아이템 생성
-        sortedFacilities.forEach((facility) => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-
-            a.textContent = this.sanitizeText(facility.name, '편의시설');
-            a.style.cursor = 'pointer';
-
-            // 클릭 이벤트 추가
-            a.addEventListener('click', () => {
-                window.location.href = `facility.html?id=${facility.id}`;
+        containers.forEach(container => {
+            container.innerHTML = '';
+            sortedFacilities.forEach(facility => {
+                const a = document.createElement('a');
+                a.textContent = this.sanitizeText(facility.name, '시설');
+                a.href = `facility.html?id=${facility.id}`;
+                container.appendChild(a);
             });
-
-            li.appendChild(a);
-            facilitiesList.appendChild(li);
         });
-
-    }
-
-    /**
-     * Side Header 이미지 배너 매핑
-     * customFields.property.images (category: property_thumbnail) 중 첫 번째 이미지 사용
-     */
-    mapSideImageBanner() {
-        if (!this.isDataLoaded) return;
-
-        const banner = this.safeSelect('[data-side-banner-img]');
-        if (!banner) return;
-
-        // customFields에서 property_thumbnail 카테고리 이미지 가져오기
-        const thumbnailImages = this.getPropertyImages('property_thumbnail');
-        const selectedThumbnail = thumbnailImages[0];
-
-        if (!selectedThumbnail || !selectedThumbnail.url) return;
-
-        // 배경 이미지 설정
-        banner.style.backgroundImage = `url('${selectedThumbnail.url}')`;
-        banner.style.backgroundSize = 'cover';
-        banner.style.backgroundPosition = 'center';
-        banner.style.backgroundRepeat = 'no-repeat';
     }
 
     // ============================================================================
@@ -561,8 +382,6 @@ class HeaderFooterMapper extends BaseDataMapper {
         this.mapHeaderLogo();
         this.mapHeaderNavigation();
 
-        // Side Header 이미지 배너 매핑
-        this.mapSideImageBanner();
     }
 
     /**
@@ -578,8 +397,6 @@ class HeaderFooterMapper extends BaseDataMapper {
         this.mapFooterInfo();
         this.mapSocialLinks();
 
-        // E-commerce registration 매핑
-        this.mapEcommerceRegistration();
     }
 
     /**

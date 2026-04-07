@@ -3,20 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="숙소 설명">
-    <meta name="keywords" content="SEO 키워드">
-    <title id="page-title">시설 안내 - 숙소명</title>
+    <title>DALTO GLAMPING - Facility</title>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/common.css" as="style">
-    <link rel="preload" href="styles/facility.css" as="style">
-
-    <!-- Theme CSS -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/facility.css">
-
-
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="영덕 씨레스트 스파풀빌라 - 시설안내" />
@@ -39,141 +31,137 @@
   <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
 </head>
 <body>
-    <main class="main-content">
-        <div class="content-wrap">
-            <!-- Facility Hero Section with Slider -->
-            <section class="facility-hero-section fade-in-hero">
-                <div class="facility-hero-slider-container">
-                    <div class="slider" data-facility-hero-slider>
-                        <!-- 동적으로 슬라이드가 생성됩니다 -->
-                    </div>
 
-                    <!-- Facility Hero Content Overlay -->
-                    <div class="facility-hero-content-overlay">
-                        <div class="facility-hero-content-container">
-                            <div class="facility-hero-text-content">
-                                <!-- 숙소 영문명 매핑 -->
-                                <h2 class="facility-hero-property-name" data-hero-property-name-en></h2>
-                                <!-- 시설 타이틀 매핑 -->
-                                <h1 class="facility-hero-title" data-facility-title></h1>
-                            </div>
+    <!-- Navigation (Header) -->
+    <div class="navigation-off">
+        <div id="header-container"></div>
+    </div>
 
-                            <!-- Slider Navigation -->
-                            <div class="slider-nav">
-                                <div class="slider-buttons">
-                                    <button class="slider-btn prev">‹</button>
-                                    <button class="slider-btn next">›</button>
-                                </div>
-                                <div class="progress-container">
-                                    <div class="progress-bar"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <div id="app" class="facility-container">
 
-        <section class="facility-top-intro-section">
-            <div class="facility-intro-container">
-                <div class="facility-intro-image wipe-reveal">
-                    <img data-facility-main-image>
-                </div>
-                <div class="facility-intro-text animate-on-scroll slide-up">
-                    <div class="facility-intro-top">
-                      <!-- 하드코딩 Fixed -->
-                        <div class="facility-intro-subtitle">Special Offer</div>
-                        <!-- 시설 타이틀 매핑 -->
-                        <h1 class="facility-intro-title" data-facility-intro-title></h1>
-                        <!-- 시설 설명 매핑 / custom field 메인 소개 문구 매핑 -->
-                        <p class="facility-intro-desc" data-facility-description></p>
-                    </div>
-                    <div class="facility-intro-bottom">
-                        <!-- 시설 이용규칙 매핑 -->
-                        <p class="facility-intro-usage" data-facility-usage-guide></p>
-                    </div>
-                </div>
+        <!-- Hero Section -->
+        <div class="main-section">
+            <!-- custom field: 전체 부대시설 히어로 슬라이더 이미지 동적 생성 (mapper) -->
+            <div class="main-bg" data-facility-hero-slider></div>
+            <div class="main-content">
+                <!-- 하드코딩 -->
+                <h1 class="main-title">Special</h1>
+                <div class="title-divider"><div class="bar-progress"></div></div>
+                <!-- custom field: 시설 설명 (mapper) -->
+                <p class="main-subtitle" data-facility-hero-subtitle></p>
             </div>
-        </section>
-
-        <!-- Usage Guide Section (내용 없을 시 display: none) -->
-        <section class="facility-usage-section" data-usage-section>
-            <div class="facility-usage-container">
-                <div class="usage-boxes">
-                    <!-- 주요특징 매핑 -->
-                    <div class="usage-box animate-on-scroll slide-up" data-features-box>
-                        <h3 class="usage-box-title">주요특징</h3>
-                        <div class="usage-box-content" data-facility-features></div>
-                    </div>
-                    <!-- 추가정보 매핑 -->
-                    <div class="usage-box animate-on-scroll slide-up" data-additional-box>
-                        <h3 class="usage-box-title">추가정보</h3>
-                        <div class="usage-box-content" data-facility-additional-info></div>
-                    </div>
-                    <!-- 이용혜택 매핑 -->
-                    <div class="usage-box animate-on-scroll slide-up" data-benefits-box>
-                        <h3 class="usage-box-title">이용혜택</h3>
-                        <div class="usage-box-content" data-facility-benefits></div>
-                    </div>
-                </div>
+            <div class="main-arrow">
+                <div class="arrow-left"></div>
+                <p class="arrow-number">01</p>
+                <div class="arrow-divider"></div>
+                <p class="arrow-number">05</p>
+                <div class="arrow-right"></div>
             </div>
-        </section>
-
-        <section class="facility-special-section">
-            <div class="facility-special-container">
-                <div class="facility-special-left animate-on-scroll slide-right">
-                  <!-- 하드코딩 fixed -->
-                    <h2 class="facility-special-title">Special</h2>
-                    <!-- 시설 이미지 전체 매핑, 슬라이딩 -->
-                    <div class="facility-special-image-left" data-wipe-slider="left">
-                        <img data-facility-left-image class="active">
-                    </div>
-                </div>
-                <div class="facility-special-right animate-on-scroll slide-left">
-                    <div class="facility-special-image-right" data-wipe-slider="right">
-                        <img data-facility-right-image class="active">
-                    </div>
-                    <div class="facility-special-text">
-                      <!-- 숙소 영문명 매핑 fixed -->
-                        <h3 class="facility-special-subtitle" data-property-name-en></h3>
-                        <!-- 시설 설명 매핑 /custom field 시설 설명 문구 매핑 -->
-                        <p class="facility-special-description" data-facility-description-2>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
         </div>
-    </main>
 
-    <!-- Include ImageWithFallback script -->
-    <script src="js/image-with-fallback.js"></script>
+        <!-- Con1 (Dalto's Special) — 부대시설 슬라이더 -->
+        <div class="section-con1">
+            <div class="title-group-dalto">
+                <!-- custom field: 부대시설명 (mapper) -->
+                <p class="main-title" data-facility-con1-title></p>
+                <p class="sub-desc">
+                    머무는 동안 불편함 없이 즐길 수 있도록 다양한 부대시설이 마련되어 있습니다.<br>
+                    휴식과 즐거움을 함께 경험해보세요.
+                </p>
+            </div>
 
+            <div class="slider-area">
+                <!-- custom field: 부대시설별 이미지 슬라이드 동적 생성 (mapper) -->
+                <div class="main-img" data-facility-con1-slider></div>
 
-    <!-- Image Helpers -->
-    <script src="js/image-helpers.js"></script>
+                <div class="slider-controls">
+                    <button class="slider-btn-prev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="1"/></svg></button>
+                    <button class="slider-btn-next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1"/></svg></button>
+                </div>
 
-    <!-- Base Data Mapper -->
-    <script src="js/data-mapper/core/base-mapper.js"></script>
+                <!-- custom field: 부대시설별 텍스트 슬라이드 동적 생성 (mapper) -->
+                <div class="slider-text-right" data-facility-con1-text></div>
+            </div>
 
-    <!-- Facility Page Mapper -->
-    <script src="js/data-mapper/pages/facility-mapper.js"></script>
+            <!-- custom field: 시설 이용 안내 (mapper) -->
+            <p class="usage-guide-text" data-facility-usage-guide></p>
+        </div>
 
-    <!-- Preview Handler for Admin Integration -->
-    <script src="js/preview-handler.js"></script>
+        <!-- Con2 — 롤링 갤러리 -->
+        <div class="section-con2">
+            <div class="bg-gradient"></div>
+            <!-- custom field: 부대시설 롤링 갤러리 동적 생성 (mapper, ×2세트) -->
+            <div class="rolling-track" data-facility-rolling-track></div>
+        </div>
 
-    <!-- Header Footer Mapper -->
-    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+        <!-- Content-3 — Special Here -->
+        <div class="content-3">
+            <div class="special-left">
+                <div class="special-header anim-fade-up">
+                    <!-- 하드코딩 -->
+                    <h2>Special Here</h2>
+                    <p>머무는 동안 다양한 부대시설을 함께 즐길 수 있습니다.</p>
+                </div>
 
-    <!-- Header and Footer Loader -->
-    <script src="js/header-footer-loader.js"></script>
+                <div class="meditation-image anim-scale-in">
+                    <!-- 부대시설 이미지 동적 생성 (mapper) -->
+                </div>
 
-    <!-- Scroll Animations -->
-    <script src="js/common/scroll-animations.js"></script>
+                <div class="meditation-info anim-fade-right">
+                    <!-- 부대시설 정보 동적 생성 (mapper) -->
+                </div>
 
-    <!-- Page-specific script -->
+                <!-- 하드코딩, 매핑 x -->
+                <p class="special-script">Special Here</p>
+
+                <div class="arrow-decoration">
+                    <svg width="856" height="250" viewBox="0 0 856 250" fill="none" style="overflow:visible">
+                        <circle cx="731" cy="125" r="125" fill="white" fill-opacity="0.4"/>
+                        <path d="M0 146.5C0 146.5 448.741 146.5 776 146.5L700 89.9999" stroke="black"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="special-right anim-fade-right">
+                <div class="special-right-image">
+                    <!-- 부대시설 오른쪽 이미지 동적 생성 (mapper) -->
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="special-bar">
+                    <div class="bar-line"><div class="bar-progress"></div></div>
+                    <div class="bar-controls">
+                        <button><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="1"/></svg></button>
+                        <button><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1"/></svg></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content-4 — Closing -->
+        <div class="content-4 closing-section">
+            <div class="content-4-bg" data-closing-image></div>
+            <div class="content-4-text">
+                <h2 data-closing-title></h2>
+                <p data-closing-description></p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-container" class="section-footer"></div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/common.js"></script>
     <script src="js/pages/facility.js"></script>
 
+    <!-- Data Mapper -->
+    <script src="js/image-helpers.js"></script>
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+    <script src="js/data-mapper/pages/facility-mapper.js"></script>
+    <script src="js/preview-handler.js"></script>
+
+    <!-- Header / Footer Loader -->
+    <script src="js/header-footer-loader.js"></script>
 </body>
 </html>

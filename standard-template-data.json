@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.42.0",
-    "generatedAt": "2026-04-07T00:27:04.559Z",
+    "version": "1.43.0",
+    "generatedAt": "2026-04-07T00:38:25.239Z",
     "templateType": "full_banner_wipe",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1108,7 +1108,7 @@
                 "description": "영덕 씨레스트 풀빌라"
               },
               "closing": {
-                "title": "파도 소리가 일상이 되는 곳,",
+                "title": "Where the sound of waves becomes your everyday life.",
                 "images": [
                   {
                     "id": "309db2e9-56bc-4765-b38e-a5e6e02351f9",
@@ -1127,7 +1127,7 @@
                     "id": "7e9d45d4-5a53-4b2a-985c-8e28ff7f6681",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1775521458213-kdz5mc8b7if.jpg",
                     "sortOrder": 0,
-                    "description": "1층 객실은 바다와 단 10초 거리,\n마치 바다와 이어진 듯한 시간을 즐길 수 있고\n2·3층 객실에서는 프라이빗한 개별 수영장에서\n탁 트인 오션뷰를 온전히 누릴 수 있습니다.",
+                    "description": "1층 객실은 바다와 단 10초 거리\n마치 바다와 이어진 듯한 시간을 즐길 수 있고,\n2·3층 객실에서는 프라이빗한 개별 수영장에서\n탁 트인 오션뷰를 온전히 누릴 수 있습니다.",
                     "isSelected": true
                   },
                   {
@@ -1241,44 +1241,30 @@
                 "title": "물 위에서, 물 안에서 쉬다",
                 "images": [
                   {
-                    "id": "02ecee85-0b18-4028-aefc-63859452aa41",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1764120071924-zldir37gyp.jpg",
-                    "sortOrder": 0,
-                    "description": "",
-                    "isSelected": false
-                  },
-                  {
-                    "id": "b48a60ab-1280-4656-925a-9986431eb71d",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1764120071924-ne6p1nxlj8g.jpg",
-                    "sortOrder": 1,
-                    "description": "",
-                    "isSelected": false
-                  },
-                  {
                     "id": "7ac8ae5c-5a1a-458f-b495-41f364886cda",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-b8yhy5j6uz7.jpg",
-                    "sortOrder": 2,
+                    "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "7fac73dc-641a-4e46-bd0a-93cf9fa81858",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-h2614wdijmp.jpg",
-                    "sortOrder": 3,
+                    "sortOrder": 1,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "536bbb6f-2381-4c46-a920-95c5bcfc9938",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-1dpfpgec84k.jpg",
-                    "sortOrder": 4,
+                    "sortOrder": 2,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "a7c26546-a422-4474-957c-33b7c17095f0",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_signature/1768185916183-90w4xy0udv8.jpg",
-                    "sortOrder": 5,
+                    "sortOrder": 3,
                     "description": "",
                     "isSelected": false
                   }
@@ -1321,7 +1307,7 @@
           "sections": [
             {
               "hero": {
-                "title": "바다와 가장 가까운 풀빌라",
+                "title": "Prologue",
                 "images": [
                   {
                     "id": "e664362e-f848-46de-91bb-ff19097b161b",
@@ -1329,79 +1315,112 @@
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true
-                  },
-                  {
-                    "id": "7abfc88f-6fda-4124-bf9a-f39bc2bdb540",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_hero/1764204453446-vupu2gthtp.jpg",
-                    "sortOrder": 1,
-                    "description": "",
-                    "isSelected": false
                   }
                 ],
-                "description": "바다를 바라보는 숙소는 많지만,\n바다를 향해 수영하는 경험은 흔하지 않습니다.\n\n영덕 씨레스트 풀빌라는\n전 객실 오션뷰로 설계된 공간에서\n탁 트인 바다를 마주하며 물 위에 머무는 시간을 선사합니다.\n\n1층 객실은 바다와 단 10초 거리.\n마치 바다와 이어진 듯한 동선 속에서\n풍경과 휴식의 경계가 자연스럽게 사라집니다.\n\n2층과 3층 객실에서는\n프라이빗한 개별 수영장을 통해\n오롯이 나만의 시선으로 바다를 누릴 수 있습니다.\n\n개별 수영장과 객실 내 스파는\n하루의 흐름을 천천히 낮추고,\n커플과 가족 모두에게 깊은 쉼을 완성합니다.\n\n불필요한 장식은 덜어내고\n바다, 물, 휴식이라는 본질에 집중한 공간.\n\n머무는 순간 자체가\n이곳을 선택한 이유가 됩니다.\n\n영덕 씨레스트 풀빌라.\n지금, 바다와 가장 가까운 휴식을 예약하세요."
+                "description": " "
               },
               "about": [
                 {
                   "title": "파도 소리가 일상이 되는 곳,",
                   "images": [
                     {
-                      "id": "3ee0ee88-6d36-4bd5-b3d4-55418caae48e",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1768186331493-9vtg6hsoxae.jpg",
+                      "id": "ba803dac-fad1-44a3-8807-c3510921bb85",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522286396-yut1b3ffwy.jpg",
                       "sortOrder": 0,
                       "description": "",
-                      "isSelected": false,
+                      "isSelected": true,
                       "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
                     },
                     {
-                      "id": "68825c9a-c6f2-4132-9ef2-b84719500446",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223967000-d84unf1b7lw.jpg",
+                      "id": "d51c1adf-c3a9-4c9f-8d48-b207fe0fedeb",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522286397-3lqnjlecd8k.jpg",
                       "sortOrder": 1,
                       "description": "",
-                      "isSelected": false,
+                      "isSelected": true,
                       "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
                     },
                     {
-                      "id": "89f08008-8c82-473d-8fd2-c11abc7bb0e8",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1764223966999-9cmaziotmy5.jpg",
+                      "id": "0eafd705-faa8-43c3-8d1d-387c1e2d47a8",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522286397-zu52g562rc.jpg",
                       "sortOrder": 2,
                       "description": "",
-                      "isSelected": false,
+                      "isSelected": true,
                       "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
                     },
                     {
-                      "id": "7b984260-e4e3-496d-9f01-19853f59296b",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1768207876317-chp7uh3hy05.jpg",
+                      "id": "4da35f15-2bf2-48b6-9938-5f70a40b3dcd",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522286397-19lln2xzl8t.jpg",
                       "sortOrder": 3,
+                      "description": "",
+                      "isSelected": true,
+                      "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
+                    },
+                    {
+                      "id": "edfd4e54-451a-44b4-805c-fee32187dc9a",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522286397-33eh7s52xk5.jpg",
+                      "sortOrder": 4,
                       "description": "",
                       "isSelected": true,
                       "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67"
                     }
                   ],
                   "blockId": "cab5ed78-56e3-4744-8f6d-8c7da037ea67",
-                  "description": "\n"
+                  "description": "눈앞에 펼쳐진 수평선,\n그 풍경을 바라보며 몸을 맡기는 물의 온도.\n\n씨레스트에서는 전 객실 오션뷰와 함께\n바다를 향해 열린 시간을 경험하실 수 있습니다."
                 },
                 {
-                  "title": "영덕 씨레스트 풀빌라",
+                  "title": "오션뷰 풀빌라 객실",
                   "images": [
                     {
-                      "id": "e89c07b5-755b-48f6-bcc3-0c56155210df",
-                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1768207876317-zaydoldgo7o.jpg",
-                      "sortOrder": 4,
+                      "id": "da5aebf3-f460-4243-9f39-ed26f6ffa8db",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522147379-6zb1zmsg93r.jpg",
+                      "sortOrder": 5,
                       "description": "",
-                      "isSelected": false,
+                      "isSelected": true,
+                      "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8"
+                    },
+                    {
+                      "id": "789d626b-7f33-4c13-a9cf-e58e512d6fc5",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522147380-jav55yadhk8.jpg",
+                      "sortOrder": 6,
+                      "description": "",
+                      "isSelected": true,
                       "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8"
                     },
                     {
                       "id": "0c9d7633-4776-497c-90d6-06b640c665c7",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1768207876317-2mf8k5k8jet.jpg",
-                      "sortOrder": 5,
+                      "sortOrder": 7,
+                      "description": "",
+                      "isSelected": true,
+                      "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8"
+                    },
+                    {
+                      "id": "b3fe8df0-d08c-4b0f-8c3d-68983a40c155",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522147380-2gmzmd6g6p3.jpg",
+                      "sortOrder": 8,
+                      "description": "",
+                      "isSelected": true,
+                      "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8"
+                    },
+                    {
+                      "id": "d5a8194b-cce5-4d11-b55c-3088c79ac358",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522147380-0ctah4gyodt.jpg",
+                      "sortOrder": 9,
+                      "description": "",
+                      "isSelected": true,
+                      "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8"
+                    },
+                    {
+                      "id": "a167c7b2-3eba-4524-8bcf-57b9e36254ad",
+                      "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/main_about/1775522147380-buvajhvumur.jpg",
+                      "sortOrder": 10,
                       "description": "",
                       "isSelected": true,
                       "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8"
                     }
                   ],
                   "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8",
-                  "description": "\n"
+                  "description": "개별 수영장과 객실 스파로\n하루의 속도를 천천히 낮추고,\n바다와 휴식의 본질에 집중한 공간"
                 }
               ]
             }

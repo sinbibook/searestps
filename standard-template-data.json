@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.44.0",
-    "generatedAt": "2026-04-07T00:45:48.645Z",
+    "version": "1.45.0",
+    "generatedAt": "2026-04-07T01:16:38.461Z",
     "templateType": "full_banner_wipe",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1031,7 +1031,15 @@
     "templateType": "fullpage_visual",
     "images": [
       {
-        "logo": []
+        "logo": [
+          {
+            "id": "d98e0265-cf8a-4e02-a18b-c05e2b08b71e",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/logo/1775524354877-y4ztvtnugo7.png",
+            "sortOrder": 0,
+            "description": "",
+            "isSelected": true
+          }
+        ]
       }
     ],
     "seo": {
@@ -1134,7 +1142,7 @@
                     "id": "bd28c6c8-bcd5-4637-8b55-18d81652b0c6",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1775521458213-kzyohttg5hm.jpg",
                     "sortOrder": 1,
-                    "description": "개별 수영장과 객실 스파로\n하루의 속도를 천천히 낮추고,\n바다와 휴식의 본질에 집중한 공간",
+                    "description": "개별 수영장과 객실 스파를 갖춘 이곳은 \n하루의 속도를 천천히 낮추고, \n바다와 휴식의 본질에 \n집중할 수 있는 공간입니다.",
                     "isSelected": true
                   },
                   {
@@ -1427,7 +1435,7 @@
                     }
                   ],
                   "blockId": "4e949fee-af65-480b-a3e8-7dcbfaca22c8",
-                  "description": "개별 수영장과 객실 스파로\n하루의 속도를 천천히 낮추고,\n바다와 휴식의 본질에 집중한 공간"
+                  "description": "개별 수영장과 객실 스파를 갖춘 이곳은 \n하루의 속도를 천천히 낮추고, \n바다와 휴식의 본질에 \n집중할 수 있는 공간입니다."
                 }
               ]
             }

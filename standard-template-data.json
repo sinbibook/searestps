@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.41.0",
-    "generatedAt": "2026-03-31T07:01:35.854Z",
+    "version": "1.42.0",
+    "generatedAt": "2026-04-07T00:27:04.559Z",
     "templateType": "full_banner_wipe",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1028,32 +1028,10 @@
   ],
   "homepage": {
     "domain": "searestps.kr",
-    "templateType": "full_banner_wipe",
+    "templateType": "fullpage_visual",
     "images": [
       {
-        "logo": [
-          {
-            "id": "caa51aa7-d89b-4ffb-82a8-eb1325b9d63c",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/logo/1764234012309-3mvmh7tu1p3.png",
-            "sortOrder": 0,
-            "description": "",
-            "isSelected": true
-          },
-          {
-            "id": "15441fd7-7bee-4b82-8fb3-ce2e69b46fb4",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/logo/1764201078771-bv8q0jlmaf7.png",
-            "sortOrder": 1,
-            "description": "",
-            "isSelected": false
-          },
-          {
-            "id": "b2e0f26e-ab93-40fa-b823-9e48d50fa33b",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/logo/1764201711739-4y7o5lhevgp.png",
-            "sortOrder": 2,
-            "description": "",
-            "isSelected": false
-          }
-        ]
+        "logo": []
       }
     ],
     "seo": {
@@ -1068,54 +1046,61 @@
           "sections": [
             {
               "hero": {
-                "title": "바다 위에서 머무는 시간,",
+                "title": "Time spent staying above the sea",
                 "images": [
                   {
-                    "id": "be14fcc4-12d4-41d2-a267-f8569e9e537e",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1764225346382-lz6s66pbude.jpg",
+                    "id": "d7849af5-ea56-4d7c-9e07-d0063c01fe51",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1775520961201-ry5cz79f03j.jpg",
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "e8cda6a9-fd10-420d-a6e3-e3df0281b857",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1764225346382-sm5ff6ljrf.jpg",
+                    "id": "3c9f7145-fff0-4cd6-87a8-c81c80291134",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1775520961202-grlgfxq36a.jpg",
                     "sortOrder": 1,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "b155fdf5-64b0-4c73-8234-3495c69dc479",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199701-cpl4uaf8b9n.jpg",
+                    "id": "3dacf46e-d3d5-43a9-beac-c574138020d2",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1775520961202-kr4qbvgtlvb.jpg",
                     "sortOrder": 2,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "3f8c106b-1df2-4d50-9784-d0b4b0fff806",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1764113626276-ctkew417hmi.jpg",
+                    "id": "4f1f1f59-c515-43de-afcc-035cea2b97ca",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1775520961203-g4cjffsiaqf.jpg",
                     "sortOrder": 3,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "5b1cbc6a-e013-433f-b1e1-a3595f7f74a9",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199701-89teb1hxhj8.jpg",
+                    "id": "fbdfd680-c30e-470c-bc54-2bb88d263ff4",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1775520961203-m66s8crrw79.jpg",
                     "sortOrder": 4,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "84ec07c7-f423-4532-a234-fb5ffaa7401e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1775521011076-ih08i967bd.jpg",
+                    "sortOrder": 5,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "20f1dfd2-c907-4b5b-88d9-c299d1be9f7f",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199702-4yfh2h2zbug.jpg",
-                    "sortOrder": 5,
+                    "sortOrder": 6,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "75c39791-f1e4-4b6a-91fa-aa403fa02c2a",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_hero/1768186199702-zq0osi94iat.jpg",
-                    "sortOrder": 6,
+                    "sortOrder": 7,
                     "description": "",
                     "isSelected": true
                   }
@@ -1136,31 +1121,38 @@
                 "description": "영덕 씨레스트 풀빌라"
               },
               "essence": {
-                "title": "바다를 보며 수영하는 경험",
+                "title": "",
                 "images": [
                   {
-                    "id": "311c0733-0ab2-41cf-a2ff-92cef829f0b1",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1764113626276-7rfyas9ozen.jpg",
+                    "id": "7e9d45d4-5a53-4b2a-985c-8e28ff7f6681",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1775521458213-kdz5mc8b7if.jpg",
                     "sortOrder": 0,
-                    "description": "",
+                    "description": "1층 객실은 바다와 단 10초 거리,\n마치 바다와 이어진 듯한 시간을 즐길 수 있고\n2·3층 객실에서는 프라이빗한 개별 수영장에서\n탁 트인 오션뷰를 온전히 누릴 수 있습니다.",
                     "isSelected": true
                   },
                   {
-                    "id": "45a431d0-519d-48f5-8370-31d1840a20e3",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1764113626276-aecugypgehr.jpg",
+                    "id": "bd28c6c8-bcd5-4637-8b55-18d81652b0c6",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1775521458213-kzyohttg5hm.jpg",
                     "sortOrder": 1,
+                    "description": "개별 수영장과 객실 스파로\n하루의 속도를 천천히 낮추고,\n바다와 휴식의 본질에 집중한 공간",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "1b73143c-760d-4f70-94be-e8be16ae0c5d",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1775521458214-qhxlxqapon.jpg",
+                    "sortOrder": 2,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "56e41f6c-651c-429c-926c-2ee6d49b37cc",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1768185916182-rs0q8iz2twr.jpg",
-                    "sortOrder": 2,
+                    "id": "8e7a4710-f0cf-45e2-b1f9-a4504decc499",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/index_essence/1775521458214-hhlprx6sdwi.jpg",
+                    "sortOrder": 3,
                     "description": "",
                     "isSelected": true
                   }
                 ],
-                "description": "1층 객실은 바다와 단 10초 거리,\n마치 바다와 이어진 듯한 시간을 즐길 수 있고\n2·3층 객실에서는 프라이빗한 개별 수영장에서\n탁 트인 오션뷰를 온전히 누릴 수 있습니다."
+                "description": "Your seaside escape at Sea Rest, \nright in front of the waves."
               },
               "gallery": {
                 "title": "바다와 가장 가까운 풀빌라",
@@ -1599,20 +1591,20 @@
             "family": "Pretendard"
           },
           "enMain": {
-            "cdn": "https://fonts.cdnfonts.com/css/gloock-2",
-            "key": "gloock",
+            "cdn": "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap",
+            "key": "cormorant",
             "woff2": null,
-            "family": "Gloock"
+            "family": "Cormorant"
           },
           "koMain": {
-            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
-            "key": "pretendard",
-            "woff2": null,
-            "family": "Pretendard"
+            "cdn": null,
+            "key": "cafe24gowoonbam",
+            "woff2": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff",
+            "family": "Cafe24Gowoonbam"
           }
         },
         "color": {
-          "primary": "#FFFDF5",
+          "primary": "#EAEAEC",
           "secondary": "#364C84"
         }
       },

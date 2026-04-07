@@ -189,7 +189,7 @@ html, body {
 .content-2-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1655409735952-cb5220efca54?w=2000&q=80');
+    background-image: url('../images/bg.png');
     background-size: cover;
     background-position: center;
 }

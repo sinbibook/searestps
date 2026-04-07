@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.43.0",
-    "generatedAt": "2026-04-07T00:38:25.239Z",
+    "version": "1.44.0",
+    "generatedAt": "2026-04-07T00:45:48.645Z",
     "templateType": "full_banner_wipe",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -1278,21 +1278,28 @@
           "sections": [
             {
               "hero": {
-                "title": "Searest Pool Villa",
+                "title": "Direction",
                 "images": [
                   {
-                    "id": "e0dbbe71-1d51-4ab4-a622-12cf6d993d50",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/directions_hero/1764204712787-jbdvbudlecg.jpg",
+                    "id": "8583771d-12ce-4cf5-bb44-f0d1edab1eab",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/directions_hero/1775522356433-4jc31womgs3.jpg",
                     "sortOrder": 0,
-                    "description": "",
+                    "description": " ",
                     "isSelected": true
                   },
                   {
-                    "id": "0232611c-9e90-4df4-9d2c-ce4fa554f635",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/directions_hero/1764204712787-3sonohnqgsp.jpg",
+                    "id": "e0dbbe71-1d51-4ab4-a622-12cf6d993d50",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/directions_hero/1764204712787-jbdvbudlecg.jpg",
                     "sortOrder": 1,
+                    "description": " ",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "41e99823-62d9-4c40-bf8c-ffd44aecc428",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/directions_hero/1775522356433-mk2ttuyk2n9.jpg",
+                    "sortOrder": 2,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   }
                 ]
               },
@@ -1559,43 +1566,43 @@
           "sections": [
             {
               "hero": {
-                "title": "Searest Pool Villa",
+                "title": "Reservation",
                 "images": [
+                  {
+                    "id": "a70fcb42-aace-4cca-8bc8-1e13c3adf12e",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/reservation_hero/1775522604581-uoqyue592w.jpg",
+                    "sortOrder": 0,
+                    "description": "",
+                    "isSelected": true
+                  },
                   {
                     "id": "c56fc189-9029-4e44-82b0-6c454fb024a2",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/reservation_hero/1764204651644-ugl77hrxajc.jpg",
-                    "sortOrder": 0,
+                    "sortOrder": 1,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "dd60070e-a7e4-493b-895a-7dfe492c99ba",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/reservation_hero/1764204614322-g4193bnk7ii.jpg",
-                    "sortOrder": 1,
+                    "sortOrder": 2,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   }
                 ]
               },
               "about": {
-                "title": "Sea and Searest",
+                "title": " ",
                 "images": [
                   {
-                    "id": "912f1e6e-ccad-471c-b3aa-cd45cb043085",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/reservation_about/1764204651645-nsm8y2ha2u.jpg",
+                    "id": "c4b3451b-5366-4538-930d-725097a7f6ad",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/reservation_about/1775522731055-zot4fyxppxq.jpg",
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true
-                  },
-                  {
-                    "id": "1537266a-9f55-413c-b2f8-b044f66b0549",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/reservation_about/1764204614322-00hdqp1s4kxdp.jpg",
-                    "sortOrder": 1,
-                    "description": "",
-                    "isSelected": false
                   }
                 ],
-                "description": "바다와 함께하는 힐링 여행"
+                "description": " "
               }
             }
           ]

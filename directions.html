@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="숙소 설명">
-    <meta name="keywords" content="SEO 키워드">
-    <title>오시는길 - 숙소명</title>
+    <title>DALTO GLAMPING - Directions</title>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/common.css" as="style">
-    <link rel="preload" href="styles/directions.css" as="style">
-
-    <!-- Theme CSS -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/directions.css">
@@ -37,120 +31,91 @@
   <meta name="twitter:image" content="https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/4b1057f0-d1dd-4faa-ad1c-cac176e28b60/thumbnail/1764113512853-6l215jl0s1g.jpg" />
 </head>
 <body>
+    <!-- Navigation (Header) - page-wrapper 밖으로 분리 -->
+    <div class="navigation-off">
+        <div id="header-container"></div>
+    </div>
 
-    <section class="page-hero-section animate-hero">
-        <!-- CUSTOM FIELD : 메인 소개 섹션 이미지 매핑 1장 -->
-        <div class="hero-background">
-            <img data-main-hero-img>
+    <div class="page-wrapper">
+        <!-- CUSTOM FIELD : 오시는길 메인소개 섹션 이미지 (슬라이드쇼) -->
+        <div class="main-section">
+            <!-- custom field : 히어로 슬라이더 이미지 동적 생성 (mapper) -->
+            <div class="main-bg" data-hero-slider></div>
+            <div class="main-content">
+                <!-- custom field : 오시는길 타이틀 매핑 -->
+                <h1 class="main-title" data-directions-title></h1>
+                <div class="title-divider"><div class="bar-progress"></div></div>
+                <!-- custom field : 오시는길 설명 매핑 -->
+                <p class="main-subtitle" data-directions-description></p>
+            </div>
+            <div class="main-arrow">
+                <div class="arrow-left"></div>
+                <p class="arrow-number">01</p>
+                <div class="arrow-divider"></div>
+                <p class="arrow-number">10</p>
+                <div class="arrow-right"></div>
+            </div>
         </div>
-        <!-- 페이지 제목 하드코딩 fixed -->
-        <div class="page-title">
-            <span class="property-name-kr" data-main-property-name-kr></span>
-            <h1 class="typing-text" data-text="Location" style="--text-length: 8;">Location</h1>
-        </div>
-        <!-- Scroll Down Icon -->
-        <div class="scroll-down-icon" onclick="scrollToContent()">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
 
-    <main class="directions-content scroll-target">
-        <div class="main-container">
-            <div class="logo-line-container animate-element">
-                <!-- 숙소 영문명 매핑 fixed -->
-                <span class="logo-text-line" data-main-property-name-en></span>
-                <div class="horizontal-line"></div>
+        <!-- Con (Content) - 오시는 길 -->
+        <div class="section-con">
+            <div class="directions-info">
+                <!-- 하드코딩, 매핑 x -->
+                <p class="page-title">Directions</p>
+                <p class="address-text">
+                    <span class="address-row">
+                        <!-- 하드코딩, 매핑 x -->
+                        <span class="bold">도로명 주소 : </span>
+                        <!-- 숙소설정 상세주소 매핑 -->
+                        <span class="medium" data-directions-address></span>
+                    </span>
+                    <span class="address-row">
+                        <!-- 하드코딩, 매핑 x -->
+                        <span class="bold">전화 : </span>
+                        <!-- 숙소설정 운영정보 전화번호 매핑 -->
+                        <span class="medium" data-directions-phone></span>
+                    </span>
+                </p>
             </div>
 
-            <!-- CUSTOM FIELD : 메인 소개 섹션 타이틀 매핑 -->
-            <div class="hero-content animate-element">
-                <h2 class="hero-title" data-directions-title></h2>
-            </div>
-
-            <!-- 지도 섹션 -->
-            <section class="map-section animate-element">
-                <div class="map-container">
-                    <div id="kakao-map"></div>
+            <div class="map-container">
+                <!-- kakao map : property.latitude, property.longitude 매핑 -->
+                <div class="map-img-wrapper">
+                    <div id="kakao-map" style="width:100%;height:100%"></div>
                 </div>
-            </section>
-
-            <div class="location-details animate-element">
-                <div class="location-address-wrapper">
-                    <svg class="location-icon" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor"/>
-                        <circle cx="12" cy="9" r="2.5" fill="white"/>
-                    </svg>
-                    <!-- 숙소 주소 매핑 -->
-                    <p class="location-address" data-directions-address></p>
-                </div>
             </div>
-
-            <!-- CUSTOM FIELD : 안내사항 섹션 매핑, 없으면 display none -->
-            <div class="location-note-section animate-element" data-directions-notes></div>
         </div>
-        <!-- 숙소 외경이미지 1번째 fixed -->
-        <section class="full-banner animate-element" data-main-banner>
-            <div class="closing-property-name" data-closing-property-name></div>
-        </section>
-    </main>
+
+        <!-- 홈 / 마무리 섹션과 동일하게 매핑 -->
+        <div class="content-4 closing-section">
+            <!-- custom field : 마무리 섹션 이미지 매핑 -->
+            <div class="content-4-bg" data-closing-image></div>
+            <div class="content-4-text">
+                <!-- custom field : 마무리 섹션 제목 매핑 -->
+                <h2 data-closing-title></h2>
+                <!-- custom field : 마무리 섹션 내용 매핑 -->
+                <p data-closing-description></p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
+    </div>
 
     <!-- Kakao Map SDK -->
     <script type="text/javascript" src="js/kakao-maps-sdk.js"></script>
 
-    <!-- Include ImageWithFallback script -->
-    <script src="js/image-with-fallback.js"></script>
-
-    <!-- Common JavaScript -->
+    <!-- Scripts -->
     <script src="js/common.js"></script>
-
-    <!-- Image Helpers -->
-    <script src="js/image-helpers.js"></script>
-
-    <!-- Base Data Mapper -->
-    <script src="js/data-mapper/core/base-mapper.js"></script>
-
-    <!-- Directions Page Mapper -->
-    <script src="js/data-mapper/pages/directions-mapper.js"></script>
-
-    <!-- Preview Handler for Admin Integration -->
-    <script src="js/preview-handler.js"></script>
-
-    <!-- Header Footer Mapper -->
-    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
-
-    <!-- Header and Footer Loader -->
-    <script src="js/header-footer-loader.js"></script>
-
-    <!-- Scroll Animations -->
-    <script src="js/common/scroll-animations.js"></script>
-
-    <!-- Data Mapper (중복 제거됨) -->
-
-    <!-- Page-specific script -->
     <script src="js/pages/directions.js"></script>
 
-    <!-- Initialize Data Mapper -->
-    <script>
-        document.addEventListener('DOMContentLoaded', async function() {
-            const directionsMapper = new DirectionsMapper();
-            await directionsMapper.initialize();
-        });
-    </script>
+    <!-- Data Mapper -->
+    <script src="js/image-helpers.js"></script>
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+    <script src="js/data-mapper/pages/directions-mapper.js"></script>
+    <script src="js/preview-handler.js"></script>
 
-    <script>
-        // 타이핑 애니메이션 초기화
-        document.addEventListener('DOMContentLoaded', function() {
-            // 타이핑 애니메이션 완료 후 처리
-            const typingText = document.querySelector('.typing-text');
-            if (typingText) {
-                setTimeout(() => {
-                    typingText.classList.add('typed');
-                }, 3200); // 1.2s delay + 2s animation
-            }
-        });
-    </script>
-
+    <!-- Header / Footer Loader -->
+    <script src="js/header-footer-loader.js"></script>
 </body>
 </html>

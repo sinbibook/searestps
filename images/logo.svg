@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 88" width="210" height="88">
+  <rect width="210" height="88" fill="#683c3c"/>
+  <circle cx="40" cy="34" r="14" fill="none" stroke="#c1a677" stroke-width="1.5"/>
+  <path d="M30 34 Q40 20 50 34" fill="none" stroke="#c1a677" stroke-width="1.2"/>
+  <circle cx="48" cy="28" r="2" fill="#c1a677"/>
+  <text x="105" y="40" text-anchor="middle" font-family="serif" font-weight="700" font-size="22" fill="#ffffff" letter-spacing="4">DALTO</text>
+  <text x="105" y="56" text-anchor="middle" font-family="sans-serif" font-weight="400" font-size="7" fill="rgba(255,255,255,0.7)" letter-spacing="3">POOLVILLA GLAMPING</text>
+  <text x="105" y="72" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="9" fill="rgba(255,255,255,0.85)" letter-spacing="1">달토풀빌라글램핑</text>
+</svg>

@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="숙소 설명">
-  <meta name="keywords" content="SEO 키워드">
-  <title>Main - 템플릿</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DALTO GLAMPING</title>
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="styles/common.css" as="style">
-  <link rel="preload" href="styles/main.css" as="style">
-
-  <!-- Theme CSS -->
-  <link rel="stylesheet" href="styles/theme.css">
-  <link rel="stylesheet" href="styles/common.css">
-  <link rel="stylesheet" href="styles/main.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/main.css">
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="영덕 씨레스트 스파풀빌라 - 숙소소개" />
@@ -38,85 +32,68 @@
 </head>
 <body>
 
-  <main>
-      <section class="page-hero-section">
-        <!-- CUSTOM FIELD : 메인 소개 섹션 이미지 매핑 1장 -->
-          <div class="hero-background">
-              <img data-main-hero-img>
-          </div>
-          <!-- 페이지 제목 하드코딩 fixed -->
-          <div class="page-title">
-              <span class="property-name-kr" data-main-property-name-kr></span>
-              <h1 class="typing-text" data-text="Prologue" style="--text-length: 8;">Prologue</h1>
-          </div>
-          <!-- Scroll Down Icon -->
-          <div class="scroll-down-icon" onclick="scrollToContent()">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </div>
-      </section>
-      <div class="content-wrap scroll-target">
-          <div class="main-container">
-              <div class="text-content">
-                  <div class="logo-line-container">
-                      <!-- 숙소 영문명 매핑 fixed -->
-                      <span class="logo-text-line" data-main-property-name-en></span>
-                      <div class="horizontal-line"></div>
-                  </div>
-                  <!-- custom field : 메인 소개 섹션 타이틀/설명 매핑 -->
-                  <div class="hero-content">
-                      <h2 class="hero-title" data-main-about-title></h2>
-                      <p class="hero-description" data-main-about-description></p>
-                  </div>
-              </div>
-              <!-- custom field : 소개 블록 동적 생성 - 이미지1, 제목, 설명이 한블록-->
-              <div class="about-content" data-main-introduction>
-                  <!-- 동적으로 about-block들이 생성됩니다 -->
-              </div>
-          </div>
+    <!-- Navigation (Header) -->
+    <div class="index-page">
+        <div id="header-container"></div>
+    </div>
 
-          <!-- 숙소 외경이미지 0번째 fixed -->
-          <section class="full-banner" data-main-banner>
-              <!-- 숙소 영문명 매핑 fixed -->
-              <div class="closing-property-name" data-closing-property-name></div>
-          </section>
-      </div>
-  </main>
+    <div id="app" class="main-page">
 
-  <!-- Common JavaScript -->
-  <script src="js/common.js"></script>
+        <!-- CUSTOM FIELD : 메인 소개 섹션 이미지 매핑 -->
+        <div class="main-section">
+            <!-- custom field : 히어로 슬라이더 이미지 동적 생성 (mapper) -->
+            <div class="main-bg" data-hero-slider></div>
+            <div class="main-content">
+                <!-- custom field : 메인 소개 섹션 타이틀 매핑 -->
+                <h1 class="main-title" data-main-about-title></h1>
+                <div class="title-divider"><div class="bar-progress"></div></div>
+                <!-- custom field : 메인 소개 섹션 설명 매핑 -->
+                <p class="main-subtitle" data-main-about-description></p>
+            </div>
+            <div class="main-arrow">
+                <div class="arrow-left"></div>
+                <p class="arrow-number">01</p>
+                <div class="arrow-divider"></div>
+                <p class="arrow-number">10</p>
+                <div class="arrow-right"></div>
+            </div>
+        </div>
 
-  <!-- Include ImageWithFallback script -->
-  <script src="js/image-with-fallback.js"></script>
+        <!-- Introduction Section -->
+        <div class="section-con">
+            <!-- 하드코딩, 매핑 x -->
+            <p class="prologue-title">Prologue</p>
+            <!-- custom field : about 블록 동적 생성 (mapper) -->
+            <div data-main-introduction></div>
+        </div>
 
-  <!-- Image Helpers -->
-  <script src="js/image-helpers.js"></script>
+        <!-- 홈/마무리 섹션과 동일하게 매핑 -->
+        <div class="content-4 closing-section">
+            <!-- custom field : 마무리 섹션 이미지 매핑 -->
+            <div class="content-4-bg" data-closing-image></div>
+            <div class="content-4-text">
+                <!-- custom field : 마무리 섹션 제목 매핑 -->
+                <h2 data-closing-title></h2>
+                <!-- custom field : 마무리 섹션 내용 매핑 -->
+                <p data-closing-description></p>
+            </div>
+        </div>
 
-  <!-- Base Data Mapper (must load before preview-handler) -->
-  <script src="js/data-mapper/core/base-mapper.js"></script>
+    </div>
 
-  <!-- Preview Handler for Admin Integration -->
-  <script src="js/preview-handler.js"></script>
+    <div id="footer-container"></div>
 
-  <!-- Main Page Mapper -->
-  <script src="js/data-mapper/pages/main-mapper.js"></script>
+    <!-- Scripts -->
+    <script src="js/common.js"></script>
+    <script src="js/pages/main.js"></script>
 
-  <!-- Header Footer Mapper -->
-  <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+    <!-- Data Mapper -->
+    <script src="js/image-helpers.js"></script>
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+    <script src="js/data-mapper/pages/main-mapper.js"></script>
+    <script src="js/preview-handler.js"></script>
 
-  <!-- Header and Footer Loader -->
-  <script src="js/header-footer-loader.js"></script>
-
-  <!-- Fullscreen Slider Component (나중에 추가) -->
-  <!-- <script src="js/components/fullscreen-slider.js"></script> -->
-
-  <!-- Scroll Animations -->
-  <script src="js/common/scroll-animations.js"></script>
-
-  <!-- Page-specific script -->
-  <script type="module" src="js/pages/main.js"></script>
-
-
+    <!-- Header / Footer Loader -->
+    <script src="js/header-footer-loader.js"></script>
 </body>
 </html>

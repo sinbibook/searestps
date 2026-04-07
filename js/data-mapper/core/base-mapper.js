@@ -52,17 +52,14 @@ class BaseDataMapper {
             // 스네이크 케이스를 카멜 케이스로 자동 변환
             this.data = this.convertToCamelCase(rawData);
             this.isDataLoaded = true;
-            console.log(`Data loaded from: ${this.dataSource}`);
 
             // 데이터 소스에 따라 이미지 폴백 처리 설정
             // demo-filled.json: JSON 이미지만 사용 (폴백 없음)
             // standard-template-data.json: image-helpers의 폴백 이미지 사용
             if (this.dataSource === 'demo-filled.json') {
                 window.useImageHelpersFallback = false;
-                console.log('Image fallback disabled - using demo data images only');
             } else {
                 window.useImageHelpersFallback = true;
-                console.log('Image fallback enabled - using image-helpers for empty data');
             }
 
             return this.data;

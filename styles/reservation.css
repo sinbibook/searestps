@@ -1,501 +1,801 @@
-/* Reservation page specific styles */
+/* Reservation Page Specific Styles */
 
-/* page-title h1 스타일은 common.css에서 관리 */
-
-/* Reservation Page Container */
-.reservation-page {
-    position: relative;
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
-/* Reservation Intro Section */
-.reservation-intro-section {
-    padding: 80px 20px 60px;
-    max-width: 1200px;
+.reservation-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: white;
     margin: 0 auto;
 }
 
-/* 제목과 설명 세로 레이아웃 */
-.reservation-content-wrapper {
-    margin-top: 100px;
-}
-
-.reservation-title-section {
-    margin-bottom: 30px;
-}
-
-.reservation-description-section {
+/* =========================================
+   NAVIGATION (HEADER) — from index.css
+   ========================================= */
+.navigation-off {
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
+    max-width: none;
+    height: 160px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+    z-index: 999;
+    pointer-events: none;
+    overflow: visible;
 }
 
-.reservation-hero-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--color-secondary, #658399);
-    margin: 0;
-    line-height: 1.2;
-    text-align: left;
+.navigation-off .site-header,
+.navigation-off .header-dropdown {
+    pointer-events: auto;
 }
 
-.reservation-description {
-    
-    font-size: 18px;
-    line-height: 1.8;
-    color: #666;
-    margin: 0;
-    white-space: pre-line;
-    text-align: left;
-}
-
-/* Book Now Button Section */
-.reservation-book-now {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.reservation-book-btn {
-    display: inline-block;
-    padding: 15px 50px;
-    background-color: var(--color-secondary, #658399);
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.reservation-book-btn:hover {
-    background-color: var(--color-secondary, #658399);
-    opacity: 0.8;
-    transform: translateY(-2px);
-}
-
-/* Reservation Content Layout */
-.reservation-content-layout {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Details Section - container for grid */
-.reservation-details-section {
-    width: 100%;
-    padding: 0;
-    /* 오른쪽 콘텐츠가 스크롤될 수 있을 정도의 최소 높이 */
-    min-height: auto;
-    padding-bottom: 100px;
-}
-
-/* ========================================
-   새로운 3섹션 레이아웃 스타일
-   ======================================== */
-
-/* 각 예약 섹션 */
-.reservation-section {
-    margin-bottom: 100px;
-}
-
-/* 섹션 그리드 */
-.reservation-section-grid {
-    display: flex;
-    gap: 80px;
-    align-items: flex-start;
-    max-width: 100%;
-    margin: 0;
-}
-
-/* 짝수 섹션 (입/퇴실, 예약안내) 반대 레이아웃 */
-.reservation-section:nth-child(even) .reservation-section-grid {
-    flex-direction: row-reverse;
-}
-
-/* 왼쪽 이미지 패널 */
-.reservation-image-panel {
-    position: sticky;
-    top: 100px;
-    flex: 0 0 40%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    margin-left: calc(-50vw + 50%);
-    width: 40vw;
-}
-
-/* 짝수 섹션 이미지 패널 - 오른쪽 정렬 */
-.reservation-section:nth-child(even) .reservation-image-panel {
-    margin-left: 0;
-    margin-right: calc(-50vw + 50%);
-}
-
-.reservation-panel-image {
-    width: 100%;
-    height: 350px;
-    border-radius: 0;
-    overflow: hidden;
-    margin-bottom: 30px;
-    background: #f0f0f0;
-    transition: border-radius 0.6s ease;
+/* =========================================
+   MAIN HERO SECTION — from index.css
+   Top: 0px, Height: 960px
+   ========================================= */
+.main-section {
     position: relative;
+    width: 100%;
+    height: 960px;
+    overflow: hidden;
 }
 
-/* 홀수 섹션 이미지 - 오른쪽 radius */
-.reservation-section:nth-child(odd) .reservation-panel-image.visible {
-    border-radius: 0px 180px 180px 0px;
+.main-bg {
+    position: absolute;
+    inset: 0;
 }
 
-/* 짝수 섹션 이미지 - 왼쪽 radius, 오른쪽은 직각 */
-.reservation-section:nth-child(even) .reservation-panel-image.visible {
-    border-radius: 180px 0px 0px 180px;
+.main-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease;
 }
 
-.reservation-panel-image img {
+.main-slide.active {
+    opacity: 1;
+}
+
+.main-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+}
+
+.main-content {
+    position: absolute;
+    left: 5vw;
+    top: 0;
+    z-index: 1;
+    padding-top: 180px;
+    max-width: 1600px;
+    opacity: 0;
+    animation: heroFadeIn 1.2s ease forwards 0.3s;
+}
+
+.main-section .main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.6;
+    color: white;
+    letter-spacing: -0.6px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    margin: 0;
+    position: static;
+    transform: none;
+    white-space: normal;
+}
+
+.title-divider {
+    width: 658px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-top: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.title-divider .bar-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: progressFill 4s linear infinite;
+}
+
+.main-subtitle {
+    font-family: var(--font-ko-main);
+    font-weight: 700;
+    font-size: clamp(18px, 1.8vw, 24px);
+    line-height: 1.5;
+    color: white;
+    letter-spacing: -0.36px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    margin: 24px 0 0;
+}
+
+.main-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    z-index: 1;
+    opacity: 0;
+    animation: heroFadeIn 1s ease forwards 1s;
+}
+
+.arrow-left,
+.arrow-right {
+    width: 9px;
+    height: 9px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+.arrow-left {
+    transform: rotate(45deg);
+}
+
+.arrow-right {
+    transform: rotate(-135deg);
+}
+
+.arrow-number {
+    font-family: var(--font-en-main);
+    font-size: 26px;
+    line-height: 36px;
+    color: white;
+    letter-spacing: -0.39px;
+    margin: 0;
+}
+
+.arrow-divider {
+    width: 10px;
+    height: 1px;
+    background: white;
+    transform: rotate(90deg);
+}
+
+/* =========================================
+   Con Section (Main Content)
+   Top: 960px, Height: 2000px
+   ========================================= */
+.section-con {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 700px);
+    align-items: start;
+    width: 100%;
+    background-color: var(--color-primary);
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+
+.section-con > * {
+    margin-left: 0;
+}
+
+/* Side Image (Right) */
+.side-img-wrapper {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    position: sticky;
+    top: 96px;
+    width: 100%;
+    height: 1200px;
+    border-top-left-radius: 100px;
+    overflow: hidden;
+    z-index: 5;
+    margin-top: 234px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.img-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 1200px;
+    border-top-left-radius: 250px;
+    overflow: hidden;
+}
+
+.img-inner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.reservation-panel-title {
+/* Page Title */
+.page-title {
+    position: absolute;
+    top: 120px;
+    left: 5vw;
     font-family: var(--font-en-main);
-    font-size: 36px;
-    font-weight: 400;
-    color: var(--color-secondary, #658399);
-    text-align: right;
-    transition: all 0.6s ease;
-    padding: 0 40px;
-    margin-top: 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-}
-
-.reservation-panel-title::before {
-    content: '';
-    flex: 1 1 auto;
-    height: 1px;
-    background-color: var(--color-secondary, #658399);
-    margin-right: 20px;
-}
-
-/* 짝수 섹션 타이틀 - 왼쪽 정렬 */
-.reservation-section:nth-child(even) .reservation-panel-title {
-    text-align: left;
-    justify-content: flex-start;
-    flex-direction: row-reverse;
-}
-
-.reservation-section:nth-child(even) .reservation-panel-title::before {
-    margin-right: 0;
-    margin-left: 20px;
-}
-
-/* 오른쪽 콘텐츠 영역 */
-.reservation-content-area {
-    flex: 1;
-    padding: 0 40px;
-    max-width: 600px; /* 더 좁게 변경 */
-    min-height: 500px; /* 이미지 높이와 매칭 */
-    display: flex;
-    align-items: center;
-}
-
-/* 각 섹션 박스 */
-.reservation-box {
-    padding: 40px;
-    padding-bottom: 40px;
-    width: 100%;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* 스크롤 시 나타나는 애니메이션 */
-.reservation-box.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* 박스 내부 이미지 숨김 (왼쪽 패널에서 표시) */
-.reservation-box-image {
-    display: none;
-}
-
-.reservation-box-title {
-    font-size: 24px;
     font-weight: 700;
-    color: var(--color-secondary, #658399);
-    margin-bottom: 40px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--color-secondary, #658399);
+    font-size: 54px;
+    color: black;
+    letter-spacing: -0.81px;
+    z-index: 10;
 }
 
-.reservation-box-content {
-    color: #666;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-/* Check-in/Check-out Times */
-.checkin-checkout-times {
+/* Tabs */
+.tabs-group {
+    position: absolute;
+    top: 217px;
+    left: 5vw;
     display: flex;
-    gap: 40px;
-    margin-bottom: 25px;
+    gap: 20px;
+    z-index: 10;
 }
 
-.detail-item {
+.tab-btn {
+    position: relative;
+    width: 180px;
+    height: 60px;
+    border-radius: 100px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: all 0.3s;
+    background-color: transparent;
 }
 
-.detail-label {
-    font-weight: 600;
-    color: var(--color-secondary, #658399);
-    font-size: 16px;
+.tab-btn.active {
+    background-color: black;
 }
 
-.detail-value {
-    color: #333;
-    font-size: 16px;
+.tab-btn .tab-text {
+    font-family: var(--font-ko-sub);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.36px;
+    color: black;
+    z-index: 2;
 }
 
-/* Operation Info Section */
-.operation-info-section {
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.operation-info-text {
-    color: #666;
-    line-height: 1.8;
-}
-
-/* Refund Box */
-.refund-box {
-    background: transparent;
-}
-
-.refund-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* Refund Table Section */
-.refund-table-section {
-    background: transparent;
-    border-radius: 8px;
-    padding: 20px;
-}
-
-.refund-section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.refund-table-wrapper {
-    overflow-x: auto;
-}
-
-.refund-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.refund-table thead {
-    background: var(--color-secondary, #658399);
+.tab-btn.active .tab-text {
     color: white;
 }
 
-.refund-table th,
-.refund-table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
+/* Text Content Area */
+.text-content-area {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 342px;
+    padding-left: 5vw;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    z-index: 1;
 }
 
-.refund-table tbody tr:nth-child(even) {
-    background: transparent;
+.info-section {
+    width: 100%;
 }
 
-.refund-table tbody tr:hover {
-    background: rgba(101, 131, 153, 0.1);
+.section-con .section-header {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 25px;
 }
 
-/* Refund Text Section */
-.refund-text-section {
-    background: transparent;
-    border-radius: 8px;
-    padding: 20px;
+.section-con .section-title {
+    font-family: var(--font-ko-sub);
+    font-weight: 700;
+    font-size: 24px;
+    color: black;
+    letter-spacing: -0.36px;
+    margin-bottom: 10px;
 }
 
-.refund-notes {
-    color: #666;
-    line-height: 1.8;
+.section-line {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
-/* Reservation Text Content - Preserve line breaks */
-.reservation-text-content {
-    white-space: pre-line;
+/* Info List */
+.info-list {
+    width: 100%;
+    line-height: 1.6;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    /* 모바일에서 이미지 패널 숨김 */
-    .reservation-image-panel {
+.info-list li {
+    font-family: var(--font-ko-sub);
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(0,0,0,0.8);
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Extra info paragraphs */
+.extra-info {
+    font-family: var(--font-ko-sub);
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(0,0,0,0.8);
+    line-height: 1.4;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Fee Table */
+.fee-table-container {
+    margin-top: 15px;
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fee-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+    font-family: var(--font-ko-sub);
+    text-align: center;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.fee-table td {
+    padding: 17px 0;
+    font-size: 18px;
+    color: rgba(0,0,0,0.8);
+    border-right: 1px solid black;
+}
+
+.fee-table td:last-child {
+    border-right: none;
+}
+
+.fee-table tr.header-row {
+    background-color: #dad3bd;
+    height: 74px;
+    font-weight: 400;
+}
+
+.fee-table tr.data-row {
+    background-color: transparent;
+    height: 74px;
+    font-weight: 700;
+}
+
+.fee-table .first-col {
+    font-weight: 700;
+    width: 100px;
+    line-height: 1.3;
+}
+
+/* =========================================
+   CONTENT-4: UNDER THE MOONLIGHT — from index.css
+   Top: 2960px
+   ========================================= */
+.content-4 {
+    position: relative;
+    left: 0;
+    width: 100%;
+    min-height: 400px;
+    height: 50vh;
+    max-height: 620px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.content-4-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.content-4-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 8%;
+}
+
+.content-4-text h2 {
+    font-family: var(--font-en-main);
+    font-weight: 700;
+    font-size: clamp(30px, 3.5vw, 46px);
+    line-height: 1.3;
+    color: white;
+    margin: 0 0 20px 0;
+}
+
+.content-4-text p {
+    font-family: var(--font-ko-main);
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+}
+
+/* =========================================
+   Footer Section
+   ========================================= */
+.section-footer {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 298px;
+    background-color: var(--color-primary);
+    overflow: hidden;
+}
+
+#footer-container {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    font-size: 0;
+    background: var(--color-primary);
+}
+
+/* =========================================
+   ANIMATIONS — from index.css
+   ========================================= */
+@keyframes progressFill {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+@keyframes heroFadeIn {
+    to { opacity: 1; }
+}
+
+/* =========================================
+   TABLET RESPONSIVE (max-width: 1400px)
+   ========================================= */
+@media (max-width: 1400px) {
+    .section-con {
+        grid-template-columns: 1fr;
+    }
+
+    .side-img-wrapper {
         display: none;
     }
 
-    /* 모바일에서 콘텐츠 영역 전체 너비 */
-    .reservation-content-area {
-        max-width: 100%;
-        padding: 0;
-        margin-bottom: 0; /* 모바일에서는 margin-bottom 제거 */
+    .page-title {
+        font-size: clamp(36px, 3.5vw, 54px);
+    }
+
+    .tab-btn {
+        width: auto;
+        padding: 0 30px;
+    }
+
+    .tab-btn .tab-text {
+        font-size: 20px;
+    }
+
+    .section-con {
+        padding-bottom: 0;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* --- 레이아웃: 절대 배치 → flex 상대 배치 전환 --- */
+    .reservation-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden !important;
+    }
+
+    /* --- NAVIGATION --- */
+    .navigation-off {
+        height: 100px;
+        width: 100% !important;
+    }
+
+    /* --- HERO SECTION --- */
+    .main-section {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 500px;
         min-height: auto;
+        max-height: none;
+        overflow: hidden;
+        order: 1;
     }
 
-    /* 모바일에서 섹션 그리드 수정 */
-    .reservation-section-grid {
-        display: block;
-        gap: 0;
+    .main-bg {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
     }
 
-    /* 모바일에서 박스 애니메이션 제거 */
-    .reservation-box {
+    .main-bg::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-slide {
+        position: relative;
+        inset: auto;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
         opacity: 1;
-        transform: none;
-        transition: none;
+        scroll-snap-align: start;
     }
 
-    .reservation-intro-section {
-        padding: 60px 20px 40px;
+    .main-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .reservation-description {
+    .main-content {
+        left: 0;
+        right: 0;
+        padding: 100px 20px 0;
+        max-width: none;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .main-section .main-title {
+        text-align: center;
+        padding: 0 20px;
+        white-space: normal;
+        word-break: keep-all;
+    }
+
+    .main-subtitle {
+        text-align: center;
+        padding: 0 20px;
+        white-space: normal;
+        word-break: keep-all;
+    }
+
+    .main-section .main-title br,
+    .main-subtitle br {
+        display: none;
+    }
+
+    .title-divider {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main-arrow {
+        gap: 16px;
+    }
+
+    /* --- SECTION-CON (Main Content) --- */
+    .section-con {
+        display: block;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        min-height: auto;
+        order: 2;
+        padding: 60px 20px;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+
+    .section-con > * {
+        margin-left: 0;
+    }
+
+    .page-title {
+        position: relative;
+        top: auto;
+        left: auto;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .tabs-group {
+        position: relative;
+        top: auto;
+        left: auto;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+    .tab-btn {
+        width: auto;
+        height: 44px;
+        padding: 0 20px;
+    }
+
+    .tab-btn .tab-text {
         font-size: 16px;
     }
 
-    .reservation-book-btn {
-        padding: 12px 40px;
+    .text-content-area {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .section-con .section-header {
+        width: 100% !important;
+    }
+
+    .section-line {
+        width: 100% !important;
+    }
+
+    /* --- 아코디언 토글 --- */
+    .section-con .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding-bottom: 14px;
+        font-size: 20px;
+    }
+
+    .section-con .section-title::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid rgba(0,0,0,0.6);
+        border-bottom: 2px solid rgba(0,0,0,0.6);
+        transform: rotate(-135deg);
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        margin-left: 10px;
+    }
+
+    .info-section.is-open .section-title::after {
+        transform: rotate(45deg);
+    }
+
+    .info-section .info-list,
+    .info-section .extra-info,
+    .info-section .fee-table-container {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+
+    .info-section.is-open .info-list,
+    .info-section.is-open .extra-info {
+        max-height: 2000px;
+        opacity: 1;
+    }
+
+    .info-section.is-open .fee-table-container {
+        max-height: 500px;
+        opacity: 1;
+        overflow-x: auto;
+    }
+
+    .info-list {
+        width: 100% !important;
+        padding-left: 0;
+    }
+
+    .info-list li {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .info-list li br {
+        display: none;
+    }
+
+    .extra-info {
+        width: 100% !important;
         font-size: 15px;
     }
 
-    .reservation-content-layout {
-        padding: 0 20px;
-    }
-
-    /* 모바일 레이아웃 */
-    .reservation-details-grid {
-        flex-direction: column;
-        min-height: auto;
-        gap: 0;
-    }
-
-    .reservation-sticky-panel {
+    .extra-info br {
         display: none;
     }
 
-    .reservation-scroll-content {
-        border-left: none;
-        padding: 0 20px;
-        max-width: 100%;
+    .side-img-wrapper {
+        display: none;
     }
 
-    .reservation-box {
+    .fee-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .fee-table-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .fee-table {
+        width: 100%;
+        min-width: 600px;
+        font-size: 14px;
+    }
+
+    .fee-table td {
+        font-size: 14px;
+        padding: 12px 4px;
+    }
+
+    /* --- CONTENT-4: MOONLIGHT --- */
+    .content-4 {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100% !important;
+        height: 250px;
         min-height: auto;
-        padding: 40px 20px;
+        max-height: none;
+        order: 3;
     }
 
-    .reservation-box-title {
-        font-size: 24px;
-        margin-bottom: 30px;
+    .content-4-text {
+        padding: 0 20px;
     }
 
-    .reservation-box-content {
-        font-size: 14px;
-    }
-
-    .checkin-checkout-times {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .refund-table {
-        font-size: 14px;
-    }
-
-    .refund-table th,
-    .refund-table td {
-        padding: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .reservation-intro-section {
-        padding: 40px 20px 30px;
-    }
-
-    .reservation-hero-title {
-        font-size: 28px;
-    }
-
-    .reservation-description {
-        font-size: 14px;
-    }
-
-    .reservation-book-now {
-        padding: 30px 20px;
-    }
-
-    .reservation-content-wrapper {
-        margin-top: 40px;
-        text-align: center;
-    }
-
-    .reservation-title-section {
-        margin-bottom: 20px;
-    }
-
-    .reservation-hero-title {
-        text-align: center;
-    }
-
-    .reservation-description {
-        text-align: center;
-    }
-
-
-    .reservation-box {
-        padding: 20px 0;
-    }
-
-    .reservation-box-title {
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-
-    .detail-label,
-    .detail-value {
-        font-size: 14px;
-    }
-
-    .refund-section-title {
-        font-size: 16px;
-    }
-
-    .refund-table-section {
-        padding: 0;
-    }
-
-    .refund-text-section {
-        padding: 0;
+    /* --- FOOTER --- */
+    .section-footer {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto;
+        order: 4;
     }
 }

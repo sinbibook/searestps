@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.53.0",
-    "generatedAt": "2026-04-07T02:07:42.411Z",
+    "version": "1.54.0",
+    "generatedAt": "2026-04-07T06:44:13.679Z",
     "templateType": "fullpage_visual",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -83,42 +83,21 @@
           {
             "id": "201d1556-2373-44cb-8a77-7284c2005acb",
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1775526112941-yvwom4017ie.jpg",
-            "sortOrder": 1,
+            "sortOrder": 0,
             "description": "",
             "isSelected": true
           },
           {
             "id": "a919ce36-96b4-49ce-a4d8-869ea59c8137",
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1775526112941-r99fb51z1ih.jpg",
-            "sortOrder": 2,
+            "sortOrder": 1,
             "description": "",
             "isSelected": true
           },
           {
             "id": "89e2975b-bc07-452c-94fc-00133d69224b",
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1775526112942-ufrpozoare.jpg",
-            "sortOrder": 4,
-            "description": "",
-            "isSelected": true
-          },
-          {
-            "id": "16c07bed-50ff-4ff3-89c3-9294ee925692",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865261-k2bg75t9f0o.jpg",
-            "sortOrder": 0,
-            "description": "",
-            "isSelected": true
-          },
-          {
-            "id": "dd47f256-918f-4f3f-b27e-bc6cbba753e2",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865263-dj1bg3ewnwm.jpg",
-            "sortOrder": 3,
-            "description": "",
-            "isSelected": true
-          },
-          {
-            "id": "ab862ad3-dca9-42c8-8560-b855d9832fd0",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/244eedf4-17a3-4bd3-8628-5e40ef0f362b/main/1764119865264-mvvzre972kq.jpg",
-            "sortOrder": 5,
+            "sortOrder": 2,
             "description": "",
             "isSelected": true
           }
@@ -299,13 +278,6 @@
             "isSelected": true
           },
           {
-            "id": "d75abbc6-b347-4288-ad80-c8214d739248",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870309-k5e1xjgush.jpg",
-            "sortOrder": 5,
-            "description": "",
-            "isSelected": false
-          },
-          {
             "id": "0a9d6725-8df6-40fb-8c4a-8ed54bcb878c",
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/ae680008-3d8f-479f-8ea6-199323252752/main/1764119870308-du21c5hls58.jpg",
             "sortOrder": 1,
@@ -451,7 +423,7 @@
     {
       "id": "c48616db-df5f-48c7-b255-b1a89b26be75",
       "name": "A101(10초해변,실내스파,스노쿨링,바다수영)",
-      "description": "복층형 : \n- 1층 : 거실1+주방1+화장실1+스파+테라스\n- 2층: 침대룸1",
+      "description": "복층형 : \n- 1층 : 거실1(쇼파베드1)+주방1+화장실1+스파+테라스\n- 2층: 침대룸1",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "usageGuide": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
@@ -467,17 +439,19 @@
         "퀸 베드"
       ],
       "amenities": [
+        "침대",
         "무료 WiFi",
         "스마트 TV",
         "에어컨",
-        "침대",
         "냉장고",
-        "헤어드라이어",
         "전자레인지",
+        "헤어드라이어",
         "전기포트",
         "수건",
         "샴푸",
-        "바디워시"
+        "바디워시",
+        "칫솔",
+        "치약"
       ],
       "roomViews": [
         "오션뷰"
@@ -650,7 +624,7 @@
     {
       "id": "9cf38076-db69-4b69-a99c-70ff9694266d",
       "name": "A201(오션뷰,실내풀,야외풀,야외스파)",
-      "description": "복층형 : \n- 1층 : 침대룸1+거실1+주방1+화장실1+풀빌라+스파+테라스\n- 2층: 침대룸1",
+      "description": "복층형 : \n- 1층 : 침대룸1+거실1(쇼파베드1)+주방1+화장실1+풀빌라+스파+테라스\n- 2층: 침대룸1",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "usageGuide": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
@@ -666,17 +640,19 @@
         "퀸 베드"
       ],
       "amenities": [
+        "침대",
         "무료 WiFi",
         "스마트 TV",
         "에어컨",
-        "침대",
         "냉장고",
-        "헤어드라이어",
         "전자레인지",
+        "헤어드라이어",
         "전기포트",
         "수건",
         "샴푸",
-        "바디워시"
+        "바디워시",
+        "칫솔",
+        "치약"
       ],
       "roomViews": [
         "오션뷰"
@@ -850,7 +826,7 @@
     {
       "id": "6505d61c-c867-456f-a90c-958317560205",
       "name": "A301(오션뷰,야외풀,야외스파)",
-      "description": "분리형 : 침대룸1+거실1+주방1+화장실1+풀빌라+스파+테라스",
+      "description": "분리형 : 침대룸1+거실1(쇼파베드1)+주방1+화장실1+풀빌라+스파+테라스",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "usageGuide": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
@@ -867,17 +843,19 @@
         "소파베드"
       ],
       "amenities": [
+        "침대",
         "무료 WiFi",
         "스마트 TV",
         "에어컨",
-        "침대",
         "냉장고",
-        "헤어드라이어",
         "전자레인지",
+        "헤어드라이어",
         "전기포트",
         "수건",
         "샴푸",
-        "바디워시"
+        "바디워시",
+        "칫솔",
+        "치약"
       ],
       "roomViews": [
         "오션뷰"

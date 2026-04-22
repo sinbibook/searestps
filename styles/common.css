@@ -186,6 +186,9 @@ button {
     width: 100%;
     height: auto;
     min-height: 350px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background: rgba(40, 40, 40, 0.85);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     opacity: 0;
@@ -238,6 +241,11 @@ button {
     pointer-events: none;
     z-index: 1003;
     transition: opacity 0.15s ease, visibility 0s linear 0.15s;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-bottom: 10px;
 }
 
 .site-header:hover .dropdown-sub,
@@ -261,6 +269,7 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
+    flex-shrink: 0;
 }
 
 .dropdown-sub a:hover,
@@ -315,6 +324,43 @@ button {
     flex-direction: column;
     align-items: center;
     gap: 4px;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 드롭다운 스크롤바 커스텀 스타일 */
+.header-dropdown,
+.dropdown-sub,
+.dropdown-col-links {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.85) #2a2d35;
+}
+
+.header-dropdown::-webkit-scrollbar,
+.dropdown-sub::-webkit-scrollbar,
+.dropdown-col-links::-webkit-scrollbar {
+    width: 4px;
+}
+
+.header-dropdown::-webkit-scrollbar-track,
+.dropdown-sub::-webkit-scrollbar-track,
+.dropdown-col-links::-webkit-scrollbar-track {
+    background: #2a2d35;
+    border-radius: 3px;
+}
+
+.header-dropdown::-webkit-scrollbar-thumb,
+.dropdown-sub::-webkit-scrollbar-thumb,
+.dropdown-col-links::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 3px;
+}
+
+.header-dropdown::-webkit-scrollbar-thumb:hover,
+.dropdown-sub::-webkit-scrollbar-thumb:hover,
+.dropdown-col-links::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.95);
 }
 
 /* ==========================================

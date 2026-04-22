@@ -197,6 +197,8 @@ class PreviewHandler {
             'localhost',              // 로컬 개발 환경
             'admin.sinbibook.com',    // 운영 환경
             'admin.sinbibook.xyz',    // 개발 환경
+            'backoffice.sinbibook.com', // 백오피스 운영 환경
+            'backoffice.sinbibook.xyz',  // 백오피스 개발 환경
             'sinbibook.github.io',    // GitHub Pages
             'file://',                // 로컬 파일 시스템
             'null'                    // iframe null origin
@@ -663,6 +665,7 @@ class PreviewHandler {
             switch (section) {
                 case 'hero':
                     mapper.mapHeroSection();
+                    if (typeof window.initHeroSlider === 'function') window.initHeroSlider();
                     break;
                 case 'essence':
                     mapper.mapEssenceSection();

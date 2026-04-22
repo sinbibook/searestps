@@ -330,6 +330,21 @@
     // Main Hero Slideshow
     // ==========================================
     function initMainSlideshow() {
+        var arrow = document.querySelector('.main-arrow');
+        var progress = document.querySelector('.title-divider .bar-progress');
+
+        // video 모드: 슬라이드 없음 → 화살표/progress 숨기고 종료
+        var heroVideo = document.querySelector('[data-hero-slider] [data-hero-video]');
+        if (heroVideo) {
+            if (arrow) arrow.style.display = 'none';
+            if (progress) progress.style.display = 'none';
+            return;
+        }
+
+        // image 모드: 화살표/progress 복원
+        if (arrow) arrow.style.display = '';
+        if (progress) progress.style.display = '';
+
         var slides = document.querySelectorAll('.main-slide');
         if (slides.length === 0) return;
 

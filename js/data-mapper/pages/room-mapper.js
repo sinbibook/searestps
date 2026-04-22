@@ -207,9 +207,8 @@ class RoomMapper extends BaseDataMapper {
         // 입/퇴실
         const checkinEl = this.safeSelect('[data-room-checkin-checkout]');
         if (checkinEl) {
-            const checkin = this.data.property?.checkin || '-';
-            const checkout = this.data.property?.checkout || '-';
-            checkinEl.textContent = `${checkin} / ${checkout}`;
+            const ts = room.timeSettings;
+            checkinEl.textContent = `${ts?.checkin || '-'} / ${ts?.checkout || '-'}`;
         }
 
         // 기준 인원

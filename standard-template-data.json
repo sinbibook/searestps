@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.57.0",
-    "generatedAt": "2026-04-07T08:26:34.651Z",
+    "version": "1.58.0",
+    "generatedAt": "2026-04-22T01:47:41.105Z",
     "templateType": "fullpage_visual",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -422,18 +422,35 @@
   "rooms": [
     {
       "id": "c48616db-df5f-48c7-b255-b1a89b26be75",
+      "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
+      "propertyName": "영덕 씨레스트 스파풀빌라",
       "name": "A101(10초해변,실내스파,스노쿨링,바다수영)",
+      "nameEn": "A101",
       "description": "복층형 : \n- 1층 : 거실1(쇼파베드1)+주방1+화장실1+스파+테라스\n- 2층: 침대룸1",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "usageGuide": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
       "size": 99,
+      "sizePyeong": 29.9,
       "baseOccupancy": 2,
       "maxOccupancy": 6,
       "totalRoomCount": {
         "bedroom": 1,
         "bathroom": 1,
-        "livingRoom": 0
+        "livingRoom": 1,
+        "ondol": 0,
+        "kitchen": 0
+      },
+      "roomOptions": {
+        "petState": "N",
+        "barbecueState": "N",
+        "poolState": "N"
+      },
+      "timeSettings": {
+        "timeSettingType": "property",
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "22:00"
       },
       "bedTypes": [
         "퀸 베드"
@@ -462,6 +479,7 @@
         "침실분리형"
       ],
       "status": "active",
+      "bankAccountId": "5759a505-4ea8-4972-8dab-b60661023519",
       "images": [
         {
           "thumbnail": [
@@ -619,22 +637,43 @@
           ]
         }
       ],
-      "displayOrder": 1
+      "displayOrder": 1,
+      "createdAt": "2025-11-25T09:09:41.555Z",
+      "updatedAt": "2026-04-07T06:15:39.867Z",
+      "createdBy": "d3f6de9e-18a3-4b4a-a692-0bceecacad94",
+      "updatedBy": "b44df484-2787-43ca-add4-16bba0d8bc83"
     },
     {
       "id": "9cf38076-db69-4b69-a99c-70ff9694266d",
+      "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
+      "propertyName": "영덕 씨레스트 스파풀빌라",
       "name": "A201(오션뷰,실내풀,야외풀,야외스파)",
+      "nameEn": "A201",
       "description": "복층형 : \n- 1층 : 침대룸1+거실1(쇼파베드1)+주방1+화장실1+풀빌라+스파+테라스\n- 2층: 침대룸1",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "usageGuide": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
       "size": 132,
+      "sizePyeong": 39.9,
       "baseOccupancy": 2,
       "maxOccupancy": 8,
       "totalRoomCount": {
         "bedroom": 2,
         "bathroom": 1,
-        "livingRoom": 0
+        "livingRoom": 1,
+        "ondol": 0,
+        "kitchen": 0
+      },
+      "roomOptions": {
+        "petState": "N",
+        "barbecueState": "N",
+        "poolState": "N"
+      },
+      "timeSettings": {
+        "timeSettingType": "property",
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "22:00"
       },
       "bedTypes": [
         "퀸 베드"
@@ -664,6 +703,7 @@
         "패밀리룸"
       ],
       "status": "active",
+      "bankAccountId": "5759a505-4ea8-4972-8dab-b60661023519",
       "images": [
         {
           "thumbnail": [
@@ -821,22 +861,43 @@
           ]
         }
       ],
-      "displayOrder": 2
+      "displayOrder": 2,
+      "createdAt": "2025-11-25T09:09:41.718Z",
+      "updatedAt": "2026-04-07T06:15:23.250Z",
+      "createdBy": "d3f6de9e-18a3-4b4a-a692-0bceecacad94",
+      "updatedBy": "b44df484-2787-43ca-add4-16bba0d8bc83"
     },
     {
       "id": "6505d61c-c867-456f-a90c-958317560205",
+      "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
+      "propertyName": "영덕 씨레스트 스파풀빌라",
       "name": "A301(오션뷰,야외풀,야외스파)",
+      "nameEn": "A301",
       "description": "분리형 : 침대룸1+거실1(쇼파베드1)+주방1+화장실1+풀빌라+스파+테라스",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "usageGuide": "[인원추가(1박기준/현장결제)]\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.",
       "group": null,
       "size": 99,
+      "sizePyeong": 29.9,
       "baseOccupancy": 2,
       "maxOccupancy": 6,
       "totalRoomCount": {
         "bedroom": 1,
         "bathroom": 1,
-        "livingRoom": 0
+        "livingRoom": 1,
+        "ondol": 0,
+        "kitchen": 0
+      },
+      "roomOptions": {
+        "petState": "N",
+        "barbecueState": "N",
+        "poolState": "N"
+      },
+      "timeSettings": {
+        "timeSettingType": "property",
+        "checkin": "15:00",
+        "checkout": "11:00",
+        "checkinDeadline": "22:00"
       },
       "bedTypes": [
         "퀸 베드",
@@ -865,6 +926,7 @@
         "침실분리형"
       ],
       "status": "active",
+      "bankAccountId": "5759a505-4ea8-4972-8dab-b60661023519",
       "images": [
         {
           "thumbnail": [
@@ -1022,7 +1084,11 @@
           ]
         }
       ],
-      "displayOrder": 3
+      "displayOrder": 3,
+      "createdAt": "2025-11-25T09:09:41.647Z",
+      "updatedAt": "2026-04-07T06:15:03.531Z",
+      "createdBy": "d3f6de9e-18a3-4b4a-a692-0bceecacad94",
+      "updatedBy": "b44df484-2787-43ca-add4-16bba0d8bc83"
     }
   ],
   "homepage": {
@@ -1112,6 +1178,8 @@
                     "isSelected": true
                   }
                 ],
+                "videos": [],
+                "mediaType": "video",
                 "description": "영덕 씨레스트 풀빌라"
               },
               "closing": {
@@ -1125,7 +1193,9 @@
                     "isSelected": true
                   }
                 ],
-                "description": "영덕 씨레스트 풀빌라"
+                "description": "영덕 씨레스트 풀빌라",
+                "mediaType": "image",
+                "videos": []
               },
               "essence": {
                 "title": "",
@@ -1159,7 +1229,9 @@
                     "isSelected": true
                   }
                 ],
-                "description": "Your seaside escape \nat Sea Rest, \nright in front of the waves."
+                "description": "Your seaside escape \nat Sea Rest, \nright in front of the waves.",
+                "mediaType": "image",
+                "videos": []
               },
               "gallery": {
                 "title": "바다와 가장 가까운 풀빌라",
@@ -1242,7 +1314,9 @@
                     "isSelected": true
                   }
                 ],
-                "description": "\n눈앞에 펼쳐진 수평선,\n그 풍경을 바라보며 몸을 맡기는 물의 온도.\n\n씨레스트에서는\n전 객실 오션뷰와 함께\n바다를 향해 열린 시간을 경험하실 수 있습니다."
+                "description": "\n눈앞에 펼쳐진 수평선,\n그 풍경을 바라보며 몸을 맡기는 물의 온도.\n\n씨레스트에서는\n전 객실 오션뷰와 함께\n바다를 향해 열린 시간을 경험하실 수 있습니다.",
+                "mediaType": "image",
+                "videos": []
               },
               "signature": {
                 "title": "물 위에서, 물 안에서 쉬다",
@@ -1276,7 +1350,9 @@
                     "isSelected": false
                   }
                 ],
-                "description": "수영 이후에는\n객실 내 스파에서 다시 한 번 깊은 휴식을.\n\n바다를 바라보며 즐기는 스파 타임은\n하루의 피로를 천천히 내려놓게 합니다."
+                "description": "수영 이후에는\n객실 내 스파에서 다시 한 번 깊은 휴식을.\n\n바다를 바라보며 즐기는 스파 타임은\n하루의 피로를 천천히 내려놓게 합니다.",
+                "mediaType": "image",
+                "videos": []
               }
             }
           ]
@@ -1730,7 +1806,8 @@
             "category": "property_exterior"
           }
         ],
-        "nameEn": "Searest Pool Villa"
+        "nameEn": "Searest Pool Villa",
+        "name": "영덕 씨레스트 스파풀빌라"
       },
       "roomtypes": [
         {

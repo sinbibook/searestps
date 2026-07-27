@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.73.0",
-    "generatedAt": "2026-06-19T09:07:33.291601967Z",
+    "version": "1.74.0",
+    "generatedAt": "2026-07-27T02:59:06.013369216Z",
     "templateType": "fullpage_visual",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -15,13 +15,13 @@
     "address": "경북 영덕군 남정면 원척1길 2 씨레스트 풀빌라",
     "latitude": 36.2977816284399,
     "longitude": 129.378030880882,
-    "contactPhone": "",
+    "contactPhone": "010-4222-7400",
     "contactEmail": "555@naver.com",
     "checkin": "15:00",
     "checkout": "11:00",
-    "checkInOutInfo": "※ 22시 이후 입실 시 사전 문의 부탁드립니다.",
-    "usageGuide": "[공지사항]\n- 전 객실 금연입니다\n- 예약 인원에서 인원이 추가되는 경우 펜션에 미리 연락을 주시기 바랍니다.\n- 펜션의 객실요금은 각 객실의 기준인원이 이용할 수 있는 요금입니다.\n- 기준인원이 넘어가는 추가인원에 대한 비용은 별도 지불하셔야 합니다. 최대 인원 초과 시 펜션에 사전문의 바랍니다.\n- 단순 방문 손님도 인원추가비 요금이 발생합니다. \n- 계단이 많으므로 몸이 불편하신 분은 3층을 추천드립니다.\n\n[개별바베큐]\n- 이용 장소: 각 객실 개별테라스\n- 제공 구성: 숯+그릴\n- 이용 요금: 2~4인 30,000원 / 숯 추가 5,000원 (1박기준/현장결제)\n※ 우천 및 동계 시 사용 가능\n※ 펜션 내 개인 가스버너, 부탄가스 반입 금지\n\n[개별수영장]\n- 온도: 미온수 30℃~33℃\n※ 미온수 이용 시 입실 하루 전 신청 필수\n\n[301호 실외수영장]\n- 크기 7m x 2m x 1.2m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 : 4,5,10,11월 100,000원 (현장결제)\n- 미온수 요금 : 6,9월 80,000원 (현장결제)\n\n[201호 실내수영장]\n- 크기 6.0m x 2m x 1.0m\n- 미온수 요금: 50,000원 (현장결제)\n- 사계절 이용 가능\n\n[201호 실외수영장]\n- 크기 7m x 2m x 1.1m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 : 4,5,10,11월 100,000원 (현장결제)\n- 미온수 요금 : 6,9월 80,000원 (현장결제)\n\n[101호 간이수영장]\n- 크기 3m x 2m x 0.76m\n- 이용기간 : 5/1~10/31\n- 미온수 요금 : 40,000원 (현장결제)\n\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.\n\n[스파]\n- 이용 객실:101호 실내스파, 201호/301호 노천스파\n- 이용 요금:무료\n- 이용 시간:15:00~22:00\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.\n\n[부대시설]\n[바다 수영 / 스노클링]\n- 전 객실에서 바다 야외 수영을 즐기실 수 있으며, 101호는 바다와 가장 가까워 더욱 특별한 경험을 선사합니다\n※ 풀페이스스노쿨링(5천원), 구명조끼(5천원), 아쿠아슈즈(3천원) 대여 가능(1박기준/현장결제)\n※ 몸무게 100kg 이하 이용 가능\n\n[편의 및 주변 시설]\n- 가져오신 짐은 2층까지 기계로 내려드립니다. \n- 객실 와이파이 이용 가능 \n- OTT 이용가능 (개인계정)\n- 전 객실  메모리폼 매트리스 , 직수 정수기 구비\n- 엘리베이터 없음\n\n[주차장]\n- 주차장 보유\n- 이용 요금: 무료\n- 위치: 3층 인접 주차 가능, 1층은 계단 이용\n※ 엘리베이터가 없어 몸이 불편한 경우 3층 객실 권장",
-    "reservationGuide": "- 전 객실 금연입니다\n- 예약 인원에서 인원이 추가되는 경우 펜션에 미리 연락을 주시기 바랍니다.\n- 펜션의 객실요금은 각 객실의 기준인원이 이용할 수 있는 요금입니다.\n- 기준인원이 넘어가는 추가인원에 대한 비용은 별도 지불하셔야 합니다. 최대 인원 초과 시 펜션에 사전문의 바랍니다.\n- 단순 방문 손님도 인원추가비 요금이 발생합니다. \n- 계단이 많으므로 몸이 불편하신 분은 3층을 추천드립니다.",
+    "checkInOutInfo": "[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의 부탁드립니다.",
+    "usageGuide": "[공지사항]\n- 전 객실 금연입니다\n- 201호 객실에는 객실 내 화장실 외에 별도의 개별 화장실이 마련되어 있습니다.\n- 예약 인원에서 인원이 추가되는 경우 펜션에 미리 연락을 주시기 바랍니다.\n- 펜션의 객실요금은 각 객실의 기준인원이 이용할 수 있는 요금입니다.\n- 기준인원이 넘어가는 추가인원에 대한 비용은 별도 지불하셔야 합니다. 최대 인원 초과 시 펜션에 사전문의 바랍니다.\n- 단순 방문 손님도 인원추가비 요금이 발생합니다. \n- 계단이 많으므로 몸이 불편하신 분은 3층을 추천드립니다.\n\n[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의 부탁드립니다.\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 12개월 이상~8세 미만\n- 유아: 12개월 미만\n\n[추가요금]\n- 결제방법: 후결제(현장결제)\n- 초등학생(8세 이상)~성인 : 1인 당 30,000원\n- 7세 이하 : 1인 당 20,000원 \n- 12개월 이하 무료 (인원수에는 포함)\n- 최대인원 초과입실은 불가합니다.\n\n[개별바베큐]\n- 이용 장소: 각 객실 개별테라스\n- 제공 구성: 숯+그릴\n- 이용 요금: 2~4인 30,000원 / 숯 추가 5,000원 (1박기준/현장결제)\n※ 우천 및 동계 시 사용 가능\n※ 펜션 내 개인 가스버너, 부탄가스 반입 금지\n\n[개별수영장]\n- 온도: 미온수 30℃~33℃\n※ 미온수 이용 시 입실 하루 전 신청 필수\n\n[301호 실외수영장]\n- 크기 7m x 2m x 1.2m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 : 4,5,10,11월 100,000원 (현장결제)\n- 미온수 요금 : 6,9월 80,000원 (현장결제)\n\n[201호 실내수영장]\n- 크기 6.0m x 2m x 1.0m\n- 미온수 요금: 50,000원 (현장결제)\n- 사계절 이용 가능\n\n[201호 실외수영장]\n- 크기 7m x 2m x 1.1m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 : 4,5,10,11월 100,000원 (현장결제)\n- 미온수 요금 : 6,9월 80,000원 (현장결제)\n\n[101호 간이수영장]\n- 크기 3m x 2m x 0.76m\n- 이용기간 : 5/1~10/31\n- 미온수 요금 : 40,000원 (현장결제)\n\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.\n\n[스파]\n- 이용 객실:101호 실내스파, 201호/301호 노천스파\n- 이용 요금:무료\n- 이용 시간:15:00~22:00\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.\n\n[부대시설]\n[바다 수영 / 스노클링]\n- 전 객실에서 바다 야외 수영을 즐기실 수 있으며, 101호는 바다와 가장 가까워 더욱 특별한 경험을 선사합니다\n※ 풀페이스스노쿨링(5천원), 구명조끼(5천원), 아쿠아슈즈(3천원) 대여 가능(1박기준/현장결제)\n※ 몸무게 100kg 이하 이용 가능\n\n[편의 및 주변 시설]\n- 가져오신 짐은 2층까지 기계로 내려드립니다. \n- 객실 와이파이 이용 가능 \n- OTT 이용가능 (개인계정)\n- 전 객실  메모리폼 매트리스 , 직수 정수기 구비\n- 엘리베이터 없음\n\n[주차장]\n- 주차장 보유\n- 이용 요금: 무료\n- 위치: 3층 인접 주차 가능, 1층은 계단 이용\n※ 엘리베이터가 없어 몸이 불편한 경우 3층 객실 권장",
+    "reservationGuide": "- 전 객실 금연입니다\n- 201호 객실에는 객실 내 화장실 외에 별도의 개별 화장실이 마련되어 있습니다.\n- 예약 인원에서 인원이 추가되는 경우 펜션에 미리 연락을 주시기 바랍니다.\n- 펜션의 객실요금은 각 객실의 기준인원이 이용할 수 있는 요금입니다.\n- 기준인원이 넘어가는 추가인원에 대한 비용은 별도 지불하셔야 합니다. 최대 인원 초과 시 펜션에 사전문의 바랍니다.\n- 단순 방문 손님도 인원추가비 요금이 발생합니다. \n- 계단이 많으므로 몸이 불편하신 분은 3층을 추천드립니다.",
     "province": "경상북도",
     "city": "영덕군",
     "domain": "searestps.kr",
@@ -400,7 +400,7 @@
           {
             "id": "9ef13976-5a61-424e-8445-a231a810fe20",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/VKhOY95kE1ju.jpg",
-            "sortOrder": 0,
+            "sortOrder": 1,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -410,7 +410,7 @@
           {
             "id": "80e0af3e-1288-4490-ac1f-0655d2eeaa4a",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/SU1rYfX94wJ2.jpg",
-            "sortOrder": 0,
+            "sortOrder": 2,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -418,7 +418,7 @@
           {
             "id": "5016bb7c-ac20-43a4-a7cc-6c5d75e49898",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/dW4u3CYGI1kr.jpg",
-            "sortOrder": 1,
+            "sortOrder": 3,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -426,7 +426,7 @@
           {
             "id": "3b31f96b-77bb-4e8a-a644-e46d2e039dd9",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/lyXjOorsucMi.jpg",
-            "sortOrder": 2,
+            "sortOrder": 4,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -434,7 +434,7 @@
           {
             "id": "c502a852-36d1-4b8a-8c3f-e7e114f8e350",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/JiAtlxHzywBj.jpg",
-            "sortOrder": 3,
+            "sortOrder": 5,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -442,7 +442,7 @@
           {
             "id": "2cd07b70-0a98-4b69-83c5-b76fa5768000",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/BI3bJ6uEiTeo.jpg",
-            "sortOrder": 4,
+            "sortOrder": 6,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -450,7 +450,7 @@
           {
             "id": "0285a846-ca42-4a17-a8e2-3c274bf7b451",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/bICgxUGivrq5.jpg",
-            "sortOrder": 5,
+            "sortOrder": 7,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -458,7 +458,7 @@
           {
             "id": "0b3b17c3-dd2c-4350-938f-8eef62a8721a",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/ANUPdpgWn5c4.jpg",
-            "sortOrder": 6,
+            "sortOrder": 8,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -466,7 +466,7 @@
           {
             "id": "5a8b32f7-e196-4513-b9ca-f661d109c6a8",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/WgOpClaX0FQy.jpg",
-            "sortOrder": 7,
+            "sortOrder": 9,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -474,7 +474,7 @@
           {
             "id": "12445f23-4288-41ba-9877-baed47dd9bf0",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/vYZgOGE3otl5.jpg",
-            "sortOrder": 8,
+            "sortOrder": 10,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -482,7 +482,7 @@
           {
             "id": "93313a48-71f5-476e-b1ba-f755b24a5892",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/y4HsaUYc5M9D.jpg",
-            "sortOrder": 9,
+            "sortOrder": 11,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -490,7 +490,7 @@
           {
             "id": "b391ca2c-aa9f-47c5-b8e7-07308e328d5d",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/sB0uztAoJdS8.jpg",
-            "sortOrder": 10,
+            "sortOrder": 12,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -498,7 +498,7 @@
           {
             "id": "5dafc99c-0bc8-4901-b3f3-6adccba2e908",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/hiR6y3DuLAMP.jpg",
-            "sortOrder": 11,
+            "sortOrder": 13,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -506,7 +506,7 @@
           {
             "id": "a66d00a6-062b-4e83-a7a2-9ee0b2043690",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/mJrhQZeDPWR0.jpg",
-            "sortOrder": 12,
+            "sortOrder": 14,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -514,7 +514,7 @@
           {
             "id": "65211aa0-58d8-4136-a13c-8bded4607621",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/Ppfx58Ihw3Al.jpg",
-            "sortOrder": 13,
+            "sortOrder": 15,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -522,7 +522,7 @@
           {
             "id": "09865676-f5ec-405f-98a3-62e9424baaef",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/T2G4tq593sxc.jpg",
-            "sortOrder": 14,
+            "sortOrder": 16,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -1251,7 +1251,9 @@
     "seo": {
       "title": "영덕 씨레스트 스파풀빌라",
       "description": "삶의 휴식이 시작되는 곳, 영덕 씨레스트 스파풀빌라 입니다. ",
-      "keywords": "영덕펜션, 경상도펜션, 영덕풀빌라, 영덕풀빌라펜션, 영덕스파펜션, 영덕오션뷰펜션, 개별바베큐, 바다수영, 스노쿨링"
+      "keywords": "영덕펜션, 경상도펜션, 영덕풀빌라, 영덕풀빌라펜션, 영덕스파펜션, 영덕오션뷰펜션, 개별바베큐, 바다수영, 스노쿨링",
+      "naverSiteVerification": null,
+      "googleSiteVerification": null
     },
     "socialLinks": {
       "facebook": null,

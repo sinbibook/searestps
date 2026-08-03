@@ -87,13 +87,13 @@ button {
 .header-logo {
     flex-shrink: 0;
     width: 210px;
-    height: 88px;
+    height: 75px;
 }
 
 .header-logo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .header-nav {
@@ -570,6 +570,10 @@ button {
    ========================================== */
 
 @media (max-width: 768px) {
+
+    .address {
+        font-size: 13px;
+    }
 
     /* --- HEADER --- */
     .site-header {

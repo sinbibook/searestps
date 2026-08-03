@@ -375,7 +375,6 @@ class IndexMapper extends BaseDataMapper {
                 </div>
                 <div class="room-info">
                     <h3>${roomName}</h3>
-                    <p>${this._formatTextWithLineBreaks(room.description, '객실 설명')}</p>
                     <button class="btn-more" onclick="navigateTo('room', '${room.id}')">View More</button>
                 </div>
             `;

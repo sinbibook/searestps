@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>영덕 씨레스트 스파풀빌라</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/404.css">
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영덕 씨레스트 스파풀빌라" />
+  <meta property="og:description" content="전 객실 오션뷰, 펜션 앞 해변, 출렁이는 파도와 황홀한 일출은 물론 낚시, 스노링 등 다양한 체험으로 아름다운 추억을 만들어드리겠습니다." />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/VKhOY95kE1ju.jpg" />
+  <meta property="og:url" content="https://searestps.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영덕 씨레스트 스파풀빌라" />
+  <meta name="twitter:description" content="전 객실 오션뷰, 펜션 앞 해변, 출렁이는 파도와 황홀한 일출은 물론 낚시, 스노링 등 다양한 체험으로 아름다운 추억을 만들어드리겠습니다." />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/VKhOY95kE1ju.jpg" />
+</head>
+<body>
+
+    <div id="app" class="error-page-container">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">페이지를 찾을 수 없습니다</h1>
+            <p class="error-description">
+                요청하신 페이지는 이용할 수 없거나 삭제되었습니다.
+            </p>
+            <a href="index.html" class="error-button" onclick="goHome(); return false;">홈으로 돌아가기</a>
+        </div>
+    </div>
+
+    <!-- Scripts for preview handler -->
+    <script src="js/common.js"></script>
+    <script src="js/image-helpers.js"></script>
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+    <script src="js/preview-handler.js"></script>
+
+    <!-- 홈으로 이동 -->
+    <script>
+        function goHome() {
+            location.replace('index.html');
+        }
+
+        // Preview 모드에서 버튼 숨기기
+        if (typeof window !== 'undefined' && window.parent !== window) {
+            window.addEventListener('DOMContentLoaded', () => {
+                const homeButton = document.querySelector('.error-button');
+                if (homeButton) {
+                    homeButton.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!-- 404 페이지 상태 감시 -->
+    <script>
+        (function() {
+            function checkDisabledPages() {
+                if (!window.PreviewHandler || !window.PreviewHandler.currentData) return;
+
+                const data = window.PreviewHandler.currentData;
+
+                // 모든 페이지의 enabled 상태 확인 (어느 페이지에서 404가 됐는지 모르므로 전부 확인)
+                const nearbyEnabled = data?.homepage?.customFields?.pages?.nearbyAttractions?.sections?.[0]?.enabled;
+                if (nearbyEnabled === true) {
+                    location.replace('nearby-attractions.html');
+                    return;
+                }
+
+                const layoutEnabled = data?.homepage?.customFields?.pages?.layoutMap?.sections?.[0]?.enabled;
+                if (layoutEnabled === true) {
+                    location.replace('layout-map.html');
+                    return;
+                }
+            }
+
+            if (typeof window !== 'undefined' && window.parent === window) {
+                window.addEventListener('DOMContentLoaded', () => {
+                    setTimeout(checkDisabledPages, 500);
+                    setInterval(checkDisabledPages, 1000);
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>

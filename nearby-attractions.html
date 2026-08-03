@@ -4,83 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:,">
-    <title>영덕 씨레스트 스파풀빌라 - 오시는길</title>
+    <title>영덕 씨레스트 스파풀빌라</title>
     <meta name="description" content="삶의 휴식이 시작되는 곳, 영덕 씨레스트 스파풀빌라 입니다. ">
     <meta name="keywords" content="영덕펜션, 경상도펜션, 영덕풀빌라, 영덕풀빌라펜션, 영덕스파펜션, 영덕오션뷰펜션, 개별바베큐, 바다수영, 스노쿨링">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/directions.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/nearby-attractions.css">
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="영덕 씨레스트 스파풀빌라 - 오시는길" />
+  <meta property="og:title" content="영덕 씨레스트 스파풀빌라" />
   <meta property="og:description" content="전 객실 오션뷰, 펜션 앞 해변, 출렁이는 파도와 황홀한 일출은 물론 낚시, 스노링 등 다양한 체험으로 아름다운 추억을 만들어드리겠습니다." />
   <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/VKhOY95kE1ju.jpg" />
   <meta property="og:url" content="https://searestps.kr" />
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="영덕 씨레스트 스파풀빌라 - 오시는길" />
+  <meta name="twitter:title" content="영덕 씨레스트 스파풀빌라" />
   <meta name="twitter:description" content="전 객실 오션뷰, 펜션 앞 해변, 출렁이는 파도와 황홀한 일출은 물론 낚시, 스노링 등 다양한 체험으로 아름다운 추억을 만들어드리겠습니다." />
   <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/04/06/VKhOY95kE1ju.jpg" />
 </head>
 <body>
-    <!-- Navigation (Header) - page-wrapper 밖으로 분리 -->
-    <div class="navigation-off">
+
+    <!-- Navigation (Header) -->
+    <div class="index-page">
         <div id="header-container"></div>
     </div>
 
-    <div class="page-wrapper">
-        <!-- CUSTOM FIELD : 오시는길 메인소개 섹션 이미지 (슬라이드쇼) -->
+    <div id="app" class="nearby-attractions-page">
+
+        <!-- HERO SECTION -->
         <div class="main-section">
             <!-- custom field : 히어로 슬라이더 이미지 동적 생성 (mapper) -->
-            <div class="main-bg" data-hero-slider></div>
+            <div class="main-bg" data-nearby-attractions-hero-slider></div>
             <div class="main-content">
-                <!-- custom field : 오시는길 타이틀 매핑 -->
-                <h1 class="main-title" data-directions-title></h1>
+                <!-- custom field : 주변 관광지 섹션 타이틀 매핑 -->
+                <h1 class="main-title" data-nearby-attractions-hero-title></h1>
                 <div class="title-divider"><div class="bar-progress"></div></div>
-                <!-- custom field : 오시는길 설명 매핑 -->
-                <p class="main-subtitle" data-directions-description></p>
+                <!-- custom field : 주변 관광지 섹션 설명 매핑 -->
+                <p class="main-subtitle" data-nearby-attractions-hero-description></p>
             </div>
             <div class="main-arrow">
                 <div class="arrow-left"></div>
                 <p class="arrow-number">01</p>
                 <div class="arrow-divider"></div>
-                <p class="arrow-number">10</p>
+                <p class="arrow-number" data-attractions-count>0</p>
                 <div class="arrow-right"></div>
             </div>
         </div>
 
-        <!-- Con (Content) - 오시는 길 -->
-        <div class="section-con">
-            <div class="directions-info">
-                <!-- 하드코딩, 매핑 x -->
-                <p class="page-title">Directions</p>
-                <p class="address-text">
-                    <span class="address-row">
-                        <!-- 하드코딩, 매핑 x -->
-                        <span class="bold">도로명 주소 : </span>
-                        <!-- 숙소설정 상세주소 매핑 -->
-                        <span class="medium" data-directions-address></span>
-                    </span>
-                    <span class="address-row">
-                        <!-- 하드코딩, 매핑 x -->
-                        <span class="bold">전화 : </span>
-                        <!-- 숙소설정 운영정보 전화번호 매핑 -->
-                        <span class="medium" data-directions-phone></span>
-                    </span>
-                </p>
-            </div>
-
-            <div class="map-container">
-                <!-- kakao map : property.latitude, property.longitude 매핑 -->
-                <div class="map-img-wrapper">
-                    <div id="kakao-map" style="width:100%;height:100%"></div>
-                </div>
-            </div>
+        <!-- ABOUT SECTION : 관광지 목록 -->
+        <div class="section-attractions">
+            <!-- 하드코딩, 매핑 x -->
+            <p class="section-title">Attractions</p>
+            <!-- custom field : 관광지 블록 동적 생성 (mapper) -->
+            <div data-nearby-attractions-about></div>
         </div>
 
-        <!-- 홈 / 마무리 섹션과 동일하게 매핑 -->
+        <!-- CLOSING SECTION -->
         <div class="content-4 closing-section">
             <!-- custom field : 마무리 섹션 이미지 매핑 -->
             <div class="content-4-bg" data-closing-image></div>
@@ -92,24 +74,51 @@
             </div>
         </div>
 
-        <!-- Footer -->
-        <div id="footer-container"></div>
     </div>
 
-    <!-- Kakao Map SDK -->
-    <script type="text/javascript" src="js/kakao-maps-sdk.js"></script>
+    <div id="footer-container"></div>
 
     <!-- Scripts -->
     <script src="js/common.js"></script>
-    <script src="js/pages/directions.js"></script>
+    <script src="js/pages/nearby-attractions.js"></script>
 
     <!-- Data Mapper -->
     <script src="js/image-helpers.js"></script>
     <script src="js/data-mapper/core/base-mapper.js"></script>
-    <script src="js/data-mapper/pages/directions-mapper.js"></script>
+    <script src="js/data-mapper/pages/nearby-attractions-mapper.js"></script>
     <script src="js/preview-handler.js"></script>
 
     <!-- Header / Footer Loader -->
     <script src="js/header-footer-loader.js"></script>
+
+    <!-- Enabled 상태 감시 (미노출 → 노출 변경 감지) -->
+    <script>
+        (function() {
+            function checkPageEnabled() {
+                if (!window.PreviewHandler || !window.PreviewHandler.currentData) return;
+
+                const data = window.PreviewHandler.currentData;
+                const enabled = data?.homepage?.customFields?.pages?.nearbyAttractions?.sections?.[0]?.enabled;
+
+                if (enabled === false) {
+                    location.replace('404.html');
+                }
+            }
+
+            if (typeof window !== 'undefined' && window.parent === window) {
+                window.addEventListener('DOMContentLoaded', () => {
+                    setTimeout(checkPageEnabled, 500);
+                    setInterval(checkPageEnabled, 1000);
+                });
+
+                // 탭이 활성화될 때 enabled 상태 확인
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden) {
+                        setTimeout(checkPageEnabled, 100);
+                    }
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

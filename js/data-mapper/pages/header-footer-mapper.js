@@ -104,6 +104,9 @@ class HeaderFooterMapper extends BaseDataMapper {
         // 시설 메뉴 동적 생성
         this.mapFacilityMenuItems();
 
+        // About 메뉴 아이템 (주변 관광지, 숙소 배치도) enabled 처리
+        this.mapAboutMenuItems();
+
         // 예약 버튼에 realtimeBookingId 매핑
         this.mapReservationButtons();
     }
@@ -210,6 +213,27 @@ class HeaderFooterMapper extends BaseDataMapper {
         });
     }
 
+    /**
+     * About 메뉴 아이템 (주변 관광지, 숙소 배치도) enabled 처리
+     */
+    mapAboutMenuItems() {
+        if (!this.isDataLoaded) return;
+
+        // 주변 관광지 메뉴 enabled 처리
+        const nearbyEnabled = this.safeGet(this.data, 'homepage.customFields.pages.nearbyAttractions.sections.0.enabled');
+        const nearbyMenus = document.querySelectorAll('.nearby-attractions-menu');
+        nearbyMenus.forEach(el => {
+            el.style.display = (nearbyEnabled === true) ? '' : 'none';
+        });
+
+        // 숙소 배치도 메뉴 enabled 처리
+        const layoutEnabled = this.safeGet(this.data, 'homepage.customFields.pages.layoutMap.sections.0.enabled');
+        const layoutMenus = document.querySelectorAll('.layout-map-menu');
+        layoutMenus.forEach(el => {
+            el.style.display = (layoutEnabled === true) ? '' : 'none';
+        });
+    }
+
     // ============================================================================
     // 🦶 FOOTER MAPPINGS
     // ============================================================================
@@ -297,22 +321,11 @@ class HeaderFooterMapper extends BaseDataMapper {
             }
         }
 
-        // 저작권 정보 매핑 - 자동 생성 (현재년도 + 신비서 하드코딩)
+        // 저작권 정보 - '신비서' 주체명이 포함되어 저작권 문구 전체를 블라인드 처리(미노출)
         const copyrightElement = this.safeSelect('[data-footer-copyright]');
         if (copyrightElement) {
-            const currentYear = new Date().getFullYear();
-
-            // 링크 요소 생성
-            const copyrightLink = document.createElement('a');
-            copyrightLink.href = 'https://www.sinbibook.com/';
-            copyrightLink.target = '_blank';
-            copyrightLink.textContent = `© ${currentYear} 신비서. All rights reserved.`;
-            copyrightLink.style.color = 'inherit';
-            copyrightLink.style.textDecoration = 'none';
-
-            // 기존 내용을 링크로 교체
             copyrightElement.innerHTML = '';
-            copyrightElement.appendChild(copyrightLink);
+            copyrightElement.style.display = 'none';
         }
     }
 

@@ -760,10 +760,10 @@ html, body {
     opacity: 0;
     transition: opacity 1.2s ease;
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: flex-end;
-    gap: 50px;
+    gap: 12px;
     white-space: nowrap;
 }
 
@@ -786,6 +786,7 @@ html, body {
 }
 
 .right-title {
+    order: -1;
     text-align: right;
 }
 
@@ -834,8 +835,8 @@ html, body {
 
 .usage-guide-text {
     position: absolute;
-    top: 1185px;
-    right: max(5vw, calc(50% - 800px));
+    top: 1213px;
+    right: max(5vw, calc(50% - 850px));
     max-width: 800px;
     font-family: var(--font-ko-sub);
     font-size: 18px;
@@ -1073,6 +1074,7 @@ html, body {
     }
 
     .main-section .main-title {
+        font-size: 25px;
         text-align: center;
         padding: 0 20px;
         white-space: normal;
@@ -1080,6 +1082,7 @@ html, body {
     }
 
     .main-subtitle {
+        font-size: 16px;
         text-align: center;
         padding: 0 20px;
         white-space: normal;
@@ -1118,7 +1121,7 @@ html, body {
     }
 
     .title-group-dalto .main-title {
-        font-size: 32px;
+        font-size: 25px;
     }
 
     .title-group-dalto .sub-desc {

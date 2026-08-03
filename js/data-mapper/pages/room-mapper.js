@@ -103,7 +103,6 @@ class RoomMapper extends BaseDataMapper {
     /**
      * 히어로 텍스트 매핑
      * [data-room-name] → 객실명
-     * [data-room-description] → 커스텀 설명 (없으면 시스템 description)
      */
     mapHeroContent() {
         const room = this.getCurrentRoom();
@@ -112,13 +111,6 @@ class RoomMapper extends BaseDataMapper {
         const nameEl = this.safeSelect('[data-room-name]');
         if (nameEl) {
             nameEl.textContent = this.getRoomName(room);
-        }
-
-        const descEl = this.safeSelect('[data-room-description]');
-        if (descEl) {
-            const pageData = this.getCurrentRoomPageData();
-            const description = pageData?.sections?.[0]?.hero?.description || room.description;
-            descEl.innerHTML = this._formatTextWithLineBreaks(description, '객실 설명');
         }
     }
 
@@ -233,12 +225,17 @@ class RoomMapper extends BaseDataMapper {
             const roomInfo = room.usageGuide || '';
             const lines = roomInfo.split(/\n/).filter(l => l.trim());
 
+            // 매핑된 값이 있는 info-block(제목/구분선 포함)을 통째로 노출/미노출 처리
+            const guideBlock = guideEl.closest('.info-block');
             if (lines.length > 0) {
                 lines.forEach(line => {
                     const li = document.createElement('li');
                     li.textContent = line.trim();
                     guideEl.appendChild(li);
                 });
+                if (guideBlock) guideBlock.style.display = '';
+            } else {
+                if (guideBlock) guideBlock.style.display = 'none';
             }
         }
     }
@@ -307,9 +304,6 @@ class RoomMapper extends BaseDataMapper {
                 const h3 = document.createElement('h3');
                 h3.textContent = this.getRoomName(room);
 
-                const p = document.createElement('p');
-                p.textContent = this.sanitizeText(room.description, '');
-
                 const roomId = room.id;
                 const btn = document.createElement('button');
                 btn.className = 'btn-more';
@@ -320,7 +314,6 @@ class RoomMapper extends BaseDataMapper {
                 });
 
                 infoDiv.appendChild(h3);
-                infoDiv.appendChild(p);
                 infoDiv.appendChild(btn);
 
                 card.appendChild(imageDiv);

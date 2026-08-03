@@ -239,13 +239,6 @@ class FacilityMapper extends BaseDataMapper {
                 ko.textContent = this.sanitizeText(facility.name, '시설명');
                 textBox.appendChild(ko);
 
-                if (isLarge) {
-                    const desc = document.createElement('p');
-                    desc.className = 'item-desc';
-                    desc.innerHTML = this._formatTextWithLineBreaks(facility.description, '');
-                    textBox.appendChild(desc);
-                }
-
                 item.appendChild(textBox);
                 rollingSet.appendChild(item);
             });

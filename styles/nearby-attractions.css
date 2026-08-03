@@ -1,0 +1,316 @@
+/* Nearby Attractions Page Styles - based on main.css */
+
+/* =========================================
+   Con Section (About/Attractions)
+   ========================================= */
+.section-attractions {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-primary);
+    overflow: hidden;
+    padding: 182px 0 174px;
+    box-sizing: border-box;
+}
+
+.section-title {
+    font-family: var(--font-en-main);
+    font-weight: 700;
+    font-size: 54px;
+    color: black;
+    letter-spacing: -0.81px;
+    line-height: 1.3;
+    text-align: left;
+    position: absolute;
+    top: 182px;
+    left: 150px;
+    max-width: 1600px;
+    margin: 0;
+}
+
+/* ---- Attraction Block: 각 관광지 블록 ---- */
+.attraction-block {
+    position: relative;
+    width: 100%;
+    padding: 0 8vw;
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 114px;
+}
+
+/* even 블록은 text, img 순서이므로 기본 flex-direction: row 유지 */
+
+/* ---- Attraction Image: 아코디언 갤러리 (3개 이미지) ---- */
+.attraction-image {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* 단일 이미지 (1개일 때) */
+.attraction-image.single-image {
+    height: 400px;
+}
+
+.attraction-image.single-image .img-grid {
+    height: 100%;
+}
+
+.attraction-image.single-image .img-item {
+    flex: 1 1 100% !important;
+    flex-basis: 100% !important;
+    height: 100% !important;
+    margin-top: 0 !important;
+}
+
+.attraction-image.single-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 아코디언 갤러리 */
+.attraction-image .img-grid {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.attraction-image .img-item {
+    flex: 0 0 4vw;
+    overflow: hidden;
+    cursor: pointer;
+    transition-property: flex-basis !important;
+    transition-duration: 1600ms !important;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 3개 아이템 기본값 */
+.attraction-image .img-item.i1 { margin-top: 0;    height: 100%; }
+.attraction-image .img-item.i2 { margin-top: 10px; height: 100%; }
+.attraction-image .img-item.i3 { margin-top: 20px; height: 100%; }
+
+/* 홀수 블록: 높이 100% 유지 (margin-top 반대 설정 - 왼쪽 크고 오른쪽 작음) */
+.attraction-block.odd .attraction-image .img-item.i1 {
+    height: 100%;
+    margin-top: 20px;
+}
+.attraction-block.odd .attraction-image .img-item.i2 {
+    height: 100%;
+    margin-top: 10px;
+}
+.attraction-block.odd .attraction-image .img-item.i3 {
+    height: 100%;
+    margin-top: 0;
+}
+
+
+/* 활성 상태: 100% - (2 * 4vw) - (2 * 5px) = calc(100% - 8vw - 10px) */
+.attraction-image .img-item.is-active {
+    flex-basis: calc(100% - 8vw - 10px) !important;
+}
+
+.attraction-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-property: transform, opacity !important;
+    transition-duration: 1100ms, 1100ms !important;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition-delay: 120ms, 120ms !important;
+    will-change: transform;
+}
+
+.attraction-image .img-item.is-active img {
+    transform: scale(1.03);
+}
+
+/* ---- Attraction Text: 제목 + 설명 ---- */
+.attraction-text {
+    flex: 0 1 450px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+    text-align: right;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    max-height: fit-content;
+}
+
+.attraction-block.even .attraction-text {
+    align-items: flex-end;
+    text-align: left;
+}
+
+.attraction-title {
+    font-family: var(--font-ko-main);
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--color-secondary);
+    letter-spacing: -0.42px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.attraction-desc {
+    font-family: var(--font-ko-sub);
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================================
+   CONTENT SECTION 4: CLOSING (from index.css)
+   ========================================= */
+.content-4 {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    height: 50vh;
+    max-height: 620px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.content-4-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.content-4-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 8%;
+}
+
+.content-4-text h2 {
+    font-family: var(--font-en-main);
+    font-weight: 700;
+    font-size: clamp(30px, 3.5vw, 46px);
+    line-height: 1.3;
+    color: white;
+    margin: 0 0 20px 0;
+}
+
+.content-4-text p {
+    font-family: var(--font-ko-main);
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 1024px) {
+    .attraction-block {
+        flex-direction: column !important;
+        padding: 0 6vw;
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    /* 홀수/짝수 모두 이미지가 위, 텍스트가 아래 */
+    .attraction-block.odd,
+    .attraction-block.even {
+        flex-direction: column !important;
+    }
+
+    .attraction-block.odd .attraction-image,
+    .attraction-block.even .attraction-image {
+        order: 0;
+        width: 100%;
+    }
+
+    .attraction-block.odd .attraction-text,
+    .attraction-block.even .attraction-text {
+        order: 1;
+        align-items: center;
+        text-align: center;
+    }
+
+    .attraction-image {
+        width: 100%;
+        height: auto;
+        flex: none;
+    }
+
+    /* 모바일: 가로 스크롤 슬라이드 (main.css 스타일) */
+    .attraction-image .img-grid {
+        flex-direction: row;
+        width: 100%;
+        height: 250px;
+        gap: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .attraction-image .img-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .attraction-image {
+        height: 250px;
+    }
+
+    .attraction-image.single-image {
+        height: 250px;
+    }
+
+    .attraction-image .img-item,
+    .attraction-image .img-item.i1,
+    .attraction-image .img-item.i2,
+    .attraction-image .img-item.i3 {
+        flex: 0 0 100% !important;
+        width: 100%;
+        height: 100%;
+        margin-top: 0 !important;
+        scroll-snap-align: start;
+        transition: none !important;
+    }
+
+    .attraction-image .img-item.is-active {
+        flex-basis: 100% !important;
+        height: 100%;
+    }
+
+    .section-title {
+        font-size: 36px;
+        left: 6vw;
+        top: 60px;
+    }
+
+    .section-attractions {
+        padding: 120px 0 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 33px;
+    }
+}

@@ -150,31 +150,6 @@ class ReservationMapper extends BaseDataMapper {
     }
 
     /**
-     * 예약안내 섹션 매핑
-     * property.reservationGuide → [data-reservation-guide]
-     */
-    mapReservationGuideSection() {
-        this._mapTextContent('[data-reservation-guide]', 'reservationGuide');
-    }
-
-    /**
-     * 입/퇴실 안내 섹션 매핑
-     * property.checkin → [data-checkin-time]
-     * property.checkout → [data-checkout-time]
-     * property.checkInOutInfo → [data-operation-info]
-     */
-    mapCheckInOutSection() {
-        if (!this.isDataLoaded || !this.data.property) return;
-
-        const property = this.data.property;
-
-        const operationInfo = this.safeSelect('[data-operation-info]');
-        if (operationInfo && property.checkInOutInfo) {
-            operationInfo.innerHTML = this._formatTextWithLineBreaks(property.checkInOutInfo);
-        }
-    }
-
-    /**
      * 환불 규정 섹션 매핑
      * property.refundSettings.customerRefundNotice → [data-refund-notes] (내용 있을 때만 .refund-text-section 노출)
      * property.refundPolicies → .refund-table-body (행 동적 생성)
@@ -303,8 +278,6 @@ class ReservationMapper extends BaseDataMapper {
 
         // 안내 섹션들
         this.mapUsageSection();
-        this.mapReservationGuideSection();
-        this.mapCheckInOutSection();
         this.mapRefundSection();
 
         // 마무리 섹션

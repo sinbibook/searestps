@@ -1,0 +1,127 @@
+/* 404 Error Page Styles */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.error-page-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.error-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 40px;
+    max-width: 700px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.error-code {
+    font-family: var(--font-en-main);
+    font-weight: 700;
+    font-size: clamp(80px, 15vw, 200px);
+    color: var(--color-secondary);
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.error-title {
+    font-family: var(--font-ko-main);
+    font-weight: 700;
+    font-size: 2rem;
+    color: #000;
+    margin: 30px 0 20px 0;
+    line-height: 1.3;
+}
+
+.error-description {
+    font-family: var(--font-ko-sub);
+    font-weight: 500;
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 50px 0;
+    line-height: 1.6;
+}
+
+.error-button {
+    display: inline-block;
+    padding: 16px 48px;
+    background-color: var(--color-secondary);
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-ko-main);
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid var(--color-secondary);
+}
+
+.error-button:hover {
+    background-color: transparent;
+    color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+.error-button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .error-page-container {
+        padding: 20px;
+    }
+
+    .error-content {
+        padding: 40px 20px;
+    }
+
+    .error-code {
+        font-size: clamp(60px, 12vw, 120px);
+    }
+
+    .error-title {
+        font-size: clamp(24px, 3vw, 36px);
+        margin: 20px 0 15px 0;
+    }
+
+    .error-description {
+        font-size: clamp(14px, 1.8vw, 18px);
+        margin: 0 0 40px 0;
+    }
+
+    .error-button {
+        padding: 14px 40px;
+        font-size: 15px;
+    }
+}

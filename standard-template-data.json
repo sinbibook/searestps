@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.79.0",
-    "generatedAt": "2026-10-12T11:55:57.686559287Z",
+    "version": "1.80.0",
+    "generatedAt": "2026-10-21T07:51:30.719332882Z",
     "templateType": "fullpage_visual",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -108,7 +108,7 @@
         "id": "9409a2c3-4b8a-4b02-8744-a30e116185c0",
         "name": "개별 풀빌라",
         "description": "객실 내 개별 수영장이 있습니다. (201호, 301호)\n객실 내 간이 수영장이 있습니다. (101호)",
-        "usageGuide": "[301호 실외수영장]\n- 크기 7m x 2m x 1.2m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 : 4,5,10,11월 100,000원 (현장결제)\n- 미온수 요금 : 6,9월 80,000원 (현장결제)\n\n[201호 실내수영장]\n- 크기 6.0m x 2m x 1.0m\n- 미온수 요금: 50,000원 (현장결제)\n- 사계절 이용 가능\n\n[201호 실외수영장]\n- 크기 7m x 2m x 1.1m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 : 4,5,10,11월 100,000원 (현장결제)\n- 미온수 요금 : 6,9월 80,000원 (현장결제)\n\n[101호 간이수영장]\n- 크기 3m x 2m x 0.76m\n- 이용기간 : 5/1~10/31\n- 미온수 요금 : 40,000원 (현장결제)\n\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.",
+        "usageGuide": "- 온도: 미온수 30℃~33℃\n※ 미온수 이용 시 입실 하루 전 신청 필수\n\n[301호 실외수영장]\n- 크기 7m x 2m x 1.2m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 : 80,000원 (현장결제)\n\n[201호 실내수영장]\n- 크기 6.0m x 2m x 1.0m\n- 미온수 요금: 50,000원 (현장결제)\n- 사계절 이용 가능\n\n[201호 실외수영장]\n- 크기 7m x 2m x 1.1m\n- 이용기간 : 4/1~11/30\n- 미온수 요금 :80,000원 (현장결제)\n\n[101호 간이수영장]\n- 크기 3m x 2m x 0.76m\n- 이용기간 : 5/1~10/31\n- 미온수 요금 : 40,000원 (현장결제)\n※ 기상 상황에 따라 이용이 불가할 수 있습니다.",
         "displayOrder": 1,
         "images": [
           {
@@ -401,7 +401,7 @@
           {
             "id": "b3cbff46-6130-4d82-abce-7f7956b8b046",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/pX2e06rRTkHg.jpg",
-            "sortOrder": 1,
+            "sortOrder": 0,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -411,7 +411,7 @@
           {
             "id": "4d32bea6-7509-46ad-8c71-b22ba1393850",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/19hiCHpZzBT5.jpg",
-            "sortOrder": 2,
+            "sortOrder": 0,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -419,7 +419,7 @@
           {
             "id": "a40853f1-eaf6-4cdd-a6cb-62f78420dfc2",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/fsgQIy1oM857.jpg",
-            "sortOrder": 3,
+            "sortOrder": 1,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -427,7 +427,7 @@
           {
             "id": "11607772-e951-49f7-9907-2ee0b43eade8",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/I7jhdpTLfG14.jpg",
-            "sortOrder": 4,
+            "sortOrder": 2,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -435,7 +435,7 @@
           {
             "id": "d99e7e3f-95d2-4e8e-a57f-372ae35ffef0",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/xYm7oPMpXHrN.jpg",
-            "sortOrder": 5,
+            "sortOrder": 3,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -443,7 +443,7 @@
           {
             "id": "4db98682-e870-4543-80ec-96ad5d1b6c04",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/Kfl6LETVjBu0.jpg",
-            "sortOrder": 6,
+            "sortOrder": 4,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -451,7 +451,7 @@
           {
             "id": "391f5584-724d-41f1-a0aa-351c6610d4d5",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/p9PqjNkV8ITO.jpg",
-            "sortOrder": 7,
+            "sortOrder": 5,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -459,7 +459,7 @@
           {
             "id": "ff0fc498-4f2d-409d-987b-77f65f91ae6b",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/WwvqryVFcLSG.jpg",
-            "sortOrder": 8,
+            "sortOrder": 6,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -467,7 +467,7 @@
           {
             "id": "72b54157-3f9c-40d2-9a9a-b36eb9ee21b6",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/XJzMaRDNY3di.jpg",
-            "sortOrder": 9,
+            "sortOrder": 7,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -1835,13 +1835,14 @@
               {
                 "id": "01a12ff8-1c75-7a43-8bf5-257c47648d3d",
                 "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/popup/1791806150971-lojnrumt43.jpg",
-                "sortOrder": 1,
+                "sortOrder": 0,
                 "description": "",
                 "isSelected": true,
                 "blockId": "b6cd6d5e-4f89-4cc6-a0a9-b83d697058c6"
               }
             ],
             "slider": false,
+            "videos": [ ],
             "enabled": true,
             "endDate": null,
             "sortOrder": 0,
@@ -1856,13 +1857,14 @@
               {
                 "id": "62549fc7-8b29-4ee0-a3e1-3d01588337ce",
                 "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/b82bc487-6e83-4e78-abd5-c5953afa9e2f/popup/1781256163469-afe1xdew5s.jpg",
-                "sortOrder": 0,
+                "sortOrder": 1,
                 "description": "",
                 "isSelected": true,
                 "blockId": "44170c35-a193-4528-86ff-2b742334c71f"
               }
             ],
             "slider": false,
+            "videos": [ ],
             "enabled": true,
             "endDate": "2026-07-31",
             "sortOrder": 1,
@@ -2540,7 +2542,10 @@
             }
           ]
         }
-      ]
+      ],
+      "footer": {
+        "ruralStayMark": null
+      }
     }
   }
 }

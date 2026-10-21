@@ -264,6 +264,31 @@ class HeaderFooterMapper extends BaseDataMapper {
     }
 
     /**
+     * Footer 농어촌민박사업자 이미지 매핑
+     * MAPPER: homepage.customFields.footer.ruralStayMark → [data-footer-rural-stay-mark] (구분선 아래, 사업자정보 위)
+     * 이미지가 있을 때만 노출하고, 없으면 숨겨 기존 푸터와 같다.
+     * 프리뷰는 같은 페이지에서 다시 매핑하므로 매번 표시 상태를 되돌린다.
+     */
+    mapFooterRuralStayMark() {
+        if (!this.isDataLoaded) return;
+
+        const mark = this.safeGet(this.data, 'homepage.customFields.footer.ruralStayMark');
+        const markUrl = mark && mark.url ? String(mark.url) : '';
+
+        this.safeSelectAll('[data-footer-rural-stay-mark-wrap]').forEach(wrap => {
+            wrap.style.display = markUrl ? '' : 'none';
+        });
+        this.safeSelectAll('[data-footer-rural-stay-mark]').forEach(img => {
+            if (!markUrl) {
+                img.removeAttribute('src');
+                return;
+            }
+            img.src = markUrl;
+            img.alt = (mark.description && String(mark.description).trim()) || '농어촌민박사업자';
+        });
+    }
+
+    /**
      * Footer 사업자 정보 매핑
      */
     mapFooterInfo() {
@@ -274,7 +299,8 @@ class HeaderFooterMapper extends BaseDataMapper {
         // 전화번호 매핑 - property.contactPhone 사용
         const footerPhone = this.safeSelect('[data-footer-phone]');
         if (footerPhone) {
-            const phoneNumber = this.safeGet(this.data, 'property.contactPhone');
+            // 배열/숫자로 내려오는 경우도 안전하게 문자열로 변환
+            const phoneNumber = this.sanitizeText(this.safeGet(this.data, 'property.contactPhone'));
             if (phoneNumber) {
                 footerPhone.textContent = phoneNumber;
             }
@@ -321,11 +347,24 @@ class HeaderFooterMapper extends BaseDataMapper {
             }
         }
 
-        // 저작권 정보 - '신비서' 주체명이 포함되어 저작권 문구 전체를 블라인드 처리(미노출)
+        // 저작권 정보 - property.tripProviderName(Trip11 공급자명) 이 있을 때만 노출한다.
+        // 값이 없으면 '신비서' 주체명이 노출되므로 기존대로 블라인드 처리한다.
         const copyrightElement = this.safeSelect('[data-footer-copyright]');
         if (copyrightElement) {
-            copyrightElement.innerHTML = '';
-            copyrightElement.style.display = 'none';
+            const provider = String(this.safeGet(this.data, 'property.tripProviderName') || '').trim();
+            if (provider) {
+                const currentYear = new Date().getFullYear();
+                const copyrightLink = document.createElement('a');
+                copyrightLink.textContent = `© ${currentYear} ${provider}. All rights reserved.`;
+                copyrightLink.style.color = 'inherit';
+                copyrightLink.style.textDecoration = 'none';
+                copyrightElement.innerHTML = '';
+                copyrightElement.appendChild(copyrightLink);
+                copyrightElement.style.display = '';
+            } else {
+                copyrightElement.innerHTML = '';
+                copyrightElement.style.display = 'none';
+            }
         }
     }
 
@@ -407,6 +446,7 @@ class HeaderFooterMapper extends BaseDataMapper {
 
         // Footer 매핑
         this.mapFooterLogo();
+        this.mapFooterRuralStayMark();
         this.mapFooterInfo();
         this.mapSocialLinks();
 

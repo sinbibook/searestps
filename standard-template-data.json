@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.82.0",
-    "generatedAt": "2026-10-21T08:06:22.414558660Z",
+    "version": "1.83.0",
+    "generatedAt": "2026-10-21T08:06:43.320056751Z",
     "templateType": "fullpage_visual",
     "propertyId": "4b1057f0-d1dd-4faa-ad1c-cac176e28b60",
     "homepageId": "b82bc487-6e83-4e78-abd5-c5953afa9e2f"
@@ -29,6 +29,9 @@
     "domain": "searestps.kr",
     "realtimeBookingId": "https://map.naver.com/p/entry/place/37471454",
     "ybsId": "61677",
+    "tripPropertyId": "9999",
+    "partnerType": "distributor_b",
+    "tripProviderName": "(주)신비서",
     "amenities": [
       "흡연구역(지정장소)",
       "주차장"
@@ -476,10 +479,7 @@
         "surrounding": [ ],
         "commonArea": [ ]
       }
-    ],
-    "tripPropertyId": "9999",
-    "partnerType": "distributor_b",
-    "tripProviderName": "(주)신비서"
+    ]
   },
   "rooms": [
     {

@@ -126,7 +126,31 @@ class BaseDataMapper {
      * @returns {boolean} 비어있으면 true
      */
     _isEmptyValue(value) {
-        return value === null || value === undefined || value === '';
+        if (value === null || value === undefined || value === '') return true;
+        // 배열로 내려오는 필드(예: property.contactPhone) 대응
+        if (Array.isArray(value)) {
+            return value.every(item => this._isEmptyValue(item));
+        }
+        return false;
+    }
+
+    /**
+     * 어떤 타입의 값이든 안전하게 문자열로 변환하는 헬퍼 메서드
+     * API가 문자열 대신 배열/숫자를 내려주는 경우에도 예외 없이 처리한다
+     * @private
+     * @param {any} value - 변환할 값
+     * @returns {string} 변환된 문자열 (변환 불가한 객체는 빈 문자열)
+     */
+    _toText(value) {
+        if (this._isEmptyValue(value)) return '';
+        if (Array.isArray(value)) {
+            return value
+                .filter(item => !this._isEmptyValue(item))
+                .map(item => this._toText(item))
+                .join(', ');
+        }
+        if (typeof value === 'object') return '';
+        return String(value);
     }
 
     /**
@@ -150,7 +174,8 @@ class BaseDataMapper {
      */
     sanitizeText(text, fallback = '') {
         if (this._isEmptyValue(text)) return fallback;
-        return text.trim();
+        const normalized = this._toText(text).trim();
+        return normalized === '' ? fallback : normalized;
     }
 
     /**
@@ -162,8 +187,9 @@ class BaseDataMapper {
      */
     _formatTextWithLineBreaks(text, fallback = '') {
         if (this._isEmptyValue(text)) return fallback;
-        // 앞뒤 공백 제거
-        const trimmedText = text.trim();
+        // 앞뒤 공백 제거 (문자열이 아닌 값도 안전하게 변환)
+        const trimmedText = this._toText(text).trim();
+        if (trimmedText === '') return fallback;
         // 먼저 HTML 특수 문자를 이스케이프 처리한 후 줄바꿈 변환
         const escapedText = this._escapeHTML(trimmedText);
         return escapedText.replace(/\n/g, '<br>');

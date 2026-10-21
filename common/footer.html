@@ -22,6 +22,11 @@
     </div>
     <div class="footer-divider"></div>
     <div class="footer-info-wrapper">
+        <!-- data-* 속성 : data-footer-rural-stay-mark-wrap (customFields.footer.ruralStayMark 가 있을 때만 노출, 기본 숨김)
+             data-footer-rural-stay-mark : 농어촌민박사업자 이미지 (표시마크 + 신고번호, alt = description) -->
+        <div class="footer-rural-stay-mark-wrap" data-footer-rural-stay-mark-wrap style="display: none">
+            <img class="footer-rural-stay-mark" src="" alt="농어촌민박사업자" data-footer-rural-stay-mark>
+        </div>
         <div class="footer-info">
             <!-- custom field : 대표자명 매핑 -->
             <p data-footer-representative-name></p>

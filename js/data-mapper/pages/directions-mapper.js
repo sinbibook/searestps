@@ -134,27 +134,38 @@ class DirectionsMapper extends BaseDataMapper {
             return;
         }
 
-        if (!window.kakao || !window.kakao.maps) {
-            console.warn('[DirectionsMapper] Kakao SDK not loaded');
-            return;
-        }
+        // SDK 로드 확인 및 지도 생성 (백오피스 프리뷰는 SDK보다 매핑이 먼저 실행될 수 있음)
+        const checkSdkAndLoad = (retryCount = 0) => {
+            const MAX_RETRIES = 20; // 20 * 100ms = 2초
+            if (window.kakao && window.kakao.maps && window.kakao.maps.load) {
+                window.kakao.maps.load(() => {
+                    this._createKakaoMap(lat, lng, mapContainer);
+                });
+            } else if (retryCount < MAX_RETRIES) {
+                setTimeout(() => checkSdkAndLoad(retryCount + 1), 100);
+            } else {
+                console.error('[DirectionsMapper] Failed to load Kakao Map SDK after multiple retries.');
+            }
+        };
 
-        kakao.maps.load(() => {
-            this._createKakaoMap(lat, lng, mapContainer);
-        });
+        checkSdkAndLoad();
     }
 
     /**
      * 카카오 지도 생성 (마커 포함)
      */
     _createKakaoMap(lat, lng, container) {
-        const coords = new kakao.maps.LatLng(lat, lng);
-        const map = new kakao.maps.Map(container, {
-            center: coords,
-            level: 5
-        });
-        const marker = new kakao.maps.Marker({ position: coords });
-        marker.setMap(map);
+        try {
+            const coords = new kakao.maps.LatLng(lat, lng);
+            const map = new kakao.maps.Map(container, {
+                center: coords,
+                level: 5
+            });
+            const marker = new kakao.maps.Marker({ position: coords });
+            marker.setMap(map);
+        } catch (error) {
+            console.error('[DirectionsMapper] Failed to create Kakao Map:', error);
+        }
     }
 
     /**

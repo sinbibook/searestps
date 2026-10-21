@@ -496,7 +496,12 @@ class PreviewHandler {
             mapper.isDataLoaded = true;
 
             // 기존 매핑 로직 실행 (완료 대기)
-            await mapper.mapPage();
+            // 한 섹션의 오류가 나머지 매핑(지도/헤더/푸터)까지 중단시키지 않도록 방어
+            try {
+                await mapper.mapPage();
+            } catch (error) {
+                console.error(`[PreviewHandler] ${currentPage} mapPage failed:`, error);
+            }
 
         }
 
